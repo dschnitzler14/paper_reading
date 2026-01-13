@@ -11,7 +11,10 @@ strategies_module_ui <- function(id) {
         navset_tab(
           id = "reading_tabs",
           nav_panel(
-            title = "How to read advice",
+            title = tagList(
+              bs_icon("play-circle"),
+              " How to Read a Paper"
+            ),
             layout_sidebar(
               sidebar = sidebar(
                 width = "40%",
@@ -26,7 +29,11 @@ strategies_module_ui <- function(id) {
             )
           ),
           nav_panel(
-            title = "Title and Abstract",
+            title = tagList(
+              bs_icon("1-circle-fill"),
+              " Title and Abstract"
+            ),
+            #title = "",
             layout_sidebar(
               sidebar = sidebar(
                 width = "40%",
@@ -83,7 +90,10 @@ strategies_module_ui <- function(id) {
             )
           ),
           nav_panel(
-            title = "Introduction",
+            title = tagList(
+              bs_icon("2-circle-fill"),
+              " Introduction"
+            ),
             layout_sidebar(
               sidebar = sidebar(
                 width = "40%",
@@ -96,6 +106,12 @@ strategies_module_ui <- function(id) {
                   uiOutput(ns("strategies_introduction2_click")),
                   uiOutput(ns("strategies_introduction3_click")),
                   uiOutput(ns("strategies_introduction4_click"))
+                ),
+                div(
+                  class = "sb-notepad",
+                  tags$h4("Unknown Concepts and Vocabulary"),
+                  uiOutput(ns("strategies_introduction1_vocab_click")),
+                  
                 ),
                 
                 # div(
@@ -128,7 +144,10 @@ strategies_module_ui <- function(id) {
             )
           ),
           nav_panel(
-            title = "Methods",
+            title = tagList(
+              bs_icon("3-circle-fill"),
+              " Methods"
+            ),
             layout_sidebar(
               sidebar = sidebar(
                 width = "40%",
@@ -226,7 +245,10 @@ strategies_module_ui <- function(id) {
             )
           ),
           nav_panel(
-            title = "Results",
+            title = tagList(
+              bs_icon("4-circle-fill"),
+              " Results"
+            ),
             layout_sidebar(
               sidebar = sidebar(
                 width = "40%",
@@ -291,7 +313,10 @@ strategies_module_ui <- function(id) {
             )
           ),
           nav_panel(
-            title = "Pause",
+            title = tagList(
+              bs_icon("pause-circle"),
+              " Pause"
+            ),
             layout_sidebar(
               sidebar = sidebar(
                 width = "40%",
@@ -307,7 +332,10 @@ strategies_module_ui <- function(id) {
             )
           ),
           nav_panel(
-            title = "Discussion",
+            title = tagList(
+              bs_icon("5-circle-fill"),
+              " Discussion"
+            ),
             layout_sidebar(
               sidebar = sidebar(
                 width = "40%",
@@ -398,23 +426,61 @@ strategies_module_ui <- function(id) {
             )
           ),
           nav_panel(
-            title = "Understanding",
+            title = tagList(
+              bs_icon("question-circle"),
+              " Understanding"
+            ),
             layout_sidebar(
               sidebar = sidebar(
                 width = "40%",
                 title = "Understanding",
+                div(
+                  class = "sb-notepad",
+                  tags$h4("❓ Open Questions"),
+                  
+                  tags$h5("Methods"),
+                  uiOutput(ns("reflection_methods5_click")),
+                  uiOutput(ns("reflection_methods5_answer")),
+
+                  uiOutput(ns("reflection_methods7_click")),
+                  uiOutput(ns("reflection_methods7_answer")),
+
+                  uiOutput(ns("reflection_methods9_click")),
+                  uiOutput(ns("reflection_methods9_answer")),
+
+                  uiOutput(ns("reflection_methods10_2_click")),
+                  uiOutput(ns("reflection_methods10_2_answer")),
+
+                  uiOutput(ns("reflection_methods11_click")),
+                  uiOutput(ns("reflection_methods11_answer")),
+
+                  uiOutput(ns("reflection_methods14_click")),
+                  uiOutput(ns("reflection_methods14_answer")),
+
+                  uiOutput(ns("reflection_methods17_2_click")),
+                  uiOutput(ns("reflection_methods17_2_answer")),
+                  
+                  tags$h5("Discussion"),
+                  uiOutput(ns("reflection_discussion4_click")),
+                  uiOutput(ns("reflection_discussion4_answer"))
+
+                ),
                 
               ),
               card(
                 card_header("Understanding"),
                 card_body(
                   
+                  
                 )
               )
             )
           ),
           nav_panel(
-            title = "Reflection",
+            title = tagList(
+              bs_icon("star"),
+              " Reflection"
+            ),
             layout_sidebar(
               sidebar = sidebar(
                 width = "40%",
@@ -445,26 +511,7 @@ strategies_module_ui <- function(id) {
               card(
                 card_header("Reflection"),
                 card_body(
-                  div(
-                  class = "sb-notepad",
-                  tags$h4("❓ Questions"),
-                  tags$h3("Introduction"),
-                  tags$hr(),
-                  tags$h3("Methods"),
-                  uiOutput(ns("reflection_methods5_click")),
-                  uiOutput(ns("reflection_methods7_click")),
-                  uiOutput(ns("reflection_methods9_click")),
-                  uiOutput(ns("reflection_methods10_2_click")),
-                  uiOutput(ns("reflection_methods11_click")),
-                  uiOutput(ns("reflection_methods14_click")),
-                  uiOutput(ns("reflection_methods17_2_click")),
-                  tags$hr(),
-                  tags$h3("Results"),
-                  tags$hr(),
-                  tags$h3("Discussion"),
-                  uiOutput(ns("reflection_discussion4_click"))
-
-                ),
+                  
                   uiOutput(ns("overall_stars"))
                 )
               )
@@ -547,6 +594,18 @@ observeEvent(input$intro4, {
   })
 })
 
+
+observeEvent(input$intro_vocab1, {
+  output$strategies_introduction1_vocab_click <- renderUI({
+    tagList(
+      tags$ul(
+        tags$li("✏️ Social frailty is a condition characterised by reduced social engagement and support, which can lead to negative health outcomes.")
+      )
+    )
+  })
+})
+
+
 # Methods
 output$strategies_methods <- renderUI({
     md_ui("english/strategies/methods_strategy.Rmd")
@@ -610,11 +669,22 @@ methods5_question_ui <- function() {
   )
 }
 
+methods5_answer_ui <- function() {
+  tagList(
+    tags$p(
+      class = "handwritten",
+      "❌ The methods do not specify a recovery period after the implantation surgery. This is an important consideration as surgery can induce stress and affect behaviour. Ideally, there should be a recovery period of at least one week to allow the rats to heal and return to baseline behaviour before starting the experiment."),
+      tags$br(),
+  )
+}
+
 observeEvent(input$methods5, {
   ui <- methods5_question_ui()
+  ui_answer <- methods5_answer_ui()
 
   output$strategies_methods5_click <- renderUI(ui)
   output$reflection_methods5_click <- renderUI(ui)
+  output$reflection_methods5_answer <- renderUI(ui_answer)
 })
 
 observeEvent(input$methods6, {
@@ -645,11 +715,22 @@ methods7_question_ui <- function() {
   )
 }
 
+methods7_answer_ui <- function() {
+  tagList(
+    tags$p(
+      class = "handwritten",
+      "✔️ The authors addressed this is a possible confounding factor."),
+      tags$br(),
+  )
+}
+
 observeEvent(input$methods7, {
   ui <- methods7_question_ui()
+  ui_answer <- methods7_answer_ui()
 
   output$strategies_methods7_click <- renderUI(ui)
   output$reflection_methods7_click <- renderUI(ui)
+  output$reflection_methods7_answer <- renderUI(ui_answer)
 })
 
 observeEvent(input$methods8, {
@@ -682,11 +763,22 @@ methods9_question_ui <- function() {
   )
 }
 
+methods9_answer_ui <- function() {
+  tagList(
+    tags$p(
+      class = "handwritten",
+      "❌ The methods do not provide a rationale for why obscuring vision is sufficient to induce social isolation stress. While visual cues are important for social interaction, rats also rely heavily on olfactory and auditory cues. Therefore, it is questionable whether obscuring vision alone is enough to create a socially isolated environment."),
+      tags$br(),
+  )
+}
+
 observeEvent(input$methods9, {
   ui <- methods9_question_ui()
+  ui_answer <- methods9_answer_ui()
 
   output$strategies_methods9_click <- renderUI(ui)
   output$reflection_methods9_click <- renderUI(ui)
+  output$reflection_methods9_answer <- renderUI(ui_answer)
 })
 ###
 
@@ -718,11 +810,22 @@ methods10_2_question_ui <- function() {
   )
 }
 
+methods10_2_answer_ui <- function() {
+  tagList(
+    tags$p(
+      class = "handwritten",
+      "❌ The methods do not specify whether the rats in the interrupted group were always paired with the same partner rat during the pair-housing periods. This is an important detail as changing cage mates can introduce additional stress and affect social dynamics. "),
+      tags$br(),
+  )
+}
+
 observeEvent(input$methods10_2, {
   ui <- methods10_2_question_ui()
+  ui_answer <- methods10_2_answer_ui()
 
   output$strategies_methods10_2_click <- renderUI(ui)
   output$reflection_methods10_2_click <- renderUI(ui)
+  output$reflection_methods10_2_answer <- renderUI(ui_answer)
 })
 ###
 
@@ -740,16 +843,27 @@ observeEvent(input$methods10_2, {
 methods11_question_ui <- function() {
   tagList(
     tags$ul(
-      tags$li("❓ What is one rat eats more than the other?")
+      tags$li("❓ What if one rat eats more than the other?")
     )
+  )
+}
+
+methods11_answer_ui <- function() {
+  tagList(
+    tags$p(
+      class = "handwritten",
+      "❌ The methods do not address how they controlled for potential differences in food intake between cage mates in the pair-housed groups. "),
+      tags$br(),
   )
 }
 
 observeEvent(input$methods11, {
   ui <- methods11_question_ui()
+  ui_answer <- methods11_answer_ui()
 
   output$strategies_methods11_click <- renderUI(ui)
   output$reflection_methods11_click <- renderUI(ui)
+  output$reflection_methods11_answer <- renderUI(ui_answer)
 })
 ###
 
@@ -798,11 +912,22 @@ methods14_question_ui <- function() {
   )
 }
 
+methods14_answer_ui <- function() {
+  tagList(
+    tags$p(
+      class = "handwritten",
+      "❌ The methods do not provide a clear rationale for fasting the rats before blood collection. Additionally, the description of the restraining method is insufficient, making it difficult to assess its potential impact on stress levels. Overall, the timing and procedures for blood collection raise concerns about accurately assessing baseline hormone levels."),
+      tags$br(),
+  )
+}
+
 observeEvent(input$methods14, {
   ui <- methods14_question_ui()
+  ui_answer <- methods14_answer_ui()
 
   output$strategies_methods14_click <- renderUI(ui)
   output$reflection_methods14_click <- renderUI(ui)
+  output$reflection_methods14_answer <- renderUI(ui_answer)
 })
 ###
 
@@ -861,16 +986,27 @@ observeEvent(input$methods17, {
 methods17_2_question_ui <- function() {
   tagList(
     tags$ul(
-      tags$li("❓ did they also check for normality?")
+      tags$li("❓ Did they also check for normality?")
     )
+  )
+}
+
+methods17_2_answer_ui <- function() {
+  tagList(
+    tags$p(
+      class = "handwritten",
+      "❌ The methods do not specify whether normality tests were conducted in addition to checking for homogeneity of variance. "),
+      tags$br(),
   )
 }
 
 observeEvent(input$methods17_2, {
   ui <- methods17_2_question_ui()
+  ui_answer <- methods17_2_answer_ui()
 
   output$strategies_methods17_2_click <- renderUI(ui)
   output$reflection_methods17_2_click <- renderUI(ui)
+  output$reflection_methods17_2_answer <- renderUI(ui_answer)
 })
 ###
 
@@ -1022,12 +1158,22 @@ discussion4_question_ui <- function() {
     )
   )
 }
+discussion4_answer_ui <- function() {
+  tagList(
+    tags$p(
+      class = "handwritten",
+      "✔️ Upon looking up the reference, it seems they meant 'oxyntic glands', glands that secrete hydrochloric acid in the stomach."),
+      tags$br(),
+  )
+}
 
 observeEvent(input$discussion4, {
   ui <- discussion4_question_ui()
-
+  ui_answer <- discussion4_answer_ui()
+  
   output$strategies_discussion4_click <- renderUI(ui)
   output$reflection_discussion4_click <- renderUI(ui)
+  output$reflection_discussion4_answer <- renderUI(ui_answer)
 })
 ###
 

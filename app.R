@@ -2,6 +2,7 @@ source("global.R")
 
 library(shiny)
 library(bslib)
+library(bsicons)
 
 # load all modules in modules/ directory ----
 module_files <- list.files(path = "modules", pattern = "\\.R$", full.names = TRUE)
@@ -28,6 +29,7 @@ ui <- bslib::page_navbar(
   tags$link(rel="stylesheet", href="css/paper_stack.css"),
   tags$link(rel = "stylesheet", type = "text/css", href = "css/highlights.css"),
   tags$script(src = "js/highlight_click_state.js"),
+  tags$link(rel = "stylesheet", href = "https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap"),
   tags$link(rel = "stylesheet", href = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"),
   tags$meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
 ),
@@ -35,41 +37,82 @@ ui <- bslib::page_navbar(
 
 
   nav_panel(
-    "Introduction",
-    value = "introduction",
-    introduction_module_ui("introduction")
+  title = tagList(
+    bs_icon("info-circle"),
+    " Introduction"
   ),
+  value = "introduction",
+  introduction_module_ui("introduction")
+  ),
+
   nav_panel(
-    "What is a Paper?",
+    title = tagList(
+      bs_icon("file-text"),
+      " What is a Paper?"
+    ),
     value = "what_is_a_paper",
     what_is_a_paper_module_ui("what_is_a_paper")
   ),
+
   nav_panel(
-    "Anatomy of a Paper",
+    title = tagList(
+      bs_icon("heart-pulse"),
+      " Anatomy of a Paper"
+    ),
     value = "anatomy",
     anatomy_module_ui("anatomy")
   ),
+
   nav_panel(
-    "Reading Strategies",
+    title = tagList(
+      bs_icon("puzzle"),
+      " Reading Strategies"
+    ),
     value = "strategies",
     strategies_module_ui("strategies")
   ),
+
   nav_panel(
-    "Practice",
+    title = tagList(
+      bs_icon("dice-2"),
+      " Practice"
+    ),
     value = "practice",
     practice_module_ui("practice")
   ),
+
   nav_panel(
-    "Searching Papers",
+    title = tagList(
+      bs_icon("search"),
+      " Searching Papers"
+    ),
     value = "searching",
     searching_module_ui("searching")
   ),
+
   nav_panel(
-    "Useful Tools",
+    title = tagList(
+      bs_icon("tools"),
+      " Useful Tools"
+    ),
     value = "tools",
     tools_module_ui("tools")
   ),
-  
+
+  nav_menu(
+    title = tagList(
+      bs_icon("three-dots"),
+      ""
+    ),
+    nav_item(
+  shiny::actionLink(
+    inputId = "open_about",
+    label = "About",
+    class = "ps-topmenu-link"
+  )
+),
+  ),
+
 
   # footer
   footer = tags$footer(
@@ -141,7 +184,25 @@ process_rmd_fragment <- function(filepath,
   htmltools::tags$div(class = wrapper_class, htmltools::HTML(html_str))
 }
 
+observeEvent(input$open_about, {
+  showModal(
+    modalDialog(
+      title = "About",
+      size = "l",
+      easyClose = TRUE,
+      footer = modalButton("Close"),
 
+      div(
+        class = "ps-about-modal",
+        uiOutput("about_text")
+      )
+    )
+  )
+})
+
+output$about_text <- renderUI({
+        process_markdown("about.md")
+      })
 
 
   introduction_module_server("introduction", parent_session = session, nav_order_list = nav_order_list, process_markdown = process_markdown)

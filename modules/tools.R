@@ -24,11 +24,11 @@ tools_module_ui <- function(id) {
         class = "tool-card tool-card-click",
         bslib::card_body(
           style = "cursor:pointer;",
-          onclick = "window.open('https://www.zotero.org','_blank')",
+          onclick = "window.open('https://pubcrawler.gen.tcd.ie/','_blank')",
           tags$div(
             class = "tool-card-content",
-            tags$h3("Zotero"),
-            tags$p("Bibliography manager"),
+            tags$h3("PubCrawler"),
+            tags$p("Automated literature search tool"),
             tags$div(class = "tool-cta", "Go to site now")
           )
         )
@@ -38,11 +38,11 @@ tools_module_ui <- function(id) {
         class = "tool-card tool-card-click",
         bslib::card_body(
           style = "cursor:pointer;",
-          onclick = "window.open('https://www.zotero.org','_blank')",
+          onclick = "window.open('https://scholar.google.com/','_blank')",
           tags$div(
             class = "tool-card-content",
-            tags$h3("Zotero"),
-            tags$p("Bibliography manager"),
+            tags$h3("Google Scholar"),
+            tags$p("Search engine for academic literature (Google)"),
             tags$div(class = "tool-cta", "Go to site now")
           )
         )
@@ -52,11 +52,11 @@ tools_module_ui <- function(id) {
         class = "tool-card tool-card-click",
         bslib::card_body(
           style = "cursor:pointer;",
-          onclick = "window.open('https://www.zotero.org','_blank')",
+          onclick = "window.open('https://europepmc.org/','_blank')",
           tags$div(
             class = "tool-card-content",
-            tags$h3("Zotero"),
-            tags$p("Bibliography manager"),
+            tags$h3("Europe PMC"),
+            tags$p("Search engine for academic literature (Europe PMC)"),
             tags$div(class = "tool-cta", "Go to site now")
           )
         )
@@ -66,11 +66,11 @@ tools_module_ui <- function(id) {
         class = "tool-card tool-card-click",
         bslib::card_body(
           style = "cursor:pointer;",
-          onclick = "window.open('https://www.zotero.org','_blank')",
+          onclick = "window.open('https://www.overleaf.com/','_blank')",
           tags$div(
             class = "tool-card-content",
-            tags$h3("Zotero"),
-            tags$p("Bibliography manager"),
+            tags$h3("Overleaf"),
+            tags$p("Online LaTeX editor"),
             tags$div(class = "tool-cta", "Go to site now")
           )
         )
@@ -80,11 +80,11 @@ tools_module_ui <- function(id) {
         class = "tool-card tool-card-click",
         bslib::card_body(
           style = "cursor:pointer;",
-          onclick = "window.open('https://www.zotero.org','_blank')",
+          onclick = "window.open('https://paperstars.org/','_blank')",
           tags$div(
             class = "tool-card-content",
-            tags$h3("Zotero"),
-            tags$p("Bibliography manager"),
+            tags$h3("Paperstars"),
+            tags$p("'Goodreads for Science'"),
             tags$div(class = "tool-cta", "Go to site now")
           )
         )

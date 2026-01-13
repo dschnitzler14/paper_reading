@@ -1,0 +1,4 @@
+- ❌ Using lowercase `and`, `or`, `not`
+- ❌ Searching entire sentences
+- ❌ Forgetting synonyms
+- ❌ Being too broad at the start

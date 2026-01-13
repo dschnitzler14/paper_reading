@@ -6,6 +6,10 @@ library(tidyverse)
 library(markdown)
 library(shinyWidgets)
 library(knitr)
+library(DT)
+library(openalexR)
+library(bsicons)
+
 
 nav_order_list <- c(
   "introduction",

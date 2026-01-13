@@ -529,3 +529,640 @@ a.action-button.highlight.shiny-bound-input:active {
     border-radius: 999px;
     background: rgba(47, 59, 20, 0.08);
 }
+
+
+/* =========================
+   Paperstars Rating Boxes
+   ========================= */
+
+.paperstars-rating {
+    --ps-green: #4B6B07;
+    --ps-orange: #BD7426;
+    --ps-red: #C33838;
+}
+
+/* Make sure the widget can be full width */
+.paperstars-rating .btn-group,
+.paperstars-rating .btn-group-vertical {
+    width: 100%;
+}
+
+/* Map colours by visual order (labels are the stable targets) */
+.paperstars-rating label.btn:nth-of-type(1) {
+    --ps-col: var(--ps-green);
+}
+
+.paperstars-rating label.btn:nth-of-type(2) {
+    --ps-col: var(--ps-orange);
+}
+
+.paperstars-rating label.btn:nth-of-type(3) {
+    --ps-col: var(--ps-red);
+}
+
+/* Base pill */
+.paperstars-rating input[type="radio"].btn-check+label.btn {
+    width: 100%;
+    display: block !important;
+    border-radius: 999px !important;
+    padding: 9px 16px;
+    text-align: left;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.25;
+    border: 2px solid var(--ps-col) !important;
+    color: var(--ps-col) !important;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Selected state */
+.paperstars-rating input[type="radio"].btn-check:checked+label.btn {
+    background: var(--ps-col) !important;
+    border-color: var(--ps-col) !important;
+    color: #ffffff !important;
+}
+
+/* Spacing between pills (works even when individual=TRUE wraps each option) */
+.paperstars-rating label.btn {
+    margin: 0 !important;
+}
+
+.paperstars-rating label.btn:not(:last-of-type) {
+    margin-bottom: 18px !important;
+}
+
+/* Hover polish */
+.paperstars-rating label.btn:hover {
+    filter: brightness(0.97);
+}
+
+/* Kill Bootstrap focus junk */
+.paperstars-rating label.btn:focus,
+.paperstars-rating label.btn:focus-visible,
+.paperstars-rating input[type="radio"].btn-check:focus+label.btn {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* =========================
+Handwritten Font
+========================= */
+
+.handwritten {
+    font-family: "Caveat", cursive;
+    font-size: 1.15rem;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+    color: #2f2f2f;
+}
+
+/* =========================
+Paper Search Bar
+========================= */
+
+.ps-searching-card {
+    background: transparent !important;
+    border: 0 !important;
+}
+
+.ps-searching {
+    --ps-ink: #1e1e1a;
+    --ps-muted: rgba(30, 30, 26, .62);
+    --ps-border: rgba(30, 30, 26, .14);
+    --ps-shadow: 0 14px 30px rgba(30, 30, 26, .06);
+    --ps-shadow-strong: 0 10px 22px rgba(30, 30, 26, .18);
+    --ps-radius: 999px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+
+    padding: 6px 4px 2px;
+}
+
+.ps-search-title {
+    margin: 0 0 6px 0;
+    font-weight: 700;
+    color: var(--ps-ink);
+}
+
+.ps-search-help {
+    margin: 0 auto 14px auto;
+    color: var(--ps-muted);
+    max-width: 720px;
+}
+
+.ps-search-topwrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ps-search-row {
+    display: flex;
+    justify-content: center;
+}
+
+.ps-searchbar {
+    position: relative;
+    width: min(1100px, 100%);
+}
+
+.ps-searchbar .form-group {
+    margin: 0 !important;
+}
+
+.ps-searchbar input.form-control {
+    width: 100% !important;
+    height: 54px;
+    border-radius: var(--ps-radius);
+    padding: 12px 64px 12px 48px;
+    font-size: 1rem;
+    border: 1px solid var(--ps-border);
+    background: #ffffff;
+    box-shadow: var(--ps-shadow);
+}
+
+.ps-searchbar input.form-control:focus {
+    border-color: rgba(30, 30, 26, .24);
+    box-shadow: 0 16px 34px rgba(30, 30, 26, .10);
+}
+
+.ps-searchbar::before {
+    content: "";
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    transform: translateY(-50%);
+    opacity: .55;
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%231e1e1a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.ps-search-go {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 12px;
+    border: 0 !important;
+    background: #11110f !important;
+    color: #ffffff !important;
+    font-size: 1.25rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--ps-shadow-strong);
+    padding: 0 !important;
+}
+
+.ps-search-go:hover {
+    filter: brightness(1.05);
+}
+
+.ps-search-go:active {
+    transform: translateY(-50%) scale(0.98);
+}
+
+.ps-sort-row {
+    display: flex;
+    justify-content: center !important;
+    margin-top: 10px;
+}
+
+.ps-sort {
+    width: min(420px, 100%);
+    text-align: left;
+}
+
+.ps-sort-label {
+    font-size: .85rem;
+    color: var(--ps-muted);
+    margin-bottom: 6px;
+}
+
+.ps-sort .form-group {
+    margin: 0 !important;
+}
+
+.ps-sort select.form-select,
+.ps-sort select.form-control {
+    width: 100%;
+    height: 44px;
+    border-radius: 14px;
+    border: 1px solid var(--ps-border);
+    background: #ffffff;
+    box-shadow: var(--ps-shadow);
+    padding-left: 12px;
+}
+
+.ps-example-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ps-pill {
+    border-radius: 14px !important;
+    border: 1px solid var(--ps-border) !important;
+    background: rgba(255, 255, 255, .65) !important;
+    color: rgba(30, 30, 26, .55) !important;
+    padding: 10px 14px !important;
+    box-shadow: none !important;
+}
+
+.ps-pill:hover {
+    background: #ffffff !important;
+    color: rgba(30, 30, 26, .78) !important;
+}
+
+.ps-meta-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 14px;
+    align-items: end;
+    justify-items: center;
+}
+
+@media (max-width: 900px) {
+    .ps-meta-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ps-control-n .form-group {
+    margin: 0 !important;
+}
+
+.ps-control-n input.form-control {
+    width: min(420px, 100%);
+    height: 44px;
+    border-radius: 14px;
+    border: 1px solid var(--ps-border);
+    background: #ffffff;
+    box-shadow: var(--ps-shadow);
+}
+
+.ps-control-url .form-check {
+    margin: 0;
+    padding-top: 28px;
+}
+
+.ps-requrl {
+    margin-top: 12px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid var(--ps-border);
+    background: rgba(255, 255, 255, .6);
+    white-space: pre-wrap;
+    text-align: left;
+}
+
+.ps-status {
+    margin-top: 12px;
+    color: var(--ps-muted);
+}
+
+.ps-results {
+    margin-top: 10px;
+}
+
+.ps-searching .dataTables_wrapper .dataTables_filter input {
+    border-radius: 12px;
+    border: 1px solid var(--ps-border);
+}
+
+.ps-searching .form-group {
+    align-items: center;
+}
+
+.ps-searching input,
+.ps-searching select {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ps-searchbar .shiny-input-container {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.ps-searchbar .shiny-input-container input {
+    width: 100% !important;
+}
+
+/* =========================
+Search Strategies Page Styling
+========================= */
+
+.ps-guide {
+    --ps-ink: #1f2318;
+    --ps-muted: rgba(31, 35, 24, 0.72);
+    --ps-soft: rgba(31, 35, 24, 0.10);
+    --ps-border: rgba(31, 35, 24, 0.14);
+    --ps-card: rgba(255, 250, 232, 0.92);
+    --ps-card-2: rgba(255, 246, 221, 0.92);
+    --ps-accent: #4B6B07;
+    --ps-accent-2: #BD7426;
+
+    color: var(--ps-ink);
+}
+
+/* Base bslib card polish scoped to guide only */
+.ps-guide .card {
+    border-radius: 18px;
+    border: 1px solid var(--ps-border);
+    box-shadow: 0 14px 30px rgba(31, 35, 24, 0.08);
+    overflow: hidden;
+}
+
+.ps-guide .card .card-body {
+    padding: 18px 18px 16px;
+}
+
+/* Typography rhythm */
+.ps-guide h3 {
+    color: #2f3b14;
+    letter-spacing: 0.2px;
+}
+
+.ps-guide p,
+.ps-guide li {
+    color: var(--ps-ink);
+    line-height: 1.55;
+}
+
+.ps-guide p {
+    margin-bottom: 0.85rem;
+}
+
+/* Keep prose blocks readable if present inside uiOutput content */
+.ps-guide .prose {
+    max-width: 980px;
+}
+
+.ps-guide .prose h1,
+.ps-guide .prose h2,
+.ps-guide .prose h3 {
+    color: #2f3b14;
+    letter-spacing: 0.2px;
+}
+
+.ps-guide .prose p,
+.ps-guide .prose li {
+    color: var(--ps-ink);
+    line-height: 1.55;
+}
+
+.ps-guide .prose p {
+    margin-bottom: 0.85rem;
+}
+
+/* =========================
+Hero card
+========================= */
+
+.ps-guide .ps-guide-hero {
+    position: relative;
+    background: linear-gradient(180deg, var(--ps-card), var(--ps-card-2));
+}
+
+.ps-guide .ps-guide-hero:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(rgba(75, 107, 7, 0.10) 1px, transparent 1px),
+        radial-gradient(rgba(189, 116, 38, 0.08) 1px, transparent 1px);
+    background-position: 0 0, 12px 12px;
+    background-size: 24px 24px;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.ps-guide .ps-guide-hero:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 7px;
+    background: linear-gradient(180deg, var(--ps-accent), var(--ps-accent-2));
+    opacity: 0.95;
+}
+
+.ps-guide .ps-guide-hero .card-body {
+    position: relative;
+    z-index: 1;
+    padding: 20px 20px 16px;
+}
+
+.ps-guide .ps-guide-hero-inner h3 {
+    font-size: 2.05rem;
+    margin: 0 0 0.6rem;
+}
+
+.ps-guide .ps-guide-hero-inner p {
+    font-size: 1.02rem;
+    color: var(--ps-muted);
+    max-width: 70ch;
+}
+
+/* =========================
+Step grid
+========================= */
+
+.ps-guide .ps-step-grid {
+    margin-top: 14px;
+    row-gap: 16px;
+}
+
+/* Each tile */
+.ps-guide .ps-step {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    background: linear-gradient(180deg, rgba(255, 250, 232, 0.95), rgba(255, 245, 219, 0.95));
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.ps-guide .ps-step:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 42px rgba(31, 35, 24, 0.12);
+    border-color: rgba(75, 107, 7, 0.30);
+}
+
+/* Decorative blob (keeps it playful without breaking the grid) */
+/* .ps-guide .ps-step:before {
+    content: "";
+    position: absolute;
+    right: -46px;
+    top: -46px;
+    width: 160px;
+    height: 160px;
+    border-radius: 999px;
+    background: radial-gradient(circle at 30% 30%, rgba(75, 107, 7, 0.16), transparent 62%);
+    pointer-events: none;
+} */
+
+.ps-guide .ps-step .card-body {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    padding: 16px 16px 14px;
+}
+
+.ps-guide .ps-step-inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Title row with number badge */
+.ps-guide .ps-step-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ps-guide .ps-step-title h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.15;
+}
+
+/* Number badge */
+.ps-guide .ps-step-num {
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+
+    background: rgba(75, 107, 7, 0.14);
+    border: 1px solid rgba(75, 107, 7, 0.25);
+    color: #2f3b14;
+    font-weight: 900;
+    font-size: 0.95rem;
+}
+
+/* Slight variation so the grid feels more lively */
+.ps-guide .ps-step-3 .ps-step-num,
+.ps-guide .ps-step-6 .ps-step-num,
+.ps-guide .ps-step-9 .ps-step-num {
+    background: rgba(189, 116, 38, 0.14);
+    border-color: rgba(189, 116, 38, 0.22);
+    color: #6a3d10;
+}
+
+/* Lists become “checklist chips” */
+.ps-guide .ps-step ul {
+    margin: 0.6rem 0 0;
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.45rem;
+}
+
+.ps-guide .ps-step ul>li {
+    position: relative;
+    padding: 0.5rem 0.65rem 0.5rem 2.1rem;
+    background: rgba(255, 255, 255, 0.60);
+    border: 1px solid rgba(31, 35, 24, 0.12);
+    border-radius: 12px;
+}
+
+.ps-guide .ps-step ul>li:before {
+    content: "♖";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.45rem;
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+
+    background: rgba(75, 107, 7, 0.14);
+    color: #2f3b14;
+    font-weight: 900;
+}
+
+/* Inline code + pre blocks (if your uiOutput includes examples) */
+.ps-guide .ps-step code,
+.ps-guide .ps-guide-hero code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.92rem;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px dashed rgba(31, 35, 24, 0.22);
+    border-radius: 10px;
+    padding: 2px 7px;
+}
+
+.ps-guide .ps-step pre,
+.ps-guide .ps-guide-hero pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.92rem;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px dashed rgba(31, 35, 24, 0.22);
+    border-radius: 14px;
+    padding: 10px 12px;
+    overflow-x: auto;
+}
+
+/* Optional: make markdown blockquotes feel like friendly callouts */
+.ps-guide blockquote {
+    margin: 0.85rem 0;
+    padding: 10px 12px;
+    border-left: 6px solid rgba(189, 116, 38, 0.55);
+    background: rgba(189, 116, 38, 0.10);
+    border-radius: 14px;
+}
+
+/* Optional: little badge style if you add spans with ps-badge in content */
+.ps-guide .ps-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(31, 35, 24, 0.12);
+    background: rgba(255, 255, 255, 0.55);
+    color: rgba(31, 35, 24, 0.85);
+    font-weight: 650;
+    font-size: 0.88rem;
+}
+
+/* Optional: callout box if you add a div.ps-callout in content */
+.ps-guide .ps-callout {
+    border: 1px solid rgba(189, 116, 38, 0.25);
+    background: rgba(189, 116, 38, 0.10);
+    border-radius: 16px;
+    padding: 12px 14px;
+    margin-top: 10px;
+}
+
+.ps-guide .ps-callout strong {
+    color: #6a3d10;
+}
+
+.ps-topmenu .dropdown-toggle {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(30, 30, 26, 0.18);
+}
