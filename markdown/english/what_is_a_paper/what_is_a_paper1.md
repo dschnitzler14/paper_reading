@@ -1,4 +1,4 @@
-Okay so what even is a paper?
+# Okay so what even is a paper?
 
 A "paper" is a broad umbrella term that encompasses any scholarly communication. While different fields might have specific types, in science there are a number of different types of papers.
 

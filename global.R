@@ -9,6 +9,8 @@ library(knitr)
 library(DT)
 library(openalexR)
 library(bsicons)
+library(purrr)
+library(fontawesome)
 
 
 nav_order_list <- c(

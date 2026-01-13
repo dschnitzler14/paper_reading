@@ -1,15 +1,14 @@
-
 Before typing anything, decide what you actually want to know.
 
-**Bad starting point**
+- Bad starting point:
 
 > brain and memory
 
-**Better starting point**
+- Better starting point:
 
 > How does stress affect hippocampal memory in rats?
 
-Good searches come from **specific questions**, not broad topics.
+Good searches come from specific questions, not broad topics.
 
 Break your question into:
 

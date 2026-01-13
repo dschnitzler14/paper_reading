@@ -7,6 +7,6 @@ Key terms might be:
 - hippocampus
 - stress
 - memory
-- rat OR rodents
+- rat OR rodent
 
 These are the building blocks of your search.

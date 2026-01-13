@@ -13,7 +13,7 @@ strategies_module_ui <- function(id) {
           nav_panel(
             title = tagList(
               bs_icon("play-circle"),
-              " How to Read a Paper"
+              " Start Here"
             ),
             layout_sidebar(
               sidebar = sidebar(
@@ -516,7 +516,33 @@ strategies_module_ui <- function(id) {
                 )
               )
             )
+          ),
+          nav_panel(
+          title = tagList(
+            bs_icon("magic"),
+            " AI"
+          ),
+          layout_sidebar(
+            sidebar = sidebar(
+              width = "40%",
+              title = "Popular Generative AI",
+              bslib::navset_pill_list(
+                id = ns("ai_toc"),
+                well = FALSE,
+                selected = "gpt",
+                bslib::nav_panel(title = "ChatGPT", value = "gpt"),
+                bslib::nav_panel("Claude", value = "claude"),
+                bslib::nav_panel("Anara", value = "anara")
+              )
+            ),
+            card(
+              card_header("Can't I just use AI?"),
+              card_body(
+                uiOutput(ns("ai_section_body"))
+              )
+            )
           )
+        )
         )
       )
     )
@@ -535,6 +561,65 @@ strategies_module_server <- function(id, parent_session, nav_order_list, process
     process_rmd_fragment(path, ns = ns, base_dir = "markdown", ...)
   }
 
+  ###
+output$ai_gpt <- renderUI({
+  chat_device_ui(
+    ns("gpt_chat"),
+    title = "ChatGPT 5.2",
+    subtitle = "Let's try ChatGPT",
+    device = "phone",
+    height = "650px"
+  )
+})
+
+output$ai_claude <- renderUI({
+  chat_device_ui(
+    ns("claude_chat"),
+    title = "Claude Sonnet 4.5",
+    subtitle = "Let's try Claude",
+    device = "phone",
+    height = "650px"
+  )
+})
+
+output$ai_anara <- renderUI({
+  chat_device_ui(
+    ns("anara_chat"),
+    title = "Anara",
+    subtitle = "Let's try Anara",
+    device = "phone",
+    height = "650px"
+  )
+})
+
+output$ai_section_body <- renderUI({
+  req(input$ai_toc)
+
+  if (input$ai_toc == "gpt") {
+    uiOutput(ns("ai_gpt"))
+  } else if (input$ai_toc == "claude") {
+    uiOutput(ns("ai_claude"))
+  } else {
+    uiOutput(ns("ai_anara"))
+  }
+})
+
+chat_device_server(
+  "gpt_chat",
+  md_dir = "markdown/english/chat_device/chat_gpt"
+)
+
+chat_device_server(
+  "claude_chat",
+  md_dir = "markdown/english/chat_device/claude"
+)
+
+chat_device_server(
+  "anara_chat",
+  md_dir = "markdown/english/chat_device/anara"
+)
+
+  ###
 
   output$strategies_advice_box1 <- renderUI({
         process_markdown("strategies/now_what_start.md")
