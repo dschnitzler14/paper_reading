@@ -15,10 +15,21 @@ strategies_module_ui <- function(id) {
               bs_icon("play-circle"),
               " Start Here"
             ),
+            # layout_sidebar(
+            #   sidebar = sidebar(
+            #     width = "40%",
+            #     title = "Looking for advice?",
             layout_sidebar(
-              sidebar = sidebar(
-                width = "40%",
-                title = "Looking for advice?",
+              fillable = TRUE,
+              fill = TRUE,
+            sidebar = sidebar(
+              title = tags$span("How To Guide", class = "toc-title"),
+              open = list(desktop = "always", mobile = "closed"),
+              width = "40%",
+              bg = "inherit",
+              fg = "inherit",
+              padding = "0px",
+              gap = "1px",
               ),
               card(
                 card_header("Advice"),
@@ -34,10 +45,22 @@ strategies_module_ui <- function(id) {
               " Title and Abstract"
             ),
             #title = "",
+            # layout_sidebar(
+            #   sidebar = sidebar(
+            #     width = "40%",
+            #     title = "Title and Abstract",
+
             layout_sidebar(
-              sidebar = sidebar(
-                width = "40%",
-                title = "Title and Abstract",
+              fillable = TRUE,
+              fill = TRUE,
+            sidebar = sidebar(
+              title = tags$span("Title and Abstract", class = "toc-title"),
+              open = list(desktop = "always", mobile = "closed"),
+              width = "40%",
+              bg = "inherit",
+              fg = "inherit",
+              padding = "0px",
+              gap = "1px",
                 
                 # div(
                 #   class = "sb-notepad",
@@ -94,11 +117,24 @@ strategies_module_ui <- function(id) {
               bs_icon("2-circle-fill"),
               " Introduction"
             ),
+            # layout_sidebar(
+            #   sidebar = sidebar(
+            #     width = "40%",
+            #     class = "sidebar-notes",
+            #     title = "Introduction",
+
             layout_sidebar(
-              sidebar = sidebar(
-                width = "40%",
-                class = "sidebar-notes",
-                title = "Introduction",
+              fillable = TRUE,
+              fill = TRUE,
+            sidebar = sidebar(
+              title = tags$span("Introduction", class = "toc-title"),
+              open = list(desktop = "always", mobile = "closed"),
+              width = "40%",
+              bg = "inherit",
+              fg = "inherit",
+              padding = "0px",
+              gap = "1px",
+              
                 div(
                   class = "sb-notepad",
                   tags$h4("Notes"),
@@ -148,10 +184,23 @@ strategies_module_ui <- function(id) {
               bs_icon("3-circle-fill"),
               " Methods"
             ),
+            # layout_sidebar(
+            #   sidebar = sidebar(
+            #     width = "40%",
+            #     title = "Methods",
+
             layout_sidebar(
-              sidebar = sidebar(
-                width = "40%",
-                title = "Methods",
+              fillable = TRUE,
+              fill = TRUE,
+            sidebar = sidebar(
+              title = tags$span("Methods", class = "toc-title"),
+              open = list(desktop = "always", mobile = "closed"),
+              width = "40%",
+              bg = "inherit",
+              fg = "inherit",
+              padding = "0px",
+              gap = "1px",
+
                 div(
                   class = "sb-notepad",
                   tags$h4("📝 Notes"),
@@ -249,10 +298,22 @@ strategies_module_ui <- function(id) {
               bs_icon("4-circle-fill"),
               " Results"
             ),
+            # layout_sidebar(
+            #   sidebar = sidebar(
+            #     width = "40%",
+            #     title = "Results",
             layout_sidebar(
-              sidebar = sidebar(
-                width = "40%",
-                title = "Results",
+              fillable = TRUE,
+              fill = TRUE,
+            sidebar = sidebar(
+              title = tags$span("Results", class = "toc-title"),
+              open = list(desktop = "always", mobile = "closed"),
+              width = "40%",
+              bg = "inherit",
+              fg = "inherit",
+              padding = "0px",
+              gap = "1px",
+
                 div(
                   class = "sb-notepad",
                   tags$h4("📝 Notes"),
@@ -317,10 +378,21 @@ strategies_module_ui <- function(id) {
               bs_icon("pause-circle"),
               " Pause"
             ),
+            # layout_sidebar(
+            #   sidebar = sidebar(
+            #     width = "40%",
+            #     title = "Pause",
             layout_sidebar(
-              sidebar = sidebar(
-                width = "40%",
-                title = "Pause",
+              fillable = TRUE,
+              fill = TRUE,
+            sidebar = sidebar(
+              title = tags$span("Pause", class = "toc-title"),
+              open = list(desktop = "always", mobile = "closed"),
+              width = "40%",
+              bg = "inherit",
+              fg = "inherit",
+              padding = "0px",
+              gap = "1px",
                 
               ),
               card(
@@ -336,10 +408,22 @@ strategies_module_ui <- function(id) {
               bs_icon("5-circle-fill"),
               " Discussion"
             ),
+            # layout_sidebar(
+            #   sidebar = sidebar(
+            #     width = "40%",
+            #     title = "Discussion",
             layout_sidebar(
-              sidebar = sidebar(
-                width = "40%",
-                title = "Discussion",
+              fillable = TRUE,
+              fill = TRUE,
+            sidebar = sidebar(
+              title = tags$span("Discussion", class = "toc-title"),
+              open = list(desktop = "always", mobile = "closed"),
+              width = "40%",
+              bg = "inherit",
+              fg = "inherit",
+              padding = "0px",
+              gap = "1px",
+
                 div(
                   class = "sb-notepad",
                   tags$h4("📝 Notes"),
@@ -430,10 +514,21 @@ strategies_module_ui <- function(id) {
               bs_icon("question-circle"),
               " Understanding"
             ),
+            # layout_sidebar(
+            #   sidebar = sidebar(
+            #     width = "40%",
+            #     title = "Understanding",
             layout_sidebar(
-              sidebar = sidebar(
-                width = "40%",
-                title = "Understanding",
+              fillable = TRUE,
+              fill = TRUE,
+            sidebar = sidebar(
+              title = tags$span("Understanding", class = "toc-title"),
+              open = list(desktop = "always", mobile = "closed"),
+              width = "40%",
+              bg = "inherit",
+              fg = "inherit",
+              padding = "0px",
+              gap = "1px",
                 div(
                   class = "sb-notepad",
                   tags$h4("❓ Open Questions"),
@@ -482,9 +577,20 @@ strategies_module_ui <- function(id) {
               " Reflection"
             ),
             layout_sidebar(
-              sidebar = sidebar(
-                width = "40%",
-                title = "Reflection",
+            #   sidebar = sidebar(
+            #     width = "40%",
+            #     title = "Reflection",
+              fillable = TRUE,
+              fill = TRUE,
+            sidebar = sidebar(
+              #title = "Popular GenAI Tools",
+              title = tags$span("Reflection", class = "toc-title"),
+              open = list(desktop = "always", mobile = "closed"),
+              width = "40%",
+              bg = "inherit",
+              fg = "inherit",
+              padding = "0px",
+              gap = "1px",
                 div(
                   class = "sb-white",
                   tags$h4("Data Availability"),
@@ -523,9 +629,17 @@ strategies_module_ui <- function(id) {
             " AI"
           ),
           layout_sidebar(
+              fillable = TRUE,
+              fill = TRUE,
             sidebar = sidebar(
-              width = "25%",
-              title = "Popular Generative AI",
+              #title = "Popular GenAI Tools",
+              title = tags$span("Popular GenAI Tools", class = "toc-title"),
+              open = list(desktop = "always", mobile = "closed"),
+              width = "40%",
+              bg = "inherit",
+              fg = "inherit",
+              padding = "0px",
+              gap = "1px",
               
               bslib::navset_pill_list(
                   id = ns("ai_toc"),

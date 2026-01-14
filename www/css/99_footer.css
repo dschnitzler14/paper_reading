@@ -1,0 +1,39 @@
+.app-footer {
+    flex-shrink: 0;
+    margin-top: auto;
+    background: var(--accent-green);
+    padding: 6px 12px;
+    color: #ffffff;
+}
+
+.app-footer .footer-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.app-footer .footer-inner span,
+.app-footer .footer-inner p {
+    margin: 0;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.app-footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.app-footer a:focus {
+    outline: 2px solid var(--accent-yellow);
+    outline-offset: 3px;
+    border-radius: 8px;
+}
+
+.app-footer .footer-logo {
+    height: 42px;
+    width: auto;
+    vertical-align: middle;
+    cursor: pointer;
+}

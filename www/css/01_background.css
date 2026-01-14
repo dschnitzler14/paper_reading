@@ -1,0 +1,23 @@
+html {
+    height: 100%;
+}
+
+html::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: var(--app-bg);
+    z-index: -1;
+}
+
+body {
+    background: transparent;
+}
+
+.bslib-page,
+.bslib-page-fill,
+.bslib-page-main,
+.tab-content,
+body>.container-fluid {
+    background: transparent !important;
+}

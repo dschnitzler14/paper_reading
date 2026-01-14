@@ -1,0 +1,24 @@
+.navbar-brand {
+    font-family: 'Libre Baskerville', serif !important;
+    font-weight: 700;
+}
+
+.toc-title {
+    color: #000;
+    font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+    font-weight: 700;
+}
+
+.card-body p,
+.sidebar p,
+.nav-panel p {
+    display: block;
+}
+
+.handwritten {
+    font-family: "Caveat", cursive;
+    font-size: 1.15rem;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+    color: #2f2f2f;
+}

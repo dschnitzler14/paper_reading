@@ -1,0 +1,192 @@
+.bslib-sidebar,
+.sidebar {
+    color: #2b2b2b !important;
+}
+
+.sb-white {
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+.sb-white :is(h4, h5) {
+    margin: 0 0 8px 0;
+    font-family: "Libre Baskerville", serif;
+    color: var(--ink);
+}
+
+.sb-white p {
+    margin: 0 0 10px 0;
+    color: #2b2b2b !important;
+}
+
+.sb-notepad {
+    position: relative;
+    background: #fffdf6;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    border-radius: 14px;
+    padding: 14px 14px 14px 18px;
+    margin-bottom: 12px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.sb-notepad::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(to bottom,
+            rgba(76, 107, 0, 0.10) 0px,
+            rgba(76, 107, 0, 0.10) 1px,
+            transparent 1px,
+            transparent 26px);
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.sb-notepad::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 14px;
+    width: 2px;
+    background: rgba(200, 60, 60, 0.35);
+    pointer-events: none;
+}
+
+.sb-notepad>* {
+    position: relative;
+    z-index: 1;
+}
+
+.sb-notepad :is(h4, h5) {
+    margin: 0 0 8px 0;
+    font-family: "Libre Baskerville", serif;
+    color: var(--ink);
+}
+
+.toc-title {
+    display: block;
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1.2;
+
+    margin-bottom: 12px;
+    padding-top: 20px;
+    padding-left: 6px;
+
+    color: var(--ink);
+}
+
+/* .sidebar .sidebar-content> :first-child:not(ul):not(.row),
+.bslib-sidebar .bslib-sidebar-content> :first-child:not(ul):not(.row) {
+    display: block;
+    font-family: "Libre Baskerville", serif !important;
+    font-size: 1.35rem !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    margin: 0 0 12px 0 !important;
+    padding: 0 0 6px 0 !important;
+    color: var(--ink) !important;
+    border-bottom: 2px solid rgba(47, 59, 0, 0.15);
+}
+
+.sidebar .bslib-sidebar-header,
+.sidebar .sidebar-header,
+.bslib-sidebar .bslib-sidebar-header,
+.bslib-sidebar .sidebar-header {
+    font-family: "Libre Baskerville", serif !important;
+    font-size: 1.35rem !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+
+    margin: 0 0 12px 0 !important;
+    padding: 0 0 6px 0 !important;
+
+    color: var(--ink) !important;
+    border-bottom: 2px solid rgba(47, 59, 0, 0.15);
+} */
+
+.sidebar :is(ul.nav, ul.nav-pills, ul.bslib-navs-pills) {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.sidebar :is(ul.nav, ul.nav-pills, ul.bslib-navs-pills)>* {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.sidebar :is(ul.nav, ul.nav-pills, ul.bslib-navs-pills) :is(a.nav-link, button.nav-link) {
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+    padding: 12px 14px !important;
+    line-height: 1.35 !important;
+    border-radius: 12px !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    hyphens: auto !important;
+    color: var(--sidebar-ink) !important;
+}
+
+.sidebar :is(ul.nav, ul.nav-pills, ul.bslib-navs-pills) :is(a.nav-link, button.nav-link):hover,
+.sidebar :is(ul.nav, ul.nav-pills, ul.bslib-navs-pills) :is(a.nav-link, button.nav-link):focus {
+    background: rgba(47, 59, 0, 0.06) !important;
+    color: var(--sidebar-ink) !important;
+}
+
+.sidebar :is(ul.nav, ul.nav-pills, ul.bslib-navs-pills) :is(a.nav-link, button.nav-link).active {
+    background: var(--accent-green) !important;
+    color: #ffffff !important;
+}
+
+.sidebar .sidebar-content,
+.sidebar .bslib-sidebar-content,
+.bslib-sidebar .sidebar-content,
+.bslib-sidebar .bslib-sidebar-content {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.bslib-sidebar-layout {
+    --bslib-sidebar-toggle-width: 0px !important;
+    --bslib-sidebar-handle-width: 0px !important;
+    --bslib-sidebar-handle-size: 0px !important;
+    --bslib-sidebar-toggle-size: 0px !important;
+    gap: 0 !important;
+    column-gap: 0 !important;
+    grid-template-columns: var(--bslib-sidebar-width) minmax(0, 1fr) !important;
+}
+
+.bslib-sidebar-layout>.bslib-sidebar {
+    margin: 0 !important;
+}
+
+.bslib-sidebar-layout :is(.bslib-sidebar-toggle, .bslib-sidebar-handle, .sidebar-toggle, [data-bslib-sidebar-handle], [data-bslib-sidebar-toggle]) {
+    display: none !important;
+    width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.sidebar .row>.col-sm-8 {
+    display: none !important;
+}
+
+.sidebar .row>.col-sm-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+}

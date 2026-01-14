@@ -24,17 +24,47 @@ ui <- bslib::page_navbar(
   id = "topnav",
   theme = theme,
 
-  tags$head(
-  tags$link(rel="stylesheet", href="styles.css"),
+#   tags$head(
+#   tags$link(rel="stylesheet", href="styles.css"),
+#   tags$link(rel="stylesheet", href="css/paper_stack.css"),
+#   tags$link(rel = "stylesheet", type = "text/css", href = "css/highlights.css"),
+#   tags$link(rel = "stylesheet", type = "text/css", href = "css/chat_device.css"),
+#   tags$script(src = "js/highlight_click_state.js"),
+#   tags$link(rel = "stylesheet", href = "https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap"),
+#   tags$link(rel = "stylesheet", href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"),
+#   tags$link(rel = "stylesheet", href = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"),
+#   tags$meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
+# ),
+
+tags$head(
+  tags$link(rel="stylesheet", href="css/00_tokens.css"),
+  tags$link(rel="stylesheet", href="css/01_background.css"),
+  tags$link(rel="stylesheet", href="css/02_layout.css"),
+  tags$link(rel="stylesheet", href="css/20_typography.css"),
+  tags$link(rel="stylesheet", href="css/10_cards.css"),
+  tags$link(rel="stylesheet", href="css/11_buttons.css"),
+  tags$link(rel="stylesheet", href="css/12_sidebar.css"),
+  tags$link(rel="stylesheet", href="css/30_paperbox.css"),
+  tags$link(rel="stylesheet", href="css/40_paperstars.css"),
+  tags$link(rel="stylesheet", href="css/50_tools.css"),
+  tags$link(rel="stylesheet", href="css/60_searching.css"),
+  tags$link(rel="stylesheet", href="css/61_ps_guide.css"),
+  tags$link(rel="stylesheet", href="css/90_nav_verdict.css"),
+  tags$link(rel="stylesheet", href="css/99_footer.css"),
+
   tags$link(rel="stylesheet", href="css/paper_stack.css"),
-  tags$link(rel = "stylesheet", type = "text/css", href = "css/highlights.css"),
-  tags$link(rel = "stylesheet", type = "text/css", href = "css/chat_device.css"),
-  tags$script(src = "js/highlight_click_state.js"),
-  tags$link(rel = "stylesheet", href = "https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap"),
-  tags$link(rel = "stylesheet", href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"),
-  tags$link(rel = "stylesheet", href = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"),
-  tags$meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
+  tags$link(rel="stylesheet", type="text/css", href="css/highlights.css"),
+  tags$link(rel="stylesheet", type="text/css", href="css/chat_device.css"),
+
+  tags$script(src="js/highlight_click_state.js"),
+
+  tags$link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap"),
+  tags$link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"),
+  tags$link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"),
+
+  tags$meta(name="viewport", content="width=device-width, initial-scale=1.0")
 ),
+
 
 
 

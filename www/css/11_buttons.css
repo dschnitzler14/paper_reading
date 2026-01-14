@@ -1,0 +1,68 @@
+a.action-button.highlight {
+    display: inline !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+}
+
+a.action-button.highlight.shiny-bound-input,
+a.action-button.highlight.shiny-bound-input:link,
+a.action-button.highlight.shiny-bound-input:visited,
+a.action-button.highlight.shiny-bound-input:hover,
+a.action-button.highlight.shiny-bound-input:active {
+    display: inline !important;
+    float: none !important;
+    width: auto !important;
+}
+
+.fun-btn {
+    border-radius: 999px !important;
+    padding: 12px 22px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 10px;
+    border: none !important;
+    box-shadow: none !important;
+    transition: background-color 0.15s ease-in-out, transform 0.08s ease-in-out;
+}
+
+.fun-btn:active {
+    transform: scale(0.98);
+}
+
+.fun-btn-primary {
+    background-color: var(--accent-green) !important;
+    color: #ffffff !important;
+}
+
+.fun-btn-primary:hover,
+.fun-btn-primary:focus {
+    background-color: var(--accent-green-dark) !important;
+    color: #ffffff !important;
+}
+
+.fun-btn-secondary {
+    background-color: #ffffff !important;
+    color: #1f2a10 !important;
+    border: 2px solid #d2d6c6 !important;
+}
+
+.fun-btn-secondary:hover,
+.fun-btn-secondary:focus {
+    background-color: #f6f4ec !important;
+    color: #1f2a10 !important;
+}
+
+.fun-btn i {
+    font-size: 1.1em;
+}
+
+.card-actions,
+.box-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+}

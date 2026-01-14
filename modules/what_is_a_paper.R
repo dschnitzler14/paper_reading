@@ -19,26 +19,29 @@ what_is_a_paper_module_ui <- function(id) {
           border = TRUE,
           border_radius = TRUE,
           border_color = "rgba(0,0,0,0.08)",
-          padding = "16px",
-          gap = "16px",
+          padding = "2px", #"16px",
+          gap = "2px", #"16px",
 
           sidebar = bslib::sidebar(
             title = tags$span("Chapters", class = "toc-title"),
-            width = 200,
+            open = list(desktop = "always", mobile = "closed"),
+            width = "30%",
             bg = "inherit",
             fg = "inherit",
             padding = "0px",
-            gap = "5px",
+            gap = "1px",
 
             bslib::navset_pill_list(
               id = ns("toc"),
               well = FALSE,
               bslib::nav_panel("So, what actually is a Paper?", value = "box1"),
-              bslib::nav_panel("Not all Papers are Created Equal", value = "box2"),
-              bslib::nav_panel("History of Publishing", value = "box3"),
-              bslib::nav_panel("Problems with Scientific Publishing", value = "box4"),
-              bslib::nav_panel("How does Scientific Publishing Work?", value = "box5"),
-              bslib::nav_panel("Different Types of Publication", value = "box6")
+              bslib::nav_panel("If it's in a Paper it must be true!", value = "box2"),
+              bslib::nav_panel("How does Scientific Publishing Work?", value = "box3"),
+              bslib::nav_panel("History of Publishing", value = "box4"),
+              bslib::nav_panel("Different Types of Publication", value = "box5"),
+              bslib::nav_panel("Problems with Scientific Publishing", value = "box6")
+              #bslib::nav_panel("What is Open Science?", value = "box7")
+              
             )
           ),
 
