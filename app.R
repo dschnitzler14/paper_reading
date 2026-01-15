@@ -20,23 +20,17 @@ theme <- bslib::bs_theme(
 )
 
 ui <- bslib::page_navbar(
-  title = "Reading A Paper",
+  #title = "Lecturi",
+  title = tagList(
+  fontawesome::fa("readme"),
+  " Lecturi"
+),
   id = "topnav",
   theme = theme,
 
-#   tags$head(
-#   tags$link(rel="stylesheet", href="styles.css"),
-#   tags$link(rel="stylesheet", href="css/paper_stack.css"),
-#   tags$link(rel = "stylesheet", type = "text/css", href = "css/highlights.css"),
-#   tags$link(rel = "stylesheet", type = "text/css", href = "css/chat_device.css"),
-#   tags$script(src = "js/highlight_click_state.js"),
-#   tags$link(rel = "stylesheet", href = "https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap"),
-#   tags$link(rel = "stylesheet", href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"),
-#   tags$link(rel = "stylesheet", href = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"),
-#   tags$meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
-# ),
 
 tags$head(
+  tags$link(rel = "icon", type = "image/x-icon", href = "favicon.ico"),
   tags$link(rel="stylesheet", href="css/00_tokens.css"),
   tags$link(rel="stylesheet", href="css/01_background.css"),
   tags$link(rel="stylesheet", href="css/02_layout.css"),
@@ -55,6 +49,8 @@ tags$head(
   tags$link(rel="stylesheet", href="css/paper_stack.css"),
   tags$link(rel="stylesheet", type="text/css", href="css/highlights.css"),
   tags$link(rel="stylesheet", type="text/css", href="css/chat_device.css"),
+  tags$link(rel = "stylesheet", href = "css/flashcards.css"),
+  tags$link(rel = "stylesheet", href = "css/matching_game.css"),
 
   tags$script(src="js/highlight_click_state.js"),
 
@@ -151,7 +147,7 @@ tags$head(
     class = "app-footer",
     div(
       class = "footer-inner",
-      span("Powered by"),
+      span("Ex Libris"),
       tags$a(
         href = "https://paperstars.org",
         target = "_blank",

@@ -1,9 +1,7 @@
-# History of publishing
+# How does scientific publishing work?
 
-Scholarly communications have always been the backbone of scientific advances. Nobody ever works alone and we continue to build on the foundations of others. Writing and publishing a book takes a lot of time and effort, so brief communications in journals facilitated the rapid dissemination of results, allowing others to build on your work, as well as preventing a duplication of efforts.
+You will be excused for thining scientific publishing works much like any other form of publishing. You write a book, you successfully have it picked up by a publisher who edit it, print it, and finally sell it, possibly making you rich.
 
-Unfortunately, this also became a way to stake one's claim over a particular finding - essentially the equivalent of trolling "first" in the comments.
+Scientific publishing is very different. So different that it cannot even be compared.
 
-Primarily though, the purpose of publication is to share your knowledge and results in order to advance the field.
-
-Today, we are no longer reliant on print journals, quickly accessing papers online.
+After concluding your study you write your paper, summarising your efforts, findings, and interpretation. You then submit you paper

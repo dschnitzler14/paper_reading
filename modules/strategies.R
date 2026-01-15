@@ -378,10 +378,7 @@ strategies_module_ui <- function(id) {
               bs_icon("pause-circle"),
               " Pause"
             ),
-            # layout_sidebar(
-            #   sidebar = sidebar(
-            #     width = "40%",
-            #     title = "Pause",
+            
             layout_sidebar(
               fillable = TRUE,
               fill = TRUE,
@@ -398,7 +395,49 @@ strategies_module_ui <- function(id) {
               card(
                 card_header("Pause"),
                 card_body(
-                  
+                  div(
+                      class = "strategies-main",
+                      div(
+                        class = "paper-box",
+                        uiOutput(ns("pause_text1"))
+                      )
+                    )
+                )
+              ),
+              card(
+                card_header("Introduction"),
+                card_body(
+                  div(
+                      class = "strategies-main",
+                      div(
+                        class = "paper-box",
+                        pause_flashcards_ui(ns("pause_intro"))
+                      )
+                    )
+                )
+              ),
+              card(
+                card_header("Methods"),
+                card_body(
+                  div(
+                      class = "strategies-main",
+                      div(
+                        class = "paper-box",
+                        matching_game_ui(ns("match1"))
+                      )
+                    )
+                )
+              ),
+              card(
+                card_header("Results"),
+                card_body(
+                  div(
+                      class = "strategies-main",
+                      div(
+                        class = "paper-box",
+                        
+                      )
+                    )
                 )
               )
             )
@@ -689,6 +728,9 @@ strategies_module_server <- function(id, parent_session, nav_order_list, process
     md_ui <- function(path, ...) {
     process_rmd_fragment(path, ns = ns, base_dir = "markdown", ...)
   }
+
+  pause_flashcards_server("pause_intro", dictionary = pause_intro_dictionary)
+  matching_game_server("match1", cards = cards, pairs = pairs)
 
   ###
 output$ai_gpt <- renderUI({
@@ -1320,6 +1362,11 @@ observeEvent(input$results8, {
   })
 })
 
+# Pause
+
+output$pause_text1 <- renderUI({
+    process_markdown("strategies/pause1.md")
+  })
 
   # Discussion
 

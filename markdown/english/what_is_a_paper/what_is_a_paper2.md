@@ -1,4 +1,4 @@
-# All Papers are not created Equal
+# If it's in a Paper it must be True!
 
 By convention, scientific papers are written in an objective and impersonal style. This can give the impression that the findings presented are absolute truths, entirely absent of human intervention, and therefore absent of human error or fallibility.
 

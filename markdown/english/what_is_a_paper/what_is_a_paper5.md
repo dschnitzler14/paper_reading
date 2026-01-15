@@ -1,7 +1,7 @@
-# How does scientific publishing work?
+# Different Types of Publication
 
-You will be excused for thining scientific publishing works much like any other form of publishing. You write a book, you successfully have it picked up by a publisher who edit it, print it, and finally sell it, possibly making you rich.
+## Traditional
 
-Scientific publishing is very different. So different that it cannot even be compared.
+## Open Access
 
-After concluding your study you write your paper, summarising your efforts, findings, and interpretation. You then submit you paper
+## Pre-Print

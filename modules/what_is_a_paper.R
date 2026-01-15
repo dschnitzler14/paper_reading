@@ -11,8 +11,8 @@ what_is_a_paper_module_ui <- function(id) {
 
       bslib::card_body(
         bslib::layout_sidebar(
-          fillable = TRUE,
-          fill = TRUE,
+          fillable = FALSE,
+          fill = FALSE,
 
           bg = "#fffdf6",
           fg = "#2b362bff",
@@ -39,8 +39,8 @@ what_is_a_paper_module_ui <- function(id) {
               bslib::nav_panel("How does Scientific Publishing Work?", value = "box3"),
               bslib::nav_panel("History of Publishing", value = "box4"),
               bslib::nav_panel("Different Types of Publication", value = "box5"),
-              bslib::nav_panel("Problems with Scientific Publishing", value = "box6")
-              #bslib::nav_panel("What is Open Science?", value = "box7")
+              bslib::nav_panel("Problems with Scientific Publishing", value = "box6"),
+              bslib::nav_panel("What is Open Science?", value = "box7")
               
             )
           ),
@@ -70,14 +70,17 @@ what_is_a_paper_module_server <- function(id, parent_session, nav_order_list, pr
     output$what_is_a_paper_box4 <- renderUI(process_markdown("what_is_a_paper/what_is_a_paper4.md"))
     output$what_is_a_paper_box5 <- renderUI(process_markdown("what_is_a_paper/what_is_a_paper5.md"))
     output$what_is_a_paper_box6 <- renderUI(process_markdown("what_is_a_paper/what_is_a_paper6.md"))
+    output$what_is_a_paper_box7 <- renderUI(process_markdown("what_is_a_paper/what_is_a_paper7.md"))
+
 
     titles <- c(
       box1 = "So, what actually is a Paper?",
-      box2 = "Not all Papers are Created Equal",
-      box3 = "History of Publishing",
-      box4 = "Problems with Scientific Publishing",
-      box5 = "How does Scientific Publishing Work?",
-      box6 = "Different Types of Publication"
+      box2 = "If it's in a Paper, it must be True!",
+      box3 = "How does Scientific Publishing Work?",
+      box4 = "History of Publishing",
+      box5 = "Different Types of Publication",
+      box6 = "Problems with Scientific Publishing",
+      box7 = "What is Open Science?"
     )
 
     current_key <- reactive({
@@ -97,7 +100,8 @@ what_is_a_paper_module_server <- function(id, parent_session, nav_order_list, pr
         box3 = uiOutput(ns("what_is_a_paper_box3")),
         box4 = uiOutput(ns("what_is_a_paper_box4")),
         box5 = uiOutput(ns("what_is_a_paper_box5")),
-        box6 = uiOutput(ns("what_is_a_paper_box6"))
+        box6 = uiOutput(ns("what_is_a_paper_box6")),
+        box7 = uiOutput(ns("what_is_a_paper_box7"))
       )
     })
 

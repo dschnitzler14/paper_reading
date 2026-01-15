@@ -1,7 +1,3 @@
-# Different Types of Publication
+# Problems with Scientific Publishing
 
-## Traditional
-
-## Open Access
-
-## Pre-Print
+While the primary function of scientific 
