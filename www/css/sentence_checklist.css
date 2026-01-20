@@ -1,0 +1,49 @@
+.lecturi-checklist {
+    width: 100%;
+}
+
+.lecturi-checklist__label {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #2b362b;
+}
+
+.lecturi-checklist__group .shiny-input-checkboxgroup .form-check {
+    padding: 10px 12px;
+    margin: 8px 0;
+    border: 1px solid rgba(43, 54, 43, 0.14);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.lecturi-checklist__group .shiny-input-checkboxgroup .form-check:hover {
+    border-color: rgba(43, 54, 43, 0.24);
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.lecturi-checklist__group .shiny-input-checkboxgroup .form-check-label {
+    color: #2b362b;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.lecturi-checklist__actions {
+    margin-top: 10px;
+}
+
+.lecturi-checklist__submit {
+    border-radius: 14px;
+    padding: 10px 14px;
+    font-weight: 700;
+}
+
+.lecturi-checklist__feedback {
+    margin-top: 12px;
+}
+
+.lecturi-alert {
+    border-radius: 14px;
+    border-width: 1px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}

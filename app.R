@@ -4,6 +4,7 @@ library(shiny)
 library(bslib)
 library(bsicons)
 
+
 # load all modules in modules/ directory ----
 module_files <- list.files(path = "modules", pattern = "\\.R$", full.names = TRUE)
 invisible(lapply(module_files, source))
@@ -51,6 +52,7 @@ tags$head(
   tags$link(rel="stylesheet", type="text/css", href="css/chat_device.css"),
   tags$link(rel = "stylesheet", href = "css/flashcards.css"),
   tags$link(rel = "stylesheet", href = "css/matching_game.css"),
+  tags$link(rel = "stylesheet", href = "css/sentence_checklist.css"),
 
   tags$script(src="js/highlight_click_state.js"),
 

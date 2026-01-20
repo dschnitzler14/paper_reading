@@ -120,3 +120,20 @@ pause_results_dictionary <- list(
     incorrect_helper = "Not quite"
   )
 )
+
+sentence_checklist_dictionary_names <-list(
+    "Social isolation has significant negative effects on health and wellbeing in the elderly.",
+    "Muscle deterioration is a key concern for socially isolated elderly individuals.",
+    "The study aims to investigate the impact of social isolation by studying its effects on mental health."
+  )
+
+sentence_checklist_dictionary_values <-list(
+    "social_isolation_health" ,
+    "muscle_deterioration" ,
+    "study_aims"
+  )
+
+sentence_checklist_dictionary_correct <- list(
+    "social_isolation_health",
+    "muscle_deterioration"
+)

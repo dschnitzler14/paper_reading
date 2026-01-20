@@ -15,10 +15,7 @@ strategies_module_ui <- function(id) {
               bs_icon("play-circle"),
               " Start Here"
             ),
-            # layout_sidebar(
-            #   sidebar = sidebar(
-            #     width = "40%",
-            #     title = "Looking for advice?",
+            
             layout_sidebar(
               fillable = TRUE,
               fill = TRUE,
@@ -44,11 +41,6 @@ strategies_module_ui <- function(id) {
               bs_icon("1-circle-fill"),
               " Title and Abstract"
             ),
-            #title = "",
-            # layout_sidebar(
-            #   sidebar = sidebar(
-            #     width = "40%",
-            #     title = "Title and Abstract",
 
             layout_sidebar(
               fillable = TRUE,
@@ -61,20 +53,6 @@ strategies_module_ui <- function(id) {
               fg = "inherit",
               padding = "0px",
               gap = "1px",
-                
-                # div(
-                #   class = "sb-notepad",
-                #   tags$h4("Checklist"),
-                #   checkboxGroupInput( 
-                #       "checkbox_group_title_abstract", 
-                #       "Checkbox group", 
-                #       c( 
-                #         "A" = "a", 
-                #         "B" = "b", 
-                #         "C" = "c" 
-                #       ) 
-                #     ), 
-                # ),
                 div(
                   class = "sb-white",
                   tags$h4("Title"),
@@ -117,12 +95,6 @@ strategies_module_ui <- function(id) {
               bs_icon("2-circle-fill"),
               " Introduction"
             ),
-            # layout_sidebar(
-            #   sidebar = sidebar(
-            #     width = "40%",
-            #     class = "sidebar-notes",
-            #     title = "Introduction",
-
             layout_sidebar(
               fillable = TRUE,
               fill = TRUE,
@@ -150,20 +122,6 @@ strategies_module_ui <- function(id) {
                   
                 ),
                 
-                # div(
-                #   class = "sb-notepad",
-                #   tags$h4("Checklist"),
-                #   checkboxGroupInput( 
-                #       "checkbox_group_introduction", 
-                #       "Checkbox group", 
-                #       c( 
-                #         "A" = "a", 
-                #         "B" = "b", 
-                #         "C" = "c" 
-                #       ) 
-                #     ), 
-                # ),
-                
               ),
               card(
                 card_header("Introduction"),
@@ -184,11 +142,7 @@ strategies_module_ui <- function(id) {
               bs_icon("3-circle-fill"),
               " Methods"
             ),
-            # layout_sidebar(
-            #   sidebar = sidebar(
-            #     width = "40%",
-            #     title = "Methods",
-
+            
             layout_sidebar(
               fillable = TRUE,
               fill = TRUE,
@@ -246,11 +200,7 @@ strategies_module_ui <- function(id) {
                       size = "sm",
                       individual = TRUE,
                       selected = character(0),
-                      # choices = c(
-                      #   "Sound",
-                      #   "Questionable",
-                      #   "Inadequate"
-                      # )
+                      
                       choiceNames = list("Sound", "Questionable", "Inadequate"),
                       choiceValues = list("1", "0.5", "0")
                     )
@@ -298,10 +248,7 @@ strategies_module_ui <- function(id) {
               bs_icon("4-circle-fill"),
               " Results"
             ),
-            # layout_sidebar(
-            #   sidebar = sidebar(
-            #     width = "40%",
-            #     title = "Results",
+            
             layout_sidebar(
               fillable = TRUE,
               fill = TRUE,
@@ -437,7 +384,6 @@ strategies_module_ui <- function(id) {
                       class = "strategies-main",
                       div(
                         class = "paper-box",
-                        #pause_results_section_ui(ns("results_figs"))
                         pause_flashcards_ui(ns("pause_results"))
                       )
                     )
@@ -450,10 +396,7 @@ strategies_module_ui <- function(id) {
               bs_icon("5-circle-fill"),
               " Discussion"
             ),
-            # layout_sidebar(
-            #   sidebar = sidebar(
-            #     width = "40%",
-            #     title = "Discussion",
+            
             layout_sidebar(
               fillable = TRUE,
               fill = TRUE,
@@ -556,10 +499,7 @@ strategies_module_ui <- function(id) {
               bs_icon("question-circle"),
               " Understanding"
             ),
-            # layout_sidebar(
-            #   sidebar = sidebar(
-            #     width = "40%",
-            #     title = "Understanding",
+            
             layout_sidebar(
               fillable = TRUE,
               fill = TRUE,
@@ -571,7 +511,37 @@ strategies_module_ui <- function(id) {
               fg = "inherit",
               padding = "0px",
               gap = "1px",
-                div(
+                
+                
+              ),
+              card(
+                card_header("Understanding"),
+                card_body(
+                uiOutput(ns("understanding_box1")),
+                sentence_checklist_ui(ns("understanding_checklist"))
+                  
+                )
+              )
+            )
+          ),
+          nav_panel(
+            title = tagList(
+              bs_icon("star"),
+              " Reflection"
+            ),
+            layout_sidebar(
+          
+              fillable = TRUE,
+              fill = TRUE,
+            sidebar = sidebar(
+              title = tags$span("Reflection", class = "toc-title"),
+              open = list(desktop = "always", mobile = "closed"),
+              width = "40%",
+              bg = "inherit",
+              fg = "inherit",
+              padding = "0px",
+              gap = "1px",
+              div(
                   class = "sb-notepad",
                   tags$h4("❓ Open Questions"),
                   
@@ -602,37 +572,6 @@ strategies_module_ui <- function(id) {
                   uiOutput(ns("reflection_discussion4_answer"))
 
                 ),
-                
-              ),
-              card(
-                card_header("Understanding"),
-                card_body(
-                  
-                  
-                )
-              )
-            )
-          ),
-          nav_panel(
-            title = tagList(
-              bs_icon("star"),
-              " Reflection"
-            ),
-            layout_sidebar(
-            #   sidebar = sidebar(
-            #     width = "40%",
-            #     title = "Reflection",
-              fillable = TRUE,
-              fill = TRUE,
-            sidebar = sidebar(
-              #title = "Popular GenAI Tools",
-              title = tags$span("Reflection", class = "toc-title"),
-              open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
-              bg = "inherit",
-              fg = "inherit",
-              padding = "0px",
-              gap = "1px",
                 div(
                   class = "sb-white",
                   tags$h4("Data Availability"),
@@ -659,8 +598,11 @@ strategies_module_ui <- function(id) {
               card(
                 card_header("Reflection"),
                 card_body(
-                  
-                  uiOutput(ns("overall_stars"))
+                  div(
+                    class = "sb-white",
+                    tags$h4("Overall Rating"),
+                    uiOutput(ns("overall_stars"))
+                  ),
                 )
               )
             )
@@ -674,7 +616,6 @@ strategies_module_ui <- function(id) {
               fillable = TRUE,
               fill = TRUE,
             sidebar = sidebar(
-              #title = "Popular GenAI Tools",
               title = tags$span("Popular GenAI Tools", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
               width = "40%",
@@ -732,90 +673,16 @@ strategies_module_server <- function(id, parent_session, nav_order_list, process
     process_rmd_fragment(path, ns = ns, base_dir = "markdown", ...)
   }
 
-  pause_flashcards_server("pause_intro", dictionary = pause_intro_dictionary)
-  matching_game_server("match1")
-  pause_flashcards_server("pause_results", dictionary = pause_results_dictionary)
-
-  #matching_game_server("results_figs")
-
-  ###
-output$ai_gpt <- renderUI({
-  chat_device_ui(
-    ns("gpt_chat"),
-    title = "ChatGPT 5.2",
-    subtitle = "Let's try ChatGPT",
-    device = "phone",
-    height = "650px"
-  )
-})
-
-output$ai_claude <- renderUI({
-  chat_device_ui(
-    ns("claude_chat"),
-    title = "Claude Sonnet 4.5",
-    subtitle = "Let's try Claude",
-    device = "phone",
-    height = "650px"
-  )
-})
-
-output$ai_anara <- renderUI({
-  chat_device_ui(
-    ns("anara_chat"),
-    title = "Anara",
-    subtitle = "Let's try Anara",
-    device = "phone",
-    height = "650px"
-  )
-})
-
-output$ai_section_body <- renderUI({
-  req(input$ai_toc)
-
-  if (input$ai_toc == "gpt") {
-    uiOutput(ns("ai_gpt"))
-  } else if (input$ai_toc == "claude") {
-    uiOutput(ns("ai_claude"))
-  } else if (input$ai_toc == "anara") {
-    uiOutput(ns("ai_anara"))
-  } else {
-    verdict_module_ui(ns("verdict"))
-  }
-})
-
-chat_device_server(
-  "gpt_chat",
-  md_dir = "markdown/english/chat_device/chat_gpt"
-)
-
-chat_device_server(
-  "claude_chat",
-  md_dir = "markdown/english/chat_device/claude"
-)
-
-chat_device_server(
-  "anara_chat",
-  md_dir = "markdown/english/chat_device/anara"
-)
-
-verdict_module_server("verdict", process_markdown)
-
-  ###
-
-  output$strategies_advice_box1 <- renderUI({
+ output$strategies_advice_box1 <- renderUI({
         process_markdown("strategies/now_what_start.md")
       })
 
-
-# Title and Abstract
-  
+# Title_and_Abstract_server----
   output$strategies_title_abstract <- renderUI({
   md_ui("english/strategies/title_abstract_strategy.Rmd")
 })
 
-
-# Intro
-
+# Intro_server----
 output$strategies_introduction <- renderUI({
     md_ui("english/strategies/introduction_strategy.Rmd")
   })
@@ -872,7 +739,8 @@ observeEvent(input$intro_vocab1, {
 })
 
 
-# Methods
+# Methods_server----
+
 output$strategies_methods <- renderUI({
     md_ui("english/strategies/methods_strategy.Rmd")
   })
@@ -917,16 +785,6 @@ observeEvent(input$methods4, {
   })
 })
 
-# observeEvent(input$methods5, {
-#   output$strategies_methods5_click <- renderUI({
-#     tagList(
-#       tags$ul(
-#         tags$li("❓ Did the rats get to recover from the implantation surgery before the experiment started?")
-#       )
-#     )
-#   })
-# })
-
 methods5_question_ui <- function() {
   tagList(
     tags$ul(
@@ -962,16 +820,6 @@ observeEvent(input$methods6, {
     )
   })
 })
-
-# observeEvent(input$methods7, {
-#   output$strategies_methods7_click <- renderUI({
-#     tagList(
-#       tags$ul(
-#         tags$li("❓ Are 2 rats/ cage enough to prevent social isolation stress?")
-#       )
-#     )
-#   })
-# })
 
 methods7_question_ui <- function() {
   tagList(
@@ -1010,17 +858,7 @@ observeEvent(input$methods8, {
   })
 })
 
-# observeEvent(input$methods9, {
-#   output$strategies_methods9_click <- renderUI({
-#     tagList(
-#       tags$ul(
-#         tags$li("❓ Is obscuring vision enough to induce social isolation? Rats are social animals and can hear and smell each other.")
-#       )
-#     )
-#   })
-# })
 
-###
 methods9_question_ui <- function() {
   tagList(
     tags$ul(
@@ -1046,7 +884,6 @@ observeEvent(input$methods9, {
   output$reflection_methods9_click <- renderUI(ui)
   output$reflection_methods9_answer <- renderUI(ui_answer)
 })
-###
 
 observeEvent(input$methods10, {
   output$strategies_methods10_click <- renderUI({
@@ -1059,15 +896,6 @@ observeEvent(input$methods10, {
     })
 })
 
-#   output$strategies_methods10_2_click <- renderUI({
-#     tagList(
-#       tags$ul(
-#         tags$li("❓ Were they always with the same partner rat when pair-housed?"),
-#       )
-#     )
-#   })
-# })
-###
 methods10_2_question_ui <- function() {
   tagList(
     tags$ul(
@@ -1093,19 +921,7 @@ observeEvent(input$methods10_2, {
   output$reflection_methods10_2_click <- renderUI(ui)
   output$reflection_methods10_2_answer <- renderUI(ui_answer)
 })
-###
 
-# observeEvent(input$methods11, {
-#   output$strategies_methods11_click <- renderUI({
-#     tagList(
-#       tags$ul(
-#         tags$li("❓ What is one rat eats more than the other?")
-#       )
-#     )
-#   })
-# })
-
-###
 methods11_question_ui <- function() {
   tagList(
     tags$ul(
@@ -1131,7 +947,6 @@ observeEvent(input$methods11, {
   output$reflection_methods11_click <- renderUI(ui)
   output$reflection_methods11_answer <- renderUI(ui_answer)
 })
-###
 
 observeEvent(input$methods12, {
   output$strategies_methods12_click <- renderUI({
@@ -1153,20 +968,6 @@ observeEvent(input$methods13, {
   })
 })
 
-# observeEvent(input$methods14, {
-#   output$strategies_methods14_click <- renderUI({
-#     tagList(
-#       tags$ul(
-#         tags$li("❓ Why were they fasted? For the ghrelin measurements?"),
-#         tags$li("❓ The restrainining strait jacket is not described very well"),
-#         tags$li("❓ Corticosterone reaches peak levels 20-30 mins after stress, so the timing makes sense, but could this impact the other measurements? "),
-#         tags$li("❓ Isn't the point to assess overall elevated corticosterone levels rather than acute stress response?"),
-#       )
-#     )
-#   })
-# })
-
-###
 methods14_question_ui <- function() {
   tagList(
     tags$ul(
@@ -1195,7 +996,6 @@ observeEvent(input$methods14, {
   output$reflection_methods14_click <- renderUI(ui)
   output$reflection_methods14_answer <- renderUI(ui_answer)
 })
-###
 
 observeEvent(input$methods15, {
   output$strategies_methods15_click <- renderUI({
@@ -1239,16 +1039,6 @@ observeEvent(input$methods17, {
   })
   })
 
-#   output$strategies_methods17_2_click <- renderUI({
-#     tagList(
-#       tags$ul(
-#         tags$li("❓ did they also check for normality?")
-#       )
-#     )
-#   })
-# })
-
-###
 methods17_2_question_ui <- function() {
   tagList(
     tags$ul(
@@ -1274,9 +1064,9 @@ observeEvent(input$methods17_2, {
   output$reflection_methods17_2_click <- renderUI(ui)
   output$reflection_methods17_2_answer <- renderUI(ui_answer)
 })
-###
 
-  # Results
+# Results_server----
+
 
   output$strategies_results <- renderUI({
     md_ui("english/strategies/results_strategy.Rmd")
@@ -1368,13 +1158,17 @@ observeEvent(input$results8, {
   })
 })
 
-# Pause
+# Pause_server----
 
 output$pause_text1 <- renderUI({
     process_markdown("strategies/pause1.md")
   })
 
-  # Discussion
+pause_flashcards_server("pause_intro", dictionary = pause_intro_dictionary) # flashcards for understanding introduction
+matching_game_server("match1") # matching game for methods
+pause_flashcards_server("pause_results", dictionary = pause_results_dictionary) # flashcards for understanding results
+
+# Discussion_server----
 
   output$strategies_discussion <- renderUI({
     md_ui("english/strategies/discussion_strategy.Rmd")
@@ -1410,18 +1204,7 @@ observeEvent(input$discussion3, {
   })
 })
 
-# observeEvent(input$discussion4, {
-#   output$strategies_discussion4_click <- renderUI({
-#     tagList(
-#       tags$ul(
-#         tags$li("❓ What are oxygenated glands"),
-#         tags$li("Upon looking up the reference, it seems they meant 'oxyntic glands', glands that secrete hydrochloric acid in the stomach.")
-#       )
-#     )
-#   })
-# })
 
-###
 discussion4_question_ui <- function() {
   tagList(
     tags$ul(
@@ -1446,7 +1229,6 @@ observeEvent(input$discussion4, {
   output$reflection_discussion4_click <- renderUI(ui)
   output$reflection_discussion4_answer <- renderUI(ui_answer)
 })
-###
 
 observeEvent(input$discussion5, {
   output$strategies_discussion5_click <- renderUI({
@@ -1511,6 +1293,18 @@ observeEvent(input$discussion10, {
     )
   })
 })
+
+# Understanding_server----
+
+
+output$understanding_box1 <- renderUI({
+        process_markdown("strategies/understanding.md")
+      })
+
+
+sentence_checklist_server("understanding_checklist", dictionary_names = sentence_checklist_dictionary_names, dictionary_values = sentence_checklist_dictionary_values, dictionary_correct = sentence_checklist_dictionary_correct, label = "Tick the statements you agree with:")
+
+# Reflection_server----
 
 ## Rating
 
@@ -1598,8 +1392,8 @@ output$overall_stars <- renderUI({
 
     tags$svg(
       class = "paperstars-svg-star",
-      width = "86",
-      height = "86",
+      width = "60", #"86",
+      height = "60", #"86",
       viewBox = "0 0 24 24",
       xmlns = "http://www.w3.org/2000/svg",
       tags$path(
@@ -1620,7 +1414,69 @@ output$overall_stars <- renderUI({
 })
 
 
-  # nav buttons
+# AI_server----
+output$ai_gpt <- renderUI({
+  chat_device_ui(
+    ns("gpt_chat"),
+    title = "ChatGPT 5.2",
+    subtitle = "Let's try ChatGPT",
+    device = "phone",
+    height = "650px"
+  )
+})
+
+output$ai_claude <- renderUI({
+  chat_device_ui(
+    ns("claude_chat"),
+    title = "Claude Sonnet 4.5",
+    subtitle = "Let's try Claude",
+    device = "phone",
+    height = "650px"
+  )
+})
+
+output$ai_anara <- renderUI({
+  chat_device_ui(
+    ns("anara_chat"),
+    title = "Anara",
+    subtitle = "Let's try Anara",
+    device = "phone",
+    height = "650px"
+  )
+})
+
+output$ai_section_body <- renderUI({
+  req(input$ai_toc)
+
+  if (input$ai_toc == "gpt") {
+    uiOutput(ns("ai_gpt"))
+  } else if (input$ai_toc == "claude") {
+    uiOutput(ns("ai_claude"))
+  } else if (input$ai_toc == "anara") {
+    uiOutput(ns("ai_anara"))
+  } else {
+    verdict_module_ui(ns("verdict"))
+  }
+})
+
+chat_device_server(
+  "gpt_chat",
+  md_dir = "markdown/english/chat_device/chat_gpt"
+)
+
+chat_device_server(
+  "claude_chat",
+  md_dir = "markdown/english/chat_device/claude"
+)
+
+chat_device_server(
+  "anara_chat",
+  md_dir = "markdown/english/chat_device/anara"
+)
+
+verdict_module_server("verdict", process_markdown)
+
+# nav_buttons_server----
 
    nav_buttons_server(
       id = "nav_controls",

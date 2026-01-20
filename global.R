@@ -11,6 +11,9 @@ library(openalexR)
 library(bsicons)
 library(purrr)
 library(fontawesome)
+library(whisker)
+
+#install.packages("whisker")
 
 
 nav_order_list <- c(

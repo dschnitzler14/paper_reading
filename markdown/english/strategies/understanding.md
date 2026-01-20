@@ -1,0 +1,1 @@
+So, let's first focus on making we have understood the paper. 
