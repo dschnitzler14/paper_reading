@@ -53,6 +53,7 @@ tags$head(
   tags$link(rel = "stylesheet", href = "css/flashcards.css"),
   tags$link(rel = "stylesheet", href = "css/matching_game.css"),
   tags$link(rel = "stylesheet", href = "css/sentence_checklist.css"),
+  tags$link(rel = "stylesheet", href = "css/sorting.css"),
 
   tags$script(src="js/highlight_click_state.js"),
 
@@ -239,7 +240,7 @@ output$about_text <- renderUI({
   what_is_a_paper_module_server("what_is_a_paper", parent_session = session, nav_order_list = nav_order_list, process_markdown = process_markdown)
   anatomy_module_server("anatomy", parent_session = session, nav_order_list = nav_order_list, process_markdown = process_markdown)
   strategies_module_server("strategies", parent_session = session, nav_order_list = nav_order_list, process_markdown = process_markdown, process_rmd_fragment = process_rmd_fragment)
-  practice_module_server("practice", parent_session = session, nav_order_list = nav_order_list, process_markdown = process_markdown)
+  practice_module_server("practice", parent_session = session, nav_order_list = nav_order_list, process_markdown = process_markdown, process_rmd_fragment = process_rmd_fragment)
   searching_module_server("searching", parent_session = session, nav_order_list = nav_order_list, process_markdown = process_markdown)
   tools_module_server("tools", parent_session = session, nav_order_list = nav_order_list, process_markdown = process_markdown)
 }

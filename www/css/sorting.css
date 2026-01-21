@@ -1,0 +1,106 @@
+/* =========================================================
+   sorting.css
+   Lecturi / Paperstars skin for sortable::bucket_list()
+   Targets REAL sortable DOM classes
+   ========================================================= */
+
+/* ---------- Bucket list wrapper ---------- */
+
+.bucket-list {
+    display: flex;
+    gap: 20px;
+    padding: 12px;
+}
+
+/* ---------- Individual buckets ---------- */
+
+.bucket {
+    background: #fffdf6;
+    border: 1px solid rgba(43, 54, 43, 0.18);
+    border-radius: 20px;
+    padding: 16px;
+    width: 100%;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Bucket titles ---------- */
+
+.rank-list-title {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #2b362b;
+    margin-bottom: 14px;
+}
+
+/* ---------- Rank list container ---------- */
+
+.rank-list {
+    min-height: 260px;
+    padding: 12px;
+    border-radius: 16px;
+    background: rgba(43, 54, 43, 0.04);
+    border: 1px dashed rgba(43, 54, 43, 0.25);
+}
+
+/* ---------- Draggable items ---------- */
+
+.rank-list-item {
+    background: #ffffff !important;
+    border: 1px solid rgba(43, 54, 43, 0.22) !important;
+    border-radius: 16px !important;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    line-height: 1.35;
+    color: #2b362b !important;
+    cursor: grab;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+/* ---------- Hover / active ---------- */
+
+.rank-list-item:hover {
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.rank-list-item:active {
+    cursor: grabbing;
+    transform: scale(0.97);
+}
+
+/* ---------- Drag ghost ---------- */
+
+.rank-list-item.sortable-ghost {
+    opacity: 0.55;
+    background: rgba(86, 122, 32, 0.10) !important;
+    border: 2px dashed rgba(86, 122, 32, 0.45) !important;
+}
+
+/* ---------- Empty bucket hint ---------- */
+
+.rank-list:empty::after {
+    content: "Drop items here";
+    display: block;
+    text-align: center;
+    color: rgba(43, 54, 43, 0.45);
+    font-size: 0.9rem;
+    padding: 32px 0;
+}
+
+/* ---------- Kill Bootstrap blue focus ---------- */
+
+.rank-list-item:focus,
+.rank-list-item:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px) {
+    .bucket-list {
+        flex-direction: column;
+    }
+}

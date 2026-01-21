@@ -12,7 +12,7 @@ library(bsicons)
 library(purrr)
 library(fontawesome)
 library(whisker)
-
+library(sortable)
 #install.packages("whisker")
 
 

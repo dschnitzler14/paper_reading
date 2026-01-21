@@ -4,8 +4,6 @@
    Requires wrapping the rendered markdown in: div.prose
    ========================================================= */
 
-/* 0) Kill Bootstrap reboot underline ONLY in prose + only for our highlight_* links */
-
 /* Override Bootstrap reboot link underline INSIDE prose */
 .prose a {
     text-decoration: none !important;
@@ -14,42 +12,31 @@
     font-weight: inherit !important;
 }
 
+/* Marker foundation for BOTH highlight_* and invisible_* */
 .prose a.action-button[class*="highlight_"],
-.prose a.action-button[class*="highlight_"]:link,
-.prose a.action-button[class*="highlight_"]:visited,
-.prose a.action-button[class*="highlight_"]:hover,
-.prose a.action-button[class*="highlight_"]:active,
-.prose a.action-button[class*="highlight_"]:focus,
-.prose a.action-button[class*="highlight_"]:focus-visible,
 .prose a.shiny-bound-input.action-button[class*="highlight_"],
-.prose a.shiny-bound-input.action-button[class*="highlight_"]:link,
-.prose a.shiny-bound-input.action-button[class*="highlight_"]:visited,
-.prose a.shiny-bound-input.action-button[class*="highlight_"]:hover,
-.prose a.shiny-bound-input.action-button[class*="highlight_"]:active,
-.prose a.shiny-bound-input.action-button[class*="highlight_"]:focus,
-.prose a.shiny-bound-input.action-button[class*="highlight_"]:focus-visible {
-    /* absolutely no underline, regardless of Bootstrap reboot */
+.prose a.action-button[class*="invisible_"],
+.prose a.shiny-bound-input.action-button[class*="invisible_"],
+.prose a.action-button[class*="invisible-"],
+.prose a.shiny-bound-input.action-button[class*="invisible-"] {
     text-decoration: none !important;
     text-decoration-line: none !important;
 
-    /* look like normal text */
     color: inherit !important;
     font: inherit !important;
     font-weight: inherit !important;
 
-    /* inline behavior */
     display: inline !important;
     width: auto !important;
     float: none !important;
 
-    /* remove button/link chrome some themes add */
     border: 0 !important;
     box-shadow: none !important;
     background-color: transparent !important;
 
-    /* marker foundation */
     position: relative !important;
     padding: 0 2px !important;
+
     background-repeat: no-repeat !important;
     --marker-h: 0.9em;
     --marker-y: 0.12em;
@@ -57,26 +44,37 @@
     background-position: 0 calc(100% - var(--marker-y)) !important;
 
     cursor: pointer !important;
-
     transition: background-size 0.15s ease-in-out;
 }
 
-/* Hover: slightly fuller marker */
+/* Hover: slightly fuller marker (ONLY for visible highlights, or invisible once clicked) */
 .prose a.action-button[class*="highlight_"]:hover,
-.prose a.shiny-bound-input.action-button[class*="highlight_"]:hover {
+.prose a.shiny-bound-input.action-button[class*="highlight_"]:hover,
+.prose a.action-button[class*="invisible_"].is-clicked:hover,
+.prose a.shiny-bound-input.action-button[class*="invisible_"].is-clicked:hover,
+.prose a.action-button[class*="invisible-"].is-clicked:hover,
+.prose a.shiny-bound-input.action-button[class*="invisible-"].is-clicked:hover {
     background-size: 100% calc(var(--marker-h) + 0.12em) !important;
 }
 
 /* Keyboard focus */
 .prose a.action-button[class*="highlight_"]:focus-visible,
-.prose a.shiny-bound-input.action-button[class*="highlight_"]:focus-visible {
+.prose a.shiny-bound-input.action-button[class*="highlight_"]:focus-visible,
+.prose a.action-button[class*="invisible_"]:focus-visible,
+.prose a.shiny-bound-input.action-button[class*="invisible_"]:focus-visible,
+.prose a.action-button[class*="invisible-"]:focus-visible,
+.prose a.shiny-bound-input.action-button[class*="invisible-"]:focus-visible {
     outline: 2px solid rgba(0, 0, 0, 0.35) !important;
     outline-offset: 2px !important;
 }
 
 /* Optional: subtle second swipe for "marker" texture */
 .prose a.action-button[class*="highlight_"]::after,
-.prose a.shiny-bound-input.action-button[class*="highlight_"]::after {
+.prose a.shiny-bound-input.action-button[class*="highlight_"]::after,
+.prose a.action-button[class*="invisible_"]::after,
+.prose a.shiny-bound-input.action-button[class*="invisible_"]::after,
+.prose a.action-button[class*="invisible-"]::after,
+.prose a.shiny-bound-input.action-button[class*="invisible-"]::after {
     content: "";
     position: absolute;
     left: -1px;
@@ -84,12 +82,15 @@
     bottom: 0.08em;
     height: 0.14em;
     background: inherit;
-    opacity: 0.35;
     transform: rotate(-0.4deg);
     pointer-events: none;
+    opacity: 0.35;
 }
 
-/* Color variants */
+/* =========================================================
+   Standard highlight_* (visible immediately)
+   ========================================================= */
+
 .prose a.highlight_yellow {
     background-image: linear-gradient(rgba(255, 235, 59, 0.65), rgba(255, 235, 59, 0.65)) !important;
 }
@@ -114,6 +115,7 @@
     background-image: linear-gradient(rgba(206, 147, 216, 0.65), rgba(206, 147, 216, 0.65)) !important;
 }
 
+/* Clicked standard highlights become “used” (muted) */
 .prose a.action-button[class*="highlight_"].is-clicked,
 .prose a.shiny-bound-input.action-button[class*="highlight_"].is-clicked {
     background-size: 100% var(--marker-h) !important;
@@ -123,4 +125,65 @@
 .prose a.action-button[class*="highlight_"].is-clicked::after,
 .prose a.shiny-bound-input.action-button[class*="highlight_"].is-clicked::after {
     opacity: 0.18 !important;
+}
+
+/* =========================================================
+   Invisible until clicked (invisible_* and invisible-*)
+   ========================================================= */
+
+/* Hide marker ONLY when not clicked */
+.prose a.action-button[class*="invisible_"]:not(.is-clicked),
+.prose a.shiny-bound-input.action-button[class*="invisible_"]:not(.is-clicked),
+.prose a.action-button[class*="invisible-"]:not(.is-clicked),
+.prose a.shiny-bound-input.action-button[class*="invisible-"]:not(.is-clicked) {
+    background-image: none !important;
+    background-size: 0 0 !important;
+}
+
+/* Hide texture swipe when not clicked */
+.prose a.action-button[class*="invisible_"]:not(.is-clicked)::after,
+.prose a.shiny-bound-input.action-button[class*="invisible_"]:not(.is-clicked)::after,
+.prose a.action-button[class*="invisible-"]:not(.is-clicked)::after,
+.prose a.shiny-bound-input.action-button[class*="invisible-"]:not(.is-clicked)::after {
+    opacity: 0 !important;
+}
+
+/* When clicked, show marker at normal size (no muting) */
+.prose a.action-button[class*="invisible_"].is-clicked,
+.prose a.shiny-bound-input.action-button[class*="invisible_"].is-clicked,
+.prose a.action-button[class*="invisible-"].is-clicked,
+.prose a.shiny-bound-input.action-button[class*="invisible-"].is-clicked {
+    background-size: 100% var(--marker-h) !important;
+    filter: none !important;
+}
+
+/* Colour bindings (support underscore and hyphen class names) */
+.prose a.invisible_yellow.is-clicked,
+.prose a.invisible-yellow.is-clicked {
+    background-image: linear-gradient(rgba(255, 235, 59, 0.65), rgba(255, 235, 59, 0.65)) !important;
+}
+
+.prose a.invisible_green.is-clicked,
+.prose a.invisible-green.is-clicked {
+    background-image: linear-gradient(rgba(174, 213, 129, 0.65), rgba(174, 213, 129, 0.65)) !important;
+}
+
+.prose a.invisible_blue.is-clicked,
+.prose a.invisible-blue.is-clicked {
+    background-image: linear-gradient(rgba(129, 212, 250, 0.65), rgba(129, 212, 250, 0.65)) !important;
+}
+
+.prose a.invisible_pink.is-clicked,
+.prose a.invisible-pink.is-clicked {
+    background-image: linear-gradient(rgba(248, 187, 208, 0.65), rgba(248, 187, 208, 0.65)) !important;
+}
+
+.prose a.invisible_orange.is-clicked,
+.prose a.invisible-orange.is-clicked {
+    background-image: linear-gradient(rgba(255, 204, 128, 0.65), rgba(255, 204, 128, 0.65)) !important;
+}
+
+.prose a.invisible_purple.is-clicked,
+.prose a.invisible-purple.is-clicked {
+    background-image: linear-gradient(rgba(206, 147, 216, 0.65), rgba(206, 147, 216, 0.65)) !important;
 }

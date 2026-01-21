@@ -9,7 +9,7 @@ strategies_module_ui <- function(id) {
       card_header("Reading papers"),
       card_body(
         navset_tab(
-          id = "reading_tabs",
+          id = ns("reading_tabs"),
           nav_panel(
             title = tagList(
               bs_icon("play-circle"),
@@ -37,6 +37,7 @@ strategies_module_ui <- function(id) {
             )
           ),
           nav_panel(
+            value = ns("title_abstract_panel"),
             title = tagList(
               bs_icon("1-circle-fill"),
               " Title and Abstract"
@@ -584,7 +585,7 @@ strategies_module_ui <- function(id) {
                       justified = TRUE,
                       size = "sm",
                       individual = TRUE,
-                      selected = character(0),
+                      selected = "Not Open Access",
                       choiceNames = list(
                         "Completely Available",
                         "Partial data available",
@@ -598,13 +599,56 @@ strategies_module_ui <- function(id) {
               card(
                 card_header("Reflection"),
                 card_body(
-                  div(
-                    class = "sb-white",
-                    tags$h4("Overall Rating"),
-                    uiOutput(ns("overall_stars"))
+                  card(
+                    card_header("Rating and Review"),
+                    card_body(
+                      uiOutput(ns("paperstars_parameters")),
+                      uiOutput(ns("my_overall_stars")),
+                      uiOutput(ns("my_review_text"))
+                    )
                   ),
+                card(
+                  card_header("What is your rating and review?"),
+                  card_body(
+                    selectInput(
+                    ns("jump_to_section"),
+                    "Jump to Section to Rate:",
+                    choices = list(
+                      "Title and Abstract" = "title_abstract_panel",
+                      "Methods" = "methods_panel",
+                      "Results" = "results_panel",
+                      "Discussion" = "discussion_panel"
+                    ),
+                    multiple = FALSE,
+                    selected = "Title and Abstract",
+                    width = "100%"
+                  ),
+                  actionButton(
+                    ns("jump_to_section_button"),
+                    "Go to Section",
+                    class = "paperstars-button"
+                  ),
+                  uiOutput(ns("overall_stars")),
+                    div(
+                      class = "paperstars-text-input",
+                      textAreaInput(
+                        ns("your_review_input"),
+                        label = "Your Review",
+                        value = "",
+                        placeholder = "Write your review here...",
+                        width = "100%"
+                      ),
+                      actionButton(
+                        ns("submit_review"),
+                        "Submit Review",
+                        class = "paperstars-button"
+                      )
+                    )
+                  )
+
                 )
               )
+            )
             )
           ),
           nav_panel(
@@ -661,8 +705,9 @@ strategies_module_ui <- function(id) {
   ),
     
   nav_buttons_ui(ns("nav_controls"))
-
+    
 )
+
 }
 
 strategies_module_server <- function(id, parent_session, nav_order_list, process_markdown, process_rmd_fragment) {
@@ -686,6 +731,9 @@ strategies_module_server <- function(id, parent_session, nav_order_list, process
 output$strategies_introduction <- renderUI({
     md_ui("english/strategies/introduction_strategy.Rmd")
   })
+
+#here
+
 
 observeEvent(input$intro1, {
   output$strategies_introduction1_click <- renderUI({
@@ -1037,7 +1085,7 @@ observeEvent(input$methods17, {
       )
     )
   })
-  })
+})
 
 methods17_2_question_ui <- function() {
   tagList(
@@ -1306,6 +1354,22 @@ sentence_checklist_server("understanding_checklist", dictionary_names = sentence
 
 # Reflection_server----
 
+observeEvent(input$jump_to_section_button, {
+
+selected_panel <- input$jump_to_section
+print(selected_panel)
+
+  nav_select(
+    id = ns("reading_tabs"),
+    selected = ns(selected_panel),
+    session = session
+  )
+
+nav_select(selected_panel, selected = NULL, session = session)
+
+}) 
+
+
 ## Rating
 
 rating_ids <- c(
@@ -1413,6 +1477,142 @@ output$overall_stars <- renderUI({
   )
 })
 
+output$my_overall_stars <- renderUI({
+  n <- as.integer(2)
+
+  star_svg <- function(filled) {
+    col <- if (filled) "#5D8307" else "#D6D7D4"
+
+    tags$svg(
+      class = "paperstars-svg-star",
+      width = "60", #"86",
+      height = "60", #"86",
+      viewBox = "0 0 24 24",
+      xmlns = "http://www.w3.org/2000/svg",
+      tags$path(
+        d = "M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z",
+        fill = col,
+        stroke = col,
+        `stroke-width` = "1.4",
+        `stroke-linejoin` = "round",
+        `stroke-linecap` = "round"
+      )
+    )
+  }
+
+  tags$div(
+    class = "paperstars-stars",
+    lapply(1:5, function(i) star_svg(i <= n))
+  )
+})
+
+
+output$my_review_text <- renderUI({
+  tags$div(
+    class = "paperstars-textbox",
+    process_markdown("strategies/overall_rating_text.md")
+  )
+})
+
+output$paperstars_parameters <- renderUI({
+
+  make_param <- function(title, green = 0, amber = 0, red = 0, labels) {
+    tags$div(
+      class = "paperstars-param",
+      tags$div(class = "paperstars-param__title", title),
+
+      tags$div(
+        class = "paperstars-param__bar",
+        tags$div(
+          class = "paperstars-param__segment paperstars-param__segment--green",
+          style = paste0("width:", green, "%;")
+        ),
+        tags$div(
+          class = "paperstars-param__segment paperstars-param__segment--amber",
+          style = paste0("width:", amber, "%;")
+        ),
+        tags$div(
+          class = "paperstars-param__segment paperstars-param__segment--red",
+          style = paste0("width:", red, "%;")
+        )
+      ),
+
+      tags$div(
+        class = "paperstars-param__legend",
+        tags$span(class = "paperstars-legend__item",
+                  tags$span(class = "paperstars-legend__dot paperstars-legend__dot--green"),
+                  labels[[1]]),
+        tags$span(class = "paperstars-legend__item",
+                  tags$span(class = "paperstars-legend__dot paperstars-legend__dot--amber"),
+                  labels[[2]]),
+        tags$span(class = "paperstars-legend__item",
+                  tags$span(class = "paperstars-legend__dot paperstars-legend__dot--red"),
+                  labels[[3]])
+      )
+    )
+  }
+
+  tags$div(
+    class = "paperstars-params",
+
+    make_param(
+      "Introduction",
+      green = 60,
+      amber = 20,
+      red = 20,
+      labels = list("Appropriate", "Slightly Misleading", "Exaggerated")
+    ),
+
+    make_param(
+      "Methods",
+      green = 80,
+      amber = 10,
+      red = 10,
+      labels = list("Sound", "Questionable", "Inadequate")
+    ),
+
+
+    make_param(
+      "Statistical Analysis",
+      green = 20,
+      amber = 30,
+      red = 50,
+      labels = list("Appropriate", "Some Issues", "Major concerns")
+    ),
+
+    make_param(
+      "Data Presentation",
+      green = 60,
+      amber = 10,
+      red = 30,
+      labels = list("Complete and Transparent", "Minor Omissions", "Misrepresented")
+    ),
+
+    make_param(
+      "Discussion",
+      green = 50,
+      amber = 20,
+      red = 30,
+      labels = list("Appropriate", "Slightly Misleading", "Exaggerated")
+    ),
+
+    make_param(
+      "Limitations",
+      green = 30,
+      amber = 10,
+      red = 60,
+      labels = list("Appropriately acknowledged", "Minor Omissions", "Inadequate")
+    ),
+    make_param(
+      "Data Availability",
+      green = 0,
+      amber = 10,
+      red = 90,
+      labels = list("Completely Available", "Partial data available", "Not Open Access")
+    )
+  )
+})
+
 
 # AI_server----
 output$ai_gpt <- renderUI({
@@ -1485,5 +1685,6 @@ verdict_module_server("verdict", process_markdown)
       nav_input_id = "topnav"
     )
 
-  })
+})
+  
 }

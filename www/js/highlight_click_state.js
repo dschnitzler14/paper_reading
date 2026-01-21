@@ -6,7 +6,14 @@
 
   function findHighlightAnchor(target) {
     if (!target) return null;
-    return target.closest('a.action-button[class*="highlight_"], a.shiny-bound-input.action-button[class*="highlight_"]');
+    return target.closest(
+      'a.action-button[class*="highlight_"], \
+       a.shiny-bound-input.action-button[class*="highlight_"], \
+       a.action-button[class*="invisible_"], \
+       a.shiny-bound-input.action-button[class*="invisible_"], \
+       a.action-button[class*="invisible-"], \
+       a.shiny-bound-input.action-button[class*="invisible-"]'
+    );
   }
 
   document.addEventListener("click", function (e) {

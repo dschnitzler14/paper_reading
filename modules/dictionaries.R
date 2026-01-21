@@ -137,3 +137,42 @@ sentence_checklist_dictionary_correct <- list(
     "social_isolation_health",
     "muscle_deterioration"
 )
+
+build_a_paper_dictionary <- list(
+  "Describe the overarching need for this study.",
+  "Give an overview of relevant literature to provide context.",
+  "Describe the gap in knowledge that this study aims to fill.",
+  "Describe the specific research question or hypothesis.",
+  "Describe the study design and procedures.",
+  "Explain the data collection methods used.",
+  "Describe the participants or subjects involved in the study.",
+  "Present the results obtained from the research.",
+  "Contextualise the findings and with existing literature.",
+  "Describe the limitations of the study and how they were addressed.",
+  "Suggest the next steps for future research."
+)
+
+randomised_build_a_paper_dictionary <- sample(build_a_paper_dictionary)
+
+build_a_paper_intro_dictionary <- list(
+  "Describe the overarching need for this study.",
+  "Give an overview of relevant literature to provide context.",
+  "Describe the gap in knowledge that this study aims to fill.",
+  "Describe the specific research question or hypothesis."
+)
+
+build_a_paper_methods_dictionary <- list(
+  "Describe the study design and procedures.",
+  "Explain the data collection methods used.",
+  "Describe the participants or subjects involved in the study."
+)
+
+build_a_paper_results_dictionary <- list(
+  "Present the results obtained from the research."
+)
+
+build_a_paper_discussion_dictionary <- list(
+  "Contextualise the findings and with existing literature.",
+  "Describe the limitations of the study and how they were addressed.",
+  "Suggest the next steps for future research."
+)
