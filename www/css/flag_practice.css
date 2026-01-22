@@ -1,121 +1,125 @@
 .flag-row {
     display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 14px;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
 }
 
 .flag-row p {
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.45;
 }
 
-.flag-picker .shiny-input-radiogroup {
-    margin: 0;
-}
-
-.flag-picker .radio-inline {
-    margin: 0;
-    padding: 0;
-}
-
-.flag-picker input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.flag-picker label {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 46px;
-    height: 42px;
-    border-radius: 14px;
-    background: #f6f2e6;
-    border: 1px solid rgba(43, 54, 43, 0.22);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10);
-    font-size: 20px;
-    cursor: pointer;
-    user-select: none;
-    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
-    margin-right: 8px;
-}
-
-.flag-picker label:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.14);
-    border-color: rgba(43, 54, 43, 0.35);
-}
-
-.flag-picker input[type="radio"]:focus+span,
-.flag-picker input[type="radio"]:focus+label {
-    outline: none;
-}
-
-.flag-picker input[type="radio"]:checked+span,
-.flag-picker input[type="radio"]:checked+label {
-    transform: translateY(-1px) scale(1.05);
-    border-color: rgba(43, 54, 43, 0.55);
-    box-shadow: 0 0 0 4px rgba(150, 170, 120, 0.25), 0 16px 30px rgba(0, 0, 0, 0.16);
-}
-
-.flag-picker input[type="radio"]:checked+label,
-.flag-picker input[type="radio"]:checked~label {
-    transform: translateY(-1px) scale(1.05);
-    border-color: rgba(43, 54, 43, 0.55);
-    box-shadow: 0 0 0 4px rgba(150, 170, 120, 0.25), 0 16px 30px rgba(0, 0, 0, 0.16);
-}
-
+/* FLAGS: never wrap, never shrink */
 .flag-row .shiny-input-radiogroup {
     margin: 0;
+    display: inline-flex !important;
+    align-items: center;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    gap: 4px;
+    flex: 0 0 auto;
 }
 
+.flag-row .shiny-input-radiogroup * {
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+}
+
+/* If BS5 form-checks are used */
+.flag-row .form-check,
+.flag-row .form-check-inline {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+}
+
+/* If classic Shiny radio-inline is used */
 .flag-row .radio-inline {
-    margin: 0 10px 0 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
 }
 
+/* Hide native radios completely */
 .flag-row input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    width: 1px;
-    height: 1px;
-    pointer-events: none;
+    position: absolute !important;
+    opacity: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 !important;
+    pointer-events: none !important;
 }
 
-.flag-row .radio-inline>span {
+.flag-row label::before,
+.flag-row label::after {
+    content: none !important;
+    display: none !important;
+}
+
+.flag-row label {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-indent: 0 !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto !important;
+}
+
+/* Classic Shiny: emoji in span */
+.flag-row label>span {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
+    width: 22px;
+    height: 22px;
     border-radius: 999px;
+    font-size: 15px;
+    line-height: 1;
     cursor: pointer;
     user-select: none;
-    font-size: 20px;
-    line-height: 1;
+    flex: 0 0 auto;
     transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
-.flag-row .radio-inline>span:hover {
+/* BS5: emoji in label */
+.flag-row .form-check-label {
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    font-size: 15px;
+    line-height: 1;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    flex: 0 0 auto;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.flag-row label>span:hover,
+.flag-row .form-check-label:hover {
     transform: translateY(-1px);
 }
 
-.flag-row input[type="radio"]:checked+span {
-    box-shadow: 0 0 0 3px rgba(43, 54, 43, 0.85);
-    transform: translateY(-1px) scale(1.06);
+/* Selected ring */
+.flag-row input[type="radio"]:checked+span,
+.flag-row .form-check-input:checked+.form-check-label {
+    box-shadow: 0 0 0 2px rgba(43, 54, 43, 0.85);
+    transform: translateY(-1px) scale(1.05);
 }
 
-.flag-row .radio-inline {
-    margin-right: 6px;
+/* Ensure flags column never shrinks, text can wrap */
+.flag-row .shiny-input-radiogroup {
+    min-width: 82px;
 }
 
-.flag-row .radio-inline>span {
-    width: 32px;
-    height: 32px;
-}
-
-.flag-row {
-    gap: 10px;
+.flag-row p {
+    flex: 1 1 auto;
+    min-width: 0;
 }

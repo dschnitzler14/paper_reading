@@ -1,7 +1,15 @@
 practice_your_turn_module_ui <- function(id) {
   ns <- NS(id)
   tagList(
-    p("Select one of these papers and give it a go. Then come back and check your results")
+    card(
+      class = "paperstars-instructions-card",
+      card_header("Instructions"),
+      card_body(
+        div(
+          uiOutput(ns("your_turn_intro_text"))
+        )
+      )
+    ),
   )
 }
 

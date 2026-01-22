@@ -147,7 +147,7 @@ output$wrong_section_intro_text <- renderUI({
 observeEvent(input$practice_wrong_section1, {
   output$practice_wrong_section1_click <- renderUI({
     tagList(
-      div(class = "alert alert-success lecturi-alert", "✅ Good job! This belongs in the Methods section.")
+      div(class = "alert alert-success lecturi-alert", "✅ Good job! This belongs in the Results section.")
     )
   })
 })
@@ -183,7 +183,7 @@ output$practice_wrong_section4_text <- renderUI({
 observeEvent(input$practice_wrong_section4, {
   output$practice_wrong_section4_click <- renderUI({
     tagList(
-      div(class = "alert alert-success lecturi-alert", "✅ Good job! This belongs in the Methods section.")
+      div(class = "alert alert-success lecturi-alert", "✅ Good job! This belongs in the Introduction section.")
     )
   })
 })
@@ -195,7 +195,7 @@ output$practice_wrong_section5_text <- renderUI({
 observeEvent(input$practice_wrong_section5, {
   output$practice_wrong_section5_click <- renderUI({
     tagList(
-      div(class = "alert alert-success lecturi-alert", "✅ Good job! This belongs in the Methods section.")
+      div(class = "alert alert-success lecturi-alert", "✅ Good job! This belongs in the Discussion section.")
     )
   })
 })
@@ -207,7 +207,7 @@ output$practice_wrong_section6_text <- renderUI({
 observeEvent(input$practice_wrong_section6, {
   output$practice_wrong_section6_click <- renderUI({
     tagList(
-      div(class = "alert alert-success lecturi-alert", "✅ Good job! This belongs in the Methods section.")
+      div(class = "alert alert-success lecturi-alert", "✅ Good job! This belongs in the Introduction section.")
     )
   })
 })

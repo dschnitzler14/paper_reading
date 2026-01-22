@@ -121,23 +121,6 @@ pause_results_dictionary <- list(
   )
 )
 
-# sentence_checklist_dictionary_names <-list(
-#     "Social isolation has significant negative effects on health and wellbeing in the elderly.",
-#     "Muscle deterioration is a key concern for socially isolated elderly individuals.",
-#     "The study aims to investigate the impact of social isolation by studying its effects on mental health."
-#   )
-
-# sentence_checklist_dictionary_values <-list(
-#     "social_isolation_health" ,
-#     "muscle_deterioration" ,
-#     "study_aims"
-#   )
-
-# sentence_checklist_dictionary_correct <- list(
-#     "social_isolation_health",
-#     "muscle_deterioration"
-# )
-
 understanding_checklist_dictionary <- c(
   "Social isolation has significant negative effects on health and wellbeing in the elderly." =
     "social_isolation_health",
@@ -247,4 +230,17 @@ claims3_checklist_dictionary <- c(
 claims3_checklist_dictionary_correct <- c(
   "environmental_enrichment_neuronal_growth",
   "enriched_mice_learning_improvements"
+)
+
+flag_dictionary_correct <- list(
+  flag_1  = "1",
+  flag_2  = "1",
+  flag_3  = "3",
+  flag_4  = "2",
+  flag_5  = "2",
+  flag_6  = "1",
+  flag_7  = "2",
+  flag_8  = "2",
+  flag_9  = "2",
+  flag_10 = "1"
 )

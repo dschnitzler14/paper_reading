@@ -34,12 +34,50 @@ practice_module_ui <- function(id) {
             bslib::navset_pill_list(
               id = ns("toc"),
               well = FALSE,
-              bslib::nav_panel("Practice 1", value = "practice1"),
-              bslib::nav_panel("Practice 2", value = "practice2"),
-              bslib::nav_panel("Practice 3", value = "practice3"),
-              bslib::nav_panel("Practice 4", value = "practice4"),
-              bslib::nav_panel("Practice 5", value = "practice5"),
-              bslib::nav_panel("Practice 6", value = "practice6")
+              bslib::nav_panel(
+              title = tagList(
+                bs_icon("search"),
+                tags$span("Find the Gap", style = "margin-left: 0.5rem;")
+              ),
+              value = "practice1"
+            ),
+            bslib::nav_panel(
+              title = tagList(
+                bs_icon("question-circle"),
+                tags$span("Speculation vs Evidence", style = "margin-left: 0.5rem;")
+              ),
+              value = "practice2"
+            ),
+            bslib::nav_panel(
+              title = tagList(
+                bs_icon("layers"),
+                tags$span("Build a Paper", style = "margin-left: 0.5rem;")
+              ),
+              value = "practice3"
+            ),
+            bslib::nav_panel(
+              title = tagList(
+                bs_icon("exclamation-diamond"),
+                tags$span("What Does Not Belong", style = "margin-left: 0.5rem;")
+              ),
+              value = "practice4"
+            ),
+            bslib::nav_panel(
+              title = tagList(
+                bs_icon("flag"),
+                tags$span("Green vs Red Flags", style = "margin-left: 0.5rem;")
+              ),
+              value = "practice5"
+            ),
+            bslib::nav_panel(
+              title = tagList(
+                bs_icon("pencil-square"),
+                tags$span("Your Turn", style = "margin-left: 0.5rem;")
+              ),
+              value = "practice6"
+            )
+
+
             )
           ),
 
@@ -97,7 +135,7 @@ practice_module_server <- function(id, parent_session, nav_order_list, process_m
       if (identical(key, "practice2")) practice_discussion_claims_spec_module_server("discussion_claims_spec_module")
       if (identical(key, "practice3")) practice_build_a_paper_module_server("build_a_paper_module")
       if (identical(key, "practice4")) practice_what_does_not_belong_module_server("what_does_not_belong_module", process_rmd_fragment = process_rmd_fragment, process_markdown = process_markdown)
-      if (identical(key, "practice5")) practice_green_red_flag_module_server("green_red_flag_module")
+      if (identical(key, "practice5")) practice_green_red_flag_module_server("green_red_flag_module", dictionary_correct = flag_dictionary_correct)
       if (identical(key, "practice6")) practice_your_turn_module_server("your_turn_module")
     })
 

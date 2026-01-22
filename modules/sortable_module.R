@@ -43,7 +43,9 @@ sortable_ui <- function(id, dictionary) {
           orientation = "horizontal"
         )
       ),
-    actionButton(ns("done_sorting"), "Done Sorting"),
+    actionButton(ns("done_sorting"), 
+    "Done Sorting",
+    class = "btn btn-primary lecturi-checklist__submit"),
     uiOutput(ns("sorting_feedback"))
   )
 }

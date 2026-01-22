@@ -341,17 +341,15 @@ strategies_module_ui <- function(id) {
                 
               ),
               card(
+                class = "paperstars-instructions-card",
                 card_header("Pause"),
                 card_body(
                   div(
-                      class = "strategies-main",
-                      div(
-                        class = "paper-box",
-                        uiOutput(ns("pause_text1"))
-                      )
-                    )
+                    uiOutput(ns("pause_text1"))
+                  )
                 )
               ),
+              
               card(
                 card_header("Introduction"),
                 card_body(
@@ -386,6 +384,39 @@ strategies_module_ui <- function(id) {
                       div(
                         class = "paper-box",
                         pause_flashcards_ui(ns("pause_results"))
+                      )
+                    )
+                )
+              ),
+              card(
+                card_header("Summary of Findings"),
+                card_body(
+                  div(
+                      class = "strategies-main",
+                      div(
+                        class = "paper-box",
+                        p("Why did they do this study?"),
+                        p("How did they do the study?"),
+                        p("What did they find?"),
+                        p("What do the results mean?")
+                      )
+                    )
+                )
+              ),
+              card(
+                card_header("Discussion Predictions"),
+                card_body(
+                  div(
+                      class = "strategies-main",
+                      div(
+                        class = "paper-box",
+                        p("Before we move on, let's also think about the Discussion."),
+                        tags$ul(
+                          tags$li("What do you expect the authors to say in the Discussion?"),
+                          tags$li("How will they interpret the results?"),
+                          tags$li("What limitations might they mention?"),
+                          tags$li("Based on the evidence, what claims would be reasonable?")
+                        )
                       )
                     )
                 )
@@ -519,8 +550,14 @@ strategies_module_ui <- function(id) {
                 card_header("Understanding"),
                 card_body(
                 uiOutput(ns("understanding_box1")),
-                sentence_checklist_ui(ns("understanding_checklist"))
-                  
+                div(
+                  class = "strategies-main",
+                  div(
+                    class = "paper-box",
+                    sentence_checklist_ui(ns("understanding_checklist"))
+                  )
+                )
+                
                 )
               )
             )
