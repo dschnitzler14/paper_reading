@@ -57,25 +57,24 @@ strategies_module_ui <- function(id) {
                 div(
                   class = "sb-white",
                   tags$h4("Title"),
-                  div(
-                    class = "paperstars-rating",
-                    radioGroupButtons(
-                      inputId = ns("title_rating"),
+                  paperstars_rating_ui(
+                      id = ns("title_rating"),
                       label = "What did you think of the title?",
-                      direction = "vertical",
-                      justified = TRUE,
-                      size = "sm",
-                      individual = TRUE,
-                      selected = character(0),
-                      choiceNames = list(
-                        "Appropriate",
-                        "Slightly Misleading",
-                        "Exaggerated"
-                      ),
-                      choiceValues = list("1", "0.5", "0")
+                      choiceNames = title_choices$names,
+                      choiceValues = title_choices$values,
+                      selected = character(0)
                     )
-                  )
+                  
                 ),
+              ),
+              card(
+                class = "paperstars-instructions-card",
+                card_header("Title and Abstract Instructions"),
+                card_body(
+                  div(
+                    
+                  )
+                )
               ),
               card(
                 card_header("Title and Abstract"),
@@ -123,6 +122,15 @@ strategies_module_ui <- function(id) {
                   
                 ),
                 
+              ),
+              card(
+                class = "paperstars-instructions-card",
+                card_header("Introduction Instructions"),
+                card_body(
+                  div(
+                    
+                  )
+                )
               ),
               card(
                 card_header("Introduction"),
@@ -191,44 +199,36 @@ strategies_module_ui <- function(id) {
                 div(
                   class = "sb-white",
                   tags$h4("Methods"),
-                  div(
-                    class = "paperstars-rating",
-                    radioGroupButtons(
-                      inputId = ns("methods_rating"),
-                      label = "What did you think of the methods?",
-                      direction = "vertical",
-                      justified = TRUE,
-                      size = "sm",
-                      individual = TRUE,
-                      selected = character(0),
-                      
-                      choiceNames = list("Sound", "Questionable", "Inadequate"),
-                      choiceValues = list("1", "0.5", "0")
-                    )
-                  )
+                  paperstars_rating_ui(
+                    id = ns("methods_rating"),
+                    label = "What did you think of the methods?",
+                    choiceNames = methods_choices$names,
+                    choiceValues = methods_choices$values,
+                    selected = character(0)
+                  ),
+                  
                 ),
                 div(
                   class = "sb-white",
                   tags$h4("Statistical Analysis"),
-                  div(
-                    class = "paperstars-rating",
-                    radioGroupButtons(
-                      inputId = ns("stats_rating"),
-                      label = "What did you think of the statistical analysis?",
-                      direction = "vertical",
-                      justified = TRUE,
-                      size = "sm",
-                      individual = TRUE,
-                      selected = character(0),
-                      choiceNames = list(
-                        "Appropriate",
-                        "Some Issues",
-                        "Major concerns"
-                      ),
-                      choiceValues = list("1", "0.5", "0")
-                    )
-                  )
+                  paperstars_rating_ui(
+                    id = ns("stats_rating"),
+                    label = "What did you think of the statistical analysis?",
+                    choiceNames = stats_choices$names,
+                    choiceValues = stats_choices$values,
+                    selected = character(0)
+                  ),
+                  
                 ),
+              ),
+              card(
+                class = "paperstars-instructions-card",
+                card_header("Methods Instructions"),
+                card_body(
+                  div(
+                    
+                  )
+                )
               ),
               card(
                 card_header("Methods"),
@@ -287,25 +287,24 @@ strategies_module_ui <- function(id) {
                 div(
                   class = "sb-white",
                   tags$h4("Data Presentation"),
-                  div(
-                    class = "paperstars-rating",
-                    radioGroupButtons(
-                      inputId = ns("data_presentation_rating"),
-                      label = "What did you think of the Data Presentation?",
-                      direction = "vertical",
-                      justified = TRUE,
-                      size = "sm",
-                      individual = TRUE,
-                      selected = character(0),
-                      choiceNames = list(
-                        "Complete and Transparent",
-                        "Minor Omissions",
-                        "Misrepresented"
-                      ),
-                      choiceValues = list("1", "0.5", "0")
-                    )
-                  )
+                  paperstars_rating_ui(
+                    id = ns("data_presentation_rating"),
+                    label = "What did you think of the Data Presentation?",
+                    choiceNames = data_presentation_choices$names,
+                    choiceValues = data_presentation_choices$values,
+                    selected = character(0)
+                  ),
+                  
                 ),
+              ),
+              card(
+                class = "paperstars-instructions-card",
+                card_header("Results Instructions"),
+                card_body(
+                  div(
+                    
+                  )
+                )
               ),
               card(
                 card_header("Results"),
@@ -469,48 +468,37 @@ strategies_module_ui <- function(id) {
                 div(
                   class = "sb-white",
                   tags$h4("Discussion"),
-                  div(
-                    class = "paperstars-rating",
-                    radioGroupButtons(
-                      inputId = ns("discussion_rating"),
-                      label = "What did you think of the Discussion?",
-                      direction = "vertical",
-                      justified = TRUE,
-                      size = "sm",
-                      individual = TRUE,
-                      selected = character(0),
-                      choiceNames = list(
-                        "Appropriate",
-                        "Slightly Misleading",
-                        "Exaggerated"
-                      ),
-                      choiceValues = list("1", "0.5", "0")
-                    )
-                  )
+                  paperstars_rating_ui(
+                    id = ns("discussion_rating"),
+                    label = "What did you think of the Discussion?",
+                    choiceNames = discussion_choices$names,
+                    choiceValues = discussion_choices$values,
+                    selected = character(0)
+                  ),
+                  
                 ),
                 div(
                   class = "sb-white",
                   tags$h4("Limitations"),
-                  div(
-                    class = "paperstars-rating",
-                    radioGroupButtons(
-                      inputId = ns("limitations_rating"),
-                      label = "What did you think of the Limitations?",
-                      direction = "vertical",
-                      justified = TRUE,
-                      size = "sm",
-                      individual = TRUE,
-                      selected = character(0),
-                      choiceNames = list(
-                        "Appropriately acknowledged",
-                        "Minor Omissions",
-                        "Inadequate"
-                      ),
-                      choiceValues = list("1", "0.5", "0")
-                    )
-                  )
+                  paperstars_rating_ui(
+                    id = ns("limitations_rating"),
+                    label = "What did you think of the Limitations?",
+                    choiceNames = limitations_choices$names,
+                    choiceValues = limitations_choices$values,
+                    selected = character(0)
+                  ),
+
                 ),
 
+              ),
+              card(
+                class = "paperstars-instructions-card",
+                card_header("Discussion Instructions"),
+                card_body(
+                  div(
+                    
+                  )
+                )
               ),
               card(
                 card_header("Discussion"),
@@ -569,12 +557,12 @@ strategies_module_ui <- function(id) {
             ),
             layout_sidebar(
           
-              fillable = TRUE,
-              fill = TRUE,
+              fillable = FALSE,
+              fill = FALSE,
             sidebar = sidebar(
               title = tags$span("Reflection", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
+              width = "20%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
@@ -613,59 +601,38 @@ strategies_module_ui <- function(id) {
                 div(
                   class = "sb-white",
                   tags$h4("Data Availability"),
-                  div(
-                    class = "paperstars-rating",
-                    radioGroupButtons(
-                      inputId = ns("data_available_rating"),
-                      label = "Is the Data Available?",
-                      direction = "vertical",
-                      justified = TRUE,
-                      size = "sm",
-                      individual = TRUE,
-                      selected = "Not Open Access",
-                      choiceNames = list(
-                        "Completely Available",
-                        "Partial data available",
-                        "Not Open Access"
-                      ),
-                      choiceValues = list("1", "0.5", "0")
-                    )
+                  tags$p("This information is often not included in the main text of a paper, so you may need to check the supplementary materials or the journal's website."),
+                  paperstars_rating_ui(
+                    id = ns("data_available_rating"),
+                    label = "For this paper, I've alread checked and the data is not openly available.",
+                    choiceNames = data_available_choices$names,
+                    choiceValues = data_available_choices$values,
+                    selected = "0"
                   )
+                  
                 ),
               ),
               card(
                 card_header("Reflection"),
                 card_body(
+                  layout_columns(
+                    col_widths = c(6, 6),
                   card(
-                    card_header("Rating and Review"),
+                    card_header("My Rating and Review"),
                     card_body(
-                      uiOutput(ns("paperstars_parameters")),
+                      #uiOutput(ns("paperstars_parameters")),
                       uiOutput(ns("my_overall_stars")),
                       uiOutput(ns("my_review_text"))
                     )
                   ),
                 card(
-                  card_header("What is your rating and review?"),
+                  card_header("How would you rate this paper?"),
                   card_body(
-                    selectInput(
-                    ns("jump_to_section"),
-                    "Jump to Section to Rate:",
-                    choices = list(
-                      "Title and Abstract" = "title_abstract_panel",
-                      "Methods" = "methods_panel",
-                      "Results" = "results_panel",
-                      "Discussion" = "discussion_panel"
-                    ),
-                    multiple = FALSE,
-                    selected = "Title and Abstract",
-                    width = "100%"
-                  ),
-                  actionButton(
-                    ns("jump_to_section_button"),
-                    "Go to Section",
-                    class = "paperstars-button"
-                  ),
+                  uiOutput(ns("paperstars_parameters_rated")),
+                  p("If you missed a section, you can go back and rate it now."),
+                  tags$hr(),
                   uiOutput(ns("overall_stars")),
+                  
                     div(
                       class = "paperstars-text-input",
                       textAreaInput(
@@ -679,12 +646,14 @@ strategies_module_ui <- function(id) {
                         ns("submit_review"),
                         "Submit Review",
                         class = "paperstars-button"
-                      )
+                      ),
+                      uiOutput(ns("review_submitted"))
                     )
                   )
 
                 )
               )
+            )
             )
             )
           ),
@@ -1395,73 +1364,87 @@ sentence_checklist_server(
 
 # Reflection_server----
 
-observeEvent(input$jump_to_section_button, {
-
-selected_panel <- input$jump_to_section
-print(selected_panel)
-
-  nav_select(
-    id = ns("reading_tabs"),
-    selected = ns(selected_panel),
-    session = session
-  )
-
-nav_select(selected_panel, selected = NULL, session = session)
-
-}) 
-
-
 ## Rating
-
-rating_ids <- c(
-  "title_rating",
-  "methods_rating",
-  "stats_rating",
-  "data_presentation_rating",
-  "discussion_rating",
-  "limitations_rating",
-  "data_available_rating"
-)
-
-weighting_scores <- c(
-  1,
-  4,
-  4,
-  3,
-  2,
-  2,
-  4
-)
 
 `%||%` <- function(x, y) if (is.null(x)) y else x
 
-ratings_numeric <- reactive({
-  vals <- lapply(rating_ids, function(id) {
-    as.numeric(input[[id]] %||% "0")
-  })
-  unlist(vals, use.names = FALSE)
-})
+title_mod <- paperstars_rating_server(
+  id = "title_rating",
+  weight = 1,
+  choiceNames = title_choices$names,
+  choiceValues = title_choices$values
+)
 
-weighted_scores <- reactive({
-  ratings_numeric() * weighting_scores
-})
+methods_mod <- paperstars_rating_server(
+  id = "methods_rating",
+  weight = 4,
+  choiceNames = methods_choices$names,
+  choiceValues = methods_choices$values
+)
+
+stats_mod <- paperstars_rating_server(
+  id = "stats_rating",
+  weight = 4,
+  choiceNames = stats_choices$names,
+  choiceValues = stats_choices$values
+)
+
+data_presentation_mod <- paperstars_rating_server(
+  id = "data_presentation_rating",
+  weight = 3,
+  choiceNames = data_presentation_choices$names,
+  choiceValues = data_presentation_choices$values
+)
+
+discussion_mod <- paperstars_rating_server(
+  id = "discussion_rating",
+  weight = 2,
+  choiceNames = discussion_choices$names,
+  choiceValues = discussion_choices$values
+)
+
+limitations_mod <- paperstars_rating_server(
+  id = "limitations_rating",
+  weight = 2,
+  choiceNames = limitations_choices$names,
+  choiceValues = limitations_choices$values
+)
+
+data_available_mod <- paperstars_rating_server(
+  id = "data_available_rating",
+  weight = 4,
+  choiceNames = data_available_choices$names,
+  choiceValues = data_available_choices$values
+)
+
+rating_mods <- list(
+  title_rating = title_mod,
+  methods_rating = methods_mod,
+  stats_rating = stats_mod,
+  data_presentation_rating = data_presentation_mod,
+  discussion_rating = discussion_mod,
+  limitations_rating = limitations_mod,
+  data_available_rating = data_available_mod
+)
 
 weighted_total <- reactive({
-  sum(weighted_scores())
+  sum(vapply(rating_mods, function(m) m$score(), numeric(1)))
+})
+
+weights_total <- reactive({
+  sum(vapply(rating_mods, function(m) m$weight(), numeric(1)))
 })
 
 weighted_percent <- reactive({
-  (weighted_total() / sum(weighting_scores)) * 100
-})
-
-output$ratings_debug <- renderPrint({
-  ratings_numeric()
+  denom <- weights_total()
+  if (is.na(denom) || denom == 0) return(0)
+  (weighted_total() / denom) * 100
 })
 
 output$weighted_debug <- renderPrint({
   list(
-    weights = weighting_scores,
-    weighted_scores = weighted_scores(),
+    weights = vapply(rating_mods, function(m) m$weight(), numeric(1)),
+    weighted_scores = vapply(rating_mods, function(m) m$score(), numeric(1)),
     total = weighted_total(),
     percent = weighted_percent()
   )
@@ -1488,6 +1471,7 @@ star_rating <- reactive({
 output$star_debug <- renderPrint({
   paste("Star Rating:", star_rating())
 })
+
 
 output$overall_stars <- renderUI({
   n <- as.integer(star_rating())
@@ -1518,6 +1502,51 @@ output$overall_stars <- renderUI({
   )
 })
 
+
+output$paperstars_parameters_rated <- renderUI({
+
+  items <- list(
+    "Title & Abstract" = title_mod,
+    "Methods" = methods_mod,
+    "Statistical Analysis" = stats_mod,
+    "Data Presentation" = data_presentation_mod,
+    "Discussion" = discussion_mod,
+    "Limitations" = limitations_mod,
+    "Data Availability" = data_available_mod
+  )
+
+  tags$ul(
+    class = "paperstars-parameter-list",
+    lapply(names(items), function(label) {
+
+      mod <- items[[label]]
+
+      chosen_value <- tryCatch(mod$choice_value(), error = function(e) NULL)
+      chosen_name <- tryCatch(mod$choice_name(), error = function(e) NULL)
+
+      status_class <- if (is.null(chosen_value)) {
+        "not-rated"
+      } else if (as.numeric(chosen_value) == 1) {
+        "rated-good"
+      } else if (as.numeric(chosen_value) == 0.5) {
+        "rated-okay"
+      } else {
+        "rated-bad"
+      }
+
+      tags$li(
+        class = paste("paperstars-parameter-item", status_class),
+        tags$span(class = "paperstars-parameter-label", label),
+        tags$span(
+          class = "paperstars-parameter-value",
+          chosen_name %||% "Not yet rated"
+        )
+      )
+    })
+  )
+})
+
+
 output$my_overall_stars <- renderUI({
   n <- as.integer(2)
 
@@ -1545,6 +1574,24 @@ output$my_overall_stars <- renderUI({
     class = "paperstars-stars",
     lapply(1:5, function(i) star_svg(i <= n))
   )
+})
+
+observeEvent(input$submit_review, {
+  output$review_submitted <- renderUI({
+    tags$div(
+      class = "paperstars-review-success",
+      tags$p(
+        class = "paperstars-review-success-text",
+        "Good job! This is just a demo, but you could hop over to the real Paperstars and submit your review there."
+      ),
+      tags$a(
+        href = "https://paperstars.org",
+        target = "_blank",
+        class = "paperstars-review-success-link",
+        "Go to Paperstars"
+      )
+    )
+  })
 })
 
 

@@ -171,7 +171,7 @@ output$practice_wrong_section3_text <- renderUI({
 observeEvent(input$practice_wrong_section3, {
   output$practice_wrong_section3_click <- renderUI({
     tagList(
-      div(class = "alert alert-success lecturi-alert", "✅ Good job! This belongs in the Methods section.")
+      div(class = "alert alert-success lecturi-alert", "✅ Good job! This belongs in the Results section.")
     )
   })
 })

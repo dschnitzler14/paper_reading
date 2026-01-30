@@ -24,7 +24,7 @@ ui <- bslib::page_navbar(
   
   title = tagList(
   fontawesome::fa("readme"),
-  " Lecturi"
+  " Parsible"
 ),
   id = "topnav",
   theme = theme,
@@ -56,8 +56,12 @@ tags$head(
   tags$link(rel = "stylesheet", href = "css/sorting.css"),
   tags$link(rel = "stylesheet", href = "css/flag_practice.css"),
   tags$link(rel = "stylesheet", href = "css/instruction_cards.css"),
+  tags$link(rel = "stylesheet", type = "text/css", href = "css/highlighter.css"),
 
   tags$script(src="js/highlight_click_state.js"),
+  tags$script(src = "js/highlighter.js"),
+  tags$script(src = "js/emoji_picker.js"),
+  
 
   tags$link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap"),
   tags$link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"),
@@ -112,6 +116,14 @@ tags$head(
     ),
     value = "practice",
     practice_module_ui("practice")
+  ),
+  nav_panel(
+    title = tagList(
+      bs_icon("card-checklist"),
+      " Your Turn"
+    ),
+    value = "your_turn",
+    practice_your_turn_module_ui("your_turn")
   ),
 
   nav_panel(
@@ -243,6 +255,8 @@ output$about_text <- renderUI({
   anatomy_module_server("anatomy", parent_session = session, nav_order_list = nav_order_list, process_markdown = process_markdown)
   strategies_module_server("strategies", parent_session = session, nav_order_list = nav_order_list, process_markdown = process_markdown, process_rmd_fragment = process_rmd_fragment)
   practice_module_server("practice", parent_session = session, nav_order_list = nav_order_list, process_markdown = process_markdown, process_rmd_fragment = process_rmd_fragment)
+  practice_your_turn_module_server("your_turn", parent_session = session, nav_order_list = nav_order_list, process_markdown = process_markdown, process_rmd_fragment = process_rmd_fragment)
+
   searching_module_server("searching", parent_session = session, nav_order_list = nav_order_list, process_markdown = process_markdown)
   tools_module_server("tools", parent_session = session, nav_order_list = nav_order_list, process_markdown = process_markdown)
 }

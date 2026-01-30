@@ -244,3 +244,67 @@ flag_dictionary_correct <- list(
   flag_9  = "2",
   flag_10 = "1"
 )
+
+# paperstars rating
+title_choices <- list(
+  names = list(
+    "Appropriate",
+    "Slightly Misleading",
+    "Exaggerated"
+  ),
+  values = c("1", "0.5", "0")
+)
+
+methods_choices <- list(
+  names = list(
+    "Sound",
+    "Questionable",
+    "Inadequate"
+  ),
+  values = c("1", "0.5", "0")
+)
+
+stats_choices <- list(
+  names = list(
+    "Appropriate",
+    "Some Issues",
+    "Major concerns"
+  ),
+  values = c("1", "0.5", "0")
+)
+
+data_presentation_choices <- list(
+  names = list(
+    "Complete and Transparent",
+    "Minor Omissions",
+    "Misrepresented"
+  ),
+  values = c("1", "0.5", "0")
+)
+
+discussion_choices <- list(
+  names = list(
+    "Appropriate",
+    "Slightly Misleading",
+    "Exaggerated"
+  ),
+  values = c("1", "0.5", "0")
+)
+
+limitations_choices <- list(
+  names = list(
+    "Appropriately acknowledged",
+    "Minor Omissions",
+    "Inadequate"
+  ),
+  values = c("1", "0.5", "0")
+)
+
+data_available_choices <- list(
+  names = list(
+    "Completely Available",
+    "Partial data available",
+    "Not Open Access"
+  ),
+  values = c("1", "0.5", "0")
+)

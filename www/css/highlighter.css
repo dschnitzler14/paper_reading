@@ -1,0 +1,85 @@
+.hl-toolbar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 12px;
+    border-radius: 14px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    margin-bottom: 12px;
+}
+
+.hl-btn {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    padding: 8px 10px;
+    cursor: pointer;
+    background: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+}
+
+.hl-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    display: inline-block;
+}
+
+.hl-status {
+    margin-left: auto;
+    font-size: 0.95em;
+    opacity: 0.75;
+    white-space: nowrap;
+}
+
+.hl {
+    padding: 0.06em 0.12em;
+    border-radius: 0.35em;
+}
+
+.hl-yellow {
+    background: rgba(255,
+        235,
+        59,
+        0.65);
+}
+
+.hl-green {
+    background: rgba(174,
+        213,
+        129,
+        0.65);
+}
+
+.hl-blue {
+    background: rgba(129,
+        212,
+        250,
+        0.65);
+}
+
+.hl-pink {
+    background: rgba(248,
+        187,
+        208,
+        0.65);
+}
+
+.hl-orange {
+    background: rgba(255,
+        204,
+        128,
+        0.65);
+}
+
+.hl-purple {
+    background: rgba(206,
+        147,
+        216,
+        0.65);
+}

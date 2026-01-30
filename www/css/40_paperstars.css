@@ -253,3 +253,130 @@
 .paperstars-legend__dot--red {
     background: #c23a3a;
 }
+
+
+/* rating parameter output */
+
+.paperstars-parameter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.paperstars-parameter-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: #fafaf8;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.paperstars-parameter-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.paperstars-parameter-label {
+    font-weight: 600;
+    color: #2f2f2f;
+}
+
+.paperstars-parameter-value {
+    font-size: 0.95rem;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #e8ece4;
+    color: #355e1c;
+    white-space: nowrap;
+}
+
+/* Not yet rated */
+.paperstars-parameter-item.not-rated .paperstars-parameter-value {
+    background: #f1f1f1;
+    color: #8a8a8a;
+    font-style: italic;
+}
+
+/* Rated state emphasis */
+.paperstars-parameter-item.is-rated .paperstars-parameter-value {
+    background: #e6f0dc;
+    color: #3f5f1b;
+}
+
+.paperstars-parameter-value {
+    font-size: 0.95rem;
+    padding: 6px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+/* Green – good */
+.paperstars-parameter-item.rated-good .paperstars-parameter-value {
+    background: #e6f3df;
+    color: #3f6b1c;
+}
+
+/* Amber – okay */
+.paperstars-parameter-item.rated-okay .paperstars-parameter-value {
+    background: #fff1db;
+    color: #9a5b00;
+}
+
+/* Red – bad */
+.paperstars-parameter-item.rated-bad .paperstars-parameter-value {
+    background: #fde4e1;
+    color: #9a2f2a;
+}
+
+/* Not rated */
+.paperstars-parameter-item.not-rated .paperstars-parameter-value {
+    background: #f1f1f1;
+    color: #8a8a8a;
+    font-style: italic;
+}
+
+/* review submission */
+
+.paperstars-review-success {
+    margin-top: 20px;
+    padding: 18px 20px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #eef6e9, #f7fbf4);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.paperstars-review-success-text {
+    margin: 0 0 14px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #2f4f1e;
+}
+
+.paperstars-review-success-link {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: #5d8307;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.paperstars-review-success-link:hover {
+    background: #4f6f06;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.paperstars-review-success-link:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

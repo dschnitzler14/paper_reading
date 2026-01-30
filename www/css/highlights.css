@@ -138,6 +138,8 @@
 .prose a.shiny-bound-input.action-button[class*="invisible-"]:not(.is-clicked) {
     background-image: none !important;
     background-size: 0 0 !important;
+    cursor: default !important;
+    pointer-events: auto;
 }
 
 /* Hide texture swipe when not clicked */

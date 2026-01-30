@@ -1,0 +1,21 @@
+Caffeine caused significant increase in the mean systolic blood pressure (60 minutes post ingestion) from 116.6 to 128.3 mmHg as compared to placebo conditions. The mean rate increased from 72.9 to 77.3 Bpm in test group. No change was observed in control group.
+
+## Test Group
+
+|        | RESTING BP | RESTING HR | 60 MIN AFTER CAFFEINE BP | 60 MIN AFTER CAFFEINE HR |
+|--------|------------|------------|---------------------------|---------------------------|
+| MEAN   | 116.6/72.2 | 72.9       | 128.3/72.2                | 77.3                      |
+| SD     | 6.65/4.44  | 4.52       | 7.32/4.44                 | 6.17                      |
+
+|     | RESTING BP | RESTING HR | 60 MIN AFTER CAFFEINE BP | 60 MIN AFTER CAFFEINE HR |
+|-----|------------|------------|---------------------------|---------------------------|
+| SIG | P < 0.01    | P < 0.01    | P < 0.01                  | P < 0.01                  |
+
+## Control Group
+
+|        | RESTING BP | RESTING HR | 60 MIN AFTER PLACEBO BP | 60 MIN AFTER PLACEBO HR |
+|--------|------------|------------|--------------------------|--------------------------|
+| MEAN   | 118.7/76.4 | 73.8       | 118.7/76.4               | 73.8                     |
+| SD     | 5.59/3.93  | 2.97       | 5.59/3.93                | 2.97                     |
+
+

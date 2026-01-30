@@ -1,48 +1,54 @@
 sortable_ui <- function(id, dictionary) {
   ns <- NS(id)
   tagList(
-    
+  div(
+    class = "bucket-source-wrap",
     bucket_list(
-        header = "Drag each statement into the correct section",
-        group_name = "bucket_list_group",
-        #orientation = "horizontal",
+      header = NULL,
+      group_name = "bucket_list_group",
+      css_id = ns("bucket_list_source"),
+      add_rank_list(
+        text = "Drag from here",
+        labels = dictionary,
+        input_id = ns("rank_source"),
+        orientation = "horizontal"
+      )
+    )
+  ),
 
-        add_rank_list(
-          text = "Drag from here",
-          labels = dictionary,
-          input_id = ns("rank_source"),
-          orientation = "vertical"
-        ),
-
-        add_rank_list(
-          text = "Intro",
-          labels = NULL,
-          input_id = ns("rank_intro"),
-          orientation = "horizontal"
-          
-        ),
-
-        add_rank_list(
-          text = "Methods",
-          labels = NULL,
-          input_id = ns("rank_methods"),
-          orientation = "horizontal"
-        ),
-
-        add_rank_list(
-          text = "Results",
-          labels = NULL,
-          input_id = ns("rank_results"),
-          orientation = "horizontal"
-        ),
-
-        add_rank_list(
-          text = "Discussion",
-          labels = NULL,
-          input_id = ns("rank_discussion"),
-          orientation = "horizontal"
-        )
+  div(
+    class = "bucket-targets-wrap",
+    bucket_list(
+      header = NULL,
+      group_name = "bucket_list_group",
+      css_id = ns("bucket_list_targets"),
+      add_rank_list(
+        text = "Intro",
+        labels = NULL,
+        input_id = ns("rank_intro"),
+        orientation = "vertical"
       ),
+      add_rank_list(
+        text = "Methods",
+        labels = NULL,
+        input_id = ns("rank_methods"),
+        orientation = "vertical"
+      ),
+      add_rank_list(
+        text = "Results",
+        labels = NULL,
+        input_id = ns("rank_results"),
+        orientation = "vertical"
+      ),
+      add_rank_list(
+        text = "Discussion",
+        labels = NULL,
+        input_id = ns("rank_discussion"),
+        orientation = "vertical"
+      )
+    )
+  ),
+  
     actionButton(ns("done_sorting"), 
     "Done Sorting",
     class = "btn btn-primary lecturi-checklist__submit"),

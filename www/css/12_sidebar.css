@@ -69,6 +69,41 @@
     color: var(--ink);
 }
 
+/*  text area input in notepad */
+
+.sb-notepad .form-group {
+    margin: 0;
+}
+
+.sb-notepad textarea.form-control {
+    width: 100%;
+    min-height: 120px;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+
+    padding: 6px 6px 6px 0;
+    margin: 0;
+
+    resize: vertical;
+
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 26px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.sb-notepad textarea.form-control:focus {
+    background: transparent;
+    box-shadow: none;
+    outline: none;
+}
+
+
 .toc-title {
     display: block;
     font-family: "Libre Baskerville", serif;
@@ -82,35 +117,6 @@
 
     color: var(--ink);
 }
-
-/* .sidebar .sidebar-content> :first-child:not(ul):not(.row),
-.bslib-sidebar .bslib-sidebar-content> :first-child:not(ul):not(.row) {
-    display: block;
-    font-family: "Libre Baskerville", serif !important;
-    font-size: 1.35rem !important;
-    font-weight: 800 !important;
-    line-height: 1.2 !important;
-    margin: 0 0 12px 0 !important;
-    padding: 0 0 6px 0 !important;
-    color: var(--ink) !important;
-    border-bottom: 2px solid rgba(47, 59, 0, 0.15);
-}
-
-.sidebar .bslib-sidebar-header,
-.sidebar .sidebar-header,
-.bslib-sidebar .bslib-sidebar-header,
-.bslib-sidebar .sidebar-header {
-    font-family: "Libre Baskerville", serif !important;
-    font-size: 1.35rem !important;
-    font-weight: 800 !important;
-    line-height: 1.2 !important;
-
-    margin: 0 0 12px 0 !important;
-    padding: 0 0 6px 0 !important;
-
-    color: var(--ink) !important;
-    border-bottom: 2px solid rgba(47, 59, 0, 0.15);
-} */
 
 .sidebar :is(ul.nav, ul.nav-pills, ul.bslib-navs-pills) {
     display: flex !important;
@@ -217,4 +223,32 @@
     align-items: center !important;
 
     color: var(--sidebar-ink) !important;
+}
+
+/* emoji picker */
+
+.sb-emoji-picker {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.sb-emoji-btn {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    padding: 6px 10px;
+    cursor: pointer;
+    line-height: 1;
+    font-size: 18px;
+}
+
+.sb-emoji-btn:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.sb-emoji-btn:active {
+    transform: translateY(1px);
 }

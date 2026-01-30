@@ -69,13 +69,13 @@ practice_module_ui <- function(id) {
               ),
               value = "practice5"
             ),
-            bslib::nav_panel(
-              title = tagList(
-                bs_icon("pencil-square"),
-                tags$span("Your Turn", style = "margin-left: 0.5rem;")
-              ),
-              value = "practice6"
-            )
+            # bslib::nav_panel(
+            #   title = tagList(
+            #     bs_icon("pencil-square"),
+            #     tags$span("Your Turn", style = "margin-left: 0.5rem;")
+            #   ),
+            #   value = "practice6"
+            # )
 
 
             )
@@ -104,8 +104,8 @@ practice_module_server <- function(id, parent_session, nav_order_list, process_m
       practice2 = "Practice 2",
       practice3 = "Practice 3",
       practice4 = "Practice 4",
-      practice5 = "Practice 5",
-      practice6 = "Practice 6"
+      practice5 = "Practice 5"
+      #practice6 = "Practice 6"
     )
 
     current_key <- reactive({
@@ -125,7 +125,7 @@ practice_module_server <- function(id, parent_session, nav_order_list, process_m
         practice3 = practice_build_a_paper_module_ui(ns("build_a_paper_module"), dictionary = dictionary),
         practice4 = practice_what_does_not_belong_module_ui(ns("what_does_not_belong_module")),
         practice5 = practice_green_red_flag_module_ui(ns("green_red_flag_module")),
-        practice6 = practice_your_turn_module_ui(ns("your_turn_module"))
+        #practice6 = practice_your_turn_module_ui(ns("your_turn_module"))
       )
     })
 
@@ -136,7 +136,7 @@ practice_module_server <- function(id, parent_session, nav_order_list, process_m
       if (identical(key, "practice3")) practice_build_a_paper_module_server("build_a_paper_module")
       if (identical(key, "practice4")) practice_what_does_not_belong_module_server("what_does_not_belong_module", process_rmd_fragment = process_rmd_fragment, process_markdown = process_markdown)
       if (identical(key, "practice5")) practice_green_red_flag_module_server("green_red_flag_module", dictionary_correct = flag_dictionary_correct)
-      if (identical(key, "practice6")) practice_your_turn_module_server("your_turn_module")
+      #if (identical(key, "practice6")) practice_your_turn_module_server("your_turn_module")
     })
 
     nav_buttons_server(
