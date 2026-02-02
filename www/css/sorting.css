@@ -21,48 +21,81 @@
     --source-list-height: 220px;
 }
 
-.bucket-source-wrap {
-    max-width: var(--source-max);
+.bucket-source-solo {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.bucket-source-solo .bucket-source-wrap,
+.bucket-source-solo .bucket-targets-wrap {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.bucket-source-solo .bucket-source-wrap {
+    max-width: min(var(--source-max), 100%);
     margin: 0 auto;
 }
 
-.bucket-source-wrap .bucket-list {
-    display: block;
+.bucket-source-solo .bucket-source-wrap .bucket-list,
+.bucket-source-solo .bucket-targets-wrap .bucket-list {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     padding: 12px;
 }
 
-.bucket-targets-wrap .bucket-list {
+.bucket-source-solo .bucket-source-wrap .bucket-list {
+    display: block;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+.bucket-source-solo .bucket-targets-wrap .bucket-list {
     display: flex;
     flex-wrap: wrap;
     gap: var(--gap);
-    padding: 12px;
     align-items: flex-start;
 }
 
-.bucket-source-wrap .bucket,
-.bucket-targets-wrap .bucket {
+.bucket-source-solo .bucket-source-wrap .bucket,
+.bucket-source-solo .bucket-targets-wrap .bucket {
     background: linear-gradient(180deg, #ffffff, var(--paper)) !important;
     border: 1px solid var(--border) !important;
     border-radius: var(--r-xl) !important;
     padding: 18px !important;
     box-shadow: var(--shadow-bucket) !important;
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
 }
 
-.bucket-targets-wrap .bucket {
+.bucket-source-solo .bucket-source-wrap .bucket {
+    width: 100%;
+    overflow: hidden;
+}
+
+.bucket-source-solo .bucket-targets-wrap .bucket {
     width: auto;
     flex: 1 1 var(--col-min);
     min-width: var(--col-min);
     transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
 }
 
-.bucket-targets-wrap .bucket:hover {
+.bucket-source-solo .bucket-targets-wrap .bucket:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-bucket-hover) !important;
     border-color: rgba(86, 122, 32, 0.28) !important;
 }
 
-.bucket-source-wrap .rank-list-title,
-.bucket-targets-wrap .rank-list-title {
+.bucket-source-solo .bucket-source-wrap .rank-list-title,
+.bucket-source-solo .bucket-targets-wrap .rank-list-title {
     font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-weight: 750;
     font-size: 1rem;
@@ -71,39 +104,56 @@
     letter-spacing: 0.2px;
 }
 
-.bucket-source-wrap .rank-list,
-.bucket-targets-wrap .rank-list {
+.bucket-source-solo .bucket-source-wrap .rank-list,
+.bucket-source-solo .bucket-targets-wrap .rank-list {
     padding: 14px;
     border-radius: var(--r-lg);
     background: var(--panel) !important;
     border: 1px dashed var(--border-strong) !important;
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
 }
 
-.bucket-source-wrap .rank-list {
+.bucket-source-solo .bucket-source-wrap .rank-list {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
     height: var(--source-list-height);
     min-height: var(--source-list-height);
+
     display: flex;
     flex-wrap: nowrap;
     gap: 12px;
+    align-items: center;
+
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
+
     padding-bottom: 12px;
 }
 
-.bucket-source-wrap .rank-list-item {
-    margin-bottom: 0;
-    flex: 0 0 auto;
+.bucket-source-solo .bucket-source-wrap .rank-list-item {
+    margin-bottom: 0 !important;
+    flex: 0 0 240px;
+    width: 240px !important;
+    min-width: 240px !important;
+    max-width: 240px !important;
+    height: auto !important;
+    white-space: normal;
+    box-sizing: border-box;
 }
 
 .rank-list-item {
     background: #ffffff !important;
     border: 1px solid var(--border-strong) !important;
     border-radius: 18px !important;
-    padding: 12px 14px;
+    padding: 10px 12px !important;
     margin-bottom: 12px;
-    font-size: 0.95rem;
-    line-height: 1.35;
+    font-size: 0.92rem !important;
+    line-height: 1.28 !important;
     color: var(--ink) !important;
     cursor: grab;
     box-shadow: var(--shadow-card);
@@ -136,7 +186,7 @@
     padding: 34px 0;
 }
 
-.bucket-source-wrap .rank-list:empty::after {
+.bucket-source-solo .bucket-source-wrap .rank-list:empty::after {
     content: "";
     padding: 0;
 }
@@ -147,30 +197,26 @@
     box-shadow: none !important;
 }
 
+.bucket-source-solo .sortable-ghost,
+.bucket-source-solo .sortable-drag {
+    max-width: 240px;
+}
+
 @media (max-width: 768px) {
-    .bucket-targets-wrap .bucket {
+    .bucket-source-solo .bucket-targets-wrap .bucket {
         flex: 1 1 100%;
         min-width: 100%;
     }
-}
 
-.bucket-source-wrap .rank-list {
-    height: auto !important;
-    min-height: 0 !important;
-    align-items: flex-start;
-}
+    .bucket-source-solo .bucket-source-wrap .rank-list-item {
+        flex: 0 0 220px;
+        width: 220px !important;
+        min-width: 220px !important;
+        max-width: 220px !important;
+    }
 
-.bucket-source-wrap .rank-list-item {
-    width: 240px !important;
-    min-width: 240px !important;
-    max-width: 240px !important;
-    height: auto !important;
-    margin-bottom: 0 !important;
-    white-space: normal;
-}
-
-.rank-list-item {
-    padding: 10px 12px !important;
-    font-size: 0.92rem !important;
-    line-height: 1.28 !important;
+    .bucket-source-solo .sortable-ghost,
+    .bucket-source-solo .sortable-drag {
+        max-width: 220px;
+    }
 }

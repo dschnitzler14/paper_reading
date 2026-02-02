@@ -34,15 +34,17 @@ what_is_a_paper_module_ui <- function(id) {
             bslib::navset_pill_list(
               id = ns("toc"),
               well = FALSE,
+              fluid = TRUE,
               bslib::nav_panel("So, what actually is a Paper?", value = "box1"),
               bslib::nav_panel("If it's in a Paper it must be true!", value = "box2"),
               bslib::nav_panel("How does Scientific Publishing Work?", value = "box3"),
               bslib::nav_panel("History of Publishing", value = "box4"),
               bslib::nav_panel("Different Types of Publication", value = "box5"),
               bslib::nav_panel("Problems with Scientific Publishing", value = "box6"),
-              bslib::nav_panel("What is Open Science?", value = "box7")
+              bslib::nav_panel("What is Open Science?", value = "box7"),
+              bslib::nav_panel("Good ≠ Perfect", value = "box8")
               
-            )
+            ),
           ),
 
           tags$div(
@@ -71,6 +73,7 @@ what_is_a_paper_module_server <- function(id, parent_session, nav_order_list, pr
     output$what_is_a_paper_box5 <- renderUI(process_markdown("what_is_a_paper/what_is_a_paper5.md"))
     output$what_is_a_paper_box6 <- renderUI(process_markdown("what_is_a_paper/what_is_a_paper6.md"))
     output$what_is_a_paper_box7 <- renderUI(process_markdown("what_is_a_paper/what_is_a_paper7.md"))
+    output$what_is_a_paper_box8 <- renderUI(process_markdown("what_is_a_paper/what_is_a_paper8.md"))
 
 
     titles <- c(
@@ -80,7 +83,8 @@ what_is_a_paper_module_server <- function(id, parent_session, nav_order_list, pr
       box4 = "History of Publishing",
       box5 = "Different Types of Publication",
       box6 = "Problems with Scientific Publishing",
-      box7 = "What is Open Science?"
+      box7 = "What is Open Science?",
+      box8 = "Good ≠ Perfect"
     )
 
     current_key <- reactive({
@@ -101,7 +105,8 @@ what_is_a_paper_module_server <- function(id, parent_session, nav_order_list, pr
         box4 = uiOutput(ns("what_is_a_paper_box4")),
         box5 = uiOutput(ns("what_is_a_paper_box5")),
         box6 = uiOutput(ns("what_is_a_paper_box6")),
-        box7 = uiOutput(ns("what_is_a_paper_box7"))
+        box7 = uiOutput(ns("what_is_a_paper_box7")),
+        box8 = uiOutput(ns("what_is_a_paper_box8"))
       )
     })
 

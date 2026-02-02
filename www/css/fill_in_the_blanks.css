@@ -1,22 +1,25 @@
+/* 
 .fill-blanks-line {
-    display: flex !important;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 6px;
-    line-height: 1.8;
+    line-height: 1.9;
+    font-size: 1.02em;
+}
+
+.fill-blanks-line span {
+    display: inline;
 }
 
 .fill-blanks-line .blank {
-    display: inline-flex;
-    align-items: baseline;
+    display: inline-block;
+    vertical-align: baseline;
+    margin: 0 6px;
 }
 
 .fill-blanks-line .blank>.shiny-input-container,
-.fill-blanks-line .blank>.form-group,
-.fill-blanks-line .blank>div {
-    display: inline-flex !important;
-    align-items: baseline;
+.fill-blanks-line .blank>.form-group {
+    display: inline-block !important;
+    vertical-align: baseline;
     margin: 0 !important;
+    width: auto !important;
 }
 
 .fill-blanks-line .blank label,
@@ -24,26 +27,192 @@
     display: none !important;
 }
 
+.fill-blanks-line .blank select.form-control,
 .fill-blanks-line .blank select.form-select,
-.fill-blanks-line .blank select.form-control {
+.fill-blanks-line .blank select {
     width: auto !important;
-    min-width: 120px;
-    border: none !important;
-    border-bottom: 2px solid currentColor !important;
-    border-radius: 0 !important;
-    padding: 0 8px !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    height: auto !important;
-    line-height: 1.6 !important;
+    min-width: 160px;
+
+    height: 36px;
+    padding: 6px 34px 6px 12px !important;
+
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(6px);
+
+    font-size: 0.95em;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease, background 120ms ease;
 }
 
-.fill-blanks-line .blank select.form-select:focus,
-.fill-blanks-line .blank select.form-control:focus {
-    box-shadow: none !important;
+.fill-blanks-line .blank select:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+    border-color: rgba(0, 0, 0, 0.18);
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.fill-blanks-line .blank select:focus {
     outline: none !important;
+    box-shadow: 0 0 0 4px rgba(80, 140, 255, 0.22), 0 10px 22px rgba(0, 0, 0, 0.10);
+    border-color: rgba(80, 140, 255, 0.55);
+    transform: translateY(-1px);
 }
 
 .fill-blanks-output {
-    margin-top: 12px;
+    margin-top: 16px;
+    padding: 14px 14px;
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+.fill-blanks-output .shiny-text-output {
+    font-size: 0.98em;
+    line-height: 1.65;
+}
+
+.fill-blanks-output .shiny-text-output:empty::before {
+    content: "Your generated summary will appear here…";
+    opacity: 0.65;
+}
+
+.fill-blanks-output {
+    position: relative;
+}
+
+.fill-blanks-output::before {
+    content: "Your summary";
+    display: inline-block;
+    font-size: 0.78em;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin-bottom: 8px;
+} */
+
+.fill-blanks .fill-blanks-line {
+    line-height: 1.9;
+    font-size: 1.02em;
+}
+
+.fill-blanks .fill-blanks-line span {
+    display: inline;
+}
+
+.fill-blanks .fill-blanks-line .blank {
+    display: inline-block;
+    vertical-align: baseline;
+    margin: 0 6px;
+}
+
+.fill-blanks .fill-blanks-line .blank .shiny-input-container,
+.fill-blanks .fill-blanks-line .blank .form-group {
+    display: inline-block !important;
+    vertical-align: baseline;
+    margin: 0 !important;
+    width: auto !important;
+}
+
+.fill-blanks .fill-blanks-line .blank label,
+.fill-blanks .fill-blanks-line .blank .control-label {
+    display: none !important;
+}
+
+.fill-blanks .fill-blanks-line .blank .shiny-input-container {
+    position: relative;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.70) !important;
+    border: 1px solid rgba(0, 0, 0, 0.10) !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08) !important;
+    transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+}
+
+.fill-blanks .fill-blanks-line .blank .shiny-input-container:hover {
+    transform: translateY(-1px);
+    border-color: rgba(0, 0, 0, 0.18) !important;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+.fill-blanks .fill-blanks-line .blank .shiny-input-container::after {
+    content: "▾";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-52%);
+    font-size: 0.95em;
+    opacity: 0.60;
+    pointer-events: none;
+}
+
+.fill-blanks .fill-blanks-line .blank .shiny-input-container select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    height: 36px !important;
+    padding: 6px 34px 6px 14px !important;
+    margin: 0 !important;
+
+    width: auto !important;
+    min-width: 150px !important;
+
+    font-size: 0.95em !important;
+    font-weight: 650 !important;
+    letter-spacing: 0.1px !important;
+    line-height: 1.2 !important;
+
+    color: inherit !important;
+}
+
+.fill-blanks .fill-blanks-line .blank .shiny-input-container select:focus {
+    outline: none !important;
+}
+
+.fill-blanks .fill-blanks-line .blank .shiny-input-container:focus-within {
+    border-color: rgba(80, 140, 255, 0.55) !important;
+    box-shadow: 0 0 0 4px rgba(80, 140, 255, 0.18), 0 16px 34px rgba(0, 0, 0, 0.12) !important;
+}
+
+.fill-blanks .fill-blanks-output {
+    margin-top: 16px;
+    padding: 14px 14px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.50);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+.fill-blanks .fill-blanks-output {
+    position: relative;
+}
+
+.fill-blanks .fill-blanks-output::before {
+    content: "Your summary";
+    display: inline-block;
+    font-size: 0.78em;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin-bottom: 8px;
+}
+
+.fill-blanks .fill-blanks-output .shiny-text-output {
+    font-size: 0.98em;
+    line-height: 1.65;
 }

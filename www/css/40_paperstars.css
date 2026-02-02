@@ -380,3 +380,89 @@
     transform: translateY(0);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+.overall-stars-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px;
+    padding-top: 0%;
+    border-radius: 999px;
+
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+
+    width: fit-content;
+    margin: auto;
+}
+
+.reflection-columns>.bslib-grid {
+    align-items: flex-start;
+}
+
+.paperstars-accordion {
+    --bs-accordion-bg: rgba(255, 255, 255, 0.78);
+    --bs-accordion-border-color: rgba(0, 0, 0, 0.10);
+    --bs-accordion-border-radius: 14px;
+    --bs-accordion-btn-focus-box-shadow: none;
+}
+
+.paperstars-accordion .accordion-item {
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    border-radius: 14px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.paperstars-accordion .accordion-button {
+    background: transparent;
+    font-family: "Libre Baskerville", serif;
+    color: var(--ink);
+    padding: 12px;
+}
+
+.paperstars-accordion .accordion-button:not(.collapsed) {
+    background: transparent;
+    color: var(--ink);
+}
+
+.paperstars-accordion .accordion-button::after {
+    opacity: 0.6;
+}
+
+.paperstars-accordion .accordion-body {
+    padding: 12px;
+}
+
+
+.paperstars-accordion.paperstars-rating {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.paperstars-accordion.paperstars-rating * {
+    min-width: 0;
+}
+
+.paperstars-accordion {
+    width: 100%;
+    max-width: 100%;
+}
+
+.paperstars-accordion .accordion-item {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.paperstars-accordion .accordion-header,
+.paperstars-accordion .accordion-button,
+.paperstars-accordion .accordion-body {
+    margin-left: 0;
+    margin-right: 0;
+}
+

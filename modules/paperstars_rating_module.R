@@ -1,24 +1,58 @@
+# paperstars_rating_ui <- function(
+#   id,
+#   label,
+#   title = "Rating",
+#   choiceNames,
+#   choiceValues = c("1", "0.5", "0"),
+#   selected = character(0)
+# ) {
+#   ns <- NS(id)
+
+#   div(
+#     class = "sb-white",
+#     tags$h4(title),
+#     class = "paperstars-rating",
+#     radioGroupButtons(
+#       inputId = ns("rating"),
+#       label = label,
+#       direction = "vertical",
+#       justified = TRUE,
+#       size = "sm",
+#       individual = TRUE,
+#       selected = selected,
+#       choiceNames = choiceNames,
+#       choiceValues = choiceValues
+#     )
+#   )
+# }
+
 paperstars_rating_ui <- function(
   id,
   label,
+  title = "Rating",
   choiceNames,
   choiceValues = c("1", "0.5", "0"),
   selected = character(0)
 ) {
   ns <- NS(id)
 
-  div(
-    class = "paperstars-rating",
-    radioGroupButtons(
-      inputId = ns("rating"),
-      label = label,
-      direction = "vertical",
-      justified = TRUE,
-      size = "sm",
-      individual = TRUE,
-      selected = selected,
-      choiceNames = choiceNames,
-      choiceValues = choiceValues
+  bslib::accordion(
+    id = ns("acc"),
+    class = "paperstars-accordion paperstars-rating",
+    bslib::accordion_panel(
+      title = tags$h4(title),
+      value = "panel",
+      radioGroupButtons(
+        inputId = ns("rating"),
+        label = label,
+        direction = "vertical",
+        justified = TRUE,
+        size = "sm",
+        individual = TRUE,
+        selected = selected,
+        choiceNames = choiceNames,
+        choiceValues = choiceValues
+      )
     )
   )
 }
@@ -30,6 +64,24 @@ paperstars_rating_server <- function(
   choiceValues = c("1", "0.5", "0")
 ) {
   moduleServer(id, function(input, output, session) {
+
+     observeEvent(input$rating, {
+      if (!is.null(input$rating) && nzchar(input$rating)) {
+        bslib::accordion_panel_close(
+          id = "acc",
+          values = "panel",
+          session = session
+        )
+      }
+    }, ignoreInit = TRUE)
+
+    choice_value <- reactive({
+      input$rating
+    })
+
+    choice_value <- reactive({
+      input$rating
+    })
 
     choice_value <- reactive({
       input$rating

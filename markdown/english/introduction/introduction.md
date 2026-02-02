@@ -1,10 +1,14 @@
 ## Welcome: How to Read a Scientific Paper
 
-Reading scientific papers can feel overwhelming, especially if no one has ever explained how you’re supposed to read them.
+Are you feeling overwhelmed with reading papers? Are you wondering where to even start?
+
+Well, reading primary scientific literature, in other words "papers", can feel like a lot, especially if no one has ever explained how you’re supposed to read them.
 
 This app is here to change that.
 
 Instead of throwing a full paper at you and hoping for the best, this app breaks the process down into small, manageable steps and shows you what to focus on at each stage.
+
+Work through this app to learn how to read a science paper!
 
 ---
 

@@ -2,6 +2,8 @@ sortable_ui <- function(id, dictionary) {
   ns <- NS(id)
   tagList(
   div(
+  class = "bucket-source-solo",
+  div(
     class = "bucket-source-wrap",
     bucket_list(
       header = NULL,
@@ -14,7 +16,8 @@ sortable_ui <- function(id, dictionary) {
         orientation = "horizontal"
       )
     )
-  ),
+  )
+),
 
   div(
     class = "bucket-targets-wrap",

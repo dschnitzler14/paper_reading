@@ -17,12 +17,12 @@ strategies_module_ui <- function(id) {
             ),
             
             layout_sidebar(
-              fillable = TRUE,
-              fill = TRUE,
+              fillable = FALSE,
+              fill = FALSE,
             sidebar = sidebar(
               title = tags$span("How To Guide", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
+              width = "30%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
@@ -44,28 +44,29 @@ strategies_module_ui <- function(id) {
             ),
 
             layout_sidebar(
-              fillable = TRUE,
-              fill = TRUE,
+              fillable = FALSE,
+              fill = FALSE,
             sidebar = sidebar(
               title = tags$span("Title and Abstract", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
+              width = "30%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
               gap = "1px",
-                div(
-                  class = "sb-white",
-                  tags$h4("Title"),
+                #div(
+                  # class = "sb-white",
+                  # tags$h4("Title"),
                   paperstars_rating_ui(
                       id = ns("title_rating"),
                       label = "What did you think of the title?",
+                      title = "Title",
                       choiceNames = title_choices$names,
                       choiceValues = title_choices$values,
                       selected = character(0)
-                    )
+                    ),
                   
-                ),
+                #),
               ),
               card(
                 class = "paperstars-instructions-card",
@@ -76,18 +77,22 @@ strategies_module_ui <- function(id) {
                   )
                 )
               ),
-              card(
-                card_header("Title and Abstract"),
-                card_body(
-                  div(
-                      class = "strategies-main",
-                      div(
-                        class = "paper-box",
-                        uiOutput(ns("strategies_title_abstract"))
-                      )
-                    )
-                )
-              )
+              div(
+                  class = "paper-box",
+                  uiOutput(ns("strategies_title_abstract"))
+                ),
+              # card(
+              #   card_header("Title and Abstract"),
+              #   card_body(
+              #     div(
+              #         class = "strategies-main",
+              #         div(
+              #           class = "paper-box",
+              #           uiOutput(ns("strategies_title_abstract"))
+              #         )
+              #       )
+              #   )
+              # )
             )
           ),
           nav_panel(
@@ -96,12 +101,12 @@ strategies_module_ui <- function(id) {
               " Introduction"
             ),
             layout_sidebar(
-              fillable = TRUE,
-              fill = TRUE,
+              fillable = FALSE,
+              fill = FALSE,
             sidebar = sidebar(
               title = tags$span("Introduction", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
+              width = "30%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
@@ -132,18 +137,22 @@ strategies_module_ui <- function(id) {
                   )
                 )
               ),
-              card(
-                card_header("Introduction"),
-                card_body(
-                  div(
-                      class = "strategies-main",
-                      div(
-                        class = "paper-box",
-                        uiOutput(ns("strategies_introduction"))
-                      )
-                    )
-                )
-              )
+              div(
+                class = "paper-box",
+                uiOutput(ns("strategies_introduction"))
+              ),
+              # card(
+              #   card_header("Introduction"),
+              #   card_body(
+              #     div(
+              #         class = "strategies-main",
+              #         div(
+              #           class = "paper-box",
+              #           uiOutput(ns("strategies_introduction"))
+              #         )
+              #       )
+              #   )
+              # )
             )
           ),
           nav_panel(
@@ -153,16 +162,43 @@ strategies_module_ui <- function(id) {
             ),
             
             layout_sidebar(
-              fillable = TRUE,
-              fill = TRUE,
+              fillable = FALSE,
+              fill = FALSE,
             sidebar = sidebar(
               title = tags$span("Methods", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
+              width = "30%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
               gap = "1px",
+
+              # div(
+              #     class = "sb-white",
+              #     tags$h4("Methods"),
+                  paperstars_rating_ui(
+                    id = ns("methods_rating"),
+                    label = "What did you think of the methods?",
+                    title = "Methods",
+                    choiceNames = methods_choices$names,
+                    choiceValues = methods_choices$values,
+                    selected = character(0)
+                  ),
+                  
+                #),
+                #div(
+                  # class = "sb-white",
+                  # tags$h4("Statistical Analysis"),
+                  paperstars_rating_ui(
+                    id = ns("stats_rating"),
+                    label = "What did you think of the statistical analysis?",
+                    title = "Statistical Analysis",
+                    choiceNames = stats_choices$names,
+                    choiceValues = stats_choices$values,
+                    selected = character(0)
+                  ),
+                  
+                #),
 
                 div(
                   class = "sb-notepad",
@@ -196,30 +232,7 @@ strategies_module_ui <- function(id) {
                     uiOutput(ns("strategies_methods16_click")),
                     uiOutput(ns("strategies_methods17_click"))
                 ),
-                div(
-                  class = "sb-white",
-                  tags$h4("Methods"),
-                  paperstars_rating_ui(
-                    id = ns("methods_rating"),
-                    label = "What did you think of the methods?",
-                    choiceNames = methods_choices$names,
-                    choiceValues = methods_choices$values,
-                    selected = character(0)
-                  ),
-                  
-                ),
-                div(
-                  class = "sb-white",
-                  tags$h4("Statistical Analysis"),
-                  paperstars_rating_ui(
-                    id = ns("stats_rating"),
-                    label = "What did you think of the statistical analysis?",
-                    choiceNames = stats_choices$names,
-                    choiceValues = stats_choices$values,
-                    selected = character(0)
-                  ),
-                  
-                ),
+                
               ),
               card(
                 class = "paperstars-instructions-card",
@@ -230,18 +243,22 @@ strategies_module_ui <- function(id) {
                   )
                 )
               ),
-              card(
-                card_header("Methods"),
-                card_body(
-                    div(
-                      class = "strategies-main",
-                      div(
-                        class = "paper-box",
-                        uiOutput(ns("strategies_methods"))
-                      )
-                    )
-                  )
-              )
+              div(
+                class = "paper-box",
+                uiOutput(ns("strategies_methods"))
+              ),
+              # card(
+              #   card_header("Methods"),
+              #   card_body(
+              #       div(
+              #         class = "strategies-main",
+              #         div(
+              #           class = "paper-box",
+              #           uiOutput(ns("strategies_methods"))
+              #         )
+              #       )
+              #     )
+              # )
             )
           ),
           nav_panel(
@@ -251,16 +268,30 @@ strategies_module_ui <- function(id) {
             ),
             
             layout_sidebar(
-              fillable = TRUE,
-              fill = TRUE,
+              fillable = FALSE,
+              fill = FALSE,
             sidebar = sidebar(
               title = tags$span("Results", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
+              width = "30%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
               gap = "1px",
+
+                # div(
+                #   class = "sb-white",
+                #   tags$h4("Data Presentation"),
+                  paperstars_rating_ui(
+                    id = ns("data_presentation_rating"),
+                    label = "What did you think of the Data Presentation?",
+                    title = "Data Presentation",
+                    choiceNames = data_presentation_choices$names,
+                    choiceValues = data_presentation_choices$values,
+                    selected = character(0)
+                  ),
+                  
+                #),
 
                 div(
                   class = "sb-notepad",
@@ -284,18 +315,7 @@ strategies_module_ui <- function(id) {
                   uiOutput(ns("strategies_results5_click")),
                   uiOutput(ns("strategies_results8_click")),
                 ),
-                div(
-                  class = "sb-white",
-                  tags$h4("Data Presentation"),
-                  paperstars_rating_ui(
-                    id = ns("data_presentation_rating"),
-                    label = "What did you think of the Data Presentation?",
-                    choiceNames = data_presentation_choices$names,
-                    choiceValues = data_presentation_choices$values,
-                    selected = character(0)
-                  ),
-                  
-                ),
+                
               ),
               card(
                 class = "paperstars-instructions-card",
@@ -306,18 +326,22 @@ strategies_module_ui <- function(id) {
                   )
                 )
               ),
-              card(
-                card_header("Results"),
-                card_body(
-                  div(
-                      class = "strategies-main",
-                      div(
-                        class = "paper-box",
-                        uiOutput(ns("strategies_results"))
-                      )
-                    )
-                )
+              div(
+                class = "paper-box",
+                uiOutput(ns("strategies_results"))
               )
+              # card(
+              #   card_header("Results"),
+              #   card_body(
+              #     div(
+              #         class = "strategies-main",
+              #         div(
+              #           class = "paper-box",
+              #           uiOutput(ns("strategies_results"))
+              #         )
+              #       )
+              #   )
+              # )
             )
           ),
           nav_panel(
@@ -327,12 +351,12 @@ strategies_module_ui <- function(id) {
             ),
             
             layout_sidebar(
-              fillable = TRUE,
-              fill = TRUE,
+              fillable = FALSE,
+              fill = FALSE,
             sidebar = sidebar(
               title = tags$span("Pause", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
+              width = "30%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
@@ -348,95 +372,129 @@ strategies_module_ui <- function(id) {
                   )
                 )
               ),
-              
-              card(
-                card_header("Introduction"),
-                card_body(
-                  div(
-                      class = "strategies-main",
-                      div(
-                        class = "paper-box",
-                        pause_flashcards_ui(ns("pause_intro"))
-                      )
-                    )
-                )
+              div(
+                class = "paper-box",
+                pause_flashcards_ui(ns("pause_intro"))
               ),
-              card(
-                card_header("Methods"),
-                card_body(
-                  div(
-                      class = "strategies-main",
-                      div(
-                        class = "paper-box",
-                        tags$h3("What questions are they trying to answer?"),
-                        p("Match the questions to the answers"),
-                        matching_game_ui(ns("match1"))
-                      )
-                    )
-                )
+              # card(
+              #   card_header("Introduction"),
+              #   card_body(
+              #     div(
+              #         class = "strategies-main",
+              #         div(
+              #           class = "paper-box",
+              #           pause_flashcards_ui(ns("pause_intro"))
+              #         )
+              #       )
+              #   )
+              # ),
+              div(
+                class = "paper-box",
+                tags$h3("What questions are they trying to answer?"),
+                p("Match the questions to the answers"),
+                matching_game_ui(ns("match1"))
               ),
-              card(
-                card_header("Results"),
-                card_body(
-                  div(
-                      class = "strategies-main",
-                      div(
-                        class = "paper-box",
-                        pause_flashcards_ui(ns("pause_results"))
-                      )
-                    )
-                )
-              ),
+              # card(
+              #   card_header("Methods"),
+              #   card_body(
+              #     div(
+              #         class = "strategies-main",
+              #         div(
+              #           class = "paper-box",
+              #           tags$h3("What questions are they trying to answer?"),
+              #           p("Match the questions to the answers"),
+              #           matching_game_ui(ns("match1"))
+              #         )
+              #       )
+              #   )
+              # ),
+              div(
+              class = "paper-box",
+              pause_flashcards_ui(ns("pause_results"))
+            ),
+              # card(
+              #   card_header("Results"),
+              #   card_body(
+              #     div(
+              #         class = "strategies-main",
+              #         div(
+              #           class = "paper-box",
+              #           pause_flashcards_ui(ns("pause_results"))
+              #         )
+              #       )
+              #   )
+              # ),
               card(
                 card_header("Summary of Findings"),
                 card_body(
-                  # div(
-                  #   class = "strategies-main",
+                  
+                  div(
+                  class = "fill-blanks",
                     div(
-                      class = "fill-blanks",
+                      class = "fill-blanks-line",
 
-                      tags$div(
-                        class = "fill-blanks-line",
-                        tags$span("In this study, the primary outcome was"),
-                        tags$span(
-                          class = "blank",
-                          selectInput(
-                            ns("outcome"),
-                            NULL,
-                            c("anxiety", "memory", "locomotion"),
-                            width = NULL
-                          )
-                        ),
-                        tags$span(", measured using the"),
-                        tags$span(
-                          class = "blank",
-                          selectInput(
-                            ns("assay"),
-                            NULL,
-                            c("EPM", "OFT", "MWM"),
-                            width = NULL
-                          )
-                        ),
-                        tags$span(". The authors report a"),
-                        tags$span(
-                          class = "blank",
-                          selectInput(
-                            ns("direction"),
-                            NULL,
-                            c("significant increase", "significant decrease", "no change"),
-                            width = NULL
-                          )
-                        ),
-                        tags$span("compared with controls.")
+                      span("This study examined how"),
+                      div(
+                        class = "blank",
+                        selectInput(ns("drop1"), NULL, c("social isolation", "environmental enrichment", "physical exercise"), width = NULL, selectize = FALSE)
                       ),
+                      span("influences physical and physiological outcomes using a rat model."),
 
-                      tags$div(
-                        class = "fill-blanks-output",
-                        tags$strong("Your summary: "),
-                        textOutput(ns("sentence_out"))
-                      )
-                    )
-                  #)
+                      span("The authors were motivated by the idea that social isolation acts as a"),
+                      div(
+                        class = "blank",
+                        selectInput(ns("drop2"), NULL, c("chronic stressor", "nutritional deficit", "genetic mutation"), width = NULL, selectize = FALSE)
+                      ),
+                      span(", which may disrupt normal regulation of behaviour, metabolism, and muscle maintenance."),
+
+                      span("To test this, they compared animals experiencing continuous isolation with animals in which isolation was"),
+                      div(
+                        class = "blank",
+                        selectInput(ns("drop3"), NULL, c("intermittently interrupted", "pharmacologically blocked", "permanently intensified"), width = NULL, selectize = FALSE)
+                      ),
+                      span("as a potential intervention."),
+
+                      span("The researchers measured changes in"),
+                      div(
+                        class = "blank",
+                        selectInput(
+                          ns("drop4"),
+                          NULL,
+                          c(
+                            "physiological markers related to stress, appetite, and muscle growth",
+                            "cognitive performance and learning ability",
+                            "immune cell counts and inflammatory markers"
+                          ),
+                          width = NULL, selectize = FALSE
+                        )
+                      ),
+                      span(", including physical activity, body and muscle weight, and hormones."),
+
+                      span("This approach allowed the authors to evaluate whether interruption of isolation could"),
+                      div(
+                        class = "blank",
+                        selectInput(
+                          ns("drop5"),
+                          NULL,
+                          c(
+                            "reduce the negative physical effects",
+                            "completely eliminate stress responses",
+                            "reverse genetic damage"
+                          ),
+                          width = NULL,
+                          selectize = FALSE
+                        )
+                      ),
+                      span("associated with prolonged social isolation.")
+                    ),
+
+                div(
+                  class = "fill-blanks-output",
+                  textOutput(ns("sentence_out"))
+                )
+                )
+
+                  
                 )
               ),
 
@@ -467,16 +525,43 @@ strategies_module_ui <- function(id) {
             ),
             
             layout_sidebar(
-              fillable = TRUE,
-              fill = TRUE,
+              fillable = FALSE,
+              fill = FALSE,
             sidebar = sidebar(
               title = tags$span("Discussion", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
+              width = "30%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
               gap = "1px",
+
+                # div(
+                #   class = "sb-white",
+                #   tags$h4("Discussion"),
+                  paperstars_rating_ui(
+                    id = ns("discussion_rating"),
+                    label = "What did you think of the Discussion?",
+                    title = "Discussion",
+                    choiceNames = discussion_choices$names,
+                    choiceValues = discussion_choices$values,
+                    selected = character(0)
+                  ),
+                  
+                #),
+                # div(
+                #   class = "sb-white",
+                #   tags$h4("Limitations"),
+                  paperstars_rating_ui(
+                    id = ns("limitations_rating"),
+                    label = "What did you think of the Limitations?",
+                    title = "Limitations",
+                    choiceNames = limitations_choices$names,
+                    choiceValues = limitations_choices$values,
+                    selected = character(0)
+                  ),
+
+                #),
 
                 div(
                   class = "sb-notepad",
@@ -503,30 +588,7 @@ strategies_module_ui <- function(id) {
                   uiOutput(ns("strategies_discussion10_click"))
 
                 ),
-                div(
-                  class = "sb-white",
-                  tags$h4("Discussion"),
-                  paperstars_rating_ui(
-                    id = ns("discussion_rating"),
-                    label = "What did you think of the Discussion?",
-                    choiceNames = discussion_choices$names,
-                    choiceValues = discussion_choices$values,
-                    selected = character(0)
-                  ),
-                  
-                ),
-                div(
-                  class = "sb-white",
-                  tags$h4("Limitations"),
-                  paperstars_rating_ui(
-                    id = ns("limitations_rating"),
-                    label = "What did you think of the Limitations?",
-                    choiceNames = limitations_choices$names,
-                    choiceValues = limitations_choices$values,
-                    selected = character(0)
-                  ),
-
-                ),
+                
 
               ),
               card(
@@ -538,18 +600,22 @@ strategies_module_ui <- function(id) {
                   )
                 )
               ),
-              card(
-                card_header("Discussion"),
-                card_body(
-                  div(
-                      class = "strategies-main",
-                      div(
-                        class = "paper-box",
-                        uiOutput(ns("strategies_discussion"))
-                      )
-                    )
-                )
-              )
+              div(
+                class = "paper-box",
+                uiOutput(ns("strategies_discussion"))
+              ),
+              # card(
+              #   card_header("Discussion"),
+              #   card_body(
+              #     div(
+              #         class = "strategies-main",
+              #         div(
+              #           class = "paper-box",
+              #           uiOutput(ns("strategies_discussion"))
+              #         )
+              #       )
+              #   )
+              # )
             )
           ),
           nav_panel(
@@ -559,12 +625,12 @@ strategies_module_ui <- function(id) {
             ),
             
             layout_sidebar(
-              fillable = TRUE,
-              fill = TRUE,
+              fillable = FALSE,
+              fill = FALSE,
             sidebar = sidebar(
               title = tags$span("Understanding", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
+              width = "30%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
@@ -600,11 +666,27 @@ strategies_module_ui <- function(id) {
             sidebar = sidebar(
               title = tags$span("Reflection", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "20%",
+              width = "30%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
               gap = "1px",
+
+              # div(
+              #     class = "sb-white",
+              #     tags$h4("Data Availability"),
+              #     tags$p("This information is often not included in the main text of a paper, so you may need to check the supplementary materials or the journal's website."),
+                  paperstars_rating_ui(
+                    id = ns("data_available_rating"),
+                    label = "For this paper, I've alread checked and the data is not openly available.",
+                    title = "Data Availability",
+                    choiceNames = data_available_choices$names,
+                    choiceValues = data_available_choices$values,
+                    selected = "0"
+                  ),
+                  
+                #),
+
               div(
                   class = "sb-notepad",
                   tags$h4("❓ Open Questions"),
@@ -636,41 +718,41 @@ strategies_module_ui <- function(id) {
                   uiOutput(ns("reflection_discussion4_answer"))
 
                 ),
-                div(
-                  class = "sb-white",
-                  tags$h4("Data Availability"),
-                  tags$p("This information is often not included in the main text of a paper, so you may need to check the supplementary materials or the journal's website."),
-                  paperstars_rating_ui(
-                    id = ns("data_available_rating"),
-                    label = "For this paper, I've alread checked and the data is not openly available.",
-                    choiceNames = data_available_choices$names,
-                    choiceValues = data_available_choices$values,
-                    selected = "0"
-                  )
-                  
-                ),
+                
               ),
-              card(
-                card_header("Reflection"),
-                card_body(
+              #card(
+                #card_header("Reflection"),
+                #card_body(
+                div(
+                  class = "reflection-columns",
                   layout_columns(
                     col_widths = c(6, 6),
                   card(
                     card_header("My Rating and Review"),
                     card_body(
-                      #uiOutput(ns("paperstars_parameters")),
+                      uiOutput(ns("paperstars_parameters_my_rating")),
+                      div(
+                      class = "overall-stars-pill",
                       uiOutput(ns("my_overall_stars")),
+                      ),
                       uiOutput(ns("my_review_text"))
                     )
                   ),
                 card(
+                  fillable = FALSE,
                   card_header("How would you rate this paper?"),
                   card_body(
-                  uiOutput(ns("paperstars_parameters_rated")),
-                  p("If you missed a section, you can go back and rate it now."),
-                  tags$hr(),
-                  uiOutput(ns("overall_stars")),
+
                   
+                  uiOutput(ns("paperstars_parameters_rated")),
+                  
+                  div(
+                      class = "overall-stars-pill",
+                      uiOutput(ns("overall_stars")),
+                    ),
+
+                    p("If you missed a section, you can go back and rate it now."),
+                    
                     div(
                       class = "paperstars-text-input",
                       textAreaInput(
@@ -692,7 +774,8 @@ strategies_module_ui <- function(id) {
                 )
               )
             )
-            )
+            #)
+            #)
             )
           ),
           nav_panel(
@@ -701,12 +784,12 @@ strategies_module_ui <- function(id) {
             " AI"
           ),
           layout_sidebar(
-              fillable = TRUE,
-              fill = TRUE,
+              fillable = FALSE,
+              fill = FALSE,
             sidebar = sidebar(
               title = tags$span("Popular GenAI Tools", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
+              width = "30%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
@@ -736,12 +819,12 @@ strategies_module_ui <- function(id) {
                 )
 
             ),
-            card(
-              card_header("Can't I just use AI?"),
-              card_body(
-                uiOutput(ns("ai_section_body"))
-              )
-            )
+            # card(
+            #   card_header("Can't I just use AI?"),
+            #   card_body(
+                uiOutput(ns("ai_section_body")),
+            #   )
+            # )
           )
         )
         )
@@ -1261,12 +1344,15 @@ pause_flashcards_server("pause_results", dictionary = pause_results_dictionary) 
 
 
 output$sentence_out <- renderText({
-      paste0(
-        "In this study, the primary outcome was ", input$outcome,
-        ", measured using the ", input$assay,
-        ". The authors report a ", input$direction,
-        " compared with controls."
-      )
+      paste(
+    "This study examined how", input$drop1,
+    "influences physical and physiological outcomes using a rat model.",
+    "The authors were motivated by the idea that social isolation acts as a", input$drop2, ".",
+    "Isolation was", input$drop3, "as a potential intervention.",
+    "The researchers measured", input$drop4, ".",
+    "This tested whether interruption of isolation could", input$drop5,
+    "associated with prolonged social isolation."
+  )
     })
 
 # Discussion_server----
@@ -1529,8 +1615,8 @@ output$overall_stars <- renderUI({
 
     tags$svg(
       class = "paperstars-svg-star",
-      width = "60", #"86",
-      height = "60", #"86",
+      width = "40", #"86",
+      height = "40", #"86",
       viewBox = "0 0 24 24",
       xmlns = "http://www.w3.org/2000/svg",
       tags$path(
@@ -1603,8 +1689,8 @@ output$my_overall_stars <- renderUI({
 
     tags$svg(
       class = "paperstars-svg-star",
-      width = "60", #"86",
-      height = "60", #"86",
+      width = "40", #"86",
+      height = "40", #"86",
       viewBox = "0 0 24 24",
       xmlns = "http://www.w3.org/2000/svg",
       tags$path(
@@ -1649,6 +1735,56 @@ output$my_review_text <- renderUI({
     process_markdown("strategies/overall_rating_text.md")
   )
 })
+
+
+output$paperstars_parameters_my_rating <- renderUI({
+  tags$ul(
+    class = "paperstars-parameter-list",
+
+    tags$li(
+      class = "paperstars-parameter-item rated-good",
+      tags$span(class = "paperstars-parameter-label", "Title & Abstract"),
+      tags$span(class = "paperstars-parameter-value", "Appropriate")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-okay",
+      tags$span(class = "paperstars-parameter-label", "Methods"),
+      tags$span(class = "paperstars-parameter-value", "Questionable")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-bad",
+      tags$span(class = "paperstars-parameter-label", "Statistical Analysis"),
+      tags$span(class = "paperstars-parameter-value", "Major concerns")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-okay",
+      tags$span(class = "paperstars-parameter-label", "Data Presentation"),
+      tags$span(class = "paperstars-parameter-value", "Minor Omissions")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-okay",
+      tags$span(class = "paperstars-parameter-label", "Discussion"),
+      tags$span(class = "paperstars-parameter-value", "Slightly Misleading")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-bad",
+      tags$span(class = "paperstars-parameter-label", "Limitations"),
+      tags$span(class = "paperstars-parameter-value", "Inadequate")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-bad",
+      tags$span(class = "paperstars-parameter-label", "Data Availability"),
+      tags$span(class = "paperstars-parameter-value", "Not Open Access")
+    )
+  )
+})
+
 
 output$paperstars_parameters <- renderUI({
 
