@@ -2,6 +2,117 @@ strategies_module_ui <- function(id) {
   ns <- NS(id)
 
   bslib::page_fluid(
+    div(
+      class = "ps-guide ps-intro",
+
+      bslib::card(
+        class = "ps-guide-hero",
+        bslib::card_body(
+          tags$div(
+            class = "ps-guide-hero-inner",
+            tags$h3("Reading Strategies"),
+            uiOutput(ns("strategies_intro"))
+          )
+        )
+      ),
+    #),
+
+     bslib::layout_columns(
+        col_widths = c(3, 3, 3, 3),
+        class = "ps-step-grid",
+
+        bslib::card(
+          class = "ps-step ps-intro-card",
+          bslib::card_body(
+            tags$div(
+              class = "ps-step-inner",
+              tags$div(
+                class = "ps-step-title",
+                tags$h3("📚 Why are we reading this paper?")
+              ),
+              uiOutput(ns("strategies_intro_why"))
+            )
+          )
+        ),
+
+        bslib::card(
+          class = "ps-step ps-intro-card",
+          bslib::card_body(
+            tags$div(
+              class = "ps-step-inner",
+              tags$div(
+                class = "ps-step-title",
+                tags$h3("🔬 What if you don’t understand all the technical jargon?")
+              ),
+              uiOutput(ns("strategies_intro_jargon"))
+            )
+          )
+        ),
+
+        bslib::card(
+          class = "ps-step ps-intro-card",
+          bslib::card_body(
+            tags$div(
+              class = "ps-step-inner",
+              tags$div(
+                class = "ps-step-title",
+                tags$h3("⏩️ What you can safely ignore (on your first read)")
+              ),
+              uiOutput(ns("strategies_intro_ignore"))
+            )
+          )
+        ),
+
+        bslib::card(
+          class = "ps-step ps-intro-card",
+          bslib::card_body(
+            tags$div(
+              class = "ps-step-inner",
+              tags$div(
+                class = "ps-step-title",
+                tags$h3("⚓️ TL;DR — How to read a paper")
+              ),
+              uiOutput(ns("strategies_intro_tldr"))
+            )
+          )
+        ),
+
+     ),
+
+     bslib::card(
+        class = "ps-step ps-intro-card",
+        bslib::card_body(
+          tags$div(
+            class = "ps-step-inner",
+            tags$div(
+              class = "ps-step-title",
+              tags$h3("🖊️ Using Highlighters")
+            ),
+            uiOutput(ns("strategies_intro_highlighter")),
+
+            tags$div(
+              class = "ps-split-demo",
+              div(
+                class = "sb-notepad",
+                tags$h4("Notes"),
+                uiOutput(ns("strategies_start_demo1_click")),
+                uiOutput(ns("strategies_start_demo2_click")),
+                uiOutput(ns("strategies_start_demo3_click")),
+                uiOutput(ns("strategies_start_demo4_click")),
+                uiOutput(ns("strategies_start_demo5_click"))
+              ),
+              div(
+                class = "paper-box",
+                uiOutput(ns("start_demo_text"))
+              )
+            )
+          )
+        )
+      ),
+
+        ),
+
+
     layout_column_wrap(
     width = 1,
     card(
@@ -10,43 +121,7 @@ strategies_module_ui <- function(id) {
       card_body(
         navset_tab(
           id = ns("reading_tabs"),
-          nav_panel(
-            title = tagList(
-              bs_icon("play-circle"),
-              " Start Here"
-            ),
-            
-            layout_sidebar(
-              fillable = FALSE,
-              fill = FALSE,
-            sidebar = sidebar(
-              title = tags$span("How To Guide", class = "toc-title"),
-              open = list(desktop = "always", mobile = "closed"),
-              width = "30%",
-              bg = "inherit",
-              fg = "inherit",
-              padding = "0px",
-              gap = "1px",
-              
-              div(
-                  class = "sb-notepad",
-                  tags$h4("Notes"),
-                  uiOutput(ns("strategies_start_demo1_click")),
-                  uiOutput(ns("strategies_start_demo2_click")),
-                  uiOutput(ns("strategies_start_demo3_click")),
-                  uiOutput(ns("strategies_start_demo4_click")),
-                  uiOutput(ns("strategies_start_demo5_click")),
-                ),
-
-              ),
-              card(
-                card_header("Advice"),
-                card_body(
-                  uiOutput(ns("strategies_advice_box1"))
-                )
-              )
-            )
-          ),
+          
           nav_panel(
             value = ns("title_abstract_panel"),
             title = tagList(
@@ -160,9 +235,7 @@ strategies_module_ui <- function(id) {
               padding = "0px",
               gap = "1px",
 
-              # div(
-              #     class = "sb-white",
-              #     tags$h4("Methods"),
+              
                   paperstars_rating_ui(
                     id = ns("methods_rating"),
                     label = "What did you think of the methods?",
@@ -172,10 +245,7 @@ strategies_module_ui <- function(id) {
                     selected = character(0)
                   ),
                   
-                #),
-                #div(
-                  # class = "sb-white",
-                  # tags$h4("Statistical Analysis"),
+                
                   paperstars_rating_ui(
                     id = ns("stats_rating"),
                     label = "What did you think of the statistical analysis?",
@@ -185,7 +255,7 @@ strategies_module_ui <- function(id) {
                     selected = character(0)
                   ),
                   
-                #),
+                
 
                 div(
                   class = "sb-notepad",
@@ -255,9 +325,7 @@ strategies_module_ui <- function(id) {
               padding = "0px",
               gap = "1px",
 
-                # div(
-                #   class = "sb-white",
-                #   tags$h4("Data Presentation"),
+              
                   paperstars_rating_ui(
                     id = ns("data_presentation_rating"),
                     label = "What did you think of the Data Presentation?",
@@ -267,7 +335,7 @@ strategies_module_ui <- function(id) {
                     selected = character(0)
                   ),
                   
-                #),
+                
 
                 div(
                   class = "sb-notepad",
@@ -341,54 +409,19 @@ strategies_module_ui <- function(id) {
                 class = "paper-box",
                 pause_flashcards_ui(ns("pause_intro"))
               ),
-              # card(
-              #   card_header("Introduction"),
-              #   card_body(
-              #     div(
-              #         class = "strategies-main",
-              #         div(
-              #           class = "paper-box",
-              #           pause_flashcards_ui(ns("pause_intro"))
-              #         )
-              #       )
-              #   )
-              # ),
+              
               div(
                 class = "paper-box",
                 tags$h3("What questions are they trying to answer?"),
                 p("Match the questions to the answers"),
                 matching_game_ui(ns("match1"))
               ),
-              # card(
-              #   card_header("Methods"),
-              #   card_body(
-              #     div(
-              #         class = "strategies-main",
-              #         div(
-              #           class = "paper-box",
-              #           tags$h3("What questions are they trying to answer?"),
-              #           p("Match the questions to the answers"),
-              #           matching_game_ui(ns("match1"))
-              #         )
-              #       )
-              #   )
-              # ),
+              
               div(
               class = "paper-box",
               pause_flashcards_ui(ns("pause_results"))
             ),
-              # card(
-              #   card_header("Results"),
-              #   card_body(
-              #     div(
-              #         class = "strategies-main",
-              #         div(
-              #           class = "paper-box",
-              #           pause_flashcards_ui(ns("pause_results"))
-              #         )
-              #       )
-              #   )
-              # ),
+              
               card(
                 card_header("Summary of Findings"),
                 card_body(
@@ -501,9 +534,7 @@ strategies_module_ui <- function(id) {
               padding = "0px",
               gap = "1px",
 
-                # div(
-                #   class = "sb-white",
-                #   tags$h4("Discussion"),
+                
                   paperstars_rating_ui(
                     id = ns("discussion_rating"),
                     label = "What did you think of the Discussion?",
@@ -513,10 +544,7 @@ strategies_module_ui <- function(id) {
                     selected = character(0)
                   ),
                   
-                #),
-                # div(
-                #   class = "sb-white",
-                #   tags$h4("Limitations"),
+                
                   paperstars_rating_ui(
                     id = ns("limitations_rating"),
                     label = "What did you think of the Limitations?",
@@ -526,7 +554,7 @@ strategies_module_ui <- function(id) {
                     selected = character(0)
                   ),
 
-                #),
+                
 
                 div(
                   class = "sb-notepad",
@@ -626,10 +654,6 @@ strategies_module_ui <- function(id) {
               padding = "0px",
               gap = "1px",
 
-              # div(
-              #     class = "sb-white",
-              #     tags$h4("Data Availability"),
-              #     tags$p("This information is often not included in the main text of a paper, so you may need to check the supplementary materials or the journal's website."),
                   paperstars_rating_ui(
                     id = ns("data_available_rating"),
                     label = "For this paper, I've alread checked and the data is not openly available.",
@@ -639,7 +663,7 @@ strategies_module_ui <- function(id) {
                     selected = "0"
                   ),
                   
-                #),
+                
 
               div(
                   class = "sb-notepad",
@@ -674,9 +698,7 @@ strategies_module_ui <- function(id) {
                 ),
                 
               ),
-              #card(
-                #card_header("Reflection"),
-                #card_body(
+              
                 div(
                   class = "reflection-columns",
                   layout_columns(
@@ -728,8 +750,6 @@ strategies_module_ui <- function(id) {
                 )
               )
             )
-            #)
-            #)
             )
           ),
           nav_panel(
@@ -798,6 +818,34 @@ strategies_module_server <- function(id, parent_session, nav_order_list, process
   }
 
 
+output$strategies_intro <- renderUI({
+  process_markdown("strategies/strategies_intro_text.md")
+})
+
+output$strategies_intro_why <- renderUI({
+  process_markdown("strategies/strategies_intro_why_text.md")
+})
+
+output$strategies_intro_jargon <- renderUI({
+  process_markdown("strategies/strategies_intro_jargon_text.md")
+})
+
+output$strategies_intro_ignore <- renderUI({
+  process_markdown("strategies/strategies_intro_ignore_text.md")
+})
+
+output$strategies_intro_tldr <- renderUI({
+  process_markdown("strategies/strategies_intro_tldr_text.md")
+})
+
+output$strategies_intro_highlighter <- renderUI({
+  process_markdown("strategies/strategies_intro_highlighter_demo_text.md")
+})
+
+output$start_demo_text <- renderUI({
+  md_ui("english/strategies/strategies_intro_highlighter_demo.Rmd")
+})
+
 
 observeEvent(input$start_demo1, {
   output$strategies_start_demo1_click <- renderUI({
@@ -860,10 +908,6 @@ observeEvent(input$start_demo5, {
   })
 })
 
-
- output$strategies_advice_box1 <- renderUI({
-        process_markdown("strategies/now_what_start.md")
-      })
 
 # Title_and_Abstract_server----
 

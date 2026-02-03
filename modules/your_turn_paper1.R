@@ -23,23 +23,24 @@ your_turn_paper1_ui <- function(id) {
             sidebar = sidebar(
               title = tags$span("Title and Abstract", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
+              width = "30%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
               gap = "1px",
-                div(
-                  class = "sb-white",
-                  tags$h4("Title"),
+                # div(
+                #   class = "sb-white",
+                #   tags$h4("Title"),
                   paperstars_rating_ui(
                       id = ns("title_rating_paper1"),
                       label = "What did you think of the title?",
+                      title = "Title",
                       choiceNames = title_choices$names,
                       choiceValues = title_choices$values,
                       selected = character(0)
-                    )
+                    ),
                   
-                ),
+                #),
                 div(
                   class = "sb-notepad",
                   tags$h4("📝 Notes"),
@@ -75,23 +76,28 @@ your_turn_paper1_ui <- function(id) {
                 card_header("Title and Abstract Instructions"),
                 card_body(
                   div(
-                    
+                    uiOutput(ns("paper1_title_abstract_instructions_text"))
                   )
                 )
               ),
-              card(
-                card_header("Title and Abstract"),
-                card_body(
-                  div(
-                      class = "strategies-main",
-                      div(
-                        class = "paper-box",
-                        highlighter_toolbar_ui(".prose"),
-                        uiOutput(ns("paper1_title_abstract"))
-                      )
-                    )
-                )
-              )
+              div(
+                class = "paper-box",
+                highlighter_toolbar_ui(".prose"),
+                uiOutput(ns("paper1_title_abstract"))
+              ),
+              # card(
+              #   card_header("Title and Abstract"),
+              #   card_body(
+              #     div(
+              #         class = "strategies-main",
+              #         div(
+              #           class = "paper-box",
+              #           highlighter_toolbar_ui(".prose"),
+              #           uiOutput(ns("paper1_title_abstract"))
+              #         )
+              #       )
+              #   )
+              # )
             )
           ),
           nav_panel(
@@ -105,7 +111,7 @@ your_turn_paper1_ui <- function(id) {
             sidebar = sidebar(
               title = tags$span("Introduction", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
+              width = "30%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
@@ -147,23 +153,28 @@ your_turn_paper1_ui <- function(id) {
                 card_header("Introduction Instructions"),
                 card_body(
                   div(
-                    
+                    uiOutput(ns("paper1_introduction_instructions_text"))
                   )
                 )
               ),
-              card(
-                card_header("Introduction"),
-                card_body(
-                  div(
-                      class = "strategies-main",
-                      div(
-                        class = "paper-box",
-                        highlighter_toolbar_ui(".prose"),
-                        uiOutput(ns("paper1_introduction"))
-                      )
-                    )
-                )
-              )
+              div(
+                class = "paper-box",
+                highlighter_toolbar_ui(".prose"),
+                uiOutput(ns("paper1_introduction"))
+              ),
+              # card(
+              #   card_header("Introduction"),
+              #   card_body(
+              #     div(
+              #         class = "strategies-main",
+              #         div(
+              #           class = "paper-box",
+              #           highlighter_toolbar_ui(".prose"),
+              #           uiOutput(ns("paper1_introduction"))
+              #         )
+              #       )
+              #   )
+              # )
             )
           ),
           nav_panel(
@@ -178,37 +189,39 @@ your_turn_paper1_ui <- function(id) {
             sidebar = sidebar(
               title = tags$span("Methods", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
+              width = "30%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
               gap = "1px",
 
                 
-                div(
-                  class = "sb-white",
-                  tags$h4("Methods"),
+                # div(
+                #   class = "sb-white",
+                #   tags$h4("Methods"),
                   paperstars_rating_ui(
                     id = ns("methods_rating_paper1"),
                     label = "What did you think of the methods?",
+                    title = "Methods",
                     choiceNames = methods_choices$names,
                     choiceValues = methods_choices$values,
                     selected = character(0)
                   ),
                   
-                ),
-                div(
-                  class = "sb-white",
-                  tags$h4("Statistical Analysis"),
+                #),
+                # div(
+                #   class = "sb-white",
+                #   tags$h4("Statistical Analysis"),
                   paperstars_rating_ui(
                     id = ns("stats_rating_paper1"),
                     label = "What did you think of the statistical analysis?",
+                    title = "Statistical Analysis",
                     choiceNames = stats_choices$names,
                     choiceValues = stats_choices$values,
                     selected = character(0)
                   ),
                   
-                ),
+                #),
                 div(
                   class = "sb-notepad",
                   tags$h4("📝 Notes"),
@@ -244,21 +257,29 @@ your_turn_paper1_ui <- function(id) {
                 class = "paperstars-instructions-card",
                 card_header("Methods Instructions"),
                 card_body(
+                  div(
+                    uiOutput(ns("paper1_methods_instructions_text"))
+                  )
                 )
               ),
-              card(
-                card_header("Methods"),
-                card_body(
-                    div(
-                      class = "strategies-main",
-                      div(
-                        class = "paper-box",
-                        highlighter_toolbar_ui(".prose"),
-                        uiOutput(ns("paper1_methods"))
-                      )
-                    )
-                  )
-              )
+              div(
+                  class = "paper-box",
+                  highlighter_toolbar_ui(".prose"),
+                  uiOutput(ns("paper1_methods"))
+                ),
+              # card(
+              #   card_header("Methods"),
+              #   card_body(
+              #       div(
+              #         class = "strategies-main",
+              #         div(
+              #           class = "paper-box",
+              #           highlighter_toolbar_ui(".prose"),
+              #           uiOutput(ns("paper1_methods"))
+              #         )
+              #       )
+              #     )
+              # )
             )
           ),
           nav_panel(
@@ -273,25 +294,26 @@ your_turn_paper1_ui <- function(id) {
             sidebar = sidebar(
               title = tags$span("Results", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
+              width = "30%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
               gap = "1px",
 
                 
-                div(
-                  class = "sb-white",
-                  tags$h4("Data Presentation"),
+                # div(
+                #   class = "sb-white",
+                #   tags$h4("Data Presentation"),
                   paperstars_rating_ui(
                     id = ns("data_presentation_rating_paper1"),
                     label = "What did you think of the Data Presentation?",
+                    title = "Data Presentation",
                     choiceNames = data_presentation_choices$names,
                     choiceValues = data_presentation_choices$values,
                     selected = character(0)
                   ),
                   
-                ),
+                #),
 
                 div(
                   class = "sb-notepad",
@@ -330,23 +352,28 @@ your_turn_paper1_ui <- function(id) {
                 card_header("Results Instructions"),
                 card_body(
                   div(
-                    
+                    uiOutput(ns("paper1_results_instructions_text"))
                   )
                 )
               ),
-              card(
-                card_header("Results"),
-                card_body(
-                  div(
-                      class = "strategies-main",
-                      div(
-                        class = "paper-box",
-                        highlighter_toolbar_ui(".prose"),
-                        uiOutput(ns("paper1_results"))
-                      )
-                    )
-                )
-              )
+              div(
+                class = "paper-box",
+                highlighter_toolbar_ui(".prose"),
+                uiOutput(ns("paper1_results"))
+              ),
+              # card(
+              #   card_header("Results"),
+              #   card_body(
+              #     div(
+              #         class = "strategies-main",
+              #         div(
+              #           class = "paper-box",
+              #           highlighter_toolbar_ui(".prose"),
+              #           uiOutput(ns("paper1_results"))
+              #         )
+              #       )
+              #   )
+              # )
             )
           ),
           nav_panel(
@@ -361,7 +388,7 @@ your_turn_paper1_ui <- function(id) {
             sidebar = sidebar(
               title = tags$span("Pause", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
+              width = "30%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
@@ -373,6 +400,7 @@ your_turn_paper1_ui <- function(id) {
                 card_header("Pause"),
                 card_body(
                   div(
+                    uiOutput(ns("paper1_pause_instructions_text"))
                   )
                 )
               ),
@@ -424,36 +452,38 @@ your_turn_paper1_ui <- function(id) {
             sidebar = sidebar(
               title = tags$span("Discussion", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
+              width = "30%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
               gap = "1px",
 
-                div(
-                  class = "sb-white",
-                  tags$h4("Discussion"),
+                # div(
+                #   class = "sb-white",
+                #   tags$h4("Discussion"),
                   paperstars_rating_ui(
                     id = ns("discussion_rating_paper1"),
                     label = "What did you think of the Discussion?",
+                    title = "Discussion",
                     choiceNames = discussion_choices$names,
                     choiceValues = discussion_choices$values,
                     selected = character(0)
                   ),
                   
-                ),
-                div(
-                  class = "sb-white",
-                  tags$h4("Limitations"),
+                #),
+                # div(
+                #   class = "sb-white",
+                #   tags$h4("Limitations"),
                   paperstars_rating_ui(
                     id = ns("limitations_rating_paper1"),
                     label = "What did you think of the Limitations?",
+                    title = "Limitations",
                     choiceNames = limitations_choices$names,
                     choiceValues = limitations_choices$values,
                     selected = character(0)
                   ),
 
-                ),
+                #),
                 div(
                   class = "sb-notepad",
                   tags$h4("📝 Notes"),
@@ -491,23 +521,28 @@ your_turn_paper1_ui <- function(id) {
                 card_header("Discussion Instructions"),
                 card_body(
                   div(
-                    
+                    uiOutput(ns("paper1_discussion_instructions_text"))
                   )
                 )
               ),
-              card(
-                card_header("Discussion"),
-                card_body(
-                  div(
-                      class = "strategies-main",
-                      div(
-                        class = "paper-box",
-                        highlighter_toolbar_ui(".prose"),
-                        uiOutput(ns("paper1_discussion"))
-                      )
-                    )
-                )
-              )
+              div(
+                class = "paper-box",
+                highlighter_toolbar_ui(".prose"),
+                uiOutput(ns("paper1_discussion"))
+              ),
+              # card(
+              #   card_header("Discussion"),
+              #   card_body(
+              #     div(
+              #         class = "strategies-main",
+              #         div(
+              #           class = "paper-box",
+              #           highlighter_toolbar_ui(".prose"),
+              #           uiOutput(ns("paper1_discussion"))
+              #         )
+              #       )
+              #   )
+              # )
             )
           ),
           nav_panel(
@@ -522,7 +557,7 @@ your_turn_paper1_ui <- function(id) {
             sidebar = sidebar(
               title = tags$span("Understanding", class = "toc-title"),
               open = list(desktop = "always", mobile = "closed"),
-              width = "40%",
+              width = "30%",
               bg = "inherit",
               fg = "inherit",
               padding = "0px",
@@ -567,19 +602,20 @@ your_turn_paper1_ui <- function(id) {
                   tags$h4("❓ Open Questions"),
                   
                 ),
-                div(
-                  class = "sb-white",
-                  tags$h4("Data Availability"),
-                  tags$p("This information is often not included in the main text of a paper, so you may need to check the supplementary materials or the journal's website."),
+                # div(
+                #   class = "sb-white",
+                #   tags$h4("Data Availability"),
+                  #tags$p("This information is often not included in the main text of a paper, so you may need to check the supplementary materials or the journal's website."),
                   paperstars_rating_ui(
                     id = ns("data_available_rating_paper1"),
                     label = "For this paper, I've alread checked and the data is not openly available.",
+                    title = "Data Availability",
                     choiceNames = data_available_choices$names,
                     choiceValues = data_available_choices$values,
                     selected = "0"
                   )
                   
-                ),
+                #),
               ),
               card(
                 card_header("Reflection"),
@@ -640,20 +676,45 @@ your_turn_paper1_server <- function(id, process_markdown, process_rmd_fragment) 
     md_ui("english/your_turn/paper1/paper1_title_abstract.Rmd")
   })
 
+  output$paper1_title_abstract_instructions_text <- renderUI({
+    process_markdown("your_turn/paper1/paper1_title_abstract_instructions.md")
+  })
+
   output$paper1_introduction <- renderUI({
     md_ui("english/your_turn/paper1/paper1_intro.Rmd")
+  })
+
+  output$paper1_introduction_instructions_text <- renderUI({
+    process_markdown("your_turn/paper1/paper1_intro_instructions.md")
   })
 
   output$paper1_methods <- renderUI({
     md_ui("english/your_turn/paper1/paper1_methods.Rmd")
   })
 
+  output$paper1_methods_instructions_text <- renderUI({
+    process_markdown("your_turn/paper1/paper1_methods_instructions.md")
+  })
+
   output$paper1_results <- renderUI({
       md_ui("english/your_turn/paper1/paper1_results.Rmd")
     })
   
+  output$paper1_results_instructions_text <- renderUI({
+    process_markdown("your_turn/paper1/paper1_results_instructions.md")
+  })
+
+ output$paper1_pause_instructions_text <- renderUI({
+    process_markdown("your_turn/paper1/paper1_pause_instructions.md")
+  })
+
+
   output$paper1_discussion <- renderUI({
     md_ui("english/your_turn/paper1/paper1_discussion.Rmd")
+  })
+
+  output$paper1_discussion_instructions_text <- renderUI({
+    process_markdown("your_turn/paper1/paper1_discussion_instructions.md")
   })
 
 

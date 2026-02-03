@@ -10,5 +10,5 @@ Why don't you give it a try?
 
 - Yellow warnings are for things that make you pause but aren’t necessarily wrong, such as `r actionLink(ns("start_demo5"), "⚠️ n=6", class = "highlight_orange")`
 
-- Red flags are for serious concerns or potential problems, for example `r actionLink(ns("start_demo6"), "🚩 no correction for multiple comparisons", class = "highlight_red")`
+- Red flags are for serious concerns or potential problems, for example `r actionLink(ns("start_demo6"), "🚩 no correction for multiple comparisons", class = "highlight_pink")`
 

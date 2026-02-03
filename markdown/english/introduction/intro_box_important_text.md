@@ -1,0 +1,3 @@
+- You are not expected to understand everything immediately
+- Getting things wrong is part of learning how to read papers
+- Practice makes perfect!

@@ -1,0 +1,2 @@
+- Start at the first section, do the activity, then move on when you’re ready.  
+- There’s no time limit, and no penalty for guessing.

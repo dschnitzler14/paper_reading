@@ -1,0 +1,2 @@
+- Read short sections of a paper at a time
+- Answer quick questions to check your understanding

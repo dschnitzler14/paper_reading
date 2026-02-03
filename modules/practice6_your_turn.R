@@ -24,11 +24,13 @@ practice_your_turn_module_ui <- function(id) {
           p("Downregulation of cyclic adenosine monophosphate levels in leukocytes of hibernating captive black bears is similar to reported cyclic adenosine monophosphate findings in major depressive disorder"),
           actionButton(ns("Tsiouris_paper"), "Read Tsiouris and Flory (2023)")),
           card(
-          p("Stress‐induced hyperphagia? Characterising the activity of the ghrelin axis in male rats with high anxiety behaviour"),
-          actionButton(ns("Hornsby_paper"), "Read Hornsby et al. (2026)")),
+          p("Coming Soon!"),
+          #actionButton(ns("4_paper"), "Read Hornsby et al. (2026)")
+          ),
           card(
-          p("Paper4"),
-          actionButton(ns("authors_paper"), "Read Authors)")),
+          p("Coming Soon!"),
+          #actionButton(ns("authors_paper"), "Read Authors)")),
+        )
         )
       )
     ),
@@ -43,6 +45,9 @@ practice_your_turn_module_server <- function(id, parent_session, nav_order_list,
 
     ns <- session$ns
 
+output$your_turn_intro_text <- renderUI({
+  process_markdown("your_turn/your_turn_instructions.md")
+})
 
 ##selector
 

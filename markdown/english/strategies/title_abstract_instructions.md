@@ -5,16 +5,18 @@ This also gives a good summary of work done! No need to pass it to generative AI
 Remember to rate this title too (Note: this may be easier to do when you have completed the paper, as you can't really judge yet if the title is appropirate, so do come back here after you have worked through the other sections.)
 
 <div style="
-  background: linear-gradient(180deg, #f8fafc, #eef2f6);
-  border: 1px solid rgba(0,0,0,0.08);
-  padding: 12px 14px;
+  background: linear-gradient(180deg, #f7f9fb, #edf2f6);
+  border: 1px solid rgba(40, 60, 80, 0.18);
+  border-left: 5px solid #8fa7c2;
+  padding: 14px 16px;
   margin: 16px 0;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
 ">
-  <strong>🔍 Section Goal</strong><br>
-  <span style="opacity:0.85;">
-    Determine if this study is relevant to your reading (in this case, let's pretend it is 😜)
-  </span>
+  <strong style="color:#2f3f52;">🔍 Section Goal</strong>
+  <ul style="margin:8px 0 0 18px; color:#2f3f52;">
+    <li>Determine if this study is relevant to your reading (in this case, let's pretend it is 😜)</li>
+  </ul>
 </div>
 
 <div style="

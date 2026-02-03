@@ -1,88 +1,100 @@
+/* .paperstars-instructions-card {
+    background: #f4f7f4 !important;
+
+    border: 2px solid rgba(43, 54, 43, 0.40) !important;
+    border-radius: 20px !important;
+
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.14) !important;
+
+    height: auto !important;
+    flex: 0 0 auto !important;
+    align-self: flex-start !important;
+
+    margin: 16px 0 24px 0 !important;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+}
+
+.paperstars-instructions-card:hover {
+    transform: translateY(-3px) !important;
+
+    box-shadow: 0 20px 52px rgba(0, 0, 0, 0.20) !important;
+    border-color: rgba(43, 54, 43, 0.60) !important;
+}
+
+.paperstars-instructions-card>.card-header {
+    background: transparent !important;
+    border-bottom: none !important;
+
+    color: #1f2b1f !important;
+
+    padding: 18px 22px 10px 22px !important;
+
+    font-weight: 900 !important;
+    font-size: 1.15rem !important;
+}
+
+.paperstars-instructions-card>.card-body {
+    background: transparent !important;
+
+    padding: 8px 22px 22px 22px !important;
+
+    color: #2b362b !important;
+
+    font-size: 1.05rem !important;
+    line-height: 1.65 !important;
+} */
+
 .paperstars-instructions-card {
-    position: relative;
-    border-radius: 18px;
-    overflow: hidden;
+    background: linear-gradient(180deg, #fffef8 0%, #f3f7ee 65%, #eaf2e4 100%) !important;
 
-    border: 2px solid rgba(43, 54, 43, 0.60);
-    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.16);
+    border: 2px solid rgba(43, 54, 43, 0.26) !important;
+    border-radius: 22px !important;
 
-    background: #f6eed4;
-    margin: 14px 0 18px 0;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10) !important;
+
+    height: auto !important;
+    flex: 0 0 auto !important;
+    align-self: flex-start !important;
+
+    margin: 16px 0 24px 0 !important;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
 }
 
-.paperstars-instructions-card::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 12px;
-    background: linear-gradient(180deg,
-            rgba(43, 54, 43, 0.95),
-            rgba(43, 54, 43, 0.55));
-    pointer-events: none;
+.paperstars-instructions-card:hover {
+    transform: translateY(-3px) !important;
+    border-color: rgba(43, 54, 43, 0.42) !important;
+
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.14) !important;
 }
 
-.paperstars-instructions-card .card-header,
-.paperstars-instructions-card .card-body {
-    position: relative;
-    z-index: 1;
+.paperstars-instructions-card>.card-header {
+    background: transparent !important;
+    border-bottom: none !important;
+
+    color: #1f2b1f !important;
+
+    padding: 18px 22px 10px 22px !important;
+
+    font-weight: 900 !important;
+    font-size: 1.15rem !important;
+    letter-spacing: 0.2px !important;
 }
 
-.paperstars-instructions-card .card-header {
-    background: linear-gradient(180deg,
-            rgba(26, 34, 26, 0.98) 0%,
-            rgba(43, 54, 43, 0.96) 100%);
-    color: #fffdf6;
+.paperstars-instructions-card>.card-body {
+    background: transparent !important;
 
-    padding: 14px 18px 14px 26px;
-    font-weight: 900;
-    font-size: 1.12rem;
-    letter-spacing: 0.2px;
+    padding: 8px 22px 22px 22px !important;
 
-    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
-    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.10);
-}
+    color: #2b362b !important;
 
-.paperstars-instructions-card .card-header::before {
-    content: "📌";
-    display: inline-block;
-    margin-right: 10px;
-    transform: translateY(1px);
-}
-
-.paperstars-instructions-card .card-body {
-    padding: 16px 18px 18px 26px;
-    color: #2b362bff;
-
-    background:
-        radial-gradient(rgba(43, 54, 43, 0.05) 1px, transparent 1px);
-    background-size: 24px 24px;
-
-    font-size: 1.05rem;
-    line-height: 1.65;
-}
-
-.paperstars-instructions-card .card-body>*:first-child {
-    margin-top: 0;
-}
-
-.paperstars-instructions-card p:last-child {
-    margin-bottom: 0;
-}
-
-.paperstars-instructions-card ul {
-    margin: 12px 0 0 0;
-    padding-left: 20px;
-}
-
-.paperstars-instructions-card li {
-    margin: 8px 0;
-}
-
-.paperstars-instructions-card strong {
-    font-weight: 900;
-    background: rgba(43, 54, 43, 0.12);
-    padding: 0 5px;
-    border-radius: 6px;
+    font-size: 1.05rem !important;
+    line-height: 1.65 !important;
 }

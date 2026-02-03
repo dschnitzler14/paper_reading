@@ -9,15 +9,17 @@ In the Discussion, the authors place their findings into a wider context. This i
 You’ll also often find alternative interpretations, suggestions for future research, and, importantly, a discussion of the study’s limitations. Remember, no study is ever perfect. Limitations are normal and expected; failing to acknowledge them doesn’t mean the study was flawless, it means the authors may be overstating the strength or impact of their conclusions.
 
 <div style="
-  background: linear-gradient(180deg, #f8fafc, #eef2f6);
-  border: 1px solid rgba(0,0,0,0.08);
-  padding: 12px 14px;
+  background: linear-gradient(180deg, #f7f9fb, #edf2f6);
+  border: 1px solid rgba(40, 60, 80, 0.18);
+  border-left: 5px solid #8fa7c2;
+  padding: 14px 16px;
   margin: 16px 0;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
 ">
-  <strong>🔍 Section Goal</strong>
+  <strong style="color:#2f3f52;">🔍 Section Goal</strong>
 
-  <ul style="margin:8px 0 0 18px; opacity:0.85;">
+  <ul style="margin:8px 0 0 18px; color:#2f3f52;">
     <li>Understand how the authors interpret their results in a wider context</li>
     <li>Identify limitations and consider how they might affect the conclusions</li>
     <li>Watch for over-interpretation or claims that go beyond the data</li>

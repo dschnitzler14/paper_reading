@@ -2,7 +2,20 @@ anatomy_module_ui <- function(id) {
   ns <- NS(id)
 
   bslib::page_fluid(
-    h3("Anatomy of a Paper"),
+    div(
+      class = "ps-guide ps-what-paper",
+
+      bslib::card(
+        class = "ps-guide-hero",
+        bslib::card_body(
+          tags$div(
+            class = "ps-guide-hero-inner",
+            tags$h3("The Anatomy of a Paper"),
+            uiOutput(ns("anatomy_intro"))
+          )
+        )
+      ),
+    ),
 
     bslib::card(
       class = "deck-controls deck-controls-main mb-3",
@@ -60,6 +73,11 @@ anatomy_module_ui <- function(id) {
 
 anatomy_module_server <- function(id, parent_session, nav_order_list, process_markdown) {
   moduleServer(id, function(input, output, session) {
+
+  
+  output$anatomy_intro <- shiny::renderUI({
+    process_markdown("anatomy/anatomy_intro_text.md")
+  })
 
     sections <- list(
       list(key = "title",        label = "Title",         file = "anatomy/title.md",               paper_class = "paper-1"),

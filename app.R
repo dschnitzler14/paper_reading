@@ -29,6 +29,7 @@ ui <- bslib::page_navbar(
   id = "topnav",
   theme = theme,
 
+
 tags$head(
   tags$title("Parsible - Learn to Read a Paper"),
   shinyjs::useShinyjs(),
@@ -64,7 +65,8 @@ tags$head(
   tags$script(src="js/highlight_click_state.js"),
   tags$script(src = "js/highlighter.js"),
   tags$script(src = "js/emoji_picker.js"),
-  tags$script(src = "js/dyslexia-toggle.js"),
+  tags$script(src = "js/card-complete.js"),
+  #tags$script(src = "js/dyslexia-toggle.js"),
   
 
   tags$link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap"),
@@ -109,7 +111,7 @@ tags$head(
   nav_panel(
     title = tagList(
       bs_icon("heart-pulse"),
-      " Anatomy of a Paper"
+      " Anatomy"
     ),
     value = "anatomy",
     anatomy_module_ui("anatomy")
@@ -118,7 +120,7 @@ tags$head(
   nav_panel(
     title = tagList(
       bs_icon("puzzle"),
-      " Reading Strategies"
+      " Strategies"
     ),
     value = "strategies",
     strategies_module_ui("strategies")
@@ -144,7 +146,7 @@ tags$head(
   nav_panel(
     title = tagList(
       bs_icon("search"),
-      " Searching Papers"
+      " Searching"
     ),
     value = "searching",
     searching_module_ui("searching")
@@ -152,12 +154,45 @@ tags$head(
 
   nav_panel(
     title = tagList(
+      bs_icon("collection"),
+      " Citing"
+    ),
+    value = "citing",
+    citing_module_ui("citing")
+  ),
+
+  nav_panel(
+    title = tagList(
       bs_icon("tools"),
-      " Useful Tools"
+      " Tools"
     ),
     value = "tools",
     tools_module_ui("tools")
   ),
+
+  
+
+  nav_item(
+  tags$div(
+    class = "ps-navswitch form-check form-switch",
+    tags$input(
+      id = "dyslexia_font",
+      type = "checkbox",
+      class = "form-check-input",
+      role = "switch"
+    ),
+    tags$label(
+      class = "form-check-label",
+      `for` = "dyslexia_font",
+      tagList(
+        bs_icon("eyeglasses"),
+        tags$span("Dyslexia")
+      )
+    )
+  )
+),
+
+
 
   nav_menu(
     title = tagList(
@@ -172,13 +207,13 @@ tags$head(
   )
 ),
 
-  nav_item(
-    actionLink(
-      "toggle_dyslexia_font",
-      "Toggle Dyslexia-friendly font On/Off",
-      class = "ps-topmenu-link"
-    )
-  )
+  # nav_item(
+  #   actionLink(
+  #     "toggle_dyslexia_font",
+  #     "Toggle Dyslexia-friendly font On/Off",
+  #     class = "ps-topmenu-link"
+  #   )
+  # )
   ),
 
 
@@ -202,6 +237,14 @@ tags$head(
 )
 
 server <- function(input, output, session) {
+
+  observe({
+  if (isTRUE(input$dyslexia_font)) {
+    shinyjs::addClass(selector = "body", class = "dyslexia-font")
+  } else {
+    shinyjs::removeClass(selector = "body", class = "dyslexia-font")
+  }
+})
 
   markdown_path <- reactiveVal("markdown/english/")
 
@@ -282,6 +325,7 @@ output$about_text <- renderUI({
 
   searching_module_server("searching", parent_session = session, nav_order_list = nav_order_list, process_markdown = process_markdown)
   tools_module_server("tools", parent_session = session, nav_order_list = nav_order_list, process_markdown = process_markdown)
+  citing_module_server("citing", parent_session = session, nav_order_list = nav_order_list, process_markdown = process_markdown)
 }
 
 

@@ -1,0 +1,3 @@
+- Skim first to understand the structure and purpose
+- Focus your attention on the results
+- Read the discussion with a critical (but fair) mindset
