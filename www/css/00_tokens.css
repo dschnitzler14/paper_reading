@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:wght@400;700&display=swap');
 
 :root {
-    --paper-bg-0: #EEDDC1;
+    --paper-bg-0: #EDDABF;
     --paper-bg-1: #F2EDD2;
     --accent-green: #4C6B00;
     --accent-green-dark: #3f5a00;
@@ -11,5 +11,5 @@
     --sidebar-bg: #F2EDD2;
     --sidebar-ink: #2b2b2b;
 
-    --app-bg: linear-gradient(180deg, var(--paper-bg-0) 0%, var(--paper-bg-1) 100%);
+    --app-bg: linear-gradient(180deg, var(--paper-bg-0) 0%, var(--paper-bg-1) 70%);
 }

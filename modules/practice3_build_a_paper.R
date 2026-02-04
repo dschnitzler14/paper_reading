@@ -11,8 +11,15 @@ practice_build_a_paper_module_ui <- function(id, dictionary) {
       )
     ),
     card(
+      card(
+      card_body(
+        div(
+          class = "strategies-main",
 
     sortable_ui(ns("build_a_paper_sortable"), randomised_build_a_paper_dictionary)
+    )
+      )
+    )
     )
   )
 }

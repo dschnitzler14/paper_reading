@@ -10,46 +10,28 @@ practice_intro_mystery_module_ui <- function(id) {
         )
       )
     ),
-    card(
-      card_header("Example Intro"),
-      card_body(
-        div(
-        class = "strategies-main",
+    
+        
         div(
           class = "paper-box",
           uiOutput(ns("mystery_intro1")),
           uiOutput(ns("practice_intro1_mystery1_click"))
-        )
-      )
         
       ),
-    ),
-    card(
-      card_header("Study 1"),
-      card_body(
-        div(
-        class = "strategies-main",
+        
+      
         div(
           class = "paper-box",
           uiOutput(ns("mystery_intro2")),
           uiOutput(ns("practice_intro2_mystery1_click"))
-        )
-      )
-      ),
-    ),
-    card(
-      card_header("Study 2"),
-      card_body(
-        div(
-        class = "strategies-main",
+        ),
+    
         div(
           class = "paper-box",
           uiOutput(ns("mystery_intro3")),
           uiOutput(ns("practice_intro3_mystery1_click"))
-        )
-      )
-      ),
-    )
+        ),
+      
   )
 }
 

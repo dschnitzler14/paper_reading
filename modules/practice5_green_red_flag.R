@@ -12,6 +12,10 @@ practice_green_red_flag_module_ui <- function(id) {
       )
     ),
 
+   card(
+      card_body(
+        div(
+          class = "strategies-main",
     tags$div(
       class = "flag-row",
       radioButtons(ns("flag_1"), NULL,   choiceNames = list("✅", "🚩", "⚠️"),
@@ -87,8 +91,12 @@ practice_green_red_flag_module_ui <- function(id) {
       "Submit",
       class = "btn btn-primary lecturi-checklist__submit"
     ),
+   
 
     uiOutput(ns("flag_results"))
+         )
+      )
+   ),
   )
 }
 

@@ -15,7 +15,7 @@ strategies_module_ui <- function(id) {
           )
         )
       ),
-    #),
+    
 
      bslib::layout_columns(
         col_widths = c(3, 3, 3, 3),
@@ -110,15 +110,13 @@ strategies_module_ui <- function(id) {
         )
       ),
 
-        ),
+    ),
 
-
-    layout_column_wrap(
-    width = 1,
     card(
-      full_screen = TRUE,
-      card_header("Reading papers"),
+      card_header("Strategies for Reading Papers"),
       card_body(
+        tags$div(
+          class = "ps-reading-tabs",
         navset_tab(
           id = ns("reading_tabs"),
           
@@ -126,21 +124,19 @@ strategies_module_ui <- function(id) {
             value = ns("title_abstract_panel"),
             title = tagList(
               bs_icon("1-circle-fill"),
-              " Title and Abstract"
-            ),
+              " Title and Abstract"),
+            
+            card(
+                class = "paperstars-instructions-card",
+                card_header("Title and Abstract Instructions"),
+                card_body(
+                    uiOutput(ns("title_abstract_instruction_text"))
+                  )
+              ),
+              layout_columns(
+                col_widths = c(3, 9),
 
-            layout_sidebar(
-              fillable = FALSE,
-              fill = FALSE,
-            sidebar = sidebar(
-              title = tags$span("Title and Abstract", class = "toc-title"),
-              open = list(desktop = "always", mobile = "closed"),
-              width = "30%",
-              bg = "inherit",
-              fg = "inherit",
-              padding = "0px",
-              gap = "1px",
-                
+                div(
                   paperstars_rating_ui(
                       id = ns("title_rating"),
                       label = "What did you think of the title?",
@@ -148,60 +144,22 @@ strategies_module_ui <- function(id) {
                       choiceNames = title_choices$names,
                       choiceValues = title_choices$values,
                       selected = character(0)
-                    ),
-                  
-                
-              ),
-              card(
-                class = "paperstars-instructions-card",
-                card_header("Title and Abstract Instructions"),
-                card_body(
-                  div(
-                    uiOutput(ns("title_abstract_instruction_text"))
-                  )
-                )
-              ),
-              div(
+                  ),
+
+                ),
+
+                div(
                   class = "paper-box",
                   uiOutput(ns("strategies_title_abstract"))
-                ),
-              
-            )
+                ) 
+              )
           ),
           nav_panel(
             title = tagList(
               bs_icon("2-circle-fill"),
-              " Introduction"
-            ),
-            layout_sidebar(
-              fillable = FALSE,
-              fill = FALSE,
-            sidebar = sidebar(
-              title = tags$span("Introduction", class = "toc-title"),
-              open = list(desktop = "always", mobile = "closed"),
-              width = "30%",
-              bg = "inherit",
-              fg = "inherit",
-              padding = "0px",
-              gap = "1px",
-              
-                div(
-                  class = "sb-notepad",
-                  tags$h4("Notes"),
-                  uiOutput(ns("strategies_introduction1_click")),
-                  uiOutput(ns("strategies_introduction2_click")),
-                  uiOutput(ns("strategies_introduction3_click")),
-                  uiOutput(ns("strategies_introduction4_click"))
-                ),
-                div(
-                  class = "sb-notepad",
-                  tags$h4("Unknown Concepts and Vocabulary"),
-                  uiOutput(ns("strategies_introduction1_vocab_click")),
-                  
-                ),
-                
-              ),
-              card(
+              " Introduction"),
+
+            card(
                 class = "paperstars-instructions-card",
                 card_header("Introduction Instructions"),
                 card_body(
@@ -210,33 +168,54 @@ strategies_module_ui <- function(id) {
                   )
                 )
               ),
+            
+            layout_columns(
+                col_widths = c(3, 9),
+
               div(
-                class = "paper-box",
-                uiOutput(ns("strategies_introduction"))
+                div(
+                    class = "sb-notepad",
+                    tags$h4("Notes"),
+                    uiOutput(ns("strategies_introduction1_click")),
+                    uiOutput(ns("strategies_introduction2_click")),
+                    uiOutput(ns("strategies_introduction3_click")),
+                    uiOutput(ns("strategies_introduction4_click"))
+                  ),
+                div(
+                    class = "sb-notepad",
+                    tags$h4("Unknown Concepts and Vocabulary"),
+                    uiOutput(ns("strategies_introduction1_vocab_click")),
+                )  
               ),
-              
+
+              div(
+                  class = "paper-box",
+                  uiOutput(ns("strategies_introduction"))
+              ),
             )
+            
           ),
+          
           nav_panel(
             title = tagList(
               bs_icon("3-circle-fill"),
               " Methods"
             ),
             
-            layout_sidebar(
-              fillable = FALSE,
-              fill = FALSE,
-            sidebar = sidebar(
-              title = tags$span("Methods", class = "toc-title"),
-              open = list(desktop = "always", mobile = "closed"),
-              width = "30%",
-              bg = "inherit",
-              fg = "inherit",
-              padding = "0px",
-              gap = "1px",
+            card(
+                class = "paperstars-instructions-card",
+                card_header("Methods Instructions"),
+                card_body(
+                  div(
+                    uiOutput(ns("methods_instruction_text"))
+                  )
+                )
+            ),
 
-              
-                  paperstars_rating_ui(
+            layout_columns(
+                col_widths = c(3, 9),
+              div(
+                paperstars_rating_ui(
                     id = ns("methods_rating"),
                     label = "What did you think of the methods?",
                     title = "Methods",
@@ -245,7 +224,6 @@ strategies_module_ui <- function(id) {
                     selected = character(0)
                   ),
                   
-                
                   paperstars_rating_ui(
                     id = ns("stats_rating"),
                     label = "What did you think of the statistical analysis?",
@@ -254,10 +232,8 @@ strategies_module_ui <- function(id) {
                     choiceValues = stats_choices$values,
                     selected = character(0)
                   ),
-                  
-                
 
-                div(
+                  div(
                   class = "sb-notepad",
                   tags$h4("📝 Notes"),
                   uiOutput(ns("strategies_methods1_click")),
@@ -270,86 +246,73 @@ strategies_module_ui <- function(id) {
                   uiOutput(ns("strategies_methods12_click")),
                   uiOutput(ns("strategies_methods13_click")),
                   uiOutput(ns("strategies_methods15_click")),
-                  
                 ),
-                div(
-                  class = "sb-notepad",
-                  tags$h4("❓ Questions"),
-                    uiOutput(ns("strategies_methods5_click")),
-                    uiOutput(ns("strategies_methods7_click")),
-                    uiOutput(ns("strategies_methods9_click")),
-                    uiOutput(ns("strategies_methods10_2_click")),
-                    uiOutput(ns("strategies_methods11_click")),
-                    uiOutput(ns("strategies_methods14_click")), 
-                    uiOutput(ns("strategies_methods17_2_click"))
-                ),
-                div(
-                  class = "sb-notepad",
-                  tags$h4("🚦 Flags"),
-                    uiOutput(ns("strategies_methods16_click")),
-                    uiOutput(ns("strategies_methods17_click"))
-                ),
-                
-              ),
-              card(
-                class = "paperstars-instructions-card",
-                card_header("Methods Instructions"),
-                card_body(
                   div(
-                    uiOutput(ns("methods_instruction_text"))
+                    class = "sb-notepad",
+                    tags$h4("❓ Questions"),
+                      uiOutput(ns("strategies_methods5_click")),
+                      uiOutput(ns("strategies_methods7_click")),
+                      uiOutput(ns("strategies_methods9_click")),
+                      uiOutput(ns("strategies_methods10_2_click")),
+                      uiOutput(ns("strategies_methods11_click")),
+                      uiOutput(ns("strategies_methods14_click")), 
+                      uiOutput(ns("strategies_methods17_2_click"))
+                  ),
+                  div(
+                    class = "sb-notepad",
+                    tags$h4("🚦 Flags"),
+                      uiOutput(ns("strategies_methods16_click")),
+                      uiOutput(ns("strategies_methods17_click"))
                   )
-                )
               ),
+
               div(
                 class = "paper-box",
                 uiOutput(ns("strategies_methods"))
-              ),
-              
+              )
+
             )
           ),
+
           nav_panel(
             title = tagList(
               bs_icon("4-circle-fill"),
               " Results"
             ),
-            
-            layout_sidebar(
-              fillable = FALSE,
-              fill = FALSE,
-            sidebar = sidebar(
-              title = tags$span("Results", class = "toc-title"),
-              open = list(desktop = "always", mobile = "closed"),
-              width = "30%",
-              bg = "inherit",
-              fg = "inherit",
-              padding = "0px",
-              gap = "1px",
 
-              
-                  paperstars_rating_ui(
-                    id = ns("data_presentation_rating"),
-                    label = "What did you think of the Data Presentation?",
-                    title = "Data Presentation",
-                    choiceNames = data_presentation_choices$names,
-                    choiceValues = data_presentation_choices$values,
-                    selected = character(0)
-                  ),
-                  
-                
+            card(
+              class = "paperstars-instructions-card",
+              card_header("Results Instructions"),
+              card_body(
+                div(
+                  uiOutput(ns("results_instruction_text"))
+                )
+              )
+            ),
 
+            layout_columns(
+              col_widths = c(3, 9),
+
+              div(
+                paperstars_rating_ui(
+                  id = ns("data_presentation_rating"),
+                  label = "What did you think of the Data Presentation?",
+                  title = "Data Presentation",
+                  choiceNames = data_presentation_choices$names,
+                  choiceValues = data_presentation_choices$values,
+                  selected = character(0)
+                ),
                 div(
                   class = "sb-notepad",
                   tags$h4("📝 Notes"),
                   uiOutput(ns("strategies_results1_click")),
                   uiOutput(ns("strategies_results4_click")),
                   uiOutput(ns("strategies_results6_click")),
-                  uiOutput(ns("strategies_results7_click")),
-                  
+                  uiOutput(ns("strategies_results7_click"))
                 ),
                 div(
                   class = "sb-notepad",
-                  tags$h4("❓ Questions"),
-                  
+                  tags$h4("❓ Questions")
                 ),
                 div(
                   class = "sb-notepad",
@@ -357,204 +320,206 @@ strategies_module_ui <- function(id) {
                   uiOutput(ns("strategies_results2_click")),
                   uiOutput(ns("strategies_results3_click")),
                   uiOutput(ns("strategies_results5_click")),
-                  uiOutput(ns("strategies_results8_click")),
-                ),
-                
-              ),
-              card(
-                class = "paperstars-instructions-card",
-                card_header("Results Instructions"),
-                card_body(
-                  div(
-                    uiOutput(ns("results_instruction_text"))
-                  )
+                  uiOutput(ns("strategies_results8_click"))
                 )
               ),
-              div(
-                class = "paper-box",
-                uiOutput(ns("strategies_results"))
+
+              layout_column_wrap(
+                width = 1,
+                heights_equal = "row",
+
+                card(
+                  class = "paper-box",
+                  uiOutput(ns("strategies_results_figs"))
+                ),
+
+                card(
+                  class = "paper-box",
+                  uiOutput(ns("strategies_results"))
+                ),
+
+                
               )
-              
             )
           ),
+
           nav_panel(
             title = tagList(
               bs_icon("pause-circle"),
               " Pause"
             ),
             
-            layout_sidebar(
-              fillable = FALSE,
-              fill = FALSE,
-            sidebar = sidebar(
-              title = tags$span("Pause", class = "toc-title"),
-              open = list(desktop = "always", mobile = "closed"),
-              width = "30%",
-              bg = "inherit",
-              fg = "inherit",
-              padding = "0px",
-              gap = "1px",
-                
-              ),
-              card(
-                class = "paperstars-instructions-card",
-                card_header("Pause"),
-                card_body(
-                  div(
-                    uiOutput(ns("pause_text1"))
-                  )
+            card(
+              class = "paperstars-instructions-card",
+              card_header("Pause"),
+              card_body(
+                div(
+                  uiOutput(ns("pause_text1"))
                 )
-              ),
-              div(
-                class = "paper-box",
-                pause_flashcards_ui(ns("pause_intro"))
-              ),
-              
-              div(
-                class = "paper-box",
+              )
+            ),
+
+            
+            card(
+              card_body(
+                div(
+                  class = "strategies-main",
+                  pause_flashcards_ui(ns("pause_intro")),
+                )
+              )
+            ),
+
+            card(
+              card_body(
+                div(
+                class = "strategies-main",
                 tags$h3("What questions are they trying to answer?"),
                 p("Match the questions to the answers"),
                 matching_game_ui(ns("match1"))
-              ),
-              
-              div(
-              class = "paper-box",
-              pause_flashcards_ui(ns("pause_results"))
+                ),
+              )
+            ),
+            
+            card(
+              card_body(
+                div(
+                  class = "strategies-main",
+                  pause_flashcards_ui(ns("pause_results"))
+                ),
+              )
             ),
               
-              card(
-                card_header("Summary of Findings"),
-                card_body(
-                  
-                  div(
-                  class = "fill-blanks",
-                    div(
-                      class = "fill-blanks-line",
 
-                      span("This study examined how"),
-                      div(
-                        class = "blank",
-                        selectInput(ns("drop1"), NULL, c("social isolation", "environmental enrichment", "physical exercise"), width = NULL, selectize = FALSE)
-                      ),
-                      span("influences physical and physiological outcomes using a rat model."),
-
-                      span("The authors were motivated by the idea that social isolation acts as a"),
-                      div(
-                        class = "blank",
-                        selectInput(ns("drop2"), NULL, c("chronic stressor", "nutritional deficit", "genetic mutation"), width = NULL, selectize = FALSE)
-                      ),
-                      span(", which may disrupt normal regulation of behaviour, metabolism, and muscle maintenance."),
-
-                      span("To test this, they compared animals experiencing continuous isolation with animals in which isolation was"),
-                      div(
-                        class = "blank",
-                        selectInput(ns("drop3"), NULL, c("intermittently interrupted", "pharmacologically blocked", "permanently intensified"), width = NULL, selectize = FALSE)
-                      ),
-                      span("as a potential intervention."),
-
-                      span("The researchers measured changes in"),
-                      div(
-                        class = "blank",
-                        selectInput(
-                          ns("drop4"),
-                          NULL,
-                          c(
-                            "physiological markers related to stress, appetite, and muscle growth",
-                            "cognitive performance and learning ability",
-                            "immune cell counts and inflammatory markers"
-                          ),
-                          width = NULL, selectize = FALSE
-                        )
-                      ),
-                      span(", including physical activity, body and muscle weight, and hormones."),
-
-                      span("This approach allowed the authors to evaluate whether interruption of isolation could"),
-                      div(
-                        class = "blank",
-                        selectInput(
-                          ns("drop5"),
-                          NULL,
-                          c(
-                            "reduce the negative physical effects",
-                            "completely eliminate stress responses",
-                            "reverse genetic damage"
-                          ),
-                          width = NULL,
-                          selectize = FALSE
-                        )
-                      ),
-                      span("associated with prolonged social isolation.")
-                    ),
-
+            card(
+              card_header("Summary of Findings"),
+              card_body(
+                
                 div(
-                  class = "fill-blanks-output",
-                  textOutput(ns("sentence_out"))
-                )
-                )
-
-                  
-                )
-              ),
-
-              card(
-                card_header("Discussion Predictions"),
-                card_body(
+                class = "fill-blanks",
                   div(
-                      class = "strategies-main",
-                      div(
-                        class = "paper-box",
-                        p("Before we move on, let's also think about the Discussion."),
-                        tags$ul(
-                          tags$li("What do you expect the authors to say in the Discussion?"),
-                          tags$li("How will they interpret the results?"),
-                          tags$li("What limitations might they mention?"),
-                          tags$li("Based on the evidence, what claims would be reasonable?")
-                        )
+                    class = "fill-blanks-line",
+
+                    span("This study examined how"),
+                    div(
+                      class = "blank",
+                      selectInput(ns("drop1"), NULL, c("social isolation", "environmental enrichment", "physical exercise"), width = NULL, selectize = FALSE)
+                    ),
+                    span("influences physical and physiological outcomes using a rat model."),
+
+                    span("The authors were motivated by the idea that social isolation acts as a"),
+                    div(
+                      class = "blank",
+                      selectInput(ns("drop2"), NULL, c("chronic stressor", "nutritional deficit", "genetic mutation"), width = NULL, selectize = FALSE)
+                    ),
+                    span(", which may disrupt normal regulation of behaviour, metabolism, and muscle maintenance."),
+
+                    span("To test this, they compared animals experiencing continuous isolation with animals in which isolation was"),
+                    div(
+                      class = "blank",
+                      selectInput(ns("drop3"), NULL, c("intermittently interrupted", "pharmacologically blocked", "permanently intensified"), width = NULL, selectize = FALSE)
+                    ),
+                    span("as a potential intervention."),
+
+                    span("The researchers measured changes in"),
+                    div(
+                      class = "blank",
+                      selectInput(
+                        ns("drop4"),
+                        NULL,
+                        c(
+                          "physiological markers related to stress, appetite, and muscle growth",
+                          "cognitive performance and learning ability",
+                          "immune cell counts and inflammatory markers"
+                        ),
+                        width = NULL, selectize = FALSE
+                      )
+                    ),
+                    span(", including physical activity, body and muscle weight, and hormones."),
+
+                    span("This approach allowed the authors to evaluate whether interruption of isolation could"),
+                    div(
+                      class = "blank",
+                      selectInput(
+                        ns("drop5"),
+                        NULL,
+                        c(
+                          "reduce the negative physical effects",
+                          "completely eliminate stress responses",
+                          "reverse genetic damage"
+                        ),
+                        width = NULL,
+                        selectize = FALSE
+                      )
+                    ),
+                    span("associated with prolonged social isolation.")
+                  ),
+
+              div(
+                class = "fill-blanks-output",
+                textOutput(ns("sentence_out"))
+              )
+            )
+
+            )
+            ),
+
+            card(
+              card_header("Discussion Predictions"),
+              card_body(
+                div(
+                    class = "strategies-main",
+                    div(
+                      class = "paper-box",
+                      p("Before we move on, let's also think about the Discussion."),
+                      tags$ul(
+                        tags$li("What do you expect the authors to say in the Discussion?"),
+                        tags$li("How will they interpret the results?"),
+                        tags$li("What limitations might they mention?"),
+                        tags$li("Based on the evidence, what claims would be reasonable?")
                       )
                     )
-                )
+                  )
               )
             )
           ),
+          
           nav_panel(
             title = tagList(
               bs_icon("5-circle-fill"),
               " Discussion"
             ),
-            
-            layout_sidebar(
-              fillable = FALSE,
-              fill = FALSE,
-            sidebar = sidebar(
-              title = tags$span("Discussion", class = "toc-title"),
-              open = list(desktop = "always", mobile = "closed"),
-              width = "30%",
-              bg = "inherit",
-              fg = "inherit",
-              padding = "0px",
-              gap = "1px",
 
-                
-                  paperstars_rating_ui(
-                    id = ns("discussion_rating"),
-                    label = "What did you think of the Discussion?",
-                    title = "Discussion",
-                    choiceNames = discussion_choices$names,
-                    choiceValues = discussion_choices$values,
-                    selected = character(0)
-                  ),
-                  
-                
-                  paperstars_rating_ui(
-                    id = ns("limitations_rating"),
-                    label = "What did you think of the Limitations?",
-                    title = "Limitations",
-                    choiceNames = limitations_choices$names,
-                    choiceValues = limitations_choices$values,
-                    selected = character(0)
-                  ),
+            card(
+              class = "paperstars-instructions-card",
+              card_header("Discussion Instructions"),
+              card_body(
+                div(
+                  uiOutput(ns("discussion_instruction_text"))
+                )
+              )
+            ),
 
+            layout_columns(
+                col_widths = c(3, 9),
+              div(
+                paperstars_rating_ui(
+                  id = ns("discussion_rating"),
+                  label = "What did you think of the Discussion?",
+                  title = "Discussion",
+                  choiceNames = discussion_choices$names,
+                  choiceValues = discussion_choices$values,
+                  selected = character(0)
+                ),
                 
+              
+                paperstars_rating_ui(
+                  id = ns("limitations_rating"),
+                  label = "What did you think of the Limitations?",
+                  title = "Limitations",
+                  choiceNames = limitations_choices$names,
+                  choiceValues = limitations_choices$values,
+                  selected = character(0)
+                ),
 
                 div(
                   class = "sb-notepad",
@@ -579,92 +544,75 @@ strategies_module_ui <- function(id) {
                   uiOutput(ns("strategies_discussion8_click")),
                   uiOutput(ns("strategies_discussion9_click")),
                   uiOutput(ns("strategies_discussion10_click"))
-
                 ),
-                
-
-              ),
-              card(
-                class = "paperstars-instructions-card",
-                card_header("Discussion Instructions"),
-                card_body(
-                  div(
-                    uiOutput(ns("discussion_instruction_text"))
-                  )
-                )
               ),
               div(
                 class = "paper-box",
                 uiOutput(ns("strategies_discussion"))
-              ),
-              
+              )
             )
           ),
+              
           nav_panel(
             title = tagList(
               bs_icon("question-circle"),
               " Understanding"
             ),
-            
-            layout_sidebar(
-              fillable = FALSE,
-              fill = FALSE,
-            sidebar = sidebar(
-              title = tags$span("Understanding", class = "toc-title"),
-              open = list(desktop = "always", mobile = "closed"),
-              width = "30%",
-              bg = "inherit",
-              fg = "inherit",
-              padding = "0px",
-              gap = "1px",
-                
-                
-              ),
-              card(
-                card_header("Understanding"),
-                card_body(
-                uiOutput(ns("understanding_box1")),
+
+            card(
+              class = "paperstars-instructions-card",
+              card_header("Understanding Instructions"),
+              card_body(
                 div(
-                  class = "strategies-main",
-                  div(
-                    class = "paper-box",
-                    sentence_checklist_ui(ns("understanding_checklist"))
-                  )
+                  uiOutput(ns("understanding_instruction_text"))
                 )
-                
+              )
+            ),
+
+            card(
+              card_header("Understanding"),
+              card_body(
+              uiOutput(ns("understanding_box1")),
+              div(
+                class = "strategies-main",
+                div(
+                  class = "paper-box",
+                  sentence_checklist_ui(ns("understanding_checklist"))
                 )
+              )
+              
               )
             )
           ),
+        
           nav_panel(
             title = tagList(
               bs_icon("star"),
               " Reflection"
             ),
-            layout_sidebar(
-          
-              fillable = FALSE,
-              fill = FALSE,
-            sidebar = sidebar(
-              title = tags$span("Reflection", class = "toc-title"),
-              open = list(desktop = "always", mobile = "closed"),
-              width = "30%",
-              bg = "inherit",
-              fg = "inherit",
-              padding = "0px",
-              gap = "1px",
 
-                  paperstars_rating_ui(
-                    id = ns("data_available_rating"),
-                    label = "For this paper, I've alread checked and the data is not openly available.",
-                    title = "Data Availability",
-                    choiceNames = data_available_choices$names,
-                    choiceValues = data_available_choices$values,
-                    selected = "0"
-                  ),
-                  
-                
+            card(
+              class = "paperstars-instructions-card",
+              card_header("Reflection Instructions"),
+              card_body(
+                div(
+                  uiOutput(ns("reflection_instruction_text"))
+                )
+              )
+            ),
 
+            layout_columns(
+                col_widths = c(3, 9),
+              div(
+                paperstars_rating_ui(
+                  id = ns("data_available_rating"),
+                  label = "For this paper, I've alread checked and the data is not openly available.",
+                  title = "Data Availability",
+                  choiceNames = data_available_choices$names,
+                  choiceValues = data_available_choices$values,
+                  selected = "0"
+                ),
+              
               div(
                   class = "sb-notepad",
                   tags$h4("❓ Open Questions"),
@@ -694,15 +642,12 @@ strategies_module_ui <- function(id) {
                   tags$h5("Discussion"),
                   uiOutput(ns("reflection_discussion4_click")),
                   uiOutput(ns("reflection_discussion4_answer"))
-
-                ),
-                
+              )
               ),
-              
-                div(
-                  class = "reflection-columns",
-                  layout_columns(
-                    col_widths = c(6, 6),
+              div(
+                class = "reflection-columns",
+                layout_columns(
+                  col_widths = c(6, 6),
                   card(
                     card_header("My Rating and Review"),
                     card_body(
@@ -719,95 +664,209 @@ strategies_module_ui <- function(id) {
                   card_header("How would you rate this paper?"),
                   card_body(
 
-                  
                   uiOutput(ns("paperstars_parameters_rated")),
                   
                   div(
                       class = "overall-stars-pill",
                       uiOutput(ns("overall_stars")),
-                    ),
+                  ),
 
-                    p("If you missed a section, you can go back and rate it now."),
+                  p("If you missed a section, you can go back and rate it now."),
                     
-                    div(
-                      class = "paperstars-text-input",
-                      textAreaInput(
-                        ns("your_review_input"),
-                        label = "Your Review",
-                        value = "",
-                        placeholder = "Write your review here...",
-                        width = "100%"
-                      ),
-                      actionButton(
-                        ns("submit_review"),
-                        "Submit Review",
-                        class = "paperstars-button"
-                      ),
-                      uiOutput(ns("review_submitted"))
-                    )
+                  div(
+                    class = "paperstars-text-input",
+                    textAreaInput(
+                      ns("your_review_input"),
+                      label = "Your Review",
+                      value = "",
+                      placeholder = "Write your review here...",
+                      width = "100%"
+                    ),
+                    actionButton(
+                      ns("submit_review"),
+                      "Submit Review",
+                      class = "paperstars-button"
+                    ),
+                    uiOutput(ns("review_submitted"))
                   )
-
+                  )
                 )
               )
             )
+
             )
           ),
+          
           nav_panel(
           title = tagList(
             bs_icon("magic"),
             " AI"
           ),
-          layout_sidebar(
-              fillable = FALSE,
-              fill = FALSE,
-            sidebar = sidebar(
-              title = tags$span("Popular GenAI Tools", class = "toc-title"),
-              open = list(desktop = "always", mobile = "closed"),
-              width = "30%",
-              bg = "inherit",
-              fg = "inherit",
-              padding = "0px",
-              gap = "1px",
-              
-              bslib::navset_pill_list(
-                  id = ns("ai_toc"),
-                  well = FALSE,
-                  selected = "gpt",
 
-                  nav_panel("ChatGPT", value = "gpt"),
-                  nav_panel("Claude", value = "claude"),
-                  nav_panel("Anara", value = "anara"),
-                  nav_panel("Consensus", value = "consensus"),
+          card(
+            class = "paperstars-instructions-card",
+            card_header("AI Instructions"),
+            card_body(
+              div(
+                uiOutput(ns("ai_instruction_text"))
+              )
+            )
+          ),
 
-                  bslib::nav_item(tags$hr(class = "ai-sidebar-divider")),
+          div(
+            class = "ps-guide ps-what-paper",
+            bslib::layout_columns(
+              col_widths = c(3, 3, 3, 3),
+              class = "ps-step-grid ps-what-paper-grid",
 
-                  
-
-                  nav_panel(
-                    title = tagList(
-                      bs_icon("trophy"),
-                      tags$span("The Verdict")
+              bslib::card(
+                class = "ps-step ps-step-1 ps-topic-card",
+                `data-card-id` = "what-paper-12",
+                bslib::card_body(
+                  class = "ps-topic-click",
+                  actionButton(ns("open_box_ai_1"), label = NULL, class = "ps-topic-btn"),
+                  tags$div(
+                    class = "ps-step-inner",
+                    tags$div(
+                      class = "ps-step-title ps-topic-title",
+                      tags$span(class = "ps-step-num", "1"),
+                      tags$div(
+                        class = "ps-topic-title-text",
+                        tags$h3("Let's ask ChatGPT"),
+                        tags$p(class = "ps-topic-subtitle", "General LLM")
+                      )
                     ),
-                    value = "verdict"
+                    tags$div(
+                      class = "ps-tool-cta",
+                      bs_icon("chat-dots"),
+                      tags$span("Open ChatGPT Response")
+                    )
                   )
                 )
+              ),
 
+            bslib::card(
+              class = "ps-step ps-step-2 ps-topic-card",
+              `data-card-id` = "what-paper-22",
+              bslib::card_body(
+                class = "ps-topic-click",
+                actionButton(ns("open_box_ai_2"), label = NULL, class = "ps-topic-btn"),
+                tags$div(
+                  class = "ps-step-inner",
+                  tags$div(
+                    class = "ps-step-title ps-topic-title",
+                    tags$span(class = "ps-step-num", "2"),
+                    tags$div(
+                      class = "ps-topic-title-text",
+                      tags$h3("Let's ask Claude"),
+                      tags$p(class = "ps-topic-subtitle", "General LLM")
+                    )
+                  ),
+                  tags$div(
+                    class = "ps-tool-cta",
+                    bs_icon("chat-dots"),
+                    tags$span("Open Claude Response")
+                  )
+                )
+              )
             ),
-           
-                uiOutput(ns("ai_section_body")),
-          
+
+            bslib::card(
+              class = "ps-step ps-step-3 ps-topic-card",
+              `data-card-id` = "what-paper-32",
+              bslib::card_body(
+                class = "ps-topic-click",
+                actionButton(ns("open_box_ai_3"), label = NULL, class = "ps-topic-btn"),
+                tags$div(
+                  class = "ps-step-inner",
+                  tags$div(
+                    class = "ps-step-title ps-topic-title",
+                    tags$span(class = "ps-step-num", "3"),
+                    tags$div(
+                      class = "ps-topic-title-text",
+                      tags$h3("Let's Ask Anara"),
+                      tags$p(class = "ps-topic-subtitle", "Science LLM")
+                    )
+                  ),
+                  tags$div(
+                    class = "ps-tool-cta",
+                    bs_icon("chat-dots"),
+                    tags$span("Open Anara Response")
+                  )
+                )
+              )
+            ),
+
+            bslib::card(
+              class = "ps-step ps-step-4 ps-topic-card",
+              `data-card-id` = "what-paper-42",
+              bslib::card_body(
+                class = "ps-topic-click",
+                actionButton(ns("open_box_ai_4"), label = NULL, class = "ps-topic-btn"),
+                tags$div(
+                  class = "ps-step-inner",
+                  tags$div(
+                    class = "ps-step-title ps-topic-title",
+                    tags$span(class = "ps-step-num", "4"),
+                    tags$div(
+                      class = "ps-topic-title-text",
+                      tags$h3("Consensus"),
+                      tags$p(class = "ps-topic-subtitle", "Science LLM")
+                    )
+                  ),
+                  tags$div(
+                    class = "ps-tool-cta",
+                    bs_icon("chat-dots"),
+                    tags$span("Open Consensus Response")
+                  )
+                )
+              )
+            )
+            ),
+        ),
+
+        div(
+            class = "ps-guide ps-what-paper",
+          div(
+              class = "ps-step ps-step-5 ps-topic-card",
+              `data-card-id` = "what-paper-52",
+              bslib::card_body(
+                class = "ps-topic-click",
+                actionButton(ns("open_box_ai_5"), label = NULL, class = "ps-topic-btn"),
+                tags$div(
+                  class = "ps-step-inner",
+                  tags$div(
+                    class = "ps-step-title ps-topic-title",
+                    tags$span(class = "ps-step-num", "5"),
+                    tags$div(
+                      class = "ps-topic-title-text",
+                      tags$h3("The Verdict"),
+                      tags$p(class = "ps-topic-subtitle", "How did the LLMs do?")
+                    )
+                  ),
+                  tags$div(
+                    class = "ps-tool-cta",
+                    bs_icon("trophy"),
+                    tags$span("Open the Verdict")
+                  )
+                )
+              )
           )
-        )
+        #)
+        ),
+      )
+
         )
       )
-    )
-  ),
+        )
+      ),
+    
     
   nav_buttons_ui(ns("nav_controls"))
     
 )
-
 }
+
 
 strategies_module_server <- function(id, parent_session, nav_order_list, process_markdown, process_rmd_fragment) {
   moduleServer(id, function(input, output, session) {
@@ -1323,6 +1382,131 @@ output$results_instruction_text <- renderUI({
   output$strategies_results <- renderUI({
     md_ui("english/strategies/results_strategy.Rmd")
   })
+
+  ### figs
+
+fig_dir <- "assets/strategies_figures/pause"
+
+fig_files <- list.files(
+  file.path("www", fig_dir),
+  pattern = "\\.jpg$",
+  full.names = FALSE
+)
+
+fig_captions <- c(
+  strategies_fig1A = "Comparison of weight gain rate, food intake, locomotor activity between the Control, Iso, and Int groups. (a) Weight gain rate (n = 7–8) p<0.05 (Tukey’s test). Control group, group-housed; iso group, isolated; Int, intervention.",
+  strategies_fig1B = "Comparison of weight gain rate, food intake, locomotor activity between the Control, Iso, and Int groups. (b) Food intake (n = 7–8) p<0.05 (Tukey’s test). Control group, group-housed; iso group, isolated; Int, intervention.",
+  strategies_fig1C = "Comparison of weight gain rate, food intake, locomotor activity between the Control, Iso, and Int groups.(c) Locomotor activity (n = 7–8) p<0.05 (Tukey’s test). Control group, group-housed; iso group, isolated; Int, intervention.",
+  strategies_fig2A = "Comparison of muscle weight to body weight ratio between the Control, Iso, and Int groups. (a) Masseter muscle (n = 8). p<0.05(Tukey’s test). Control group, group-housed; iso group, isolated; Int, intervention.",
+  strategies_fig2B = "Comparison of muscle weight to body weight ratio between the Control, Iso, and Int groups. (b) Lower limb muscle (n = 8). p<0.05 (Tukey’s test). Control group, group-housed; iso group, isolated; Int, intervention.",
+  strategies_fig3A = "Comparison of plasma corticosterone, ghrelin, and myostatin concentrations between the Control, Iso, and Int groups. (a) corticosterone. p<0.05 (Tukey’s test). Control group, group-housed; iso group, isolated; Int, intervention.",
+  strategies_fig3B = "Comparison of plasma corticosterone, ghrelin, and myostatin concentrations between the Control, Iso, and Int groups.(b) ghrelin (n = 4). p<0.05 (Tukey’s test). Control group, group-housed; iso group, isolated; Int, intervention.",
+  strategies_fig3C = "Comparison of plasma corticosterone, ghrelin, and myostatin concentrations between the Control, Iso, and Int groups. (c) myostatin (n = 4). p<0.05 (Tukey’s test). Control group, group-housed; iso group, isolated; Int, intervention."
+)
+
+fig_nums <- c(
+  strategies_fig1A = "Fig. 1A",
+  strategies_fig1B = "Fig. 1B",
+  strategies_fig1C = "Fig. 1C",
+  strategies_fig2A = "Fig. 2A",
+  strategies_fig2B = "Fig. 2B",
+  strategies_fig3A = "Fig. 3A",
+  strategies_fig3B = "Fig. 3B",
+  strategies_fig3C = "Fig. 3C"
+)
+
+get_caption <- function(filename) {
+  key <- tools::file_path_sans_ext(filename)
+  cap <- fig_captions[key]
+  if (length(cap) == 0 || is.na(cap) || !nzchar(cap)) "" else as.character(cap)
+}
+
+get_num <- function(filename) {
+  key <- tools::file_path_sans_ext(filename)
+  num <- fig_nums[key]
+  if (length(num) == 0 || is.na(num) || !nzchar(num)) "" else as.character(num)
+}
+
+current_fig <- reactiveVal(1)
+
+open_fig <- function(i) {
+  if (length(fig_files) == 0) return(NULL)
+  i <- ((i - 1) %% length(fig_files)) + 1
+  current_fig(i)
+
+  f <- fig_files[[i]]
+  src <- file.path(fig_dir, f)
+  num <- get_num(f)
+  cap <- get_caption(f)
+
+  showModal(
+    modalDialog(
+      size = "l",
+      easyClose = TRUE,
+      footer = NULL,
+      class = "ps-fig-modal",
+
+      div(
+        class = "ps-fig-modal-media",
+        actionButton(ns("fig_prev"), "\u2039", class = "ps-fig-nav ps-fig-nav-prev"),
+        tags$img(src = src, class = "ps-fig-modal-img"),
+        actionButton(ns("fig_next"), "\u203A", class = "ps-fig-nav ps-fig-nav-next")
+      ),
+
+      div(
+        class = "ps-fig-modal-wrap",
+        if (nzchar(num)) div(class = "ps-fig-modal-num", num),
+        if (nzchar(cap)) div(class = "ps-fig-modal-cap", cap)
+      )
+    )
+  )
+}
+
+output$strategies_results_figs <- renderUI({
+  if (length(fig_files) == 0) return(NULL)
+
+  thumbs <- lapply(seq_along(fig_files), function(i) {
+    f <- fig_files[[i]]
+    src <- file.path(fig_dir, f)
+    num <- get_num(f)
+
+    div(
+      class = "ps-fig-tile",
+      actionLink(
+        inputId = ns(paste0("fig_thumb_", i)),
+        label = tags$img(
+          src = src,
+          alt = tools::file_path_sans_ext(f),
+          class = "ps-fig-thumb-img"
+        ),
+        class = "ps-fig-thumb"
+      ),
+      if (nzchar(num)) div(class = "ps-fig-cap", num)
+    )
+  })
+
+  do.call(
+    bslib::layout_column_wrap,
+    c(list(width = 1/4, heights_equal = "row"), thumbs)
+  )
+})
+
+lapply(seq_along(fig_files), function(i) {
+  observeEvent(input[[paste0("fig_thumb_", i)]], {
+    open_fig(i)
+  }, ignoreInit = TRUE)
+})
+
+observeEvent(input$fig_prev, {
+  open_fig(current_fig() - 1)
+}, ignoreInit = TRUE)
+
+observeEvent(input$fig_next, {
+  open_fig(current_fig() + 1)
+}, ignoreInit = TRUE)
+
+
+  ###
 
   observeEvent(input$results1, {
   output$strategies_results1_click <- renderUI({
@@ -1969,15 +2153,81 @@ output$paperstars_parameters <- renderUI({
 
 
 # AI_server----
-output$ai_gpt <- renderUI({
-  chat_device_ui(
-    ns("gpt_chat"),
-    title = "ChatGPT 5.2",
-    subtitle = "Let's try ChatGPT",
-    device = "phone",
-    height = "650px"
-  )
+
+
+output$ai_instruction_text <- renderUI({
+  process_markdown("strategies/ai_instructions.md")
 })
+
+open_ai_modal <- function(title, subtitle, ui_id) {
+  showModal(
+    modalDialog(
+      title = tags$div(
+        class = "ps-modal-title",
+        tags$div(class = "ps-modal-title-main", title),
+        tags$div(class = "ps-modal-title-sub", subtitle)
+      ),
+      div(class = "ps-modal-body prose", uiOutput(ui_id)),
+      easyClose = TRUE,
+      footer = modalButton("Close"),
+      size = "l"
+    )
+  )
+}
+
+open_chat_device_modal <- function(ui_expr, size = "l") {
+  showModal(
+    modalDialog(
+      ui_expr,
+      title = NULL,
+      footer = NULL,
+      easyClose = TRUE,
+      size = size,
+      class = "ps-chatdevice-modal"
+    )
+  )
+}
+
+
+# observeEvent(input$open_box_ai_1, {
+#   open_ai_modal(
+#     "Let's ask ChatGPT",
+#     "General LLM",
+#     ns("ai_gpt")
+#   )
+# }, ignoreInit = TRUE)
+
+# output$ai_gpt <- renderUI({
+#   chat_device_ui(
+#     ns("gpt_chat"),
+#     title = "ChatGPT 5.2",
+#     subtitle = "Let's try ChatGPT",
+#     device = "phone",
+#     height = "650px"
+#   )
+# })
+
+observeEvent(input$open_box_ai_1, {
+  open_chat_device_modal(
+    chat_device_ui(
+      ns("gpt_chat"),
+      # title = "ChatGPT 5.2",
+      # subtitle = "Let's try ChatGPT",
+      device = "phone",
+      height = "650px"
+    ),
+    size = "l"
+  )
+}, ignoreInit = TRUE)
+
+
+observeEvent(input$open_box_ai_2, {
+  open_ai_modal(
+    "Let's ask Claude",
+    "General LLM",
+    ns("ai_claude")
+  )
+}, ignoreInit = TRUE)
 
 output$ai_claude <- renderUI({
   chat_device_ui(
@@ -1989,6 +2239,14 @@ output$ai_claude <- renderUI({
   )
 })
 
+observeEvent(input$open_box_ai_3, {
+  open_ai_modal(
+    "Let's ask Anara",
+    "Science LLM",
+    ns("ai_anara")
+  )
+}, ignoreInit = TRUE)
+
 output$ai_anara <- renderUI({
   chat_device_ui(
     ns("anara_chat"),
@@ -1998,6 +2256,14 @@ output$ai_anara <- renderUI({
     height = "650px"
   )
 })
+
+observeEvent(input$open_box_ai_4, {
+  open_ai_modal(
+    "Let's ask Consensus",
+    "Science LLM",
+    ns("ai_consensus")
+  )
+}, ignoreInit = TRUE)
 
 output$ai_consensus <- renderUI({
   chat_device_ui(
@@ -2009,20 +2275,16 @@ output$ai_consensus <- renderUI({
   )
 })
 
-output$ai_section_body <- renderUI({
-  req(input$ai_toc)
+observeEvent(input$open_box_ai_5, {
+  open_ai_modal(
+    "The Verdict",
+    "How do the LLMs stack up?",
+    ns("ai_verdict")
+  )
+}, ignoreInit = TRUE)
 
-  if (input$ai_toc == "gpt") {
-    uiOutput(ns("ai_gpt"))
-  } else if (input$ai_toc == "claude") {
-    uiOutput(ns("ai_claude"))
-  } else if (input$ai_toc == "anara") {
-    uiOutput(ns("ai_anara"))
-  } else if (input$ai_toc == "consensus") {
-    uiOutput(ns("ai_consensus"))
-  } else {
-    verdict_module_ui(ns("verdict"))
-  }
+output$ai_verdict <- renderUI({
+  verdict_module_ui(ns("verdict"))
 })
 
 chat_device_server(

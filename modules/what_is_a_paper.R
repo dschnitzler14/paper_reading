@@ -38,10 +38,10 @@ what_is_a_paper_module_ui <- function(id) {
                 )
               ),
               tags$div(
-  class = "ps-tool-cta",
-  bs_icon("book"),
-  tags$span("Open chapter")
-)
+                class = "ps-tool-cta",
+                bs_icon("book"),
+                tags$span("Open chapter")
+              )
             )
           )
         ),
@@ -90,10 +90,10 @@ what_is_a_paper_module_ui <- function(id) {
                 )
               ),
               tags$div(
-  class = "ps-tool-cta",
-  bs_icon("book"),
-  tags$span("Open chapter")
-)
+                class = "ps-tool-cta",
+                bs_icon("book"),
+                tags$span("Open chapter")
+              )
             )
           )
         ),
@@ -116,10 +116,10 @@ what_is_a_paper_module_ui <- function(id) {
                 )
               ),
               tags$div(
-  class = "ps-tool-cta",
-  bs_icon("book"),
-  tags$span("Open chapter")
-)
+                class = "ps-tool-cta",
+                bs_icon("book"),
+                tags$span("Open chapter")
+              )
             )
           )
         ),
@@ -142,10 +142,10 @@ what_is_a_paper_module_ui <- function(id) {
                 )
               ),
               tags$div(
-  class = "ps-tool-cta",
-  bs_icon("book"),
-  tags$span("Open chapter")
-)
+                class = "ps-tool-cta",
+                bs_icon("book"),
+                tags$span("Open chapter")
+              )
             )
           )
         ),
@@ -168,10 +168,10 @@ what_is_a_paper_module_ui <- function(id) {
                 )
               ),
               tags$div(
-  class = "ps-tool-cta",
-  bs_icon("book"),
-  tags$span("Open chapter")
-)
+                class = "ps-tool-cta",
+                bs_icon("book"),
+                tags$span("Open chapter")
+              )
             )
           )
         ),
@@ -194,10 +194,10 @@ what_is_a_paper_module_ui <- function(id) {
                 )
               ),
               tags$div(
-  class = "ps-tool-cta",
-  bs_icon("book"),
-  tags$span("Open chapter")
-)
+                class = "ps-tool-cta",
+                bs_icon("book"),
+                tags$span("Open chapter")
+              )
             )
           )
         ),

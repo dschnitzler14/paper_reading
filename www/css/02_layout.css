@@ -16,7 +16,12 @@ body>.container-fluid {
 
 .strategies-main {
     max-height: calc(100vh - 32px);
-    overflow: auto;
+    overflow: hidden;
+    background: F2EDD2 !important;
+}
+
+.strategies-main .paper-box {
+    margin-bottom: 20px;
 }
 
 /* dyslexia toggle */
@@ -118,4 +123,23 @@ body>.container-fluid {
 /* Slight emphasis when active */
 body.dyslexia-font .ps-navswitch .form-check-label {
     font-weight: 600;
+}
+
+.navbar {
+    background-image: linear-gradient(90deg, #EDDABF 0%, #F2EDD2 100%) !important;
+    background-color: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.navbar .navbar-brand {
+    color: #4C6B00 !important;
+}
+
+.navbar .navbar-brand .svg-inline--fa {
+    color: #4C6B00 !important;
+}
+
+.navbar .navbar-brand .svg-inline--fa path {
+    fill: currentColor !important;
 }

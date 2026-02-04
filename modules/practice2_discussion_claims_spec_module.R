@@ -1,6 +1,6 @@
 practice_discussion_claims_spec_module_ui <- function(id) {
   ns <- NS(id)
-
+ 
   tagList(
     card(
       class = "paperstars-instructions-card",

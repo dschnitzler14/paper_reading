@@ -2,96 +2,85 @@ practice_module_ui <- function(id) {
   ns <- NS(id)
 
   bslib::page_fluid(
-    bslib::card(
-      full_screen = TRUE,
 
-      bslib::card_header(
-        uiOutput(ns("section_title"))
-      ),
+    div(
+      class = "ps-guide ps-intro",
 
-      bslib::card_body(
-        bslib::layout_sidebar(
-          fillable = FALSE,
-          fill = FALSE,
-
-          bg = "#fffdf6",
-          fg = "#2b362bff",
-          border = TRUE,
-          border_radius = TRUE,
-          border_color = "rgba(0,0,0,0.08)",
-          padding = "2px",
-          gap = "2px",
-
-          sidebar = bslib::sidebar(
-            title = tags$span("Practice Games", class = "toc-title"),
-            open = list(desktop = "always", mobile = "closed"),
-            width = "30%",
-            bg = "inherit",
-            fg = "inherit",
-            padding = "0px",
-            gap = "1px",
-
-            bslib::navset_pill_list(
-              id = ns("toc"),
-              well = FALSE,
-              bslib::nav_panel(
-              title = tagList(
-                bs_icon("search"),
-                tags$span("Find the Gap", style = "margin-left: 0.5rem;")
-              ),
-              value = "practice1"
-            ),
-            bslib::nav_panel(
-              title = tagList(
-                bs_icon("question-circle"),
-                tags$span("Speculation vs Evidence", style = "margin-left: 0.5rem;")
-              ),
-              value = "practice2"
-            ),
-            bslib::nav_panel(
-              title = tagList(
-                bs_icon("layers"),
-                tags$span("Build a Paper", style = "margin-left: 0.5rem;")
-              ),
-              value = "practice3"
-            ),
-            bslib::nav_panel(
-              title = tagList(
-                bs_icon("exclamation-diamond"),
-                tags$span("What Does Not Belong", style = "margin-left: 0.5rem;")
-              ),
-              value = "practice4"
-            ),
-            bslib::nav_panel(
-              title = tagList(
-                bs_icon("flag"),
-                tags$span("Green vs Red Flags", style = "margin-left: 0.5rem;")
-              ),
-              value = "practice5"
-            ),
-            # bslib::nav_panel(
-            #   title = tagList(
-            #     bs_icon("pencil-square"),
-            #     tags$span("Your Turn", style = "margin-left: 0.5rem;")
-            #   ),
-            #   value = "practice6"
-            # )
-
-
-            )
-          ),
-
+      bslib::card(
+        class = "ps-guide-hero",
+        bslib::card_body(
           tags$div(
-            class = "module-page",
-            uiOutput(ns("section_body"))
+            class = "ps-guide-hero-inner",
+            tags$h3("Practice Games"),
+            uiOutput(ns("practice_intro"))
           )
         )
       ),
 
-      bslib::card_footer(
-        nav_buttons_ui(ns("nav_controls"))
+    ),
+    card(
+      card_body(
+        tags$div(
+          class = "ps-reading-tabs",
+        navset_tab(
+          id = ns("practice_tabs"),
+          
+          nav_panel(
+            value = ns("title_abstract_panel"),
+            title = tagList(
+              bs_icon("search"),
+              " Find the Gap"),
+            
+              practice_intro_mystery_module_ui(ns("intro_mystery_module")),
+          ),
+
+          nav_panel(
+            value = ns("title_abstract_panel"),
+            title = tagList(
+              bs_icon("check-square"),
+              " Speculation vs Evidence"),
+            
+            practice_discussion_claims_spec_module_ui(ns("discussion_claims_spec_module")),
+              
+          ),
+
+          nav_panel(
+            value = ns("title_abstract_panel"),
+            title = tagList(
+              bs_icon("tools"),
+              " Build a Paper"),
+            
+              practice_build_a_paper_module_ui(ns("build_a_paper_module"), dictionary = dictionary),
+        
+          ),
+
+          nav_panel(
+            value = ns("title_abstract_panel"),
+            title = tagList(
+              bs_icon("ban"),
+              " What Does Not Belong"),
+            
+              practice_what_does_not_belong_module_ui(ns("what_does_not_belong_module")),
+        
+          ),
+
+          nav_panel(
+            value = ns("title_abstract_panel"),
+            title = tagList(
+              bs_icon("flag"),
+              " Green vs Red Flags"),
+
+              practice_green_red_flag_module_ui(ns("green_red_flag_module")),
+              
+          ),
+             
+         
       )
     )
+)
+),
+
+    nav_buttons_ui(ns("nav_controls"))
   )
 }
 
@@ -99,45 +88,16 @@ practice_module_server <- function(id, parent_session, nav_order_list, process_m
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
 
-    titles <- c(
-      practice1 = "Practice 1",
-      practice2 = "Practice 2",
-      practice3 = "Practice 3",
-      practice4 = "Practice 4",
-      practice5 = "Practice 5"
-      #practice6 = "Practice 6"
-    )
+output$practice_intro <- renderUI({
+  process_markdown("practice/practice_intro.md")
+})
 
-    current_key <- reactive({
-      if (is.null(input$toc) || input$toc == "") "practice1" else input$toc
-    })
+practice_intro_mystery_module_server("intro_mystery_module", process_rmd_fragment = process_rmd_fragment)
+practice_discussion_claims_spec_module_server("discussion_claims_spec_module")
+practice_build_a_paper_module_server("build_a_paper_module")
+practice_what_does_not_belong_module_server("what_does_not_belong_module", process_rmd_fragment = process_rmd_fragment, process_markdown = process_markdown)
+practice_green_red_flag_module_server("green_red_flag_module", dictionary_correct = flag_dictionary_correct)
 
-    output$section_title <- renderUI({
-      titles[[current_key()]]
-    })
-
-    output$section_body <- renderUI({
-      key <- current_key()
-      switch(
-        key,
-        practice1 = practice_intro_mystery_module_ui(ns("intro_mystery_module")),
-        practice2 = practice_discussion_claims_spec_module_ui(ns("discussion_claims_spec_module")),
-        practice3 = practice_build_a_paper_module_ui(ns("build_a_paper_module"), dictionary = dictionary),
-        practice4 = practice_what_does_not_belong_module_ui(ns("what_does_not_belong_module")),
-        practice5 = practice_green_red_flag_module_ui(ns("green_red_flag_module")),
-        #practice6 = practice_your_turn_module_ui(ns("your_turn_module"))
-      )
-    })
-
-    observe({
-      key <- current_key()
-      if (identical(key, "practice1")) practice_intro_mystery_module_server("intro_mystery_module", process_rmd_fragment = process_rmd_fragment)
-      if (identical(key, "practice2")) practice_discussion_claims_spec_module_server("discussion_claims_spec_module")
-      if (identical(key, "practice3")) practice_build_a_paper_module_server("build_a_paper_module")
-      if (identical(key, "practice4")) practice_what_does_not_belong_module_server("what_does_not_belong_module", process_rmd_fragment = process_rmd_fragment, process_markdown = process_markdown)
-      if (identical(key, "practice5")) practice_green_red_flag_module_server("green_red_flag_module", dictionary_correct = flag_dictionary_correct)
-      #if (identical(key, "practice6")) practice_your_turn_module_server("your_turn_module")
-    })
 
     nav_buttons_server(
       id = "nav_controls",

@@ -66,7 +66,7 @@ tags$head(
   tags$script(src = "js/highlighter.js"),
   tags$script(src = "js/emoji_picker.js"),
   tags$script(src = "js/card-complete.js"),
-  #tags$script(src = "js/dyslexia-toggle.js"),
+  tags$script(src = "js/fig_nav_keys.js"),
   
 
   tags$link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap"),
@@ -86,9 +86,6 @@ tags$head(
     }
   "))
 ),
-
-
-
 
   nav_panel(
   title = tagList(
@@ -207,13 +204,7 @@ tags$head(
   )
 ),
 
-  # nav_item(
-  #   actionLink(
-  #     "toggle_dyslexia_font",
-  #     "Toggle Dyslexia-friendly font On/Off",
-  #     class = "ps-topmenu-link"
-  #   )
-  # )
+  
   ),
 
 

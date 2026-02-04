@@ -10,117 +10,117 @@ practice_what_does_not_belong_module_ui <- function(id) {
         )
       )
     ),
-    card(
-    card_header("Introduction 1"),
-    card_body(
-      div(
-          class = "strategies-main",
+    # card(
+    # card_header("Introduction 1"),
+    # card_body(
+    #   div(
+    #       class = "strategies-main",
           div(
             class = "paper-box",
             uiOutput(ns("practice_wrong_section1_text")),
             uiOutput(ns("practice_wrong_section1_click"))
 
           ),
-        )
-    )
-  ),
-  card(
-  card_header("Introduction 2"),
-  card_body(
-    div(
-      class = "strategies-main",
+  #       )
+  #   )
+  # ),
+  # card(
+  # card_header("Introduction 2"),
+  # card_body(
+  #   div(
+  #     class = "strategies-main",
       div(
         class = "paper-box",
         uiOutput(ns("practice_wrong_section2_text")),
         uiOutput(ns("practice_wrong_section2_click"))
-      )
-    )
-  )
-),
+      ),
+#     )
+#   )
+# ),
 
-card(
-  card_header("Methods 1"),
-  card_body(
-    div(
-      class = "strategies-main",
+# card(
+#   card_header("Methods 1"),
+#   card_body(
+#     div(
+#       class = "strategies-main",
       div(
         class = "paper-box",
         uiOutput(ns("practice_wrong_section3_text")),
         uiOutput(ns("practice_wrong_section3_click"))
-      )
-    )
-  )
-),
+      ),
+#     )
+#   )
+# ),
 
-card(
-  card_header("Methods 2"),
-  card_body(
-    div(
-      class = "strategies-main",
+# card(
+#   card_header("Methods 2"),
+#   card_body(
+#     div(
+#       class = "strategies-main",
       div(
         class = "paper-box",
         uiOutput(ns("practice_wrong_section4_text")),
         uiOutput(ns("practice_wrong_section4_click"))
-      )
-    )
-  )
-),
+      ),
+#     )
+#   )
+# ),
 
-card(
-  card_header("Results 1"),
-  card_body(
-    div(
-      class = "strategies-main",
+# card(
+#   card_header("Results 1"),
+#   card_body(
+#     div(
+#       class = "strategies-main",
       div(
         class = "paper-box",
         uiOutput(ns("practice_wrong_section5_text")),
         uiOutput(ns("practice_wrong_section5_click"))
-      )
-    )
-  )
-),
+      ),
+#     )
+#   )
+# ),
 
-card(
-  card_header("Results 2"),
-  card_body(
-    div(
-      class = "strategies-main",
+# card(
+#   card_header("Results 2"),
+#   card_body(
+#     div(
+#       class = "strategies-main",
       div(
         class = "paper-box",
         uiOutput(ns("practice_wrong_section6_text")),
         uiOutput(ns("practice_wrong_section6_click"))
-      )
-    )
-  )
-),
+      ),
+#     )
+#   )
+# ),
 
-card(
-  card_header("Discussion 1"),
-  card_body(
-    div(
-      class = "strategies-main",
+# card(
+#   card_header("Discussion 1"),
+#   card_body(
+#     div(
+#       class = "strategies-main",
       div(
         class = "paper-box",
         uiOutput(ns("practice_wrong_section7_text")),
         uiOutput(ns("practice_wrong_section7_click"))
-      )
-    )
-  )
-),
+      ),
+#     )
+#   )
+# ),
 
-card(
-  card_header("Discussion 2"),
-  card_body(
-    div(
-      class = "strategies-main",
+# card(
+#   card_header("Discussion 2"),
+#   card_body(
+#     div(
+#       class = "strategies-main",
       div(
         class = "paper-box",
         uiOutput(ns("practice_wrong_section8_text")),
         uiOutput(ns("practice_wrong_section8_click"))
-      )
-    )
-  )
-)
+      ),
+#     )
+#   )
+# )
 
     
   )

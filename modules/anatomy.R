@@ -17,9 +17,13 @@ anatomy_module_ui <- function(id) {
       ),
     ),
 
-    bslib::card(
+    div(
+      class = "deck-controls deck-controls-pills mb-3",
+      uiOutput(ns("deck_pills"))
+    ),
+
+    div(
       class = "deck-controls deck-controls-main mb-3",
-      bslib::card_body(
         tags$div(
           class = "deck-nav-single",
           actionButton(
@@ -33,14 +37,7 @@ anatomy_module_ui <- function(id) {
             class = "deck-btn deck-btn-next"
           )
         )
-      )
-    ),
-
-    bslib::card(
-      class = "deck-controls deck-controls-pills mb-3",
-      bslib::card_body(
-        uiOutput(ns("deck_pills"))
-      )
+      
     ),
 
     tags$div(
@@ -48,9 +45,8 @@ anatomy_module_ui <- function(id) {
       uiOutput(ns("deck_card"))
     ),
 
-    bslib::card(
+    div(
       class = "deck-controls deck-controls-main mb-3",
-      bslib::card_body(
         tags$div(
           class = "deck-nav-single",
           actionButton(
@@ -64,9 +60,7 @@ anatomy_module_ui <- function(id) {
             class = "deck-btn deck-btn-next"
           )
         )
-      )
     ),
-
     nav_buttons_ui(ns("nav_controls"))
   )
 }
