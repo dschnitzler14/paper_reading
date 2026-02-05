@@ -1,10 +1,3 @@
-# citing_module_ui <- function(id) {
-#   ns <- NS(id)
-#   tagList(
-    
-#   )
-# }
-
 citing_module_ui <- function(id) {
   ns <- NS(id)
 
@@ -173,6 +166,11 @@ citing_module_ui <- function(id) {
 
 citing_module_server <- function(id, parent_session, nav_order_list, process_markdown) {
   moduleServer(id, function(input, output, session) {
+
+
+output$citing_intro_text1 <- renderUI({
+  process_markdown("citing/citing_intro.md")
+})
 
     nav_buttons_server(
       id = "nav_controls",

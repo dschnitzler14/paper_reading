@@ -43,13 +43,6 @@
     opacity: 0.9;
 }
 
-.paperstars-instructions-card:hover {
-    transform: translateY(-2px) !important;
-    border-color: rgba(31, 35, 24, 0.20) !important;
-    box-shadow:
-        0 14px 34px rgba(0, 0, 0, 0.12) !important;
-}
-
 .paperstars-instructions-card>.card-header {
     background: transparent !important;
     border-bottom: none !important;
@@ -62,8 +55,6 @@
     font-size: 2rem !important;
     letter-spacing: 0.15px !important;
 }
-
-/* font-size: 1.12rem !important; */
 
 .paperstars-instructions-card>.card-body {
     background: transparent !important;
@@ -85,4 +76,168 @@
 .paperstars-instructions-card>.card-body ol {
     margin-top: 0.35rem !important;
     margin-bottom: 0.45rem !important;
+}
+
+/* =========================
+   Instruction-card callouts
+   ========================= */
+
+.paperstars-instructions-card .ps-callout {
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 18px;
+    padding: 16px 18px 16px 44px;
+    margin-top: 16px;
+
+    background: rgba(255, 255, 255, 0.34);
+    border: 1px solid rgba(31, 35, 24, 0.14);
+
+    box-shadow:
+        0 10px 22px rgba(0, 0, 0, 0.08),
+        0 1px 0 rgba(255, 255, 255, 0.45) inset;
+}
+
+.paperstars-instructions-card .ps-callout::before {
+    content: "";
+    position: absolute;
+    left: 16px;
+    top: 12px;
+    bottom: 12px;
+    width: 8px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(75, 107, 7, 0.95), rgba(189, 116, 38, 0.90));
+    opacity: 0.95;
+}
+
+.paperstars-instructions-card .ps-callout::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(rgba(75, 107, 7, 0.06) 1px, transparent 1px),
+        radial-gradient(rgba(189, 116, 38, 0.05) 1px, transparent 1px);
+    background-position: 0 0, 14px 14px;
+    background-size: 28px 28px;
+    opacity: 0.22;
+}
+
+.paperstars-instructions-card .ps-callout strong {
+    display: block;
+    font-weight: 800;
+    font-size: 0.98rem;
+    letter-spacing: 0.01em;
+    color: rgba(31, 35, 24, 0.90);
+    margin: 0 0 8px 0;
+}
+
+.paperstars-instructions-card .ps-callout p {
+    margin: 0;
+    color: rgba(31, 35, 24, 0.78);
+}
+
+.paperstars-instructions-card .ps-callout> :last-child {
+    margin-bottom: 0;
+}
+
+/* =========================
+   Variant system
+   ========================= */
+
+.paperstars-instructions-card .ps-callout strong {
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.paperstars-instructions-card .ps-callout strong::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 92px;
+    height: 2px;
+
+    border-radius: 999px;
+    opacity: 0.55;
+}
+
+.paperstars-instructions-card .ps-callout-goals {
+    background: rgba(75, 107, 7, 0.06);
+    border-color: rgba(75, 107, 7, 0.18);
+}
+
+.paperstars-instructions-card .ps-callout-goals::before {
+    background: linear-gradient(180deg, rgba(75, 107, 7, 1), rgba(75, 107, 7, 0.55));
+}
+
+.paperstars-instructions-card .ps-callout-goals strong::after {
+    background: rgba(75, 107, 7, 0.55);
+}
+
+.paperstars-instructions-card .ps-callout-rate {
+    background: rgba(189, 116, 38, 0.07);
+    border-color: rgba(189, 116, 38, 0.20);
+}
+
+.paperstars-instructions-card .ps-callout-rate::before {
+    background: linear-gradient(180deg, rgba(189, 116, 38, 1), rgba(189, 116, 38, 0.55));
+}
+
+.paperstars-instructions-card .ps-callout-rate strong::after {
+    background: rgba(189, 116, 38, 0.55);
+}
+
+.paperstars-instructions-card .ps-callout-warning {
+    background: rgba(189, 116, 38, 0.08);
+    border-color: rgba(189, 116, 38, 0.26);
+}
+
+.paperstars-instructions-card .ps-callout-warning::before {
+    background: linear-gradient(180deg, rgba(145, 68, 28, 1), rgba(189, 116, 38, 0.60));
+}
+
+.paperstars-instructions-card .ps-callout-warning strong::after {
+    background: rgba(145, 68, 28, 0.55);
+}
+
+.paperstars-instructions-card .ps-callout-how {
+    background: rgba(31, 35, 24, 0.045);
+    border-color: rgba(31, 35, 24, 0.16);
+}
+
+.paperstars-instructions-card .ps-callout-how::before {
+    background: linear-gradient(180deg, rgba(31, 35, 24, 0.80), rgba(31, 35, 24, 0.35));
+}
+
+.paperstars-instructions-card .ps-callout-how strong::after {
+    background: rgba(31, 35, 24, 0.35);
+}
+
+.paperstars-instructions-card .ps-callout-reflect {
+    background: rgba(75, 107, 7, 0.05);
+    border-color: rgba(75, 107, 7, 0.16);
+}
+
+.paperstars-instructions-card .ps-callout-reflect::before {
+    background: linear-gradient(180deg, rgba(75, 107, 7, 0.90), rgba(189, 116, 38, 0.70));
+}
+
+.paperstars-instructions-card .ps-callout-reflect strong::after {
+    background: rgba(75, 107, 7, 0.45);
+}
+
+.paperstars-instructions-card .ps-callout-stretch {
+    background: rgba(45, 78, 118, 0.055);
+    border-color: rgba(45, 78, 118, 0.18);
+}
+
+.paperstars-instructions-card .ps-callout-stretch::before {
+    background: linear-gradient(180deg, rgba(45, 78, 118, 0.95), rgba(45, 78, 118, 0.45));
+}
+
+.paperstars-instructions-card .ps-callout-stretch strong::after {
+    background: rgba(45, 78, 118, 0.45);
 }

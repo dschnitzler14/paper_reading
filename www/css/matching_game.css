@@ -1,5 +1,5 @@
 
-.mg-btn {
+.mg-btn { 
     width: 100%;
     text-align: left;
     margin-bottom: 10px;
@@ -16,20 +16,20 @@
 
 .mg-btn.btn-outline-primary {
     background-color: #eef3dc;
-    border: 1.5px solid #7a8f2a;
+    border: 1.5px solid #879a3e;
     color: #3f4a1d;
 }
 
 
 .mg-btn.btn-outline-secondary {
     background-color: #fff6e3;
-    border: 1.5px solid #b9a46a;
+    border: 1.5px solid #f0d189;
     color: #4a3f24;
 }
 
 
 .mg-btn:hover {
-    background-color: #f5f7ec;
+    background-color: #ecefe0;
 }
 
 
@@ -58,4 +58,45 @@
 .mg-btn.btn-success {
     pointer-events: none;
     cursor: default;
+}
+
+.mg-btn.mg-matched {
+    pointer-events: none;
+    cursor: default;
+
+    color: rgba(31, 35, 24, 0.9);
+    font-weight: 600;
+
+    background-image: none;
+    box-shadow: none;
+}
+
+.mg-btn.mg-matched.mg-pair-1 {
+    background-color: rgba(75, 107, 7, 0.08);
+    border-color: rgba(75, 107, 7, 0.28);
+}
+
+.mg-btn.mg-matched.mg-pair-2 {
+    background-color: rgba(189, 116, 38, 0.09);
+    border-color: rgba(189, 116, 38, 0.30);
+}
+
+.mg-btn.mg-matched.mg-pair-3 {
+    background-color: rgba(145, 68, 28, 0.09);
+    border-color: rgba(145, 68, 28, 0.32);
+}
+
+.mg-btn.mg-matched.mg-pair-4 {
+    background-color: rgba(31, 35, 24, 0.06);
+    border-color: rgba(31, 35, 24, 0.26);
+}
+
+.mg-btn.mg-matched.mg-pair-5 {
+    background-color: rgba(92, 114, 58, 0.08);
+    border-color: rgba(92, 114, 58, 0.30);
+}
+
+.mg-btn.mg-matched.mg-pair-6 {
+    background-color: rgba(45, 78, 68, 0.08);
+    border-color: rgba(45, 78, 68, 0.28);
 }

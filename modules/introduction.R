@@ -19,9 +19,9 @@ introduction_module_ui <- function(id) {
       bslib::layout_columns(
         col_widths = c(4, 4, 4),
         class = "ps-step-grid",
-
+ 
         bslib::card(
-          class = "ps-step ps-intro-card",
+          class = "ps-step ps-static-card",
           bslib::card_body(
             tags$div(
               class = "ps-step-inner",
@@ -35,7 +35,7 @@ introduction_module_ui <- function(id) {
         ),
 
         bslib::card(
-          class = "ps-step ps-intro-card",
+          class = "ps-step ps-static-card",
           bslib::card_body(
             tags$div(
               class = "ps-step-inner",
@@ -49,7 +49,7 @@ introduction_module_ui <- function(id) {
         ),
 
         bslib::card(
-          class = "ps-step ps-intro-card",
+          class = "ps-step ps-static-card",
           bslib::card_body(
             tags$div(
               class = "ps-step-inner",
@@ -65,10 +65,10 @@ introduction_module_ui <- function(id) {
 
       bslib::layout_columns(
         col_widths = c(6, 6),
-        class = "ps-step-grid ps-intro-bottom",
+        class = "ps-step-grid",
 
         bslib::card(
-          class = "ps-step ps-intro-callout ps-intro-callout-howto",
+          class = "ps-step ps-static-card",
           bslib::card_body(
             tags$div(
               class = "ps-step-inner",
@@ -82,7 +82,7 @@ introduction_module_ui <- function(id) {
         ),
 
         bslib::card(
-          class = "ps-step ps-intro-callout ps-intro-callout-ready",
+          class = "ps-step ps-static-card",
           bslib::card_body(
             tags$div(
               class = "ps-step-inner",

@@ -282,7 +282,7 @@
     padding: 12px 14px;
     margin-top: 10px;
 }
-
+ 
 .ps-guide .ps-callout strong {
     color: #6a3d10;
 }
@@ -551,7 +551,7 @@
 }
 
 /* column layout */
-/* 
+
 .ps-step .ps-split-demo {
     display: grid;
     grid-template-columns: 340px 1fr;
@@ -594,7 +594,7 @@
     border-radius: 14px;
     padding: 16px 16px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-} */
+}
 
 /* strategies nav bar */
 
@@ -690,4 +690,16 @@
         font-size: 1.02rem;
         padding: 9px 14px;
     }
+}
+
+/* non hover cards */
+
+.ps-guide .ps-step.ps-static-card {
+    transition: none;
+}
+
+.ps-guide .ps-step.ps-static-card:hover {
+    transform: none;
+    box-shadow: 0 14px 30px rgba(31, 35, 24, 0.08);
+    border-color: var(--ps-border);
 }

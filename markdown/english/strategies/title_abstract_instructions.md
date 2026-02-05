@@ -4,6 +4,31 @@ This also gives a good summary of work done! No need to pass it to generative AI
 
 Remember to rate this title too (Note: this may be easier to do when you have completed the paper, as you can't really judge yet if the title is appropirate, so do come back here after you have worked through the other sections.)
 
+<div class="ps-callout ps-callout-goals">
+<strong>Section goals</strong><br>
+By the end of this section, you should be able to identify the main research question and the population being studied.
+</div>
+
+<div class="ps-callout ps-callout-warning">
+<strong>Common pitfall</strong><br>
+Don’t assume causation here — this section only establishes association.
+</div>
+
+<div class="ps-callout ps-callout-how">
+<strong>How to approach this section</strong><br>
+Skim once for structure, then re-read focusing on how variables are defined.
+</div>
+
+<div class="ps-callout ps-callout-reflect">
+<strong>Self-check</strong><br>
+Could you explain this section to someone else in two sentences?
+</div>
+
+<div class="ps-callout ps-callout-stretch">
+<strong>Stretch thinking</strong><br>
+What alternative explanation could also account for these findings?
+</div>
+
 <div style="
   background: linear-gradient(180deg, #f7f9fb, #edf2f6);
   border: 1px solid rgba(40, 60, 80, 0.18);

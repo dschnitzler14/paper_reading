@@ -21,7 +21,7 @@ searching_module_ui <- function(id) {
       class = "ps-step-grid",
 
       bslib::card(
-        class = "ps-step ps-step-1",
+        class = "ps-step ps-step-1 ps-static-card",
         bslib::card_body(
           tags$div(
             class = "ps-step-inner",
@@ -36,7 +36,7 @@ searching_module_ui <- function(id) {
       ),
 
       bslib::card(
-        class = "ps-step ps-step-2",
+        class = "ps-step ps-step-2 ps-static-card",
         bslib::card_body(
           tags$div(
             class = "ps-step-inner",
@@ -51,7 +51,7 @@ searching_module_ui <- function(id) {
       ),
 
       bslib::card(
-        class = "ps-step ps-step-3",
+        class = "ps-step ps-step-3 ps-static-card",
         bslib::card_body(
           tags$div(
             class = "ps-step-inner",
@@ -66,7 +66,7 @@ searching_module_ui <- function(id) {
       ),
 
       bslib::card(
-        class = "ps-step ps-step-4",
+        class = "ps-step ps-step-4 ps-static-card",
         bslib::card_body(
           tags$div(
             class = "ps-step-inner",
@@ -81,7 +81,7 @@ searching_module_ui <- function(id) {
       ),
 
       bslib::card(
-        class = "ps-step ps-step-5",
+        class = "ps-step ps-step-5 ps-static-card",
         bslib::card_body(
           tags$div(
             class = "ps-step-inner",
@@ -96,7 +96,7 @@ searching_module_ui <- function(id) {
       ),
 
       bslib::card(
-        class = "ps-step ps-step-6",
+        class = "ps-step ps-step-6 ps-static-card",
         bslib::card_body(
           tags$div(
             class = "ps-step-inner",
@@ -111,7 +111,7 @@ searching_module_ui <- function(id) {
       ),
 
       bslib::card(
-        class = "ps-step ps-step-7",
+        class = "ps-step ps-step-7 ps-static-card",
         bslib::card_body(
           tags$div(
             class = "ps-step-inner",
@@ -126,7 +126,7 @@ searching_module_ui <- function(id) {
       ),
 
       bslib::card(
-        class = "ps-step ps-step-8",
+        class = "ps-step ps-step-8 ps-static-card",
         bslib::card_body(
           tags$div(
             class = "ps-step-inner",
@@ -141,7 +141,7 @@ searching_module_ui <- function(id) {
       ),
 
       bslib::card(
-        class = "ps-step ps-step-9",
+        class = "ps-step ps-step-9 ps-static-card",
         bslib::card_body(
           tags$div(
             class = "ps-step-inner",

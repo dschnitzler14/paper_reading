@@ -73,11 +73,15 @@
 
 .sb-notepad .form-group {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .sb-notepad textarea.form-control {
     width: 100%;
-    min-height: 120px;
+    flex: 1;
+    min-height: 0;
 
     background: transparent;
     border: none;
@@ -87,7 +91,7 @@
     padding: 6px 6px 6px 0;
     margin: 0;
 
-    resize: vertical;
+    resize: none;
 
     font-family: inherit;
     font-size: inherit;
@@ -201,5 +205,96 @@
 }
 
 .sb-notepad h4 {
-    margin-top: 46px;
+    margin-top: 0;
+    padding-right: 120px;
+}
+
+.sb-notepad.sb-answer .sb-answer-body {
+    flex: 1;
+    min-height: 0;
+    padding-top: 46px;
+}
+
+div.sb-notepad.sb-answer {
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sb-answer-col>.sb-notepad {
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sb-answer-col>.sb-notepad .sb-answer-body {
+    flex: 1;
+    min-height: 0;
+    padding-top: 46px;
+}
+
+.sb-notepad:has(.sb-answer-body) {
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sb-notepad:has(.sb-answer-body) .sb-answer-body {
+    flex: 1;
+    min-height: 0;
+    padding-top: 46px;
+}
+
+
+.sb-notepad.sb-question {
+    min-height: 220px;
+}
+
+.sb-notepad.sb-question .sb-q-label {
+    margin: 0 0 8px 0;
+    font-family: "Libre Baskerville", serif;
+    color: var(--ink);
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+}
+
+.sb-reveal-pill {
+    appearance: none;
+    border: 1px solid rgba(31, 35, 24, 0.18);
+    background: rgba(255, 255, 255, 0.55);
+    color: rgba(31, 35, 24, 0.88);
+    font-weight: 650;
+    font-size: 0.88rem;
+    line-height: 1;
+    padding: 9px 12px;
+    border-radius: 999px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+    transition:
+        transform 120ms ease,
+        background 120ms ease,
+        border-color 120ms ease,
+        box-shadow 120ms ease;
+}
+
+.sb-reveal-pill:hover,
+.sb-reveal-pill:focus {
+    background: rgba(255, 255, 255, 0.78);
+    border-color: rgba(31, 35, 24, 0.26);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.sb-reveal-pill:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.sb-reveal-pill.btn:focus,
+.sb-reveal-pill.btn:active:focus,
+.sb-reveal-pill.btn.focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(31, 35, 24, 0.12);
 }

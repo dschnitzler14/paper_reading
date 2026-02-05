@@ -238,3 +238,11 @@
     padding: 0.1rem 0.3rem;
     border-radius: 8px;
 }
+
+.modal:has(.cd-screen) .modal-dialog {
+    pointer-events: none !important;
+}
+
+.modal:has(.cd-screen) .modal-content {
+    pointer-events: auto !important;
+}

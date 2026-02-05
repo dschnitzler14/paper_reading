@@ -62,7 +62,7 @@ practice_your_turn_module_ui <- function(id) {
                 tags$div(
                   class = "ps-topic-title-text",
                   tags$h3("Downregulation of cyclic adenosine monophosphate levels in leukocytes of hibernating captive black bears is similar to reported cyclic adenosine monophosphate findings in major depressive disorder"),
-                  tags$p(class = "ps-topic-subtitle", "Read Tsiouris and Flory (2023)")
+                  tags$p(class = "ps-topic-subtitle", "Tsiouris and Flory (2023)")
                 )
               ),
               tags$div(

@@ -1,633 +1,6 @@
 your_turn_paper2_ui <- function(id) {
   ns <- NS(id)
-
-#   bslib::page_fluid(
-#     layout_column_wrap(
-#     width = 1,
-#     card(
-#       full_screen = TRUE,
-#       card_header("Tsiouris & Flory, 2023"),
-#       card_body(
-#         navset_tab(
-#           id = ns("reading_tabs"),
-#           nav_panel(
-#             value = ns("title_abstract_panel"),
-#             title = tagList(
-#               bs_icon("1-circle-fill"),
-#               " Title and Abstract"
-#             ),
-
-#             layout_sidebar(
-#               fillable = TRUE,
-#               fill = TRUE,
-#             sidebar = sidebar(
-#               title = tags$span("Title and Abstract", class = "toc-title"),
-#               open = list(desktop = "always", mobile = "closed"),
-#               width = "40%",
-#               bg = "inherit",
-#               fg = "inherit",
-#               padding = "0px",
-#               gap = "1px",
-#                 div(
-#                   class = "sb-white",
-#                   tags$h4("Title"),
-#                   paperstars_rating_ui(
-#                       id = ns("title_rating_paper2"),
-#                       label = "What did you think of the title?",
-#                       choiceNames = title_choices$names,
-#                       choiceValues = title_choices$values,
-#                       selected = character(0)
-#                     )
-                  
-#                 ),
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("📝 Notes"),
-#                   sb_notepad_emoji_picker_ui(c("📝")),
-#                   textAreaInput(ns("title_abstract_notes"), label = NULL)
-                  
-#                 ),
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("❓ Questions"),
-#                   sb_notepad_emoji_picker_ui(c("❓")),
-#                   textAreaInput(ns("title_abstract_questions"), label = NULL)
-                    
-#                 ),
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("🚦 Flags"),
-#                   sb_notepad_emoji_picker_ui(c("✅", "⚠️", "🚩")),
-#                   textAreaInput(ns("title_abstract_flags"), label = NULL)
-                    
-#                 ),
-
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("✏️ Unknown Concepts and Vocabulary"),
-#                   sb_notepad_emoji_picker_ui(c("✏️")),
-#                   textAreaInput(ns("title_abstract_vocab"), label = NULL)
-                  
-#                 ),
-#               ),
-#               card(
-#                 class = "paperstars-instructions-card",
-#                 card_header("Title and Abstract Instructions"),
-#                 card_body(
-#                   div(
-                    
-#                   )
-#                 )
-#               ),
-#               card(
-#                 card_header("Title and Abstract"),
-#                 card_body(
-#                   div(
-#                       class = "strategies-main",
-#                       div(
-#                         class = "paper-box",
-#                         highlighter_toolbar_ui(".prose"),
-#                         uiOutput(ns("paper2_title_abstract"))
-#                       )
-#                     )
-#                 )
-#               )
-#             )
-#           ),
-#           nav_panel(
-#             title = tagList(
-#               bs_icon("2-circle-fill"),
-#               " Introduction"
-#             ),
-#             layout_sidebar(
-#               fillable = TRUE,
-#               fill = TRUE,
-#             sidebar = sidebar(
-#               title = tags$span("Introduction", class = "toc-title"),
-#               open = list(desktop = "always", mobile = "closed"),
-#               width = "40%",
-#               bg = "inherit",
-#               fg = "inherit",
-#               padding = "0px",
-#               gap = "1px",
-              
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("📝 Notes"),
-#                   sb_notepad_emoji_picker_ui(c("📝")),
-#                   textAreaInput(ns("intro_notes"), label = NULL)
-                  
-#                 ),
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("❓ Questions"),
-#                   sb_notepad_emoji_picker_ui(c("❓")),
-#                   textAreaInput(ns("intro_questions"), label = NULL)
-                    
-#                 ),
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("🚦 Flags"),
-#                   sb_notepad_emoji_picker_ui(c("✅", "⚠️", "🚩")),
-#                   textAreaInput(ns("intro_flags"), label = NULL)
-                    
-#                 ),
-
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("✏️ Unknown Concepts and Vocabulary"),
-#                   sb_notepad_emoji_picker_ui(c("✏️")),
-#                   textAreaInput(ns("intro_vocab"), label = NULL)
-                  
-#                 ),
-                
-#               ),
-#               card(
-#                 class = "paperstars-instructions-card",
-#                 card_header("Introduction Instructions"),
-#                 card_body(
-#                   div(
-                    
-#                   )
-#                 )
-#               ),
-#               card(
-#                 card_header("Introduction"),
-#                 card_body(
-#                   div(
-#                       class = "strategies-main",
-#                       div(
-#                         class = "paper-box",
-#                         highlighter_toolbar_ui(".prose"),
-#                         uiOutput(ns("paper2_introduction"))
-#                       )
-#                     )
-#                 )
-#               )
-#             )
-#           ),
-#           nav_panel(
-#             title = tagList(
-#               bs_icon("3-circle-fill"),
-#               " Methods"
-#             ),
-            
-#             layout_sidebar(
-#               fillable = TRUE,
-#               fill = TRUE,
-#             sidebar = sidebar(
-#               title = tags$span("Methods", class = "toc-title"),
-#               open = list(desktop = "always", mobile = "closed"),
-#               width = "40%",
-#               bg = "inherit",
-#               fg = "inherit",
-#               padding = "0px",
-#               gap = "1px",
-
-                
-#                 div(
-#                   class = "sb-white",
-#                   tags$h4("Methods"),
-#                   paperstars_rating_ui(
-#                     id = ns("methods_rating_paper2"),
-#                     label = "What did you think of the methods?",
-#                     choiceNames = methods_choices$names,
-#                     choiceValues = methods_choices$values,
-#                     selected = character(0)
-#                   ),
-                  
-#                 ),
-#                 div(
-#                   class = "sb-white",
-#                   tags$h4("Statistical Analysis"),
-#                   paperstars_rating_ui(
-#                     id = ns("stats_rating_paper2"),
-#                     label = "What did you think of the statistical analysis?",
-#                     choiceNames = stats_choices$names,
-#                     choiceValues = stats_choices$values,
-#                     selected = character(0)
-#                   ),
-                  
-#                 ),
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("📝 Notes"),
-#                   sb_notepad_emoji_picker_ui(c("📝")),
-#                   textAreaInput(ns("methods_notes"), label = NULL)
-                  
-#                 ),
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("❓ Questions"),
-#                   sb_notepad_emoji_picker_ui(c("❓")),
-#                   textAreaInput(ns("methods_questions"), label = NULL)
-                    
-#                 ),
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("🚦 Flags"),
-#                   sb_notepad_emoji_picker_ui(c("✅", "⚠️", "🚩")),
-#                   textAreaInput(ns("methods_flags"), label = NULL)
-                    
-#                 ),
-
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("✏️ Unknown Concepts and Vocabulary"),
-#                   sb_notepad_emoji_picker_ui(c("✏️")),
-#                   textAreaInput(ns("methods_vocab"), label = NULL)
-                  
-#                 ),
-                
-#               ),
-#               card(
-#                 class = "paperstars-instructions-card",
-#                 card_header("Methods Instructions"),
-#                 card_body(
-#                 )
-#               ),
-#               card(
-#                 card_header("Methods"),
-#                 card_body(
-#                     div(
-#                       class = "strategies-main",
-#                       div(
-#                         class = "paper-box",
-#                         highlighter_toolbar_ui(".prose"),
-#                         uiOutput(ns("paper2_methods"))
-#                       )
-#                     )
-#                   )
-#               )
-#             )
-#           ),
-#           nav_panel(
-#             title = tagList(
-#               bs_icon("4-circle-fill"),
-#               " Results"
-#             ),
-            
-#             layout_sidebar(
-#               fillable = TRUE,
-#               fill = TRUE,
-#             sidebar = sidebar(
-#               title = tags$span("Results", class = "toc-title"),
-#               open = list(desktop = "always", mobile = "closed"),
-#               width = "40%",
-#               bg = "inherit",
-#               fg = "inherit",
-#               padding = "0px",
-#               gap = "1px",
-
-                
-#                 div(
-#                   class = "sb-white",
-#                   tags$h4("Data Presentation"),
-#                   paperstars_rating_ui(
-#                     id = ns("data_presentation_rating_paper2"),
-#                     label = "What did you think of the Data Presentation?",
-#                     choiceNames = data_presentation_choices$names,
-#                     choiceValues = data_presentation_choices$values,
-#                     selected = character(0)
-#                   ),
-                  
-#                 ),
-
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("📝 Notes"),
-#                   sb_notepad_emoji_picker_ui(c("📝")),
-#                   textAreaInput(ns("results_notes"), label = NULL)
-                  
-#                 ),
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("❓ Questions"),
-#                   sb_notepad_emoji_picker_ui(c("❓")),
-#                   textAreaInput(ns("results_questions"), label = NULL)
-                    
-#                 ),
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("🚦 Flags"),
-#                   sb_notepad_emoji_picker_ui(c("✅", "⚠️", "🚩")),
-#                   textAreaInput(ns("results_flags"), label = NULL)
-                    
-#                 ),
-
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("✏️ Unknown Concepts and Vocabulary"),
-#                   sb_notepad_emoji_picker_ui(c("✏️")),
-#                   textAreaInput(ns("results_vocab"), label = NULL)
-                  
-#                 ),
-
-              
-#               ),
-#               card(
-#                 class = "paperstars-instructions-card",
-#                 card_header("Results Instructions"),
-#                 card_body(
-#                   div(
-                    
-#                   )
-#                 )
-#               ),
-#               card(
-#                 card_header("Results"),
-#                 card_body(
-#                   div(
-#                       class = "strategies-main",
-#                       div(
-#                         class = "paper-box",
-#                         highlighter_toolbar_ui(".prose"),
-#                         uiOutput(ns("paper2_results"))
-#                       )
-#                     )
-#                 )
-#               )
-#             )
-#           ),
-#           nav_panel(
-#             title = tagList(
-#               bs_icon("pause-circle"),
-#               " Pause"
-#             ),
-            
-#             layout_sidebar(
-#               fillable = TRUE,
-#               fill = TRUE,
-#             sidebar = sidebar(
-#               title = tags$span("Pause", class = "toc-title"),
-#               open = list(desktop = "always", mobile = "closed"),
-#               width = "40%",
-#               bg = "inherit",
-#               fg = "inherit",
-#               padding = "0px",
-#               gap = "1px",
-                
-#               ),
-#               card(
-#                 class = "paperstars-instructions-card",
-#                 card_header("Pause"),
-#                 card_body(
-#                   div(
-#                   )
-#                 )
-#               ),
-              
-#               card(
-#                 card_header("Summary of Findings"),
-#                 card_body(
-#                   div(
-#                       class = "strategies-main",
-#                       div(
-#                         class = "paper-box",
-#                         p("Why did they do this study?"),
-#                         p("How did they do the study?"),
-#                         p("What did they find?"),
-#                         p("What do the results mean?")
-#                       )
-#                     )
-#                 )
-#               ),
-#               card(
-#                 card_header("Discussion Predictions"),
-#                 card_body(
-#                   div(
-#                       class = "strategies-main",
-#                       div(
-#                         class = "paper-box",
-#                         p("Before we move on, let's also think about the Discussion."),
-#                         tags$ul(
-#                           tags$li("What do you expect the authors to say in the Discussion?"),
-#                           tags$li("How will they interpret the results?"),
-#                           tags$li("What limitations might they mention?"),
-#                           tags$li("Based on the evidence, what claims would be reasonable?")
-#                         )
-#                       )
-#                     )
-#                 )
-#               )
-#             )
-#           ),
-#           nav_panel(
-#             title = tagList(
-#               bs_icon("5-circle-fill"),
-#               " Discussion"
-#             ),
-            
-#             layout_sidebar(
-#               fillable = TRUE,
-#               fill = TRUE,
-#             sidebar = sidebar(
-#               title = tags$span("Discussion", class = "toc-title"),
-#               open = list(desktop = "always", mobile = "closed"),
-#               width = "40%",
-#               bg = "inherit",
-#               fg = "inherit",
-#               padding = "0px",
-#               gap = "1px",
-
-#                 div(
-#                   class = "sb-white",
-#                   tags$h4("Discussion"),
-#                   paperstars_rating_ui(
-#                     id = ns("discussion_rating_paper2"),
-#                     label = "What did you think of the Discussion?",
-#                     choiceNames = discussion_choices$names,
-#                     choiceValues = discussion_choices$values,
-#                     selected = character(0)
-#                   ),
-                  
-#                 ),
-#                 div(
-#                   class = "sb-white",
-#                   tags$h4("Limitations"),
-#                   paperstars_rating_ui(
-#                     id = ns("limitations_rating_paper2"),
-#                     label = "What did you think of the Limitations?",
-#                     choiceNames = limitations_choices$names,
-#                     choiceValues = limitations_choices$values,
-#                     selected = character(0)
-#                   ),
-
-#                 ),
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("📝 Notes"),
-#                   sb_notepad_emoji_picker_ui(c("📝")),
-#                   textAreaInput(ns("discussion_notes"), label = NULL)
-                  
-#                 ),
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("❓ Questions"),
-#                   sb_notepad_emoji_picker_ui(c("❓")),
-#                   textAreaInput(ns("discussion_questions"), label = NULL)
-                    
-#                 ),
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("🚦 Flags"),
-#                   sb_notepad_emoji_picker_ui(c("✅", "⚠️", "🚩")),
-#                   textAreaInput(ns("discussion_flags"), label = NULL)
-                    
-#                 ),
-
-#                 div(
-#                   class = "sb-notepad",
-#                   tags$h4("✏️ Unknown Concepts and Vocabulary"),
-#                   sb_notepad_emoji_picker_ui(c("✏️")),
-#                   textAreaInput(ns("discussion_vocab"), label = NULL)
-                  
-#                 ),
-
-
-#               ),
-#               card(
-#                 class = "paperstars-instructions-card",
-#                 card_header("Discussion Instructions"),
-#                 card_body(
-#                   div(
-                    
-#                   )
-#                 )
-#               ),
-#               card(
-#                 card_header("Discussion"),
-#                 card_body(
-#                   div(
-#                       class = "strategies-main",
-#                       div(
-#                         class = "paper-box",
-#                         highlighter_toolbar_ui(".prose"),
-#                         uiOutput(ns("paper2_discussion"))
-#                       )
-#                     )
-#                 )
-#               )
-#             )
-#           ),
-#           nav_panel(
-#             title = tagList(
-#               bs_icon("question-circle"),
-#               " Understanding"
-#             ),
-            
-#             layout_sidebar(
-#               fillable = TRUE,
-#               fill = TRUE,
-#             sidebar = sidebar(
-#               title = tags$span("Understanding", class = "toc-title"),
-#               open = list(desktop = "always", mobile = "closed"),
-#               width = "40%",
-#               bg = "inherit",
-#               fg = "inherit",
-#               padding = "0px",
-#               gap = "1px",
-                
-                
-#               ),
-#               card(
-#                 card_header("Understanding"),
-#                 card_body(
-#                 div(
-#                   class = "strategies-main",
-#                   div(
-#                     class = "sb-notepad",
-#                     textAreaInput(ns("Your_Summary"), label = "Your Summary")
-#                   )
-#                 )
-                
-#                 )
-#               )
-#             )
-#           ),
-#           nav_panel(
-#             title = tagList(
-#               bs_icon("star"),
-#               " Reflection"
-#             ),
-#             layout_sidebar(
-          
-#               fillable = FALSE,
-#               fill = FALSE,
-#             sidebar = sidebar(
-#               title = tags$span("Reflection", class = "toc-title"),
-#               open = list(desktop = "always", mobile = "closed"),
-#               width = "20%",
-#               bg = "inherit",
-#               fg = "inherit",
-#               padding = "0px",
-#               gap = "1px",
-#               div(
-#                   class = "sb-notepad",
-#                   tags$h4("❓ Open Questions"),
-                  
-#                 ),
-#                 div(
-#                   class = "sb-white",
-#                   tags$h4("Data Availability"),
-#                   tags$p("This information is often not included in the main text of a paper, so you may need to check the supplementary materials or the journal's website."),
-#                   paperstars_rating_ui(
-#                     id = ns("data_available_rating_paper2"),
-#                     label = "For this paper, I've alread checked and the data is not openly available.",
-#                     choiceNames = data_available_choices$names,
-#                     choiceValues = data_available_choices$values,
-#                     selected = "0"
-#                   )
-                  
-#                 ),
-#               ),
-#               card(
-#                 card_header("Reflection"),
-#                 card_body(
-                  
-#                 card(
-#                   card_header("How would you rate this paper?"),
-#                   card_body(
-#                   uiOutput(ns("paperstars_parameters_rated")),
-#                   p("If you missed a section, you can go back and rate it now."),
-#                   tags$hr(),
-#                   uiOutput(ns("overall_stars")),
-                  
-#                     div(
-#                       class = "paperstars-text-input",
-#                       textAreaInput(
-#                         ns("your_review_input"),
-#                         label = "Your Review",
-#                         value = "",
-#                         placeholder = "Write your review here...",
-#                         width = "100%"
-#                       ),
-#                       actionButton(
-#                         ns("submit_review"),
-#                         "Submit Review",
-#                         class = "paperstars-button"
-#                       ),
-#                       uiOutput(ns("review_submitted"))
-#                     )
-#                   )
-
-#                 )
-              
-#             )
-#             )
-#             )
-#           ),
-          
-#         )
-#       )
-#     )
-#   ),
-    
-#   nav_buttons_ui(ns("nav_controls"))
-    
-# )
-
-bslib::page_fluid(
+ bslib::page_fluid(
     div(
       class = "ps-guide ps-intro",
 
@@ -640,7 +13,7 @@ bslib::page_fluid(
             tags$h4("Tsiouris, J. A., & Flory, M."),
             tags$h4("2023"),
             tags$a(
-              href = "https://doi.org/10.3389/fpsyt.2023.1123279",
+              href = "https://www.ijsrp.org/research-paper-0214.php?rp=P262278#citation",
               target = "_blank",
               rel = "noopener noreferrer",
               class = "ps-guide-paper-link",
@@ -927,13 +300,13 @@ bslib::page_fluid(
               ),
             )
           ),
-
+          
           nav_panel(
             title = tagList(
               bs_icon("pause-circle"),
               " Pause"
             ),
-            
+
             card(
               class = "paperstars-instructions-card",
               card_header("Pause"),
@@ -943,8 +316,107 @@ bslib::page_fluid(
                 )
               )
             ),
+
+            div(
+              class = "strategies-main",
+
+              bslib::layout_columns(
+                col_widths = c(6, 6),
+                div(
+                  class = "sb-notepad sb-question",
+                  tags$h4(class = "sb-q-label", "What was the overarching need for this study?"),
+                  textAreaInput(
+                    ns("your_pause1"),
+                    label = NULL
+                  )
+                ),
+                div(
+                  class = "sb-notepad sb-answer",
+                  actionButton(
+                    ns("show_my_pause1"),
+                    "Show the answer",
+                    class = "sb-reveal-btn"
+                  ),
+                  div(
+                    class = "sb-answer-body",
+                    uiOutput(ns("show_my_pause1_text"))
+                  )
+                )
+              ),
+
+              bslib::layout_columns(
+                col_widths = c(6, 6),
+                div(
+                  class = "sb-notepad sb-question",
+                  tags$h4(class = "sb-q-label", "What was the experimental design?"),
+                  textAreaInput(
+                    ns("your_pause2"),
+                    label = NULL
+                  )
+                ),
+                div(
+                  class = "sb-notepad sb-answer",
+                  actionButton(
+                    ns("show_my_pause2"),
+                    "Show the answer",
+                    class = "sb-reveal-btn"
+                  ),
+                  div(
+                    class = "sb-answer-body",
+                    uiOutput(ns("show_my_pause2_text"))
+                  )
+                )
+              ),
+
+              bslib::layout_columns(
+                col_widths = c(6, 6),
+                div(
+                  class = "sb-notepad sb-question",
+                  tags$h4(class = "sb-q-label", "What do the results show?"),
+                  textAreaInput(
+                    ns("your_pause3"),
+                    label = NULL
+                  )
+                ),
+                div(
+                  class = "sb-notepad sb-answer",
+                  actionButton(
+                    ns("show_my_pause3"),
+                    "Show the answer",
+                    class = "sb-reveal-btn"
+                  ),
+                  div(
+                    class = "sb-answer-body",
+                    uiOutput(ns("show_my_pause3_text"))
+                  )
+                )
+              ),
+
+              bslib::layout_columns(
+                col_widths = c(6, 6),
+                div(
+                  class = "sb-notepad sb-question",
+                  tags$h4(class = "sb-q-label", "What are your predictions for the discussion?"),
+                  textAreaInput(
+                    ns("your_pause4"),
+                    label = NULL
+                  )
+                ),
+                div(
+                  class = "sb-notepad sb-answer",
+                  actionButton(
+                    ns("show_my_pause4"),
+                    "Show the answer",
+                    class = "sb-reveal-btn"
+                  ),
+                  div(
+                    class = "sb-answer-body",
+                    uiOutput(ns("show_my_pause4_text"))
+                  )
+                )
+              )
+            )
           ),
-          
           nav_panel(
             title = tagList(
               bs_icon("5-circle-fill"),
@@ -1020,32 +492,139 @@ bslib::page_fluid(
               ),
             )
           ),
-              
+
           nav_panel(
             title = tagList(
               bs_icon("question-circle"),
               " Understanding"
             ),
             card(
-              card_header("Understanding"),
-              card_body(
-              uiOutput(ns("understanding_box1")),
-              div(
-                class = "strategies-main",
+                class = "paperstars-instructions-card",
+                card_header("Understanding"),
+                card_body(
                 div(
-                    class = "sb-notepad",
-                    textAreaInput(ns("Your_Summary"), label = "Your Summary")
-                  )
-              )
+                    uiOutput(ns("paper2_understanding_instructions_text"))
+                )
+                )
+            ),
+
+              div(
+              class = "strategies-main",
               
+              bslib::layout_columns(
+                col_widths = c(6, 6),
+                div(
+                  class = "sb-notepad sb-question",
+                  tags$h4(class = "sb-q-label", "How would you summarise the findings?"),
+                  textAreaInput(
+                    ns("your_understanding1"),
+                    label = NULL
+                  )
+                ),
+                div(
+                  class = "sb-notepad sb-answer",
+                  actionButton(
+                    ns("show_my_understanding1"),
+                    "Show the answer",
+                    class = "sb-reveal-btn"
+                  ),
+                  div(
+                  class = "sb-answer-body",
+                  uiOutput(ns("show_my_understanding1_text"))
+                  )
+                )
+              ),
+
+              bslib::layout_columns(
+                col_widths = c(6, 6),
+                div(
+                  class = "sb-notepad sb-question",
+                  tags$h4(class = "sb-q-label", "What is the wider impact of these results?"),
+                  textAreaInput(
+                    ns("your_understanding2"),
+                    label = NULL
+                  )
+                ),
+                div(
+                  class = "sb-notepad sb-answer",
+                  actionButton(
+                    ns("show_my_understanding2"),
+                    "Show the answer",
+                    class = "sb-reveal-btn"
+                  ),
+                  div(
+                  class = "sb-answer-body",
+                  uiOutput(ns("show_my_understanding2_text"))
+                  )
+                )
+              ),
+
+              bslib::layout_columns(
+                col_widths = c(6, 6),
+                div(
+                  class = "sb-notepad sb-question",
+                  tags$h4(class = "sb-q-label", "What were the limitations of this study?"),
+
+                  textAreaInput(
+                    ns("your_understanding3"),
+                    label = NULL
+                  )
+                ),
+                div(
+                  class = "sb-notepad sb-answer",
+                  actionButton(
+                    ns("show_my_understanding3"),
+                    "Show the answer",
+                    class = "sb-reveal-btn"
+                  ),
+                  div(
+                  class = "sb-answer-body",
+                  uiOutput(ns("show_my_understanding3_text"))
+                  )
+                )
+              ),
+
+              bslib::layout_columns(
+                col_widths = c(6, 6),
+                div(
+                  class = "sb-notepad sb-question",
+                  tags$h4(class = "sb-q-label", "How do the results support their claims"),
+                  textAreaInput(
+                    ns("your_understanding4"),
+                    label = NULL
+                  )
+                ),
+                div(
+                  class = "sb-notepad sb-answer",
+                  actionButton(
+                    ns("show_my_understanding4"),
+                    "Show the answer",
+                    class = "sb-reveal-btn"
+                  ),
+                  div(
+                  class = "sb-answer-body",
+                  uiOutput(ns("show_my_understanding4_text"))
+                  )
+                )
               )
-            )
+              )
+            
           ),
         
           nav_panel(
             title = tagList(
               bs_icon("star"),
               " Reflection"
+            ),
+
+            card(
+              class = "paperstars-instructions-card",
+              card_header("Understanding"),
+              card_body(
+              div(
+                  uiOutput(ns("paper2_reflection_instructions_text"))
+              )
+              )
             ),
 
             layout_columns(
@@ -1065,17 +644,6 @@ bslib::page_fluid(
                 layout_columns(
                   col_widths = c(6, 6),
                   card(
-                    card_header("My Rating and Review"),
-                    card_body(
-                      uiOutput(ns("paperstars_parameters_my_rating")),
-                      div(
-                      class = "overall-stars-pill",
-                      uiOutput(ns("my_overall_stars")),
-                      ),
-                      uiOutput(ns("my_review_text"))
-                    )
-                  ),
-                card(
                   fillable = FALSE,
                   card_header("How would you rate this paper?"),
                   card_body(
@@ -1106,7 +674,24 @@ bslib::page_fluid(
                     uiOutput(ns("review_submitted"))
                   )
                   )
+                ),
+                card(
+                  card_header(
+                    div(
+                      style = "display:flex; align-items:center; justify-content:space-between; gap:12px;",
+                      "My Rating & Review",
+                      actionButton(
+                        ns("reveal_rating_answer"),
+                        "Reveal my Rating & Review",
+                        class = "sb-reveal-pill"
+                      )
+                    )
+                  ),
+                  card_body(
+                    uiOutput(ns("my_rating_reveal_ui"))
+                  )
                 )
+                
               )
             )
 
@@ -1135,24 +720,174 @@ your_turn_paper2_server <- function(id, process_markdown, process_rmd_fragment) 
     md_ui("english/your_turn/paper2/paper2_title_abstract.Rmd")
   })
 
+  output$paper2_title_abstract_instructions_text <- renderUI({
+    process_markdown("your_turn/paper2/paper2_title_abstract_instructions.md")
+  })
+
   output$paper2_introduction <- renderUI({
     md_ui("english/your_turn/paper2/paper2_intro.Rmd")
+  })
+
+  output$paper2_introduction_instructions_text <- renderUI({
+    process_markdown("your_turn/paper2/paper2_intro_instructions.md")
   })
 
   output$paper2_methods <- renderUI({
     md_ui("english/your_turn/paper2/paper2_methods.Rmd")
   })
 
+  output$paper2_methods_instructions_text <- renderUI({
+    process_markdown("your_turn/paper2/paper2_methods_instructions.md")
+  })
+
   output$paper2_results <- renderUI({
       md_ui("english/your_turn/paper2/paper2_results.Rmd")
     })
   
+  output$paper2_results_instructions_text <- renderUI({
+    process_markdown("your_turn/paper2/paper2_results_instructions.md")
+  })
+
+ output$paper2_pause_instructions_text <- renderUI({
+    process_markdown("your_turn/paper2/paper2_pause_instructions.md")
+  })
+
+
   output$paper2_discussion <- renderUI({
     md_ui("english/your_turn/paper2/paper2_discussion.Rmd")
   })
 
+  output$paper2_discussion_instructions_text <- renderUI({
+    process_markdown("your_turn/paper2/paper2_discussion_instructions.md")
+  })
+
+
+##Pause
+
+observeEvent(input$show_my_pause1, {
+  output$show_my_pause1_text <- renderUI({
+    process_markdown("your_turn/paper2/paper2_show_my_pause1_text.md")
+
+  })
+})
+
+## Understanding
+
+observeEvent(input$show_my_understanding1, {
+  output$show_my_understanding1_text <- renderUI({
+    process_markdown("your_turn/paper2/paper2_show_my_understanding1_text.md")
+
+  })
+})
 
   ## Rating
+
+observeEvent(input$reveal_rating_answer, {
+
+  shinyjs::hide("reveal_rating_answer")
+
+  output$my_rating_reveal_ui <- renderUI({
+    tagList(
+      uiOutput(ns("paper2_paperstars_parameters_my_rating")),
+      div(
+        class = "overall-stars-pill",
+        uiOutput(ns("paper2_my_overall_stars"))
+      ),
+      uiOutput(ns("paper2_my_review_text"))
+    )
+  })
+
+}, once = TRUE)
+
+# my rating and review
+
+output$paper2_paperstars_parameters_my_rating <- renderUI({
+  tags$ul(
+    class = "paperstars-parameter-list",
+
+    tags$li(
+      class = "paperstars-parameter-item rated-okay",
+      tags$span(class = "paperstars-parameter-label", "Title & Abstract"),
+      tags$span(class = "paperstars-parameter-value", "Slightly Misleading")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-good",
+      tags$span(class = "paperstars-parameter-label", "Methods"),
+      tags$span(class = "paperstars-parameter-value", "Sound")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-bad",
+      tags$span(class = "paperstars-parameter-label", "Statistical Analysis"),
+      tags$span(class = "paperstars-parameter-value", "Major concerns")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-bad",
+      tags$span(class = "paperstars-parameter-label", "Data Presentation"),
+      tags$span(class = "paperstars-parameter-value", "Misrepresented")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-okay",
+      tags$span(class = "paperstars-parameter-label", "Discussion"),
+      tags$span(class = "paperstars-parameter-value", "Slightly Misleading")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-okay",
+      tags$span(class = "paperstars-parameter-label", "Limitations"),
+      tags$span(class = "paperstars-parameter-value", "Minor Omissions")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-bad",
+      tags$span(class = "paperstars-parameter-label", "Data Availability"),
+      tags$span(class = "paperstars-parameter-value", "Not Open Access")
+    )
+  )
+})
+
+
+output$paper2_my_overall_stars <- renderUI({
+  n <- as.integer(2)
+
+  star_svg <- function(filled) {
+    col <- if (filled) "#5D8307" else "#D6D7D4"
+
+    tags$svg(
+      class = "paperstars-svg-star",
+      width = "40", #"86",
+      height = "40", #"86",
+      viewBox = "0 0 24 24",
+      xmlns = "http://www.w3.org/2000/svg",
+      tags$path(
+        d = "M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z",
+        fill = col,
+        stroke = col,
+        `stroke-width` = "1.4",
+        `stroke-linejoin` = "round",
+        `stroke-linecap` = "round"
+      )
+    )
+  }
+
+  tags$div(
+    class = "paperstars-stars",
+    lapply(1:5, function(i) star_svg(i <= n))
+  )
+})
+
+
+output$paper2_my_review_text <- renderUI({
+  tags$div(
+    class = "paperstars-textbox",
+    #process_markdown("strategies/overall_rating_text.md")
+  )
+})
+
+##user paper2 rating and review
 
 `%||%` <- function(x, y) if (is.null(x)) y else x
 
@@ -1229,15 +964,6 @@ weighted_percent <- reactive({
   (weighted_total() / denom) * 100
 })
 
-output$weighted_debug <- renderPrint({
-  list(
-    weights = vapply(rating_mods, function(m) m$weight(), numeric(1)),
-    weighted_scores = vapply(rating_mods, function(m) m$score(), numeric(1)),
-    total = weighted_total(),
-    percent = weighted_percent()
-  )
-})
-
 star_rating <- reactive({
   pct <- weighted_percent()
 
@@ -1269,8 +995,8 @@ output$overall_stars <- renderUI({
 
     tags$svg(
       class = "paperstars-svg-star",
-      width = "60", #"86",
-      height = "60", #"86",
+      width = "40", #"86",
+      height = "40", #"86",
       viewBox = "0 0 24 24",
       xmlns = "http://www.w3.org/2000/svg",
       tags$path(

@@ -3,7 +3,7 @@ strategies_module_ui <- function(id) {
 
   bslib::page_fluid(
     div(
-      class = "ps-guide ps-intro",
+      class = "ps-guide",
 
       bslib::card(
         class = "ps-guide-hero",
@@ -22,7 +22,7 @@ strategies_module_ui <- function(id) {
         class = "ps-step-grid",
 
         bslib::card(
-          class = "ps-step ps-intro-card",
+          class = "ps-step ps-static-card",
           bslib::card_body(
             tags$div(
               class = "ps-step-inner",
@@ -36,7 +36,7 @@ strategies_module_ui <- function(id) {
         ),
 
         bslib::card(
-          class = "ps-step ps-intro-card",
+          class = "ps-step ps-static-card",
           bslib::card_body(
             tags$div(
               class = "ps-step-inner",
@@ -50,7 +50,7 @@ strategies_module_ui <- function(id) {
         ),
 
         bslib::card(
-          class = "ps-step ps-intro-card",
+          class = "ps-step ps-static-card",
           bslib::card_body(
             tags$div(
               class = "ps-step-inner",
@@ -64,7 +64,7 @@ strategies_module_ui <- function(id) {
         ),
 
         bslib::card(
-          class = "ps-step ps-intro-card",
+          class = "ps-step ps-static-card",
           bslib::card_body(
             tags$div(
               class = "ps-step-inner",
@@ -80,7 +80,7 @@ strategies_module_ui <- function(id) {
      ),
 
      bslib::card(
-        class = "ps-step ps-intro-card",
+        class = "ps-step ps-static-card",
         bslib::card_body(
           tags$div(
             class = "ps-step-inner",
@@ -2051,107 +2051,6 @@ output$paperstars_parameters_my_rating <- renderUI({
   )
 })
 
-
-output$paperstars_parameters <- renderUI({
-
-  make_param <- function(title, green = 0, amber = 0, red = 0, labels) {
-    tags$div(
-      class = "paperstars-param",
-      tags$div(class = "paperstars-param__title", title),
-
-      tags$div(
-        class = "paperstars-param__bar",
-        tags$div(
-          class = "paperstars-param__segment paperstars-param__segment--green",
-          style = paste0("width:", green, "%;")
-        ),
-        tags$div(
-          class = "paperstars-param__segment paperstars-param__segment--amber",
-          style = paste0("width:", amber, "%;")
-        ),
-        tags$div(
-          class = "paperstars-param__segment paperstars-param__segment--red",
-          style = paste0("width:", red, "%;")
-        )
-      ),
-
-      tags$div(
-        class = "paperstars-param__legend",
-        tags$span(class = "paperstars-legend__item",
-                  tags$span(class = "paperstars-legend__dot paperstars-legend__dot--green"),
-                  labels[[1]]),
-        tags$span(class = "paperstars-legend__item",
-                  tags$span(class = "paperstars-legend__dot paperstars-legend__dot--amber"),
-                  labels[[2]]),
-        tags$span(class = "paperstars-legend__item",
-                  tags$span(class = "paperstars-legend__dot paperstars-legend__dot--red"),
-                  labels[[3]])
-      )
-    )
-  }
-
-  tags$div(
-    class = "paperstars-params",
-
-    make_param(
-      "Introduction",
-      green = 60,
-      amber = 20,
-      red = 20,
-      labels = list("Appropriate", "Slightly Misleading", "Exaggerated")
-    ),
-
-    make_param(
-      "Methods",
-      green = 80,
-      amber = 10,
-      red = 10,
-      labels = list("Sound", "Questionable", "Inadequate")
-    ),
-
-
-    make_param(
-      "Statistical Analysis",
-      green = 20,
-      amber = 30,
-      red = 50,
-      labels = list("Appropriate", "Some Issues", "Major concerns")
-    ),
-
-    make_param(
-      "Data Presentation",
-      green = 60,
-      amber = 10,
-      red = 30,
-      labels = list("Complete and Transparent", "Minor Omissions", "Misrepresented")
-    ),
-
-    make_param(
-      "Discussion",
-      green = 50,
-      amber = 20,
-      red = 30,
-      labels = list("Appropriate", "Slightly Misleading", "Exaggerated")
-    ),
-
-    make_param(
-      "Limitations",
-      green = 30,
-      amber = 10,
-      red = 60,
-      labels = list("Appropriately acknowledged", "Minor Omissions", "Inadequate")
-    ),
-    make_param(
-      "Data Availability",
-      green = 0,
-      amber = 10,
-      red = 90,
-      labels = list("Completely Available", "Partial data available", "Not Open Access")
-    )
-  )
-})
-
-
 # AI_server----
 
 
@@ -2159,21 +2058,21 @@ output$ai_instruction_text <- renderUI({
   process_markdown("strategies/ai_instructions.md")
 })
 
-open_ai_modal <- function(title, subtitle, ui_id) {
-  showModal(
-    modalDialog(
-      title = tags$div(
-        class = "ps-modal-title",
-        tags$div(class = "ps-modal-title-main", title),
-        tags$div(class = "ps-modal-title-sub", subtitle)
-      ),
-      div(class = "ps-modal-body prose", uiOutput(ui_id)),
-      easyClose = TRUE,
-      footer = modalButton("Close"),
-      size = "l"
-    )
-  )
-}
+# open_ai_modal <- function(title, subtitle, ui_id) {
+#   showModal(
+#     modalDialog(
+#       title = tags$div(
+#         class = "ps-modal-title",
+#         tags$div(class = "ps-modal-title-main", title),
+#         tags$div(class = "ps-modal-title-sub", subtitle)
+#       ),
+#       div(class = "ps-modal-body prose", uiOutput(ui_id)),
+#       easyClose = TRUE,
+#       footer = modalButton("Close"),
+#       size = "l"
+#     )
+#   )
+# }
 
 open_chat_device_modal <- function(ui_expr, size = "l") {
   showModal(
@@ -2188,31 +2087,10 @@ open_chat_device_modal <- function(ui_expr, size = "l") {
   )
 }
 
-
-# observeEvent(input$open_box_ai_1, {
-#   open_ai_modal(
-#     "Let's ask ChatGPT",
-#     "General LLM",
-#     ns("ai_gpt")
-#   )
-# }, ignoreInit = TRUE)
-
-# output$ai_gpt <- renderUI({
-#   chat_device_ui(
-#     ns("gpt_chat"),
-#     title = "ChatGPT 5.2",
-#     subtitle = "Let's try ChatGPT",
-#     device = "phone",
-#     height = "650px"
-#   )
-# })
-
 observeEvent(input$open_box_ai_1, {
   open_chat_device_modal(
     chat_device_ui(
       ns("gpt_chat"),
-      # title = "ChatGPT 5.2",
-      # subtitle = "Let's try ChatGPT",
       device = "phone",
       height = "650px"
     ),
@@ -2222,7 +2100,7 @@ observeEvent(input$open_box_ai_1, {
 
 
 observeEvent(input$open_box_ai_2, {
-  open_ai_modal(
+  open_chat_device_modal(
     "Let's ask Claude",
     "General LLM",
     ns("ai_claude")
@@ -2232,15 +2110,13 @@ observeEvent(input$open_box_ai_2, {
 output$ai_claude <- renderUI({
   chat_device_ui(
     ns("claude_chat"),
-    title = "Claude Sonnet 4.5",
-    subtitle = "Let's try Claude",
     device = "phone",
     height = "650px"
   )
 })
 
 observeEvent(input$open_box_ai_3, {
-  open_ai_modal(
+  open_chat_device_modal(
     "Let's ask Anara",
     "Science LLM",
     ns("ai_anara")
@@ -2250,8 +2126,6 @@ observeEvent(input$open_box_ai_3, {
 output$ai_anara <- renderUI({
   chat_device_ui(
     ns("anara_chat"),
-    title = "Anara",
-    subtitle = "Let's try Anara",
     device = "phone",
     height = "650px"
   )
@@ -2268,8 +2142,6 @@ observeEvent(input$open_box_ai_4, {
 output$ai_consensus <- renderUI({
   chat_device_ui(
     ns("consensus_chat"),
-    title = "Consensus",
-    subtitle = "Let's try Consensus",
     device = "phone",
     height = "650px"
   )

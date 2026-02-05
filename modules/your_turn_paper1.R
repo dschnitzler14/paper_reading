@@ -300,6 +300,7 @@ your_turn_paper1_ui <- function(id) {
               ),
             )
           ),
+          
           nav_panel(
             title = tagList(
               bs_icon("pause-circle"),
@@ -318,80 +319,101 @@ your_turn_paper1_ui <- function(id) {
 
             div(
               class = "strategies-main",
-              layout_columns(
+
+              bslib::layout_columns(
                 col_widths = c(6, 6),
-
                 div(
-                  div(
-                    class = "sb-notepad",
-                    textAreaInput(
-                      ns("your_pause1"),
-                      label = "What was the overarching need for this study?"
-                    )
-                  ),
-                  div(
-                    class = "sb-notepad",
-                    textAreaInput(
-                      ns("your_pause2"),
-                      label = "What was the experimental design?"
-                    )
-                  ),
-                  div(
-                    class = "sb-notepad",
-                    textAreaInput(
-                      ns("your_pause3"),
-                      label = "What do the results show?"
-                    )
-                  ),
-                  div(
-                    class = "sb-notepad",
-                    textAreaInput(
-                      ns("your_pause4"),
-                      label = "What are your predictions for the discussion?"
-                    )
+                  class = "sb-notepad sb-question",
+                  tags$h4(class = "sb-q-label", "What was the overarching need for this study?"),
+                  textAreaInput(
+                    ns("your_pause1"),
+                    label = NULL
                   )
                 ),
-
                 div(
+                  class = "sb-notepad sb-answer",
+                  actionButton(
+                    ns("show_my_pause1"),
+                    "Show the answer",
+                    class = "sb-reveal-btn"
+                  ),
                   div(
-                      class = "sb-notepad",
-                      #tags$h4("What was the overarching need for this study?"),
-                      actionButton(
-                        ns("show_my_pause1"),
-                        "Show the answer",
-                        class = "sb-reveal-btn"
-                      ),
-                      uiOutput(ns("show_my_pause1_text"))
-                    ),
+                    class = "sb-answer-body",
+                    uiOutput(ns("show_my_pause1_text"))
+                  )
+                )
+              ),
 
-                  div(
-                    class = "sb-notepad",
-                    actionButton(
-                        ns("show_my_pause2"),
-                        "Show the answer",
-                        class = "sb-reveal-btn"
-                      ),
-                      uiOutput(ns("show_my_pause2_text"))
-                  ),
-                  div(
-                    class = "sb-notepad",
-                    actionButton(
-                        ns("show_my_pause3"),
-                        "Show the answer",
-                        class = "sb-reveal-btn"
-                      ),
-                      uiOutput(ns("show_my_pause3_text"))
-                  ),
-                  div(
-                    class = "sb-notepad",
-                    actionButton(
-                        ns("show_my_pause4"),
-                        "Show the answer",
-                        class = "sb-reveal-btn"
-                      ),
-                      uiOutput(ns("show_my_pause4_text"))
+              bslib::layout_columns(
+                col_widths = c(6, 6),
+                div(
+                  class = "sb-notepad sb-question",
+                  tags$h4(class = "sb-q-label", "What was the experimental design?"),
+                  textAreaInput(
+                    ns("your_pause2"),
+                    label = NULL
                   )
                 ),
+                div(
+                  class = "sb-notepad sb-answer",
+                  actionButton(
+                    ns("show_my_pause2"),
+                    "Show the answer",
+                    class = "sb-reveal-btn"
+                  ),
+                  div(
+                    class = "sb-answer-body",
+                    uiOutput(ns("show_my_pause2_text"))
+                  )
+                )
+              ),
+
+              bslib::layout_columns(
+                col_widths = c(6, 6),
+                div(
+                  class = "sb-notepad sb-question",
+                  tags$h4(class = "sb-q-label", "What do the results show?"),
+                  textAreaInput(
+                    ns("your_pause3"),
+                    label = NULL
+                  )
+                ),
+                div(
+                  class = "sb-notepad sb-answer",
+                  actionButton(
+                    ns("show_my_pause3"),
+                    "Show the answer",
+                    class = "sb-reveal-btn"
+                  ),
+                  div(
+                    class = "sb-answer-body",
+                    uiOutput(ns("show_my_pause3_text"))
+                  )
+                )
+              ),
+
+              bslib::layout_columns(
+                col_widths = c(6, 6),
+                div(
+                  class = "sb-notepad sb-question",
+                  tags$h4(class = "sb-q-label", "What are your predictions for the discussion?"),
+                  textAreaInput(
+                    ns("your_pause4"),
+                    label = NULL
+                  )
+                ),
+                div(
+                  class = "sb-notepad sb-answer",
+                  actionButton(
+                    ns("show_my_pause4"),
+                    "Show the answer",
+                    class = "sb-reveal-btn"
+                  ),
+                  div(
+                    class = "sb-answer-body",
+                    uiOutput(ns("show_my_pause4_text"))
+                  )
+                )
               )
             )
           ),
@@ -470,7 +492,7 @@ your_turn_paper1_ui <- function(id) {
               ),
             )
           ),
-              
+
           nav_panel(
             title = tagList(
               bs_icon("question-circle"),
@@ -478,7 +500,7 @@ your_turn_paper1_ui <- function(id) {
             ),
             card(
                 class = "paperstars-instructions-card",
-                card_header("Pause"),
+                card_header("Understanding"),
                 card_body(
                 div(
                     uiOutput(ns("paper1_understanding_instructions_text"))
@@ -486,80 +508,105 @@ your_turn_paper1_ui <- function(id) {
                 )
             ),
 
+              div(
               class = "strategies-main",
-              layout_columns(
+              
+              bslib::layout_columns(
                 col_widths = c(6, 6),
-
                 div(
-                  div(
-                    class = "sb-notepad",
-                    textAreaInput(
-                      ns("your_understanding1"),
-                      label = "How would you summarise the findings?"
-                    )
-                  ),
-                  div(
-                    class = "sb-notepad",
-                    textAreaInput(
-                      ns("your_understanding2"),
-                      label = "What is the wider impact of these results?"
-                    )
-                  ),
-                  div(
-                    class = "sb-notepad",
-                    textAreaInput(
-                      ns("your_understanding3"),
-                      label = "What were the limitations of this study?"
-                    )
-                  ),
-                  div(
-                    class = "sb-notepad",
-                    textAreaInput(
-                      ns("your_understanding4"),
-                      label = "How do the results support their claims"
-                    )
+                  class = "sb-notepad sb-question",
+                  tags$h4(class = "sb-q-label", "How would you summarise the findings?"),
+                  textAreaInput(
+                    ns("your_understanding1"),
+                    label = NULL
                   )
                 ),
-
                 div(
+                  class = "sb-notepad sb-answer",
+                  actionButton(
+                    ns("show_my_understanding1"),
+                    "Show the answer",
+                    class = "sb-reveal-btn"
+                  ),
                   div(
-                      class = "sb-notepad",
-                      actionButton(
-                        ns("show_my_understanding1"),
-                        "Show the answer",
-                        class = "sb-reveal-btn"
-                      ),
-                      uiOutput(ns("show_my_understanding1_text"))
-                    ),
+                  class = "sb-answer-body",
+                  uiOutput(ns("show_my_understanding1_text"))
+                  )
+                )
+              ),
 
-                  div(
-                    class = "sb-notepad",
-                    actionButton(
-                        ns("show_my_understanding2"),
-                        "Show the answer",
-                        class = "sb-reveal-btn"
-                      ),
-                      uiOutput(ns("show_my_understanding2_text"))
-                  ),
-                  div(
-                    class = "sb-notepad",
-                    actionButton(
-                        ns("show_my_understanding3"),
-                        "Show the answer",
-                        class = "sb-reveal-btn"
-                      ),
-                      uiOutput(ns("show_my_understanding3_text"))
-                  ),
-                  div(
-                    class = "sb-notepad",
-                    actionButton(
-                        ns("show_my_understanding4"),
-                        "Show the answer",
-                        class = "sb-reveal-btn"
-                      ),
-                      uiOutput(ns("show_my_understanding4_text"))
+              bslib::layout_columns(
+                col_widths = c(6, 6),
+                div(
+                  class = "sb-notepad sb-question",
+                  tags$h4(class = "sb-q-label", "What is the wider impact of these results?"),
+                  textAreaInput(
+                    ns("your_understanding2"),
+                    label = NULL
                   )
                 ),
+                div(
+                  class = "sb-notepad sb-answer",
+                  actionButton(
+                    ns("show_my_understanding2"),
+                    "Show the answer",
+                    class = "sb-reveal-btn"
+                  ),
+                  div(
+                  class = "sb-answer-body",
+                  uiOutput(ns("show_my_understanding2_text"))
+                  )
+                )
+              ),
+
+              bslib::layout_columns(
+                col_widths = c(6, 6),
+                div(
+                  class = "sb-notepad sb-question",
+                  tags$h4(class = "sb-q-label", "What were the limitations of this study?"),
+
+                  textAreaInput(
+                    ns("your_understanding3"),
+                    label = NULL
+                  )
+                ),
+                div(
+                  class = "sb-notepad sb-answer",
+                  actionButton(
+                    ns("show_my_understanding3"),
+                    "Show the answer",
+                    class = "sb-reveal-btn"
+                  ),
+                  div(
+                  class = "sb-answer-body",
+                  uiOutput(ns("show_my_understanding3_text"))
+                  )
+                )
+              ),
+
+              bslib::layout_columns(
+                col_widths = c(6, 6),
+                div(
+                  class = "sb-notepad sb-question",
+                  tags$h4(class = "sb-q-label", "How do the results support their claims"),
+                  textAreaInput(
+                    ns("your_understanding4"),
+                    label = NULL
+                  )
+                ),
+                div(
+                  class = "sb-notepad sb-answer",
+                  actionButton(
+                    ns("show_my_understanding4"),
+                    "Show the answer",
+                    class = "sb-reveal-btn"
+                  ),
+                  div(
+                  class = "sb-answer-body",
+                  uiOutput(ns("show_my_understanding4_text"))
+                  )
+                )
+              )
               )
             
           ),
@@ -568,6 +615,16 @@ your_turn_paper1_ui <- function(id) {
             title = tagList(
               bs_icon("star"),
               " Reflection"
+            ),
+
+            card(
+              class = "paperstars-instructions-card",
+              card_header("Understanding"),
+              card_body(
+              div(
+                  uiOutput(ns("paper1_reflection_instructions_text"))
+              )
+              )
             ),
 
             layout_columns(
@@ -587,17 +644,6 @@ your_turn_paper1_ui <- function(id) {
                 layout_columns(
                   col_widths = c(6, 6),
                   card(
-                    card_header("My Rating and Review"),
-                    card_body(
-                      uiOutput(ns("paperstars_parameters_my_rating")),
-                      div(
-                      class = "overall-stars-pill",
-                      uiOutput(ns("my_overall_stars")),
-                      ),
-                      uiOutput(ns("my_review_text"))
-                    )
-                  ),
-                card(
                   fillable = FALSE,
                   card_header("How would you rate this paper?"),
                   card_body(
@@ -628,7 +674,24 @@ your_turn_paper1_ui <- function(id) {
                     uiOutput(ns("review_submitted"))
                   )
                   )
+                ),
+                card(
+                  card_header(
+                    div(
+                      style = "display:flex; align-items:center; justify-content:space-between; gap:12px;",
+                      "My Rating & Review",
+                      actionButton(
+                        ns("reveal_rating_answer"),
+                        "Reveal my Rating & Review",
+                        class = "sb-reveal-pill"
+                      )
+                    )
+                  ),
+                  card_body(
+                    uiOutput(ns("my_rating_reveal_ui"))
+                  )
                 )
+                
               )
             )
 
@@ -707,7 +770,124 @@ observeEvent(input$show_my_pause1, {
 
   })
 })
+
+## Understanding
+
+observeEvent(input$show_my_understanding1, {
+  output$show_my_understanding1_text <- renderUI({
+    process_markdown("your_turn/paper1/paper1_show_my_understanding1_text.md")
+
+  })
+})
+
   ## Rating
+
+observeEvent(input$reveal_rating_answer, {
+
+  shinyjs::hide("reveal_rating_answer")
+
+  output$my_rating_reveal_ui <- renderUI({
+    tagList(
+      uiOutput(ns("paper1_paperstars_parameters_my_rating")),
+      div(
+        class = "overall-stars-pill",
+        uiOutput(ns("paper1_my_overall_stars"))
+      ),
+      uiOutput(ns("paper1_my_review_text"))
+    )
+  })
+
+}, once = TRUE)
+
+# my rating and review
+
+output$paper1_paperstars_parameters_my_rating <- renderUI({
+  tags$ul(
+    class = "paperstars-parameter-list",
+
+    tags$li(
+      class = "paperstars-parameter-item rated-good",
+      tags$span(class = "paperstars-parameter-label", "Title & Abstract"),
+      tags$span(class = "paperstars-parameter-value", "Appropriate")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-okay",
+      tags$span(class = "paperstars-parameter-label", "Methods"),
+      tags$span(class = "paperstars-parameter-value", "Questionable")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-bad",
+      tags$span(class = "paperstars-parameter-label", "Statistical Analysis"),
+      tags$span(class = "paperstars-parameter-value", "Major concerns")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-bad",
+      tags$span(class = "paperstars-parameter-label", "Data Presentation"),
+      tags$span(class = "paperstars-parameter-value", "Misrepresented")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-bad",
+      tags$span(class = "paperstars-parameter-label", "Discussion"),
+      tags$span(class = "paperstars-parameter-value", "Exaggerated")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-bad",
+      tags$span(class = "paperstars-parameter-label", "Limitations"),
+      tags$span(class = "paperstars-parameter-value", "Inadequate")
+    ),
+
+    tags$li(
+      class = "paperstars-parameter-item rated-bad",
+      tags$span(class = "paperstars-parameter-label", "Data Availability"),
+      tags$span(class = "paperstars-parameter-value", "Not Open Access")
+    )
+  )
+})
+
+
+output$paper1_my_overall_stars <- renderUI({
+  n <- as.integer(1)
+
+  star_svg <- function(filled) {
+    col <- if (filled) "#5D8307" else "#D6D7D4"
+
+    tags$svg(
+      class = "paperstars-svg-star",
+      width = "40", #"86",
+      height = "40", #"86",
+      viewBox = "0 0 24 24",
+      xmlns = "http://www.w3.org/2000/svg",
+      tags$path(
+        d = "M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z",
+        fill = col,
+        stroke = col,
+        `stroke-width` = "1.4",
+        `stroke-linejoin` = "round",
+        `stroke-linecap` = "round"
+      )
+    )
+  }
+
+  tags$div(
+    class = "paperstars-stars",
+    lapply(1:5, function(i) star_svg(i <= n))
+  )
+})
+
+
+output$paper1_my_review_text <- renderUI({
+  tags$div(
+    class = "paperstars-textbox",
+    #process_markdown("strategies/overall_rating_text.md")
+  )
+})
+
+##user paper1 rating and review
 
 `%||%` <- function(x, y) if (is.null(x)) y else x
 
@@ -784,15 +964,6 @@ weighted_percent <- reactive({
   (weighted_total() / denom) * 100
 })
 
-output$weighted_debug <- renderPrint({
-  list(
-    weights = vapply(rating_mods, function(m) m$weight(), numeric(1)),
-    weighted_scores = vapply(rating_mods, function(m) m$score(), numeric(1)),
-    total = weighted_total(),
-    percent = weighted_percent()
-  )
-})
-
 star_rating <- reactive({
   pct <- weighted_percent()
 
@@ -824,8 +995,8 @@ output$overall_stars <- renderUI({
 
     tags$svg(
       class = "paperstars-svg-star",
-      width = "60", #"86",
-      height = "60", #"86",
+      width = "40", #"86",
+      height = "40", #"86",
       viewBox = "0 0 24 24",
       xmlns = "http://www.w3.org/2000/svg",
       tags$path(
@@ -906,6 +1077,7 @@ observeEvent(input$submit_review, {
     )
   })
 })
+
     
   })
 }
