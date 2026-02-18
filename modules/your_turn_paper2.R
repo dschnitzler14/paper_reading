@@ -893,7 +893,7 @@ output$paper2_paperstars_parameters_my_rating <- renderUI({
 
 
 output$paper2_my_overall_stars <- renderUI({
-  n <- as.integer(2)
+  n <- as.integer(4)
 
   star_svg <- function(filled) {
     col <- if (filled) "#5D8307" else "#D6D7D4"
