@@ -1,3 +1,3 @@
 # Discussion
 
-Diet-induced changes in stress hormone levels were accompanied by altered behavioural responses. These findings highlight a potential link between metabolic state and stress sensitivity. `r actionLink(ns("practice_wrong_section8"), "Corticosterone concentrations were quantified using ELISA according to the manufacturers instructions immediately following the stress task.", class = "invisible_yellow")`
+Diet-induced changes in stress hormone levels were accompanied by altered behavioural responses. These findings highlight a potential link between metabolic state and stress sensitivity. `r actionLink(ns("practice_wrong_section8"), "Trunk blood was collected immediately following completion of the acute stress paradigm, centrifuged at 3,000 × g for 15 minutes at 4°C, and plasma corticosterone concentrations were quantified in duplicate using a commercially available ELISA kit in accordance with the manufacturer’s protocol.", class = "invisible_yellow")`
