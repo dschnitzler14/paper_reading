@@ -2031,12 +2031,13 @@ observeEvent(input$submit_review, {
         href = "https://paperstars.org",
         target = "_blank",
         class = "paperstars-review-success-link",
-        "Go to Paperstars"
+        "Go to Paperstars",
+        tags$i(class = "bi bi-box-arrow-up-right")
       )
     )
   })
 })
-
+ 
 
 output$my_review_text <- renderUI({
   tags$div(

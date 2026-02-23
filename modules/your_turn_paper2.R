@@ -1061,7 +1061,8 @@ your_turn_paper2_server <- function(id, process_markdown, process_rmd_fragment) 
             href = "https://paperstars.org",
             target = "_blank",
             class = "paperstars-review-success-link",
-            "Go to Paperstars"
+            "Go to Paperstars",
+            tags$i(class = "bi bi-box-arrow-up-right")
           )
         )
       })

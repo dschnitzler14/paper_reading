@@ -12,3 +12,5 @@ Anytime we make a decision based on statistical results we can get one of four o
 - this accepts a false null hypothesis
 - this means a result is reported as "non-significant", when it actually is
 - the likelihood of committing this type of error is related to the power of the statistical test, which is why it is important to carry out a power analysis
+
+
