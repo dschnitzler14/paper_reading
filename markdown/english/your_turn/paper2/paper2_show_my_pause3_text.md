@@ -1,0 +1,4 @@
+- authors will compare the results of forced treadmill exercise at the different intensities with previous findings
+- authors will contextualise the reduction in food intake
+- authors will discuss the different activated brain regions and suggest the wider impact of these
+- authors will describe the limitations of the study, including the choice of rat model (as highlighted in the introduction),

@@ -1,0 +1,3 @@
+- confirmation of previous results with this particular model
+- first study to demonstrate activation of dBNST and VMH
+- important to understand different modes of exercise and exercise intensity on brain regions

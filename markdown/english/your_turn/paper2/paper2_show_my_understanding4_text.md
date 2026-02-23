@@ -1,0 +1,2 @@
+- the results show that intensity of forced treadmill exercise can have an effect on subsequent food intake reduction, however higher intensity does not mean lower food intake
+- activation of brain regions following forced exercise intensity is wide-spread
