@@ -2,11 +2,11 @@ A p-value is the probability value, which estimates how likely it is that you wo
 
 > It is probability of obtaining a test statistic at least as extreme as ours **if the null is true** and there really is no difference or association in the population of interest.
 
-The cutoff for determining if a p-value is significant, by convention is 5%, which is usually written out as $\alpha$ = 0.05. In other words, if there truly is no effect, we would only expect to see results this extreme (or more extreme) about 5 times out of 100 purely due to random variation.
+The cutoff for determining if a p-value is significant, by convention is 5%, which is usually written out as 𝜶 = 0.05. In other words, if there truly is no effect, we would only expect to see results this extreme (or more extreme) about 5 times out of 100 purely due to random variation.
 
-This cutoff if about controlling false positives, not about proving something is true - more on Type I and Type II errors later.
+This cutoff is about controlling false positives, not about proving something is true - more on Type I and Type II errors later.
 
-## What a p-value is not:
+**What a p-value is not:**
 
 - ❌ It is not the probability that the null hypothesis is true.
 

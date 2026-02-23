@@ -39,7 +39,7 @@ stats_module_ui <- function(id) {
               tags$div(
                 class = "ps-step-title",
                 tags$span(class = "ps-step-num", "2"),
-                tags$h3("What is a p-value and why does it matter?")
+                tags$h3("What is a p-value?")
               ),
               uiOutput(ns("stats_step2_text"))
             )
@@ -67,7 +67,7 @@ stats_module_ui <- function(id) {
               tags$div(
                 class = "ps-step-title",
                 tags$span(class = "ps-step-num", "4"),
-                tags$h3("How to interpret statistical results?")
+                tags$h3("Type I and Type II Errors")
               ),
               uiOutput(ns("stats_step4_text"))
             )
@@ -81,7 +81,7 @@ stats_module_ui <- function(id) {
               tags$div(
                 class = "ps-step-title",
                 tags$span(class = "ps-step-num", "5"),
-                tags$h3("How to choose the right statistical test for your data?")
+                tags$h3("Confidence Intervals")
               ),
               uiOutput(ns("stats_step5_text"))
             )
@@ -95,7 +95,7 @@ stats_module_ui <- function(id) {
               tags$div(
                 class = "ps-step-title",
                 tags$span(class = "ps-step-num", "6"),
-                tags$h3("What is statistical power and why does sample size matter?")
+                tags$h3("Why does sample size matter?")
               ),
               uiOutput(ns("stats_step6_text"))
             )
@@ -165,7 +165,7 @@ stats_module_ui <- function(id) {
               tags$div(
                 class = "ps-step-title",
                 tags$span(class = "ps-step-num", "11"),
-                tags$h3("How to read statistical figures")
+                tags$h3("Multiple testing corrections")
               ),
               uiOutput(ns("stats_step11_text"))
             )
@@ -179,26 +179,26 @@ stats_module_ui <- function(id) {
               tags$div(
                 class = "ps-step-title",
                 tags$span(class = "ps-step-num", "12"),
-                tags$h3("Confidence Intervals")
+                tags$h3("Which Test Should I Use?")
               ),
               uiOutput(ns("stats_step12_text"))
             )
           )
         ),
-        bslib::card(
-          class = "ps-step ps-step-13 ps-static-card",
-          bslib::card_body(
-            tags$div(
-              class = "ps-step-inner",
-              tags$div(
-                class = "ps-step-title",
-                tags$span(class = "ps-step-num", "13"),
-                tags$h3("Type I and Type II Errors")
-              ),
-              uiOutput(ns("stats_step13_text"))
-            )
-          )
-        )
+        # bslib::card(
+        #   class = "ps-step ps-step-13 ps-static-card",
+        #   bslib::card_body(
+        #     tags$div(
+        #       class = "ps-step-inner",
+        #       tags$div(
+        #         class = "ps-step-title",
+        #         tags$span(class = "ps-step-num", "13"),
+        #         tags$h3("Type I and Type II Errors")
+        #       ),
+        #       uiOutput(ns("stats_step13_text"))
+        #     )
+        #   )
+        # )
       )
     ),
     nav_buttons_ui(ns("nav_controls"))
@@ -260,9 +260,9 @@ stats_module_server <- function(id, parent_session, nav_order_list, process_mark
       process_markdown("stats/stats_step12_text.md")
     })
 
-    output$stats_step13_text <- renderUI({
-      process_markdown("stats/stats_step13_text.md")
-    })
+    # output$stats_step13_text <- renderUI({
+    #   process_markdown("stats/stats_step13_text.md")
+    # })
 
 
     nav_buttons_server(
