@@ -1,3 +1,77 @@
-Science and scientific publishing are collaborative and iterative processes. There are slight differences across different types of publishing, but generally, you submit a paper to a journal, which gets passed to an editor or editorial team. They will look over it and decide whether or not they would like to publish your work. At this point, your paper gets passed to peer reviewers - these are your _peers_ in the field. The editor will contact different reviewers asking them to read your paper and give their feedback and comments. This can sometimes take time, as peer review is _voluntary_, meaning peer reviewers do not get paid for their work, but most scientists will engage in it because they understand the importance of scientific publishing. The reviewers are scientists who understand the work too - for example if you submit a paper about stress and metabolism, the editor will find reviewers who understand this particular area of research. However, it can get a little tricky though, finding peer reviewers who are experts in niche or novel methods.
+<div class="ps-chapter">
 
-Peer review is often done blinded - either the reviewers can't see your details, or, more commonly, you cannot see who the reviewers are. When they have read your paper and added their feedback, the paper will be returned to you with comments. At this point, you make the suggested edits or sometimes head back to the lab for additional work, to make a stronger or more convincing argument. Sometimes though, you might disagree and have a good reason for doing so, which is also a valid response. When you are ready, you resubmit this to the reviewers, who will look over your response and your changes. Once everyone is happy, the paper is finally accepted for publication.
+<div class="ps-block ps-callout">
+  <div class="ps-callout-title">
+    <i class="bi bi-lightbulb-fill"></i>
+    Main Concept
+  </div>
+    Science and scientific publishing are collaborative and iterative processes.
+</div>
+
+<div class="ps-divider"></div>
+
+<div class="ps-three-col">
+
+  <div class="ps-tile ps-data-type">
+    <h4><i class="bi bi-upload"></i> 1. Submission</h4>
+    <div class="ps-muted">Author → Journal</div>
+    <div class="ps-subcard">
+      <div class="ps-subtitle">What happens</div>
+      <div>You submit your paper to a journal for consideration.</div>
+    </div>
+    <div class="ps-subcard">
+      <div class="ps-subtitle">Editor’s role</div>
+      <div>The editor assesses whether the paper fits the journal and is suitable for review.</div>
+    </div>
+  </div>
+
+  <div class="ps-tile ps-data-type">
+    <h4><i class="bi bi-people"></i> 2. Peer Review</h4>
+    <div class="ps-muted">Experts evaluate the work</div>
+    <div class="ps-subcard">
+      <div class="ps-subtitle">Who reviews?</div>
+      <div>Researchers in the same field (your “peers”).</div>
+    </div>
+    <div class="ps-subcard">
+      <div class="ps-subtitle">Important detail</div>
+      <div>Peer review is usually voluntary and often blinded.</div>
+    </div>
+    <div class="ps-subcard">
+      <div class="ps-subtitle">Purpose</div>
+      <div>Assess methods, analysis, interpretation, and contribution to the field.</div>
+    </div>
+  </div>
+
+  <div class="ps-tile ps-data-type">
+    <h4><i class="bi bi-arrow-repeat"></i> 3. Revision & Decision</h4>
+    <div class="ps-muted">Iterative improvement</div>
+    <div class="ps-subcard">
+      <div class="ps-subtitle">Feedback</div>
+      <div>Reviewers provide comments and suggestions.</div>
+    </div>
+    <div class="ps-subcard">
+      <div class="ps-subtitle">Author response</div>
+      <div>You revise the manuscript, sometimes with additional analyses or experiments.</div>
+    </div>
+    <div class="ps-subcard">
+      <div class="ps-subtitle">Outcome</div>
+      <div>The paper is accepted, revised again, or rejected.</div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="ps-divider"></div>
+
+<div class="ps-plain">
+  <div class="ps-plain-title">
+    <i class="bi bi-translate"></i>
+    In plain English
+  </div>
+Publishing is not a one-step approval. It is a cycle of critique, revision, and refinement.
+</div>
+
+</div>
+
+</div>

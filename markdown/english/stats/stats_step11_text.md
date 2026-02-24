@@ -25,7 +25,7 @@
   In other words, if you flip a coin once, the chance of heads is 50%. But, if you flip it ten times, the chance of getting at least one heads is much higher than 50%.
 </div>
 
-<p class="ps-lede">This is relevent to some statistical tests like an ANOVA, that compare multiple groups: <span class="ps-highlight-critical">A vs B</span>, <span class="ps-highlight-critical"> B vs C</span>, <span class="ps-highlight-critical">A vs C</span>, and each of those comparisons is its own statistical test.</p>
+<p class="ps-lede">This is relevant to some statistical tests like an ANOVA, that compare multiple groups: <span class="ps-highlight-critical">A vs B</span>, <span class="ps-highlight-critical"> B vs C</span>, <span class="ps-highlight-critical">A vs C</span>, and each of those comparisons is its own statistical test.</p>
 
 Therefore, <span class="ps-highlight-term">post-hoc tests (aka post-hoc corrections)</span> are use to correct for multiple comparisons, that account for the fact that you are running multiple tests on the same dataset.
 

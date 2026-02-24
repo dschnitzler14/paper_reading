@@ -1,35 +1,127 @@
-A "paper" is a broad umbrella term that encompasses any scholarly communication. While different fields might have specific types, in science you will mostly read:
+<div class="ps-chapter">
 
-**1. Literature Reviews**
+<div class="ps-block ps-callout">
+  <div class="ps-callout-title">
+    <i class="bi bi-lightbulb-fill"></i>
+    Main Concept
+  </div>
+  A "paper" is a broad umbrella term that encompasses any scholarly communication.
+</div>
 
-These are often broad summaries of the existing literature, gathering all the current knowledge around a specific topic or question. Sometimes these can be retrospectives, which recount the history of the evidence that we have gathered to date, other times they are snapshots of what the authors consider to be the most important evidence required to understand a topic or question. These can be a great place to start if you are trying to understand the background of a topic.
+<div class="ps-divider"></div>
 
-**2. Systematic Review**
+## Different Types of Papers
 
-This type sits in-between literature reviews and scientific studies. These systematically analyse all the evidence on a study to try and synthesise overarching evidence. These use papers that have already been published and do specific statistical analyses to determine the strength of difference pieces of evidence.
+<div class="ps-myths">
+  <div class="ps-myth">
+    <div class="ps-myth-icon"><i class="bi bi-journal-text"></i></div>
+    <div class="ps-myth-body">
+      <div class="ps-myth-title">Literature Reviews</div>
+      <div class="ps-myth-text">
+        These are often broad summaries of the existing literature, gathering all the existing knowledge around a specific topic or question. Sometimes these can be retrospectives, which recount the history of the evidence that we have gathered to date, other times they are snapshots of what the authors consider to be the most important evidence required to understand a topic or question. Sometimes, a literature review might be used to frame a new hypothesis. These can be a great place to start if you are trying to understand the background of a topic.
+      </div>
+    </div>
+  </div>
 
-**3. Meta-analyses**
+  <div class="ps-myth">
+    <div class="ps-myth-icon"><i class="bi bi-journal-text"></i></div>
+    <div class="ps-myth-body">
+      <div class="ps-myth-title">Systematic Review</div>
+      <div class="ps-myth-text">
+        This type sits in-between literature reviews and scientific studies. These systematically analyse all the evidence on a study to try and synthesise overarching evidence. These use papers that have already been published and do specific statistical analyses to determine the strength of difference pieces of evidence.
+      </div>
+    </div>
+  </div>
 
-These use existing datasets that are analysed differently, testing a new hypothesis. Important to note, meta-analyses are different from systemic reviews.
+  <div class="ps-myth">
+    <div class="ps-myth-icon"><i class="bi bi-journal-text"></i></div>
+    <div class="ps-myth-body">
+      <div class="ps-myth-title">Meta-analyses</div>
+      <div class="ps-myth-text">
+        These use existing datasets that are analysed differently, testing a new hypothesis. Important to note, meta-analyses are different from systemic reviews.
+      </div>
+    </div>
+  </div>
 
-**4. Original research papers**
+  <div class="ps-myth">
+    <div class="ps-myth-icon"><i class="bi bi-journal-text"></i></div>
+    <div class="ps-myth-body">
+      <div class="ps-myth-title">Original research papers</div>
+      <div class="ps-myth-text">
+        Present new data collected and analysed by the authors. These are often what people mean when they say “a paper” in science. This is the primary way new research is communicated and disseminated, allowing others to build on existing findings.
+      </div>
+    </div>
+  </div>
 
-Present new data collected and analysed by the authors. These are often what people mean when they say “a paper” in science. This is the primary way new research is communicated and disseminated, allowing others to build on existing findings.
+  <div class="ps-myth">
+    <div class="ps-myth-icon"><i class="bi bi-journal-text"></i></div>
+    <div class="ps-myth-body">
+      <div class="ps-myth-title">Case studies</div>
+      <div class="ps-myth-text">
+        Detailed reports of a single case (or small number of cases), often used in clinical or applied fields.
+      </div>
+    </div>
+  </div>
 
-**5. Case studies**
+  <div class="ps-myth">
+    <div class="ps-myth-icon"><i class="bi bi-journal-text"></i></div>
+    <div class="ps-myth-body">
+      <div class="ps-myth-title">Methods papers</div>
+      <div class="ps-myth-text">
+        Describe a new technique, protocol, or analytical approach.
+      </div>
+    </div>
+  </div>
 
-Detailed reports of a single case (or small number of cases), often used in clinical or applied fields.
+  </div>
 
-**6. Methods papers**
+<div class="ps-divider"></div>
 
-Describe a new technique, protocol, or analytical approach.
+<div class="ps-two-col">
 
-## What is the difference between a paper and a book?
+  <div class="ps-tile ps-data-type">
+    <h4><i class="bi bi-file-earmark-text"></i> Scientific Paper</h4>
+    <div class="ps-muted">Primary unit of new knowledge</div>
+    <div class="ps-subcard">
+      <div class="ps-subtitle">Purpose</div>
+      <div>Introduces new research findings into the academic conversation.</div>
+    </div>
+    <div class="ps-subcard">
+      <div class="ps-subtitle">Speed</div>
+      <div>Published relatively quickly after a study is completed, often within months.</div>
+    </div>
+     <div class="ps-subcard">
+      <div class="ps-subtitle">When it appears</div>
+      <div>Shortly after completion of the study</div>
+    </div>
+  </div>
 
-In science especially, papers are the primary way new knowledge enters the academic conversation. Books usually come later, after enough research has accumulated synthesise it.
+  <div class="ps-tile ps-data-type">
+    <h4><i class="bi bi-book"></i> Book</h4>
+    <div class="ps-muted">Synthesis of accumulated research</div>
+    <div class="ps-subcard">
+      <div class="ps-subtitle">Purpose</div>
+      <div>Summarises and synthesises a body of established evidence.</div>
+    </div>
+    <div class="ps-subcard">
+      <div class="ps-subtitle">Speed</div>
+      <div>Published more slowly, often taking years due to writing, editing, and review.</div>
+    </div>
+    <div class="ps-subcard">
+      <div class="ps-subtitle">When it appears</div>
+      <div>Usually after enough research has accumulated to form a coherent picture.</div>
+    </div>
 
-Another way to think about it: A paper is a single brick, while a book is a wall built from many bricks.
+  </div>
 
-Both matter in constructing an understanding of a subject, but when you are reading scientific literature, you are usually reading individual bricks. Your job is to examine how solid each one is before deciding whether it will hold up the wall of evidence you are building.
+</div>
 
-Another key aspect is speed, as papers are generally much faster to publish than books. Once a study is completed, a paper can move through peer review and appear in a journal within months (though this can vary). Books, however, usually take much longer, often years, because they require extended writing, editing, proposal review, and a more complex publishing process. This means papers are typically how new findings enter the academic conversation quickly, while books tend to reflect more established bodies of knowledge.
+<div class="ps-plain">
+  <div class="ps-plain-title">
+    <i class="bi bi-translate"></i>
+    In plain English
+  </div>
+    Both books and papers are important for constructing an understanding of a subject, but when you are reading scientific literature (i.e. papers), you are usually reading individual bricks. Your job is to examine how solid each one is before deciding whether it will hold up the wall of evidence you are building.
+</div>
+
+</div>

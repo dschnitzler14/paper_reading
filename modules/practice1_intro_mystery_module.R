@@ -61,7 +61,7 @@ practice_intro_mystery_module_ui <- function(id) {
           uiOutput(ns("mystery_intro2")),
           uiOutput(ns("practice_intro2_mystery1_click"))
         ),
-    
+     
         div(
           class = "paper-box",
           tags$div(

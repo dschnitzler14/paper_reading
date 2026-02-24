@@ -1,35 +1,107 @@
-## 1. Publish or perish
+<div class="ps-chapter">
 
-Academic careers are often shaped by publication count, journal prestige, and citation metrics. This pressure can incentivise quantity over quality, discourage replication studies, and reward “positive” or novel findings over careful, incremental work.
+<div class="ps-block ps-callout">
+  <div class="ps-callout-title">
+    <i class="bi bi-lightbulb-fill"></i>
+    Main Concept
+  </div>
+    Scientific publishing is not static, and neither is science itself. Many of the challenges are widely recognised and actively debated. Researchers, institutions, funders, and publishers are all experimenting with new models designed to improve transparency, fairness, accessibility, and rigour.
+</div>
 
-## 2. Metrics incentives
+<div class="ps-divider"></div>
 
-Citation-based metrics are often used as shortcuts for judging quality. While metrics can provide useful information, they can also oversimplify complex research contributions and distort incentives, when these metrics are used to define career success, such as funding opportunities!
+<div class="ps-myths">
 
-## 3. Access inequality
+  <div class="ps-myth">
+    <div class="ps-myth-icon"><i class="bi bi-exclamation-circle-fill"></i></div>
+    <div class="ps-myth-body">
+      <div class="ps-myth-title">1. Publish or Perish</div>
+      <div class="ps-myth-text">
+        Careers are often shaped by publication count, journal prestige, and citation metrics. This can prioritise quantity over quality and discourage replication or rigorous incremental work.
+      </div>
+    </div>
+  </div>
 
-Researchers in well-funded institutions often have better access to paywalled journals, publication funds, and infrastructure. This can widen global inequities in who gets to participate fully in scientific conversations.
+  <div class="ps-myth">
+    <div class="ps-myth-icon"><i class="bi bi-exclamation-circle-fill"></i></div>
+    <div class="ps-myth-body">
+      <div class="ps-myth-title">2. Metric-Based Incentives</div>
+      <div class="ps-myth-text">
+        Citation metrics are frequently used as shortcuts for judging quality. While informative, they can oversimplify contributions and distort what is rewarded in academic careers. For some, they have become the goal, incentivising high volumes of publication.
+      </div>
+    </div>
+  </div>
 
-## 4. Limited peer reviewer pool
+  <div class="ps-myth">
+    <div class="ps-myth-icon"><i class="bi bi-exclamation-circle-fill"></i></div>
+    <div class="ps-myth-body">
+      <div class="ps-myth-title">3. Access Inequality</div>
+      <div class="ps-myth-text">
+        Researchers in well-funded institutions often have better access to journals, publication funds, and infrastructure, widening global inequities in participation.
+      </div>
+    </div>
+  </div>
 
-Peer review relies on a relatively small group of active researchers who volunteer their time. As submission rates increase, the same reviewers are repeatedly asked to evaluate papers, leading to delays. In addition, it can sometimes be difficult to find reviewers with the right expertise for highly specialised or niche methods. This means important methodological details may not always receive the level of scrutiny they require, simply because the appropriate experts are scarce or overextended.
+  <div class="ps-myth">
+    <div class="ps-myth-icon"><i class="bi bi-exclamation-circle-fill"></i></div>
+    <div class="ps-myth-body">
+      <div class="ps-myth-title">4. Limited Peer Reviewer Pool</div>
+      <div class="ps-myth-text">
+        Peer review relies on a small group of volunteer researchers. Increasing submission rates can lead to delays and make it difficult to find appropriate experts for specialised methods.
+      </div>
+    </div>
+  </div>
 
-## 5. Bias in peer review
+  <div class="ps-myth">
+    <div class="ps-myth-icon"><i class="bi bi-exclamation-circle-fill"></i></div>
+    <div class="ps-myth-body">
+      <div class="ps-myth-title">5. Bias in Peer Review</div>
+      <div class="ps-myth-text">
+        Reviewer selection, prestige effects, and disciplinary norms can influence outcomes, even when systems are designed to be fair.
+      </div>
+    </div>
+  </div>
 
-Peer review is essential, but it is not immune to bias, whether conscious or unconscious. Reviewer selection, disciplinary norms, and prestige effects can all influence outcomes.
+  <div class="ps-myth">
+    <div class="ps-myth-icon"><i class="bi bi-exclamation-circle-fill"></i></div>
+    <div class="ps-myth-body">
+      <div class="ps-myth-title">6. Reproducibility Challenges</div>
+      <div class="ps-myth-text">
+        Limited data sharing, selective reporting, and opaque methods can make it difficult to replicate findings, affecting trust in published research.
+      </div>
+    </div>
+  </div>
 
-## 6. Reproducibility issues.
+  <div class="ps-myth">
+    <div class="ps-myth-icon"><i class="bi bi-exclamation-circle-fill"></i></div>
+    <div class="ps-myth-body">
+      <div class="ps-myth-title">7. Journal Profit Models</div>
+      <div class="ps-myth-text">
+        Large commercial publishers often charge high subscription fees and APCs, creating financial barriers to both reading and publishing.
+      </div>
+    </div>
+  </div>
 
-Limited data sharing, selective reporting, and methodological opacity can make it difficult to replicate findings, undermining trust in published research.
+</div>
 
-## 7. Journal profit models.
+<div class="ps-divider"></div>
 
-Many major journals are owned by large commercial publishers that charge high subscription fees and article processing charges (APCs). This can restrict access to knowledge and create financial barriers for researchers who cannot afford to publish in or even read certain journals.
+<div class="ps-block ps-callout">
+  <div class="ps-callout-title">
+    <i class="bi bi-heart-fill"></i>
+    Progress & Reform
+  </div>
 
-# But do not despair!
+From Open Science practices to preprints, open peer review, data sharing initiatives, and alternative evaluation systems, there is a growing movement to make research more transparent and equitable.
 
-Scientific publishing is not static, and neither is science itself. Many of the challenges we’ve discussed are widely recognised and actively debated. Researchers, institutions, funders, and publishers are all experimenting with new models designed to improve transparency, fairness, accessibility, and rigour.
+</div>
 
-From Open Science practices to pre-prints, open peer review, and alternative evaluation systems, there is a growing movement toward making research more robust and more equitable.
+<div class="ps-plain">
+  <div class="ps-plain-title">
+    <i class="bi bi-translate"></i>
+    In plain English
+  </div>
+  Understanding the limitations of the system does not weaken science! It makes you a more critical reader and a more responsible researcher.
+</div>
 
-Importantly, awareness is power! Understanding the limitations of the system does not make science weaker, it makes you a more critical reader and a more responsible researcher.
+</div>

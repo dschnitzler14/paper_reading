@@ -43,19 +43,6 @@
     <div class="ps-myth-icon"><i class="bi bi-x-circle-fill"></i></div>
     <div class="ps-myth-body">
       <div class="ps-myth-title">
-        p = 0.049 is fundamentally different from <span class="ps-highlight-wrong">p = 0.051</span>.
-      </div>
-      <div class="ps-myth-text">
-        The 0.05 threshold is a convention. Results just above and just below it
-        are not meaningfully different in practice.
-      </div>
-    </div>
-  </div>
-
-  <div class="ps-myth">
-    <div class="ps-myth-icon"><i class="bi bi-x-circle-fill"></i></div>
-    <div class="ps-myth-body">
-      <div class="ps-myth-title">
         Correlation implies <span class="ps-highlight-wrong">causation</span>.
       </div>
       <div class="ps-myth-text">
