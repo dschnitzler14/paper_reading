@@ -1,3 +1,23 @@
-In this final step, take a moment to reflect on this paper - what were the strengths, what were the weaknesses? Do you think this study was rigorous? Using the rating system you have been using throughout, a star rating is calculated, rating this paper from 1-5 stars, just like a book on Goodreads. I would encourage you to write a little review of your own - you can see mine below.
+In this final step, take a moment to reflect on this paper.
 
-If your rating or review doesn't match mine, that is totally okay! This is entirely objective and your opinion matters here! Maybe you even picked up on things that I missed, or maybe you disagree with me about the importance of a particular aspect. All absolutely valid!
+<div class="ps-tile-row">
+  <div class="ps-tile">
+    <h4>Reflect</h4>
+    What were the weaknesses, what were the strengths?
+  </div>
+  <div class="ps-tile">
+    <h4>Use the Rating System</h4>
+    Use the rating system in each paper section to help guide you - you can go back to rate any section you might have missed. The rating system is weighted and used to calculate a final star rating.
+  </div>
+  <div class="ps-tile">
+    <h4>How would you review this paper?</h4>
+    In a short summary, what do you think of this paper? Amazing or meh?
+  </div>
+</div>
+
+<div class="ps-block ps-def">
+  <div class="ps-term">Help! My rating doesn't match the one already written here!</div>
+  <div>
+    Don't worry that is totally okay! This is entirely objective and your opinion matters here! Maybe you even picked up on things that I missed, or maybe you disagree with me about the importance of a particular aspect. All absolutely valid!
+  </div>
+</div>

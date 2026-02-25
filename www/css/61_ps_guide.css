@@ -94,6 +94,10 @@
     padding: 20px 20px 16px;
 }
 
+.ps-guide .ps-guide-hero-inner {
+    width: 100%;
+}
+
 .ps-guide .ps-guide-hero-inner h3 {
     font-size: 2.05rem;
     color: var(--ps-card);
@@ -103,7 +107,11 @@
 .ps-guide .ps-guide-hero-inner p {
     font-size: 1.02rem;
     color: var(--ps-card);
-    max-width: 70ch;
+    max-width: 200ch;
+}
+
+.ps-guide .ps-guide-hero .prose {
+    max-width: 100% !important;
 }
 
 .ps-guide .ps-guide-hero .card-body,

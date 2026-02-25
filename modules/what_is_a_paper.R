@@ -4,7 +4,6 @@ what_is_a_paper_module_ui <- function(id) {
   bslib::page_fluid(
     div(
       class = "ps-guide ps-what-paper",
-
       bslib::card(
         class = "ps-guide-hero",
         bslib::card_body(
@@ -15,11 +14,9 @@ what_is_a_paper_module_ui <- function(id) {
           )
         )
       ),
-
       bslib::layout_columns(
         col_widths = c(4, 4, 4),
         class = "ps-step-grid ps-what-paper-grid",
-
         bslib::card(
           class = "ps-step ps-step-1 ps-topic-card",
           `data-card-id` = "what-paper-1",
@@ -45,7 +42,6 @@ what_is_a_paper_module_ui <- function(id) {
             )
           )
         ),
-
         bslib::card(
           class = "ps-step ps-step-2 ps-topic-card",
           `data-card-id` = "what-paper-2",
@@ -71,7 +67,6 @@ what_is_a_paper_module_ui <- function(id) {
             )
           )
         ),
-
         bslib::card(
           class = "ps-step ps-step-3 ps-topic-card",
           `data-card-id` = "what-paper-3",
@@ -97,7 +92,6 @@ what_is_a_paper_module_ui <- function(id) {
             )
           )
         ),
-
         bslib::card(
           class = "ps-step ps-step-4 ps-topic-card",
           `data-card-id` = "what-paper-4",
@@ -123,7 +117,6 @@ what_is_a_paper_module_ui <- function(id) {
             )
           )
         ),
-
         bslib::card(
           class = "ps-step ps-step-5 ps-topic-card",
           `data-card-id` = "what-paper-5",
@@ -149,7 +142,6 @@ what_is_a_paper_module_ui <- function(id) {
             )
           )
         ),
-
         bslib::card(
           class = "ps-step ps-step-6 ps-topic-card",
           `data-card-id` = "what-paper-6",
@@ -175,7 +167,6 @@ what_is_a_paper_module_ui <- function(id) {
             )
           )
         ),
-
         bslib::card(
           class = "ps-step ps-step-7 ps-topic-card",
           `data-card-id` = "what-paper-7",
@@ -194,15 +185,14 @@ what_is_a_paper_module_ui <- function(id) {
                 )
               ),
               tags$div(
-  class = "ps-tool-cta",
-  bs_icon("book"),
-  tags$span("Open chapter")
-)
+                class = "ps-tool-cta",
+                bs_icon("book"),
+                tags$span("Open chapter")
+              )
             )
           )
         )
       ),
-
       div(
         class = "ps-guide-nav",
         nav_buttons_ui(ns("nav_controls"))
@@ -214,9 +204,8 @@ what_is_a_paper_module_ui <- function(id) {
 
 what_is_a_paper_module_server <- function(id, parent_session, nav_order_list, process_markdown) {
   moduleServer(id, function(input, output, session) {
-
     output$section_intro <- renderText({
-      "Click a chapter to open it in a modal. Read in small chunks, then close and pick the next one."
+      "Work through this section by reading the about the background of scientific publishing."
     })
 
     open_md_modal <- function(title, subtitle, md_path) {
@@ -235,61 +224,82 @@ what_is_a_paper_module_server <- function(id, parent_session, nav_order_list, pr
       )
     }
 
-    observeEvent(input$open_box1, {
-      open_md_modal(
-        "So, what actually is a Paper?",
-        "A paper is a structured argument",
-        "what_is_a_paper/what_is_a_paper1.md"
-      )
-    }, ignoreInit = TRUE)
+    observeEvent(input$open_box1,
+      {
+        open_md_modal(
+          "So, what actually is a Paper?",
+          "A paper is a structured argument",
+          "what_is_a_paper/what_is_a_paper1.md"
+        )
+      },
+      ignoreInit = TRUE
+    )
 
-    observeEvent(input$open_box2, {
-      open_md_modal(
-        "If it’s in a Paper, it must be True!",
-        "Why publication isn’t a guarantee of correctness.",
-        "what_is_a_paper/what_is_a_paper2.md"
-      )
-    }, ignoreInit = TRUE)
+    observeEvent(input$open_box2,
+      {
+        open_md_modal(
+          "If it’s in a Paper, it must be True!",
+          "Why publication isn’t a guarantee of correctness.",
+          "what_is_a_paper/what_is_a_paper2.md"
+        )
+      },
+      ignoreInit = TRUE
+    )
 
-    observeEvent(input$open_box3, {
-      open_md_modal(
-        "How does Scientific Publishing Work?",
-        "Peer review, revisions, and journals.",
-        "what_is_a_paper/what_is_a_paper3.md"
-      )
-    }, ignoreInit = TRUE)
+    observeEvent(input$open_box3,
+      {
+        open_md_modal(
+          "How does Scientific Publishing Work?",
+          "Peer review, revisions, and journals.",
+          "what_is_a_paper/what_is_a_paper3.md"
+        )
+      },
+      ignoreInit = TRUE
+    )
 
-    observeEvent(input$open_box4, {
-      open_md_modal(
-        "Different Types of Publication",
-        "Traditional journals, Preprints, and alternatives.",
-        "what_is_a_paper/what_is_a_paper5.md"
-      )
-    }, ignoreInit = TRUE)
+    observeEvent(input$open_box4,
+      {
+        open_md_modal(
+          "Different Types of Publication",
+          "Traditional journals, Preprints, and alternatives.",
+          "what_is_a_paper/what_is_a_paper5.md"
+        )
+      },
+      ignoreInit = TRUE
+    )
 
-    observeEvent(input$open_box5, {
-      open_md_modal(
-        "Problems with Scientific Publishing",
-        "Incentives, paywalls, and inequalty",
-        "what_is_a_paper/what_is_a_paper6.md"
-      )
-    }, ignoreInit = TRUE)
+    observeEvent(input$open_box5,
+      {
+        open_md_modal(
+          "Problems with Scientific Publishing",
+          "Incentives, paywalls, and inequalty",
+          "what_is_a_paper/what_is_a_paper6.md"
+        )
+      },
+      ignoreInit = TRUE
+    )
 
-    observeEvent(input$open_box6, {
-      open_md_modal(
-        "What is Open Science?",
-        "Sharing methods, data, code, and more.",
-        "what_is_a_paper/what_is_a_paper7.md"
-      )
-    }, ignoreInit = TRUE)
+    observeEvent(input$open_box6,
+      {
+        open_md_modal(
+          "What is Open Science?",
+          "Sharing methods, data, code, and more.",
+          "what_is_a_paper/what_is_a_paper7.md"
+        )
+      },
+      ignoreInit = TRUE
+    )
 
-    observeEvent(input$open_box7, {
-      open_md_modal(
-        "Good ≠ Perfect",
-        "No study, model, or paper is ever perfect, that doesn't mean it isn't good.",
-        "what_is_a_paper/what_is_a_paper8.md"
-      )
-    }, ignoreInit = TRUE)
+    observeEvent(input$open_box7,
+      {
+        open_md_modal(
+          "Good ≠ Perfect",
+          "No study, model, or paper is ever perfect, that doesn't mean it isn't good.",
+          "what_is_a_paper/what_is_a_paper8.md"
+        )
+      },
+      ignoreInit = TRUE
+    )
 
     nav_buttons_server(
       id = "nav_controls",

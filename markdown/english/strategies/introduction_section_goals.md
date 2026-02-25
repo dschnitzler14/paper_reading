@@ -1,7 +1,10 @@
-<div class="ps-callout ps-callout-goals">
-<strong>Section goals</strong><br>
-  <ul>
-    <li>Understand the rationale for the study</li>
-    <li>Identify hypotheses</li>
-  </ul>
+<div class="ps-block ps-def">
+  <div class="ps-term">Introduction Goal</div>
+  <div>
+    <ul class="ps-list">
+        <li><span class="ps-dot"></span><span>Understand the rationale for the study.</span></li>
+        <li><span class="ps-dot"></span><span>Identify hypotheses</span></li>
+        <li><span class="ps-dot"></span><span>Understand the background (if new to the topic)</span></li>
+    </ul>
+  </div>
 </div>

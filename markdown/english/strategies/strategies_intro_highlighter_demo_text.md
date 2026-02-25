@@ -1,4 +1,4 @@
-As you move through the paper, you’ll see highlighted pieces of text. Click on them to reveal notes and comments in the sidebar - they’re there to explain terminology, flag important points, and help guide your reading.
+As you move through the paper, you’ll see highlighted pieces of text. Click on them to reveal notes and comments - they’re there to explain terminology, flag important points, and help guide your reading.
 
 <div style="
   border-left: 5px solid #9aa0a6;

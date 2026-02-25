@@ -4,18 +4,16 @@ tools_module_ui <- function(id) {
   bslib::page_fluid(
     div(
       class = "ps-guide ps-tools",
-
       bslib::card(
         class = "ps-guide-hero",
         bslib::card_body(
           tags$div(
             class = "ps-guide-hero-inner",
-            tags$h3("Useful Tools for Reading, Writing, and Managing Papers"),
+            tags$h3("Useful Resources for Reading, Writing, and Managing Papers"),
             uiOutput(ns("tools_intro_text1"))
           )
         )
       ),
-
       div(
         class = "ps-tools-section",
         tags$div(
@@ -26,7 +24,6 @@ tools_module_ui <- function(id) {
         bslib::layout_columns(
           col_widths = c(4, 4, 4),
           class = "ps-step-grid ps-tools-grid",
-
           bslib::card(
             class = "ps-step ps-tool-card",
             bslib::card_body(
@@ -36,7 +33,7 @@ tools_module_ui <- function(id) {
                 class = "ps-step-inner",
                 tags$div(
                   class = "ps-step-title ps-tool-title",
-                  tags$div(class = "ps-linkout", "↗"),
+                  tags$i(class = "bi bi-box-arrow-up-right ps-link-icon"),
                   tags$div(
                     class = "ps-tool-title-text",
                     tags$h3("Zotero"),
@@ -49,7 +46,6 @@ tools_module_ui <- function(id) {
           )
         )
       ),
-
       div(
         class = "ps-tools-section",
         tags$div(
@@ -60,7 +56,6 @@ tools_module_ui <- function(id) {
         bslib::layout_columns(
           col_widths = c(4, 4, 4),
           class = "ps-step-grid ps-tools-grid",
-
           bslib::card(
             class = "ps-step ps-tool-card",
             bslib::card_body(
@@ -70,7 +65,7 @@ tools_module_ui <- function(id) {
                 class = "ps-step-inner",
                 tags$div(
                   class = "ps-step-title ps-tool-title",
-                  tags$div(class = "ps-linkout", "↗"),
+                  tags$i(class = "bi bi-box-arrow-up-right ps-link-icon"),
                   tags$div(
                     class = "ps-tool-title-text",
                     tags$h3("Google Scholar"),
@@ -81,7 +76,6 @@ tools_module_ui <- function(id) {
               )
             )
           ),
-
           bslib::card(
             class = "ps-step ps-tool-card",
             bslib::card_body(
@@ -91,7 +85,7 @@ tools_module_ui <- function(id) {
                 class = "ps-step-inner",
                 tags$div(
                   class = "ps-step-title ps-tool-title",
-                  tags$div(class = "ps-linkout", "↗"),
+                  tags$i(class = "bi bi-box-arrow-up-right ps-link-icon"),
                   tags$div(
                     class = "ps-tool-title-text",
                     tags$h3("Europe PMC"),
@@ -102,7 +96,6 @@ tools_module_ui <- function(id) {
               )
             )
           ),
-
           bslib::card(
             class = "ps-step ps-tool-card",
             bslib::card_body(
@@ -112,7 +105,7 @@ tools_module_ui <- function(id) {
                 class = "ps-step-inner",
                 tags$div(
                   class = "ps-step-title ps-tool-title",
-                  tags$div(class = "ps-linkout", "↗"),
+                  tags$i(class = "bi bi-box-arrow-up-right ps-link-icon"),
                   tags$div(
                     class = "ps-tool-title-text",
                     tags$h3("OpenAlex"),
@@ -123,7 +116,6 @@ tools_module_ui <- function(id) {
               )
             )
           ),
-
           bslib::card(
             class = "ps-step ps-tool-card",
             bslib::card_body(
@@ -133,7 +125,7 @@ tools_module_ui <- function(id) {
                 class = "ps-step-inner",
                 tags$div(
                   class = "ps-step-title ps-tool-title",
-                  tags$div(class = "ps-linkout", "↗"),
+                  tags$i(class = "bi bi-box-arrow-up-right ps-link-icon"),
                   tags$div(
                     class = "ps-tool-title-text",
                     tags$h3("PubCrawler"),
@@ -146,7 +138,6 @@ tools_module_ui <- function(id) {
           )
         )
       ),
-
       div(
         class = "ps-tools-section",
         tags$div(
@@ -157,7 +148,6 @@ tools_module_ui <- function(id) {
         bslib::layout_columns(
           col_widths = c(4, 4, 4),
           class = "ps-step-grid ps-tools-grid",
-
           bslib::card(
             class = "ps-step ps-tool-card",
             bslib::card_body(
@@ -167,7 +157,7 @@ tools_module_ui <- function(id) {
                 class = "ps-step-inner",
                 tags$div(
                   class = "ps-step-title ps-tool-title",
-                  tags$div(class = "ps-linkout", "↗"),
+                  tags$i(class = "bi bi-box-arrow-up-right ps-link-icon"),
                   tags$div(
                     class = "ps-tool-title-text",
                     tags$h3("Overleaf"),
@@ -178,7 +168,6 @@ tools_module_ui <- function(id) {
               )
             )
           ),
-
           bslib::card(
             class = "ps-step ps-tool-card",
             bslib::card_body(
@@ -188,7 +177,7 @@ tools_module_ui <- function(id) {
                 class = "ps-step-inner",
                 tags$div(
                   class = "ps-step-title ps-tool-title",
-                  tags$div(class = "ps-linkout", "↗"),
+                  tags$i(class = "bi bi-box-arrow-up-right ps-link-icon"),
                   tags$div(
                     class = "ps-tool-title-text",
                     tags$h3("Research Equals"),
@@ -201,7 +190,6 @@ tools_module_ui <- function(id) {
           )
         )
       ),
-
       div(
         class = "ps-tools-section",
         tags$div(
@@ -212,7 +200,6 @@ tools_module_ui <- function(id) {
         bslib::layout_columns(
           col_widths = c(4, 4, 4),
           class = "ps-step-grid ps-tools-grid",
-
           bslib::card(
             class = "ps-step ps-tool-card",
             bslib::card_body(
@@ -222,7 +209,7 @@ tools_module_ui <- function(id) {
                 class = "ps-step-inner",
                 tags$div(
                   class = "ps-step-title ps-tool-title",
-                  tags$div(class = "ps-linkout", "↗"),
+                  tags$i(class = "bi bi-box-arrow-up-right ps-link-icon"),
                   tags$div(
                     class = "ps-tool-title-text",
                     tags$h3("Paperstars"),
@@ -233,7 +220,6 @@ tools_module_ui <- function(id) {
               )
             )
           ),
-
           bslib::card(
             class = "ps-step ps-tool-card",
             bslib::card_body(
@@ -243,7 +229,7 @@ tools_module_ui <- function(id) {
                 class = "ps-step-inner",
                 tags$div(
                   class = "ps-step-title ps-tool-title",
-                  tags$div(class = "ps-linkout", "↗"),
+                  tags$i(class = "bi bi-box-arrow-up-right ps-link-icon"),
                   tags$div(
                     class = "ps-tool-title-text",
                     tags$h3("Hypothes.is"),
@@ -285,7 +271,7 @@ tools_module_ui <- function(id) {
                 class = "ps-step-inner",
                 tags$div(
                   class = "ps-step-title ps-tool-title",
-                  tags$div(class = "ps-linkout", "↗"),
+                  tags$i(class = "bi bi-box-arrow-up-right ps-link-icon"),
                   tags$div(
                     class = "ps-tool-title-text",
                     tags$h3("Center for Open Science"),
@@ -296,7 +282,6 @@ tools_module_ui <- function(id) {
               )
             )
           ),
-
           bslib::card(
             class = "ps-step ps-tool-card",
             bslib::card_body(
@@ -306,7 +291,8 @@ tools_module_ui <- function(id) {
                 class = "ps-step-inner",
                 tags$div(
                   class = "ps-step-title ps-tool-title",
-                  tags$div(class = "ps-linkout", "↗"),
+                  tags$i(class = "bi bi-box-arrow-up-right ps-link-icon"),
+                  # tags$div(class = "ps-linkout", "↗"),
                   tags$div(
                     class = "ps-tool-title-text",
                     tags$h3("Open Research Calendar"),
@@ -319,18 +305,16 @@ tools_module_ui <- function(id) {
           )
         )
       ),
-
       div(
         class = "ps-tools-section",
         tags$div(
           class = "ps-tools-section-head",
           tags$h3("Stats & analysis"),
-          tags$p("Power analysis and statistical computing.")
+          tags$p("Data Analysis & Statistics")
         ),
         bslib::layout_columns(
           col_widths = c(4, 4, 4),
           class = "ps-step-grid ps-tools-grid",
-
           bslib::card(
             class = "ps-step ps-tool-card",
             bslib::card_body(
@@ -340,7 +324,7 @@ tools_module_ui <- function(id) {
                 class = "ps-step-inner",
                 tags$div(
                   class = "ps-step-title ps-tool-title",
-                  tags$div(class = "ps-linkout", "↗"),
+                  tags$i(class = "bi bi-box-arrow-up-right ps-link-icon"),
                   tags$div(
                     class = "ps-tool-title-text",
                     tags$h3("G*Power"),
@@ -351,7 +335,6 @@ tools_module_ui <- function(id) {
               )
             )
           ),
-
           bslib::card(
             class = "ps-step ps-tool-card",
             bslib::card_body(
@@ -361,7 +344,7 @@ tools_module_ui <- function(id) {
                 class = "ps-step-inner",
                 tags$div(
                   class = "ps-step-title ps-tool-title",
-                  tags$div(class = "ps-linkout", "↗"),
+                  tags$i(class = "bi bi-box-arrow-up-right ps-link-icon"),
                   tags$div(
                     class = "ps-tool-title-text",
                     tags$h3("R"),
@@ -371,10 +354,89 @@ tools_module_ui <- function(id) {
                 tags$div(class = "ps-tool-cta", "Go to site")
               )
             )
+          ),
+          bslib::card(
+            class = "ps-step ps-tool-card",
+            bslib::card_body(
+              class = "ps-tool-click",
+              onclick = "window.open('https://biomedical-sciences.ed.ac.uk/experimental-design-and-data-analysis/what-to-do-with-experiments/chapter-1-general-introduction','_blank')",
+              tags$div(
+                class = "ps-step-inner",
+                tags$div(
+                  class = "ps-step-title ps-tool-title",
+                  tags$i(class = "bi bi-box-arrow-up-right ps-link-icon"),
+                  tags$div(
+                    class = "ps-tool-title-text",
+                    tags$h3("University of Edinburgh"),
+                    tags$p(class = "ps-tool-subtitle", "Experimental Design & Data Analysis")
+                  )
+                ),
+                tags$div(class = "ps-tool-cta", "Go to site")
+              )
+            )
+          ),
+          bslib::card(
+            class = "ps-step ps-tool-card",
+            bslib::card_body(
+              class = "ps-tool-click",
+              onclick = "window.open('https://www.statstutor.ac.uk/resources/uploaded/tutorsquickguidetostatistics.pdf','_blank')",
+              tags$div(
+                class = "ps-step-inner",
+                tags$div(
+                  class = "ps-step-title ps-tool-title",
+                  tags$i(class = "bi bi-box-arrow-up-right ps-link-icon"),
+                  tags$div(
+                    class = "ps-tool-title-text",
+                    tags$h3("StatsTutor"),
+                    tags$p(class = "ps-tool-subtitle", "Tutors’ Quick Guide to Statistics (PDF)")
+                  )
+                ),
+                tags$div(class = "ps-tool-cta", "Go to site")
+              )
+            )
+          ),
+          bslib::card(
+            class = "ps-step ps-tool-card",
+            bslib::card_body(
+              class = "ps-tool-click",
+              onclick = "window.open('https://resources.nu.edu/statsresources','_blank')",
+              tags$div(
+                class = "ps-step-inner",
+                tags$div(
+                  class = "ps-step-title ps-tool-title",
+                  tags$i(class = "bi bi-box-arrow-up-right ps-link-icon"),
+                  tags$div(
+                    class = "ps-tool-title-text",
+                    tags$h3("National University"),
+                    tags$p(class = "ps-tool-subtitle", "Statistics resources hub")
+                  )
+                ),
+                tags$div(class = "ps-tool-cta", "Go to site")
+              )
+            )
+          ),
+          bslib::card(
+            class = "ps-step ps-tool-card",
+            bslib::card_body(
+              class = "ps-tool-click",
+              onclick = "window.open('https://statisticsbyjim.com/','_blank')",
+              tags$div(
+                class = "ps-step-inner",
+                tags$div(
+                  class = "ps-step-title ps-tool-title",
+                  tags$i(class = "bi bi-box-arrow-up-right ps-link-icon"),
+                  tags$div(
+                    class = "ps-tool-title-text",
+                    tags$h3("Statistics by Jim"),
+                    tags$p(class = "ps-tool-subtitle", "Clear, practical statistics tutorials")
+                  )
+                ),
+                tags$div(class = "ps-tool-cta", "Go to site")
+              )
+            )
           )
         )
       ),
-
       div(
         class = "ps-guide-nav",
         nav_buttons_ui(ns("nav_controls"))
@@ -388,12 +450,11 @@ tools_module_server <- function(id, parent_session, nav_order_list, process_mark
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
 
-   nav_buttons_server(
+    nav_buttons_server(
       id = "nav_controls",
       parent_session = parent_session,
       nav_order_list = nav_order_list,
       nav_input_id = "topnav"
     )
-
   })
 }

@@ -182,7 +182,7 @@ ui <- bslib::page_navbar(
   nav_panel(
     title = tagList(
       bs_icon("tools"),
-      " Tools"
+      " Resources"
     ),
     value = "tools",
     tools_module_ui("tools")

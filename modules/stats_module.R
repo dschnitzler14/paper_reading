@@ -61,34 +61,6 @@ stats_module_ui <- function(id) {
             )
           )
         ),
-        # bslib::card(
-        #   class = "ps-step ps-step-2 ps-static-card",
-        #   bslib::card_body(
-        #     tags$div(
-        #       class = "ps-step-inner",
-        #       tags$div(
-        #         class = "ps-step-title",
-        #         tags$span(class = "ps-step-num", "2"),
-        #         tags$h3("What is a p-value?")
-        #       ),
-        #       uiOutput(ns("stats_step2_text"))
-        #     )
-        #   )
-        # ),
-        # bslib::card(
-        #   class = "ps-step ps-step-3 ps-static-card",
-        #   bslib::card_body(
-        #     tags$div(
-        #       class = "ps-step-inner",
-        #       tags$div(
-        #         class = "ps-step-title",
-        #         tags$span(class = "ps-step-num", "3"),
-        #         tags$h3("Why do we need to check assumptions of statistical tests?")
-        #       ),
-        #       uiOutput(ns("stats_step3_text"))
-        #     )
-        #   )
-        # ),
         bslib::card(
           class = "ps-step ps-step-3 ps-topic-card",
           `data-card-id` = "what-paper-33",
@@ -111,20 +83,6 @@ stats_module_ui <- function(id) {
             )
           )
         ),
-        # bslib::card(
-        #   class = "ps-step ps-step-4 ps-static-card",
-        #   bslib::card_body(
-        #     tags$div(
-        #       class = "ps-step-inner",
-        #       tags$div(
-        #         class = "ps-step-title",
-        #         tags$span(class = "ps-step-num", "4"),
-        #         tags$h3("Type I and Type II Errors")
-        #       ),
-        #       uiOutput(ns("stats_step4_text"))
-        #     )
-        #   )
-        # ),
         bslib::card(
           class = "ps-step ps-step-4 ps-topic-card",
           `data-card-id` = "what-paper-34",
@@ -147,20 +105,6 @@ stats_module_ui <- function(id) {
             )
           )
         ),
-        # bslib::card(
-        #   class = "ps-step ps-step-5 ps-static-card",
-        #   bslib::card_body(
-        #     tags$div(
-        #       class = "ps-step-inner",
-        #       tags$div(
-        #         class = "ps-step-title",
-        #         tags$span(class = "ps-step-num", "5"),
-        #         tags$h3("Confidence Intervals")
-        #       ),
-        #       uiOutput(ns("stats_step5_text"))
-        #     )
-        #   )
-        # ),
         bslib::card(
           class = "ps-step ps-step-5 ps-topic-card",
           `data-card-id` = "what-paper-35",
@@ -183,21 +127,6 @@ stats_module_ui <- function(id) {
             )
           )
         ),
-        # bslib::card(
-        #   class = "ps-step ps-step-6 ps-static-card",
-        #   bslib::card_body(
-        #     tags$div(
-        #       class = "ps-step-inner",
-        #       tags$div(
-        #         class = "ps-step-title",
-        #         tags$span(class = "ps-step-num", "6"),
-        #         tags$h3("Why does sample size matter?")
-        #       ),
-        #       uiOutput(ns("stats_step6_text"))
-        #     )
-        #   )
-        # ),
-
         bslib::card(
           class = "ps-step ps-step-6 ps-topic-card",
           `data-card-id` = "what-paper-36",
@@ -220,20 +149,6 @@ stats_module_ui <- function(id) {
             )
           )
         ),
-        # bslib::card(
-        #   class = "ps-step ps-step-7 ps-static-card",
-        #   bslib::card_body(
-        #     tags$div(
-        #       class = "ps-step-inner",
-        #       tags$div(
-        #         class = "ps-step-title",
-        #         tags$span(class = "ps-step-num", "7"),
-        #         tags$h3("What are effect sizes?")
-        #       ),
-        #       uiOutput(ns("stats_step7_text"))
-        #     )
-        #   )
-        # ),
         bslib::card(
           class = "ps-step ps-step-7 ps-topic-card",
           `data-card-id` = "what-paper-37",
@@ -256,20 +171,6 @@ stats_module_ui <- function(id) {
             )
           )
         ),
-        # bslib::card(
-        #   class = "ps-step ps-step-8 ps-static-card",
-        #   bslib::card_body(
-        #     tags$div(
-        #       class = "ps-step-inner",
-        #       tags$div(
-        #         class = "ps-step-title",
-        #         tags$span(class = "ps-step-num", "8"),
-        #         tags$h3("What is p-hacking?")
-        #       ),
-        #       uiOutput(ns("stats_step8_text"))
-        #     )
-        #   )
-        # ),
         bslib::card(
           class = "ps-step ps-step-8 ps-topic-card",
           `data-card-id` = "what-paper-38",
@@ -328,20 +229,6 @@ stats_module_ui <- function(id) {
             )
           )
         ),
-        # bslib::card(
-        #   class = "ps-step ps-step-10 ps-static-card",
-        #   bslib::card_body(
-        #     tags$div(
-        #       class = "ps-step-inner",
-        #       tags$div(
-        #         class = "ps-step-title",
-        #         tags$span(class = "ps-step-num", "10"),
-        #         tags$h3("Common statistical mistakes in papers")
-        #       ),
-        #       uiOutput(ns("stats_step10_text"))
-        #     )
-        #   )
-        # ),
         bslib::card(
           class = "ps-step ps-step-10 ps-topic-card",
           `data-card-id` = "what-paper-310",
@@ -364,20 +251,6 @@ stats_module_ui <- function(id) {
             )
           )
         ),
-        # bslib::card(
-        #   class = "ps-step ps-step-11 ps-static-card",
-        #   bslib::card_body(
-        #     tags$div(
-        #       class = "ps-step-inner",
-        #       tags$div(
-        #         class = "ps-step-title",
-        #         tags$span(class = "ps-step-num", "11"),
-        #         tags$h3("Multiple testing corrections")
-        #       ),
-        #       uiOutput(ns("stats_step11_text"))
-        #     )
-        #   )
-        # ),
         bslib::card(
           class = "ps-step ps-step-11 ps-topic-card",
           `data-card-id` = "what-paper-311",
@@ -400,20 +273,6 @@ stats_module_ui <- function(id) {
             )
           )
         ),
-        # bslib::card(
-        #   class = "ps-step ps-step-12 ps-static-card",
-        #   bslib::card_body(
-        #     tags$div(
-        #       class = "ps-step-inner",
-        #       tags$div(
-        #         class = "ps-step-title",
-        #         tags$span(class = "ps-step-num", "12"),
-        #         tags$h3("Which Test Should I Use?")
-        #       ),
-        #       uiOutput(ns("stats_step12_text"))
-        #     )
-        #   )
-        # ),
         bslib::card(
           class = "ps-step ps-step-12 ps-topic-card",
           `data-card-id` = "what-paper-312",
@@ -436,20 +295,28 @@ stats_module_ui <- function(id) {
             )
           )
         ),
-        # bslib::card(
-        #   class = "ps-step ps-step-13 ps-static-card",
-        #   bslib::card_body(
-        #     tags$div(
-        #       class = "ps-step-inner",
-        #       tags$div(
-        #         class = "ps-step-title",
-        #         tags$span(class = "ps-step-num", "13"),
-        #         tags$h3("Type I and Type II Errors")
-        #       ),
-        #       uiOutput(ns("stats_step13_text"))
-        #     )
-        #   )
-        # )
+        bslib::card(
+          class = "ps-step ps-step-13 ps-topic-card",
+          `data-card-id` = "what-paper-313",
+          bslib::card_body(
+            class = "ps-topic-click",
+            actionButton(ns("open_box13"), label = NULL, class = "ps-topic-btn"),
+            tags$div(
+              class = "ps-step-inner",
+              tags$div(
+                class = "ps-step-title ps-topic-title",
+                tags$span(class = "ps-step-num", "13"),
+                tags$h3("Resources"),
+                tags$p("")
+              ),
+              tags$div(
+                class = "ps-tool-cta",
+                bs_icon("book"),
+                tags$span("Open chapter")
+              )
+            )
+          )
+        ),
       )
     ),
     nav_buttons_ui(ns("nav_controls"))
@@ -609,53 +476,62 @@ stats_module_server <- function(id, parent_session, nav_order_list, process_mark
       },
       ignoreInit = TRUE
     )
-    # output$stats_step1_text <- renderUI({
-    #   process_markdown("stats/stats_step1_text.md")
+
+    observeEvent(input$open_box13,
+      {
+        open_md_modal(
+          "Resources",
+          "",
+          "stats/stats_step13_text.md"
+        )
+      },
+      ignoreInit = TRUE
+    )
+
+
+    # output$stats_step2_text <- renderUI({
+    #   process_markdown("stats/stats_step2_text.md")
     # })
 
-    output$stats_step2_text <- renderUI({
-      process_markdown("stats/stats_step2_text.md")
-    })
+    # output$stats_step3_text <- renderUI({
+    #   process_markdown("stats/stats_step3_text.md")
+    # })
 
-    output$stats_step3_text <- renderUI({
-      process_markdown("stats/stats_step3_text.md")
-    })
+    # output$stats_step4_text <- renderUI({
+    #   process_markdown("stats/stats_step4_text.md")
+    # })
 
-    output$stats_step4_text <- renderUI({
-      process_markdown("stats/stats_step4_text.md")
-    })
+    # output$stats_step5_text <- renderUI({
+    #   process_markdown("stats/stats_step5_text.md")
+    # })
 
-    output$stats_step5_text <- renderUI({
-      process_markdown("stats/stats_step5_text.md")
-    })
+    # output$stats_step6_text <- renderUI({
+    #   process_markdown("stats/stats_step6_text.md")
+    # })
 
-    output$stats_step6_text <- renderUI({
-      process_markdown("stats/stats_step6_text.md")
-    })
+    # output$stats_step7_text <- renderUI({
+    #   process_markdown("stats/stats_step7_text.md")
+    # })
 
-    output$stats_step7_text <- renderUI({
-      process_markdown("stats/stats_step7_text.md")
-    })
+    # output$stats_step8_text <- renderUI({
+    #   process_markdown("stats/stats_step8_text.md")
+    # })
 
-    output$stats_step8_text <- renderUI({
-      process_markdown("stats/stats_step8_text.md")
-    })
+    # output$stats_step9_text <- renderUI({
+    #   process_markdown("stats/stats_step9_text.md")
+    # })
 
-    output$stats_step9_text <- renderUI({
-      process_markdown("stats/stats_step9_text.md")
-    })
+    # output$stats_step10_text <- renderUI({
+    #   process_markdown("stats/stats_step10_text.md")
+    # })
 
-    output$stats_step10_text <- renderUI({
-      process_markdown("stats/stats_step10_text.md")
-    })
+    # output$stats_step11_text <- renderUI({
+    #   process_markdown("stats/stats_step11_text.md")
+    # })
 
-    output$stats_step11_text <- renderUI({
-      process_markdown("stats/stats_step11_text.md")
-    })
-
-    output$stats_step12_text <- renderUI({
-      process_markdown("stats/stats_step12_text.md")
-    })
+    # output$stats_step12_text <- renderUI({
+    #   process_markdown("stats/stats_step12_text.md")
+    # })
 
     # output$stats_step13_text <- renderUI({
     #   process_markdown("stats/stats_step13_text.md")

@@ -1,28 +1,131 @@
-As you’ve just seen, the AI tools make this paper sound very trustworthy and rigorous, but your human reasoning can tell that it’s not.
+<div class="ps-chapter">
 
-AI systems _can_ be good at summarising and rephrasing what a paper claims. But they are not designed to notice what’s missing, what’s weakly justified, or what just doesn't make sense.
-
-## What AI is actually doing
-
-AI responds primarily to what is written on the page. It does not independently evaluate whether the methods are appropriate, whether assumptions are justified, or whether the conclusions truly follow.
-
-## What AI misses
-
-<div>
-<ul style="margin: 0; padding-left: 18px;">
-  <li><strong>Gaps in methods or logic</strong>, missing controls, unclear procedures, or unjustified assumptions.</li>
-  <li><strong>Inappropriate analysis</strong>, such as flawed stats.</li>
-  <li><strong>Misleading framing</strong>, it often repeats the authors’ narrative, even when that framing is questionable.</li>
-  <li><strong>Overconfident conclusions</strong>, unless explicitly prompted, it rarely challenges what the paper claims.</li>
-</ul>
+<div class="ps-block ps-callout">
+  <div class="ps-callout-title">
+    <i class="bi bi-lightbulb-fill"></i>
+    Main Concept
+  </div>
+  AI can make a paper sound polished and convincing, but it cannot replace your critical judgement.
 </div>
 
-## Use your own brain:
+<div class="ps-divider"></div>
 
-AI is a tool, not a shortcut. Your job as a scholar is to think critically and independently, not to outsource judgement.
+## What AI Is Actually Doing
 
-## Why this matters
+<div class="ps-two-col">
 
-Carrying forward bad science is like making a small mistake in maths. A small error early on gets carried forward. Later steps may look polished and convincing, but the final conclusion is still wrong.
+  <div class="ps-tile ps-data-type">
+    <h4><i class="bi bi-robot"></i> What AI Does </h4>
+    <div class="ps-muted">Surface-level processing</div>
+    <div class="ps-subcard">
+      <div class="ps-subtitle">Summarising</div>
+      <div>Condenses what the paper claims, only based on what is written.</div>
+    </div>
+    <div class="ps-subcard">
+      <div class="ps-subtitle">Rephrasing</div>
+      <div>Rewrites arguments in confident language.</div>
+    </div>
+  </div>
 
-**Bottom line:** trust your critical thinking. It’s more impressive (and far more reliable) than what AI can do!
+  <div class="ps-tile ps-data-type">
+    <h4><i class="bi bi-ban-fill"></i> What AI Does Not Do</h4>
+    <div class="ps-muted">Independent evaluation</div>
+    <div class="ps-subcard">
+      <div class="ps-subtitle">Critical assessment</div>
+      <div>It does not independently judge whether the methods or assumptions are appropriate.</div>
+    </div>
+    <div class="ps-subcard">
+      <div class="ps-subtitle">Logical scrutiny</div>
+      <div>It does not verify whether conclusions truly follow from the data.</div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="ps-divider"></div>
+
+## What AI Misses
+
+<div class="ps-myths">
+
+  <div class="ps-myth">
+    <div class="ps-myth-icon"><i class="bi bi-x-circle-fill"></i></div>
+    <div class="ps-myth-body">
+      <div class="ps-myth-title">
+        Gaps in <span class="ps-highlight-wrong">methods or logic</span>
+      </div>
+      <div class="ps-myth-text">
+        Missing controls, unclear procedures, or unjustified assumptions
+        may go unnoticed.
+      </div>
+    </div>
+  </div>
+
+  <div class="ps-myth">
+    <div class="ps-myth-icon"><i class="bi bi-x-circle-fill"></i></div>
+    <div class="ps-myth-body">
+      <div class="ps-myth-title">
+        <span class="ps-highlight-wrong">Inappropriate analysis</span>
+      </div>
+      <div class="ps-myth-text">
+        Flawed, misapplied, or misinterpreted statistics are often repeated rather than challenged.
+      </div>
+    </div>
+  </div>
+
+  <div class="ps-myth">
+    <div class="ps-myth-icon"><i class="bi bi-x-circle-fill"></i></div>
+    <div class="ps-myth-body">
+      <div class="ps-myth-title">
+        <span class="ps-highlight-wrong">Misleading framing</span>
+      </div>
+      <div class="ps-myth-text">
+        AI typically mirrors the authors’ narrative, even if it overstates the evidence.
+      </div>
+    </div>
+  </div>
+
+  <div class="ps-myth">
+    <div class="ps-myth-icon"><i class="bi bi-x-circle-fill"></i></div>
+    <div class="ps-myth-body">
+      <div class="ps-myth-title">
+        Overconfident <span class="ps-highlight-wrong">conclusions</span>
+      </div>
+      <div class="ps-myth-text">
+        AI does not question whether the claims are justified or reasonable.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ps-divider"></div>
+
+<div class="ps-block">
+  <h4><i class="bi bi-brain"></i> Your Role as a Scholar</h4>
+  <p>
+    AI is a tool- not a shortcut. It is your <span class="ps-highlight-term">priviledge and responsibility</span> to think critically, question assumptions, and evaluate evidence independently.
+  </p>
+</div>
+
+<div class="ps-plain">
+  <div class="ps-plain-title">
+    <i class="bi bi-translate"></i>
+    In plain English
+  </div>
+  Carrying forward weak science is like making a small mistake in maths: early errors compound. Later steps may look polished, but the final conclusion can still be wrong.
+</div>
+
+<div class="ps-divider"></div>
+
+<div class="ps-block ps-callout">
+  <div class="ps-callout-title">
+    <i class="bi bi-star-fill"></i>
+    Bottom Line
+  </div>
+  Trust your critical thinking. It is more impressive and far more reliable than anything AI can generate.
+</div>
+
+</div>
+
+</div>
