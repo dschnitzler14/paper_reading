@@ -87,6 +87,22 @@ ui <- bslib::page_navbar(
       name = "viewport",
       content = "width=device-width, initial-scale=1.0"
     ),
+    tags$meta(
+        name = "description",
+        content = "Parsible helps students learn how to read academic research papers critically and confidently."
+      ),
+      tags$meta(
+        property = "og:title",
+        content = "Parsible - Learn to Read a Paper"
+      ),
+      tags$meta(
+        property = "og:description",
+        content = "Interactive tools to help students understand and evaluate research papers."
+      ),
+      tags$meta(
+        property = "og:type",
+        content = "website"
+      ),
     tags$link(
       rel = "stylesheet",
       href = "https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/open-dyslexic-regular.css"
