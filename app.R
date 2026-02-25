@@ -20,8 +20,7 @@ theme <- bslib::bs_theme(
 
 ui <- bslib::page_navbar(
   title = tagList(
-    fontawesome::fa("readme"),
-    " Parsible"
+    "Parsible"
   ),
   id = "topnav",
   theme = theme,
